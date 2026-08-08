@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 190" role="img" aria-label="Duara tatu sawa zipo kwenye mstari mmoja. Duara moja kati ya tatu limetiwa kivuli.">
+  <rect width="600" height="190" fill="white"/>
+  <g stroke="#111827" stroke-width="4">
+    <circle cx="100" cy="95" r="82" fill="#9bd3f5"/>
+    <circle cx="300" cy="95" r="82" fill="white"/>
+    <circle cx="500" cy="95" r="82" fill="white"/>
+  </g>
+</svg>

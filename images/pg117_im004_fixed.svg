@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" role="img" aria-label="Duara limegawanywa katika sehemu nane sawa. Sehemu moja kati ya nane imetiwa kivuli.">
+  <rect width="220" height="220" fill="white"/>
+  <circle cx="110" cy="110" r="95" fill="white" stroke="#111827" stroke-width="4"/>
+  <path d="M110 110 L110 205 A95 95 0 0 0 177.2 177.2 Z" fill="#9bd3f5"/>
+  <g stroke="#111827" stroke-width="3">
+    <path d="M110 15V205 M15 110H205 M42.8 42.8L177.2 177.2 M177.2 42.8L42.8 177.2"/>
+  </g>
+</svg>

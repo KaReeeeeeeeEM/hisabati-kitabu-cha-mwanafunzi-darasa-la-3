@@ -4,6 +4,7 @@ import html
 import json
 import os
 import re
+import subprocess
 import sys
 from pathlib import Path
 from xml.etree import ElementTree
@@ -19,10 +20,11 @@ AUDIO_DIR = LOCALE / "audio"
 VOICE = "sw-TZ-RehemaNeural"
 
 AUDIO_REVIEW_PAGES = {
-    24, 35, 37, 41, 44, 47, 48, 56, 58, 60, 62, 63, 64, 65, 66, 67,
-    69, 71, 76, 78, 80, 81, 82, 89, 94, 95, 99, 100, 125, 127, 131,
-    153, 162, 163, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177,
-    178, 180, 181, 182, 183, 184,
+    1, 2, 13, 14, 26, 27, 31, 35, 37, 39, 41, 44, 45, 47, 48, 51,
+    52, 56, 58, 60, 63, 64, 68, 69, 70, 71, 73, 75, 76, 77, 78,
+    79, 80, 81, 82, 89, 94, 95, 99, 100, 102, 117, 121, 123, 124,
+    125, 126, 127, 129, 131, 133, 135, 153, 162, 163, 168, 169, 170,
+    171, 172, 173, 174, 175, 176, 177, 178, 180, 181, 182, 183, 184,
 }
 
 CHANGED_IDS = {
@@ -78,12 +80,26 @@ def spoken_text(item_id: str, text: str) -> str:
     value = html.unescape(text)
     value = re.sub(r"<math\b[^>]*>.*?</math>", replace_math, value, flags=re.S)
     value = re.sub(r"<[^>]+>", " ", value)
+    # Contact details are identifiers, not quantities. Read them one character
+    # at a time so a telephone number is never announced as millions.
+    if item_id == "pg002_n0014":
+        value = value.replace("+", " namba ya kimataifa ").replace("/", ", au ")
+        value = re.sub(r"\d", lambda m: ONES[int(m.group(0))] + " ", value)
+        return re.sub(r"\s+", " ", value).strip(" .")
+    # ISBN punctuation must be announced as a dash, not interpreted as a range.
+    if item_id in {"pg001_n0013", "pg002_n0006"}:
+        value = value.replace("-", " dash ")
+        value = re.sub(r"\d", lambda m: ONES[int(m.group(0))] + " ", value)
+        return re.sub(r"\s+", " ", value).strip(" .")
+    value = re.sub(r"(?<!\d)(\d+)\s*/\s*(\d+)(?!\d)", r"\1 juu ya \2", value)
     value = re.sub(r"(?<=\d),(?=\d)", "", value)
     value = re.sub(r"\bmL\b", "mililita", value, flags=re.I)
     value = re.sub(r"\bSh\b|\bsh\b", "shilingi", value)
     value = re.sub(r"\bst\b", "senti", value, flags=re.I)
     value = re.sub(r"\bC\b", "sii", value)
     value = value.replace("/", " au ")
+    value = re.sub(r"\bminus\b", "toa", value, flags=re.I)
+    value = re.sub(r"\bplus\b", "jumlisha", value, flags=re.I)
     value = value.replace("↔", "mstari mnyoofu ")
     value = value.replace("✓", "alama ya vema").replace("✗", "alama ya mkasi")
     value = value.replace("+", " jumlisha ").replace("−", " toa ").replace("–", " toa ")
@@ -100,37 +116,52 @@ def should_regenerate(item_id: str, text: str) -> bool:
     if item_id in CHANGED_IDS:
         return True
     page = page_number(item_id)
-    if page not in AUDIO_REVIEW_PAGES:
-        return False
-    if "_im" in item_id:
-        return True
-    return bool(re.search(r"\d{4,}|\b(?:sh|st|mL|nne|C)\b|[+−–=]|\d+\s+\d+", text))
+    return page in AUDIO_REVIEW_PAGES and bool(re.search(r"[A-Za-z0-9]", text))
 
 async def render(item_id: str, text: str, semaphore: asyncio.Semaphore):
     output = AUDIO_DIR / f"{item_id}.mp3"
     speech = spoken_text(item_id, text)
     async with semaphore:
-        for attempt in range(4):
+        for attempt in range(8):
             try:
                 await edge_tts.Communicate(speech, VOICE, rate="-5%").save(str(output))
                 return item_id, speech
             except Exception:
-                if attempt == 3:
+                if attempt == 7:
                     raise
-                await asyncio.sleep(1.5 * (attempt + 1))
+                await asyncio.sleep(3 * (attempt + 1))
 
 async def main():
     texts = json.loads(TEXTS_PATH.read_text())
     audios = json.loads(AUDIOS_PATH.read_text())
     targets = [(item_id, text) for item_id, text in texts.items() if isinstance(text, str) and should_regenerate(item_id, text)]
+    if os.environ.get("RESUME_AUDIO") == "1":
+        changed = subprocess.run(
+            ["git", "status", "--porcelain", "--", str(AUDIO_DIR)],
+            cwd=ROOT,
+            check=True,
+            capture_output=True,
+            text=True,
+        ).stdout
+        completed = {
+            Path(line[3:]).stem
+            for line in changed.splitlines()
+            if line[3:].endswith(".mp3") and (ROOT / line[3:]).stat().st_size > 1000
+        }
+        for item_id in completed:
+            audios[item_id] = f"{item_id}.mp3"
+        AUDIOS_PATH.write_text(json.dumps(audios, ensure_ascii=False, indent=2) + "\n")
+        targets = [(item_id, text) for item_id, text in targets if item_id not in completed]
+        print(f"Resuming with {len(targets)} unfinished audio files", flush=True)
     AUDIO_DIR.mkdir(parents=True, exist_ok=True)
-    semaphore = asyncio.Semaphore(8)
+    semaphore = asyncio.Semaphore(int(os.environ.get("AUDIO_CONCURRENCY", "3")))
     completed = 0
     for start in range(0, len(targets), 80):
         batch = targets[start:start + 80]
         results = await asyncio.gather(*(render(item_id, text, semaphore) for item_id, text in batch))
         for item_id, _ in results:
             audios[item_id] = f"{item_id}.mp3"
+        AUDIOS_PATH.write_text(json.dumps(audios, ensure_ascii=False, indent=2) + "\n")
         completed += len(results)
         print(f"Generated {completed}/{len(targets)} audio files", flush=True)
     AUDIOS_PATH.write_text(json.dumps(audios, ensure_ascii=False, indent=2) + "\n")

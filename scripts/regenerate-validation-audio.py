@@ -134,7 +134,11 @@ async def render(item_id: str, text: str, semaphore: asyncio.Semaphore):
 async def main():
     texts = json.loads(TEXTS_PATH.read_text())
     audios = json.loads(AUDIOS_PATH.read_text())
-    targets = [(item_id, text) for item_id, text in texts.items() if isinstance(text, str) and should_regenerate(item_id, text)]
+    requested_ids = {item_id for item_id in os.environ.get("AUDIO_IDS", "").split(",") if item_id}
+    if requested_ids:
+        targets = [(item_id, texts[item_id]) for item_id in requested_ids if isinstance(texts.get(item_id), str)]
+    else:
+        targets = [(item_id, text) for item_id, text in texts.items() if isinstance(text, str) and should_regenerate(item_id, text)]
     if os.environ.get("RESUME_AUDIO") == "1":
         changed = subprocess.run(
             ["git", "status", "--porcelain", "--", str(AUDIO_DIR)],

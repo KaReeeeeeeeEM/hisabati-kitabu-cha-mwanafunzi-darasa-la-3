@@ -6,18 +6,18 @@ import os
 import re
 import subprocess
 import sys
+import urllib.request
 from pathlib import Path
 from xml.etree import ElementTree
-
-sys.path.insert(0, "/tmp/hisabati-edge-tts")
-import edge_tts
 
 ROOT = Path(__file__).resolve().parent.parent
 LOCALE = ROOT / "content/i18n/sw-TZ"
 TEXTS_PATH = LOCALE / "texts.json"
 AUDIOS_PATH = LOCALE / "audios.json"
 AUDIO_DIR = LOCALE / "audio"
-VOICE = "sw-TZ-RehemaNeural"
+CHECKPOINT_PATH = Path(os.environ.get("AUDIO_CHECKPOINT_PATH", "/tmp/hisabati-openai-audio-completed.json"))
+MODEL = os.environ.get("OPENAI_TTS_MODEL", "gpt-4o-mini-tts")
+VOICE = os.environ.get("OPENAI_TTS_VOICE", "nova")
 
 AUDIO_REVIEW_PAGES = {
     1, 2, 13, 14, 26, 27, 31, 35, 37, 39, 41, 44, 45, 47, 48, 51,
@@ -55,10 +55,15 @@ def number_words(value: str) -> str:
     if n < 1000:
         q, r = divmod(n, 100)
         return f"mia {ONES[q]}" + (f" {number_words(str(r))}" if r else "")
-    for scale, label in ((1_000_000, "milioni"), (1_000, "elfu")):
-        if n >= scale:
-            q, r = divmod(n, scale)
-            return f"{label} {number_words(str(q))}" + (f" {number_words(str(r))}" if r else "")
+    if n >= 1_000_000:
+        q, r = divmod(n, 1_000_000)
+        return f"milioni {number_words(str(q))}" + (f" {number_words(str(r))}" if r else "")
+    if n >= 1_000:
+        q, r = divmod(n, 1_000)
+        # Tanzanian primary-school convention for hundred-thousands:
+        # 123,456 = mia moja ishirini na tatu elfu, mia nne hamsini na sita.
+        prefix = f"{number_words(str(q))} elfu" if q >= 100 else f"elfu {number_words(str(q))}"
+        return prefix + (f" {number_words(str(r))}" if r else "")
     return " ".join(ONES[int(d)] for d in digits)
 
 def spoken_text(item_id: str, text: str) -> str:
@@ -118,20 +123,49 @@ def should_regenerate(item_id: str, text: str) -> bool:
     page = page_number(item_id)
     return page in AUDIO_REVIEW_PAGES and bool(re.search(r"[A-Za-z0-9]", text))
 
-async def render(item_id: str, text: str, semaphore: asyncio.Semaphore):
+def openai_mp3(speech: str, api_key: str) -> bytes:
+    payload = json.dumps({
+        "model": MODEL,
+        "voice": VOICE,
+        "input": speech,
+        "instructions": (
+            "Speak in natural Tanzanian Swahili like a warm primary-school mathematics teacher. "
+            "Use a measured pace, crisp pronunciation, and clear pauses between number place-value groups. "
+            "Read only the supplied text."
+        ),
+        "response_format": "mp3",
+        "speed": 0.92,
+    }).encode()
+    request = urllib.request.Request(
+        "https://api.openai.com/v1/audio/speech",
+        data=payload,
+        headers={"Content-Type": "application/json", "Authorization": f"Bearer {api_key}"},
+        method="POST",
+    )
+    with urllib.request.urlopen(request, timeout=120) as response:
+        return response.read()
+
+async def render(item_id: str, text: str, semaphore: asyncio.Semaphore, api_key: str):
     output = AUDIO_DIR / f"{item_id}.mp3"
     speech = spoken_text(item_id, text)
     async with semaphore:
         for attempt in range(8):
             try:
-                await edge_tts.Communicate(speech, VOICE, rate="-5%").save(str(output))
+                output.write_bytes(await asyncio.to_thread(openai_mp3, speech, api_key))
                 return item_id, speech
-            except Exception:
+            except Exception as error:
+                print(f"OpenAI attempt {attempt + 1}/8 failed for {item_id}: {error}", flush=True)
                 if attempt == 7:
                     raise
                 await asyncio.sleep(3 * (attempt + 1))
 
 async def main():
+    api_key = os.environ.get("OPENAI_API_KEY", "").strip()
+    key_file = os.environ.get("OPENAI_API_KEY_FILE", "/tmp/openai_api_key").strip()
+    if not api_key and key_file:
+        api_key = Path(key_file).read_text().strip()
+    if not api_key:
+        raise SystemExit("Set OPENAI_API_KEY or OPENAI_API_KEY_FILE before generating audio")
     texts = json.loads(TEXTS_PATH.read_text())
     audios = json.loads(AUDIOS_PATH.read_text())
     requested_ids = {item_id for item_id in os.environ.get("AUDIO_IDS", "").split(",") if item_id}
@@ -140,6 +174,7 @@ async def main():
     else:
         targets = [(item_id, text) for item_id, text in texts.items() if isinstance(text, str) and should_regenerate(item_id, text)]
     if os.environ.get("RESUME_AUDIO") == "1":
+        checkpoint = set(json.loads(CHECKPOINT_PATH.read_text())) if CHECKPOINT_PATH.exists() else set()
         changed = subprocess.run(
             ["git", "status", "--porcelain", "--", str(AUDIO_DIR)],
             cwd=ROOT,
@@ -147,7 +182,7 @@ async def main():
             capture_output=True,
             text=True,
         ).stdout
-        completed = {
+        completed = checkpoint | {
             Path(line[3:]).stem
             for line in changed.splitlines()
             if line[3:].endswith(".mp3") and (ROOT / line[3:]).stat().st_size > 1000
@@ -160,12 +195,16 @@ async def main():
     AUDIO_DIR.mkdir(parents=True, exist_ok=True)
     semaphore = asyncio.Semaphore(int(os.environ.get("AUDIO_CONCURRENCY", "3")))
     completed = 0
-    for start in range(0, len(targets), 80):
-        batch = targets[start:start + 80]
-        results = await asyncio.gather(*(render(item_id, text, semaphore) for item_id, text in batch))
+    batch_size = int(os.environ.get("AUDIO_BATCH_SIZE", "1"))
+    checkpoint = set(json.loads(CHECKPOINT_PATH.read_text())) if CHECKPOINT_PATH.exists() else set()
+    for start in range(0, len(targets), batch_size):
+        batch = targets[start:start + batch_size]
+        results = await asyncio.gather(*(render(item_id, text, semaphore, api_key) for item_id, text in batch))
         for item_id, _ in results:
             audios[item_id] = f"{item_id}.mp3"
+            checkpoint.add(item_id)
         AUDIOS_PATH.write_text(json.dumps(audios, ensure_ascii=False, indent=2) + "\n")
+        CHECKPOINT_PATH.write_text(json.dumps(sorted(checkpoint), ensure_ascii=False, indent=2) + "\n")
         completed += len(results)
         print(f"Generated {completed}/{len(targets)} audio files", flush=True)
     AUDIOS_PATH.write_text(json.dumps(audios, ensure_ascii=False, indent=2) + "\n")

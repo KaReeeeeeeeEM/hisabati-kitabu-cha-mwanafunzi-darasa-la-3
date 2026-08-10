@@ -12,6 +12,7 @@ if (start < 0 || end < 0) throw new Error("Could not locate the inline catalogue
 
 const inline = JSON.parse(source.slice(start + prefix.length, end));
 for (const relative of [
+  "assets/config.json",
   "content/i18n/sw-TZ/texts.json",
   "content/i18n/sw-TZ/audios.json",
   "content/i18n/sw-TZ/timecode/timecode_output.json",

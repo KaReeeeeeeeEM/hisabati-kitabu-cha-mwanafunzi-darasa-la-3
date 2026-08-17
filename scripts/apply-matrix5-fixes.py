@@ -43,15 +43,15 @@ p.write_text(s)
 # Page 162: visibly mark every illustrative banknote as a specimen.
 p = ROOT / "pg162_sec001.html"
 s = p.read_text()
-if '>SPECIMEN</span>' not in s:
+if '>MFANO</span>' not in s:
     s = s.replace('figure class="bg-white/40 rounded-xl p-2"', 'figure class="relative overflow-hidden bg-white/40 rounded-xl p-2"')
     s = re.sub(
         r'(<img data-id="pg162_im00[1-4]"[^>]+>)',
-        r'\1<span aria-hidden="true" class="pointer-events-none absolute inset-0 flex items-center justify-center text-4xl font-black tracking-[0.18em] text-red-700/50 rotate-[-18deg]">SPECIMEN</span>',
+        r'\1<span aria-hidden="true" class="pointer-events-none absolute inset-0 flex items-center justify-center text-4xl font-black tracking-[0.18em] text-red-700/50 rotate-[-18deg]">MFANO</span>',
         s,
     )
-if s.count('>SPECIMEN</span>') != 4:
-    raise SystemExit('Expected four SPECIMEN overlays')
+if s.count('>MFANO</span>') != 4:
+    raise SystemExit('Expected four MFANO overlays')
 p.write_text(s)
 
 # Pages 64 and 173: keep columns vertically aligned using tabular numerals.

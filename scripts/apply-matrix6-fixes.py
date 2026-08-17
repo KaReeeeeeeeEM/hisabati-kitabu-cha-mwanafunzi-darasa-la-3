@@ -92,11 +92,11 @@ def page175(source: str) -> str:
     return result
 
 def page180(source: str) -> str:
-    if '>SPECIMEN</span>' in source:
+    if '>MFANO</span>' in source:
         return source
     pattern = re.compile(r'(<img\b[^>]*data-id="pg180_im00[1-3]"[^>]*>)')
     result, count = pattern.subn(
-        r'<figure class="relative mx-auto w-full max-w-[36rem] overflow-hidden">\1<span aria-hidden="true" class="pointer-events-none absolute inset-0 flex items-center justify-center text-4xl font-black tracking-[0.18em] text-red-700/50 rotate-[-18deg]">SPECIMEN</span></figure>',
+        r'<figure class="relative mx-auto w-full max-w-[36rem] overflow-hidden">\1<span aria-hidden="true" class="pointer-events-none absolute inset-0 flex items-center justify-center text-4xl font-black tracking-[0.18em] text-red-700/50 rotate-[-18deg]">MFANO</span></figure>',
         source,
     )
     if count != 3:

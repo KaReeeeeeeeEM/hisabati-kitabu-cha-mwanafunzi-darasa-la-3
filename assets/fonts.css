@@ -3912,6 +3912,15 @@ input[data-activity-item]:focus {
   zoom: 1 !important;
 }
 
+/* Every primary page block is centered inside the canonical column.  Keep
+   vertical margins page-specific, but never allow a legacy one-sided margin
+   to create unequal horizontal whitespace. */
+#content#content[id][class] > section > :not(script,style) {
+  box-sizing: border-box !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
 /* Page 2 already contains real HTML labels. Disable the obsolete generated
    fallback which previously printed a second title over each one. */
 [data-section-id="pg008_sec001"] :is(

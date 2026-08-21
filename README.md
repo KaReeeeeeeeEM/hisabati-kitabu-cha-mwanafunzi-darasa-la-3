@@ -7,6 +7,9 @@ This repository contains the completed accessible digital textbook produced with
 - The canonical page-content column is `760px`, matching page 3. Every page
   from the first to the last uses this centered outer content width; narrower
   components may sit inside it only when the PDF shows them narrower.
+- Every primary content block is horizontally centered within that column.
+  Left and right page clearance must be equal; page-specific CSS may adjust
+  vertical spacing but must not introduce a one-sided horizontal margin.
 - Mfano frames, titles, prompts, answers and explanatory text are HTML. Actual
   examples, figures and labelled diagrams such as `(a)`–`(d)` remain cropped
   image assets with transparent backgrounds. Never rasterize the entire Mfano.

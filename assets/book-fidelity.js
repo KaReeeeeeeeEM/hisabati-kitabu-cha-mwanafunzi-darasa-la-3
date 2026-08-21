@@ -571,6 +571,34 @@
     });
   };
 
+  /* A converter wrapper occasionally leaves the leading question number at
+     its default size even though the adjacent question copy has the audited
+     book size. Match only standalone numeric labels inside Zoezi/exercise
+     surfaces to their neighbouring question text; do not touch contents,
+     table cells, option letters, or the footer page-number badge. */
+  const normaliseExerciseQuestionNumbers = () => {
+    const exercises = document.querySelectorAll(
+      '#content :is(.book-exercise-sheet,.book-exercise-panel,.book-zoezi-dialog,[class*="-exercise"])'
+    );
+    exercises.forEach((exercise) => {
+      exercise.querySelectorAll('span').forEach((number) => {
+        if (number.children.length || !/^\d{1,3}[.)]$/.test(number.textContent.trim())) return;
+        if (number.closest('table,.source-page-number,.book-exercise-title,.book-exercise-heading')) return;
+        const row = number.parentElement;
+        if (!row) return;
+        const peer = [...row.children].find((child) => child !== number && child.textContent.trim());
+        if (!peer) return;
+        const text = peer.matches('p,li,span')
+          ? peer
+          : peer.querySelector('p,li,span') || peer;
+        const size = Number.parseFloat(getComputedStyle(text).fontSize);
+        if (!Number.isFinite(size) || size < 8) return;
+        number.style.setProperty('font-size', `${size}px`, 'important');
+        number.dataset.bookQuestionNumber = 'matched';
+      });
+    });
+  };
+
   /* Jikumbushe is a semantic summary component.  Rebuild converter raster
      panels from their embedded transcription and preserve list numbering as
      aligned HTML rows. */
@@ -777,6 +805,7 @@
   normaliseVerticalArithmetic();
   normaliseWorkDialogs();
   normaliseZoeziQuestionCards();
+  normaliseExerciseQuestionNumbers();
   normaliseRecallDialogs();
   useTransparentFigureAssets();
   increaseBookTypeScale();
@@ -789,6 +818,7 @@
     normaliseVerticalArithmetic();
     normaliseWorkDialogs();
     normaliseZoeziQuestionCards();
+    normaliseExerciseQuestionNumbers();
     normaliseRecallDialogs();
     useTransparentFigureAssets();
     increaseBookTypeScale();
@@ -801,6 +831,7 @@
     cleanFlattenedAccessibilityCopy();
     normaliseWorkDialogs();
     normaliseZoeziQuestionCards();
+    normaliseExerciseQuestionNumbers();
     normaliseRecallDialogs();
     useTransparentFigureAssets();
     increaseBookTypeScale();

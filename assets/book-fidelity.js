@@ -301,6 +301,27 @@
     });
   };
 
+  /* Question 10 spans printed pages 7–8. The activity bundle removes its
+     form controls after load, so recreate the four reference-book answer
+     rules from the surviving sentence instead of leaving bare words. */
+  const restorePlaceValueAnswerRules = () => {
+    if (page !== 13 && page !== 14) return;
+    const prefix = page === 13 ? 'pg013_' : 'pg014_';
+    document.querySelectorAll(`#content [data-id^="${prefix}"]`).forEach((row) => {
+      const match = row.textContent.trim().match(/^(\d+)\s*ina\s+maelfu\b/i);
+      if (!match || (row.dataset.q10Restored === '1' && row.querySelector('[data-q10-blank]'))) return;
+      row.dataset.q10Restored = '1';
+      row.classList.add('book-q10-copy');
+      row.innerHTML = `<span class="book-q10-line book-q10-line-one">` +
+        `<span class="book-q10-number">${match[1]}</span><span>ina</span>` +
+        `<span class="book-q10-term">maelfu <span data-q10-blank aria-hidden="true"></span>,</span>` +
+        `<span class="book-q10-term">mamia <span data-q10-blank aria-hidden="true"></span>,</span></span>` +
+        `<span class="book-q10-line book-q10-line-two">` +
+        `<span class="book-q10-term">makumi <span data-q10-blank aria-hidden="true"></span></span>` +
+        `<span>na</span><span class="book-q10-term">mamoja <span data-q10-blank aria-hidden="true"></span>.</span></span>`;
+    });
+  };
+
   /* Body copy in the reference pages uses one consistent optical size. Some
      late converter templates dropped prose, questions, table copy, and list
      items to 18–21px; raise only undersized body text to the established 24px
@@ -809,6 +830,7 @@
   }
 
   removeAnswerInteractions();
+  restorePlaceValueAnswerRules();
   ensureSourcePageNumber();
 
   normaliseLateExampleCards();
@@ -835,6 +857,7 @@
     increaseBookTypeScale();
     normaliseBodyTypeScale();
     removeAnswerInteractions();
+    restorePlaceValueAnswerRules();
     ensureSourcePageNumber();
     cleanFlattenedAccessibilityCopy();
     normaliseVerticalArithmetic();
@@ -849,6 +872,7 @@
     increaseBookTypeScale();
     normaliseBodyTypeScale();
     removeAnswerInteractions();
+    restorePlaceValueAnswerRules();
     ensureSourcePageNumber();
   });
   cleanupObserver.observe(document.querySelector('#content'), {
@@ -864,6 +888,7 @@
   interactionObserver.observe(document.body, { childList: true, subtree: true });
   window.setTimeout(() => {
     removeAnswerInteractions();
+    restorePlaceValueAnswerRules();
     interactionObserver.disconnect();
   }, 10000);
 

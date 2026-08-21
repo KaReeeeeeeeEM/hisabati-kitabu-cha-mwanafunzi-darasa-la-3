@@ -1597,11 +1597,37 @@ input[data-activity-item]:focus {
 }
 
 #content#content .book-example-card {
+  box-sizing: border-box !important;
+  width: 704px !important;
+  max-width: calc(100% - 24px) !important;
+  margin: 28px auto 0 !important;
   overflow: visible !important;
   border: 1.5px solid #9b8705 !important;
   border-radius: 0 14px 0 14px !important;
   background: #fff !important;
   box-shadow: none !important;
+}
+
+/* A converter wrapper may contain several real Mfano cards. It is layout
+   only: styling it as another card creates the random connecting rules. */
+#content#content .book-example-card:has(> .book-example-card) {
+  width: 704px !important;
+  max-width: calc(100% - 24px) !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+#content#content .book-example-card:has(> .book-example-card) > .book-example-card {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+#content#content .book-example-card:has(> .book-example-card) > .book-example-card + .book-example-card {
+  margin-top: 38px !important;
 }
 
 /* Abacus diagrams in examples are compact and centred in the printed book. */
@@ -1647,10 +1673,26 @@ input[data-activity-item]:focus {
 
 /* Shared Zoezi treatment, matching the peach-and-cream panel on page 3. */
 #content#content .book-exercise-panel {
+  box-sizing: border-box !important;
+  width: 704px !important;
+  max-width: calc(100% - 24px) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
   border: 0 !important;
-  border-radius: 0 !important;
+  border-radius: 0 0 0 12px !important;
   background: #f7f4e8 !important;
   background-color: #f7f4e8 !important;
+  box-shadow: none !important;
+}
+
+/* The section around a Zoezi is only a positioning wrapper. Converter sky
+   fills and padding create the false outer border seen on printed page 119. */
+#content#content > section:has(> .book-exercise-panel) {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
   box-shadow: none !important;
 }
 
@@ -1665,7 +1707,7 @@ input[data-activity-item]:focus {
   margin-right: 0 !important;
   padding: 7px 10px !important;
   border: 0 !important;
-  border-radius: 0 !important;
+  border-radius: 0 12px 0 12px !important;
   background: #f7c79d !important;
   text-align: left !important;
   box-shadow: 0 5px 8px rgba(0, 0, 0, .14) !important;

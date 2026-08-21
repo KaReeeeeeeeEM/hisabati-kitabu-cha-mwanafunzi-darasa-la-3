@@ -10,19 +10,13 @@
   document.querySelector('#content').classList.add(`book-source-page-${page}`);
 
   const fitLegacyPage = () => {
-    const content = document.querySelector('#content');
-    if (page < 125 || content.classList.contains('book-page')) return;
+    /* Page content keeps the same print width as page iv. Density is corrected
+       inside individual components; never shrink the complete page section. */
+    section.classList.remove('book-height-fitted');
     section.style.removeProperty('zoom');
     section.style.removeProperty('transform');
+    section.style.removeProperty('transform-origin');
     section.style.removeProperty('margin-bottom');
-    const top = section.getBoundingClientRect().top;
-    const visualHeight = Math.max(...Array.from(section.querySelectorAll('*'), (node) => node.getBoundingClientRect().bottom - top), section.getBoundingClientRect().height);
-    const scale = Math.min(1, 1080 / Math.max(visualHeight, 1));
-    if (scale >= 0.995) return;
-    section.classList.add('book-height-fitted');
-    section.style.transform = `scale(${scale})`;
-    section.style.transformOrigin = 'top center';
-    section.style.marginBottom = `${-visualHeight * (1 - scale)}px`;
   };
   window.setTimeout(fitLegacyPage, 80);
   window.setTimeout(fitLegacyPage, 700);

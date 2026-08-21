@@ -40,9 +40,11 @@ This repository contains the completed accessible digital textbook produced with
   short/long widths defined in `assets/fonts.css`.
 - Do not introduce nested cards, rounded question boxes, answer inputs, or
   textareas unless they are visibly present in the source PDF.
-- Keep every primary content section horizontally centred. Later legacy pages
-  that exceed the printable height are proportionally fitted from the top
-  centre; do not use CSS `zoom`, which the reader ignores.
+- Keep every primary content section horizontally centred at the same print
+  width as page iv. Never shrink/scale the complete section to solve height;
+  compact the responsible images, gaps or component layout instead.
+- A layout wrapper containing multiple Mfano cards is never itself a Mfano
+  card. It has no border or background, preventing rules between examples.
 - Audit transparent figure variants before using them. If a generated variant
   renders predominantly black, retain the original extracted figure until a
   clean background-free crop is available.

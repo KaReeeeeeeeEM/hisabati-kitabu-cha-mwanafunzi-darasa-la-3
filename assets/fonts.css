@@ -3901,3 +3901,82 @@ input[data-activity-item]:focus {
 #content#content .book-vertical-result + i {
   margin-top: 3px !important;
 }
+
+/* One book-wide content column, taken from the approved page 3 layout. */
+#content#content[id][class] > section {
+  box-sizing: border-box !important;
+  width: 760px !important;
+  max-width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  zoom: 1 !important;
+}
+
+/* Page 2 already contains real HTML labels. Disable the obsolete generated
+   fallback which previously printed a second title over each one. */
+[data-section-id="pg008_sec001"] :is(
+  [data-id="pg008_n0003"], [data-id="pg008_n0018"],
+  [data-id="pg008_n0033"], [data-id="pg008_n0041"]
+) {
+  color: #fff !important;
+  font-size: 25px !important;
+}
+
+[data-section-id="pg008_sec001"] :is(
+  [data-id="pg008_n0003"], [data-id="pg008_n0018"],
+  [data-id="pg008_n0033"], [data-id="pg008_n0041"]
+)::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Page 3: semantic Mfano content stays HTML; only the labelled diagrams are
+   a transparent image extracted from the printed artwork. */
+#content#content .book-page3-example {
+  position: relative !important;
+  box-sizing: border-box !important;
+  width: 760px !important;
+  max-width: 100% !important;
+  padding: 42px 18px 14px !important;
+  border: 1.5px solid #9b8705 !important;
+  border-radius: 0 14px 0 14px !important;
+  background: #fff !important;
+  box-shadow: none !important;
+}
+
+#content#content .book-page3-example > .book-example-label {
+  position: absolute !important;
+  top: -22px !important;
+  left: 50px !important;
+}
+
+#content#content .book-page3-example > p,
+#content#content .book-page3-example > h2 {
+  margin: 0 !important;
+  font-size: 22px !important;
+  line-height: 1.25 !important;
+}
+
+#content#content .book-page3-example > h2 {
+  margin-top: 8px !important;
+  font-weight: 700 !important;
+}
+
+#content#content .book-page3-options {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 16px !important;
+  margin: 5px 0 0 !important;
+  font-size: 22px !important;
+}
+
+#content#content .book-page3-example img.book-page3-diagrams {
+  display: block !important;
+  width: 700px !important;
+  max-width: 100% !important;
+  height: auto !important;
+  margin: 6px auto 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+}

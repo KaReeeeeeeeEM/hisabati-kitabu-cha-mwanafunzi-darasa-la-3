@@ -4,6 +4,14 @@ This repository contains the completed accessible digital textbook produced with
 
 ## Shared book-layout rules
 
+- The canonical page-content column is `760px`, matching page 3. Every page
+  from the first to the last uses this centered outer content width; narrower
+  components may sit inside it only when the PDF shows them narrower.
+- Mfano frames, titles, prompts, answers and explanatory text are HTML. Actual
+  examples, figures and labelled diagrams such as `(a)`–`(d)` remain cropped
+  image assets with transparent backgrounds. Never rasterize the entire Mfano.
+- A Mfano title has exactly one visible source. Do not combine a real HTML
+  label with a CSS `::before`/`::after` fallback containing the same title.
 - Every **Mfano** uses the approved pages 1–20 dialogue: white card, `#9b8705`
   1.5px border, asymmetric `0 14px 0 14px` corners, no outer shadow, and the
   gold label positioned `22px` above and `50px` from the left. Later cards are

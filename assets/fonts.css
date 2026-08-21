@@ -4971,3 +4971,6 @@ input[data-activity-item]:focus {
 #content#content[id][class] > section:not([data-section-type="front_cover"]) :is(.book-example-card,.book-exercise-panel,.book-exercise-sheet,.book-work-dialog,.book-recall-dialog){box-sizing:border-box!important;width:100%!important;max-width:845px!important;margin-left:auto!important;margin-right:auto!important}
 #content#content[id][class] > section[data-section-type="table_of_contents"] > div > div,
 #content#content[id][class] > section[data-section-type="table_of_contents"] .max-w-3xl{box-sizing:border-box!important;width:100%!important;max-width:845px!important;margin-left:auto!important;margin-right:auto!important}
+
+/* Page vi institution line: page-canvas footer placement. */
+#content#content[id][class] > [data-id="pg006_institution"]{position:absolute!important;z-index:20;right:178px!important;bottom:156px!important;width:auto!important;max-width:none!important;margin:0!important;text-align:right!important;white-space:nowrap}

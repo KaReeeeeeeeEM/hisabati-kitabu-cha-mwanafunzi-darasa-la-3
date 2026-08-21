@@ -6,7 +6,9 @@ This repository contains the completed accessible digital textbook produced with
 
 - Every **Mfano** uses the approved pages 1–20 dialogue: white card, `#9b8705`
   1.5px border, asymmetric `0 14px 0 14px` corners, no outer shadow, and the
-  gold label positioned `22px` above and `50px` from the left.
+  gold label positioned `22px` above and `50px` from the left. Later cards are
+  constrained to a `680px` content width with at least `12px` clearance on
+  either side; their borders must never exceed the page content column.
 - Vertical arithmetic in both **Mfano** and **Zoezi** uses one shared stack.
   Each rule begins exactly beneath the `+` or `−` sign, never extends to its
   left, remains within its panel, and the two empty answer rules retain a

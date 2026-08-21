@@ -3803,6 +3803,10 @@ input[data-activity-item]:focus {
 #content#content.book-page .book-example-card {
   position: relative !important;
   box-sizing: border-box !important;
+  width: 680px !important;
+  max-width: calc(100% - 24px) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
   overflow: visible !important;
   border: 1.5px solid #9b8705 !important;
   border-radius: 0 14px 0 14px !important;
@@ -3816,6 +3820,14 @@ input[data-activity-item]:focus {
   left: 50px !important;
   z-index: 2 !important;
   margin: 0 !important;
+}
+
+/* These two continuation layouts contain a full-width worked table/row from
+   the source. They retain the 704px print width while remaining inside the
+   800px page column. */
+#content#content.book-page :is(.book-page70-example, .book-page71-cont) {
+  width: 704px !important;
+  max-width: calc(100% - 24px) !important;
 }
 
 /* Mfano arithmetic follows the same geometry as Zoezi arithmetic. */

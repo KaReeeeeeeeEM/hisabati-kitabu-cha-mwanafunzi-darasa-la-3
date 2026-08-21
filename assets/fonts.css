@@ -3614,3 +3614,45 @@ input[data-activity-item]:focus {
   width: calc(100% - 22px) !important;
   margin-left: 22px !important;
 }
+
+/* Anchor answer rules to the real operation-sign column.  The operation and
+   its two rules share one intrinsic-width wrapper, so neither rule can begin
+   to the left of +/− or escape its exercise grid cell. */
+#content#content .book-vertical-operation {
+  display: grid !important;
+  width: max-content !important;
+  max-width: 100% !important;
+  margin-left: auto !important;
+  text-align: right !important;
+}
+
+#content#content .book-vertical-operation > span {
+  display: flex !important;
+  align-items: baseline !important;
+  justify-content: flex-end !important;
+  gap: .42em !important;
+  white-space: nowrap !important;
+}
+
+#content#content .book-vertical-operation > span > b {
+  font: inherit !important;
+  font-weight: 400 !important;
+}
+
+#content#content .book-vertical-operation > i {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  height: 1px !important;
+  margin: 3px 0 0 !important;
+  border-top: 1px solid #222 !important;
+}
+
+#content#content .book-vertical-operation > i + i {
+  margin-top: 22px !important;
+}
+
+#content#content :is(.book-page59-item, .book-page60-item) > div {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+}

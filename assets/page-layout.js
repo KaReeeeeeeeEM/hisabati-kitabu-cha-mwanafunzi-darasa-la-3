@@ -1,6 +1,9 @@
 (() => {
   const page = Number(document.querySelector('meta[name="page-section-id"]')?.content || 0);
 
+  const verticalOperation = (operator, value) =>
+    `<div class="book-vertical-operation"><span><b>${operator}</b><span>${value}</span></span><i></i><i></i></div>`;
+
   const numberTree = (label, center, values) => `
     <div class="book-number-tree" aria-label="Mchoro ${label}">
       <div class="book-tree-label">(${label})</div>
@@ -414,7 +417,7 @@
   const renderPage53 = () => {
     const content=document.querySelector('#content');if(!content)return;
     const sums=[[4612,1321],[3592,401],[2227,12],[2363,2111],[4350,5646],[82350,5213],[59261,40712],[84743,12251],[54721,33222],[818819,71110],[834532,154063],[140546,221121],[679448,110301],[789660,10118],[751210,12166],[323456,1676543],[1456317,333572],[999879,110],[751201,128780],[2013424,1976365]];
-    const stack=(n,a,b)=>`<div class="book-page53-item"><span class="num">${n}.</span><div><span>${a}</span><span>+ &nbsp;${b}</span><i></i><i></i></div></div>`;
+    const stack=(n,a,b)=>`<div class="book-page53-item"><span class="num">${n}.</span><div><span>${a}</span>${verticalOperation('+',b)}</div></div>`;
     content.className='book-page book-page-53 book-after-page15 book-after-page18 opacity-100 visible';
     content.innerHTML=`<section data-section-id="pg059_sec001"><div class="book-example-card book-page53-example"><div class="book-example-label">Mfano wa 4</div><div class="book-page53-example-grid"><div class="book-page53-stack"><span>1222221</span><span>+ &nbsp;777777</span><i></i><i></i></div><h2>Njia</h2><div class="book-page53-stack"><span>1 222221</span><span>+ &nbsp;777777</span><i></i><span>1999998</span><i></i></div></div></div><div class="book-exercise-sheet book-page53-exercise"><h1 class="book-exercise-title">Zoezi la 2</h1><div class="book-page53-grid">${sums.map((s,i)=>stack(i+1,s[0],s[1])).join('')}</div></div></section>`;
   };
@@ -454,7 +457,7 @@
   const renderPage59 = () => {
     const content=document.querySelector('#content');if(!content)return;
     const sums=[[6027,1784],[57336,12217],[48289,3457],[85519,2719],[856956,134689],[88456,154689],[489765,94538],[365284,476329],[624872,9341],[872146,34987],[167426,594],[877925,98]];
-    const stack=(n,a,b)=>`<div class="book-page59-item"><span>${n}.</span><div class="book-page59-stack ${Math.max(String(a).length,String(b).length)>4?'wide':''}"><span>${a}</span><span>+ &nbsp;${b}</span><i></i><i></i></div></div>`;
+    const stack=(n,a,b)=>`<div class="book-page59-item"><span>${n}.</span><div class="book-page59-stack ${Math.max(String(a).length,String(b).length)>4?'wide':''}"><span>${a}</span>${verticalOperation('+',b)}</div></div>`;
     content.className='book-page book-page-59 book-after-page15 book-after-page18 opacity-100 visible';
     content.innerHTML=`<section data-section-id="pg065_sec001"><div class="book-page59-top"><p>Pia, kwa kutumia kadi ya namba unaweza kupanga namba hizo kama ifuatavyo:</p><img class="book-page59-place-value" src="images/pg065_place_value_arrows.png" alt="Mpangilio wa thamani za nafasi wenye mishale ya kubadili na tarakimu zilizozungushiwa duara"><p>Kwa hiyo, jibu ni 603085.</p></div><div class="book-exercise-sheet book-page59-exercise"><h1 class="book-exercise-title">Zoezi la 4</h1><div class="book-page59-grid">${sums.map((s,i)=>stack(i+1,s[0],s[1])).join('')}</div></div></section>`;
   };
@@ -462,7 +465,7 @@
   const renderPage60 = () => {
     const content=document.querySelector('#content');if(!content)return;
     const sums=[[100009,9991],[89725,9999],[80298,19712],[998456,154689],[6024872,3975127],[8925778,7897987],[1000009,999991],[199001,950999]];
-    const stack=(n,a,b)=>`<div class="book-page60-item"><span>${n}.</span><div class="book-page60-stack ${Math.max(String(a).length,String(b).length)>4?'wide':''}"><span>${a}</span><span>+ &nbsp;${b}</span><i></i><i></i></div></div>`;
+    const stack=(n,a,b)=>`<div class="book-page60-item"><span>${n}.</span><div class="book-page60-stack ${Math.max(String(a).length,String(b).length)>4?'wide':''}"><span>${a}</span>${verticalOperation('+',b)}</div></div>`;
     content.className='book-page book-page-60 book-after-page15 book-after-page18 opacity-100 visible';
     content.innerHTML=`<section data-section-id="pg066_sec001"><div class="book-exercise-sheet book-page60-sheet"><div class="book-page60-grid">${sums.map((s,i)=>stack(i+13,s[0],s[1])).join('')}</div><div class="book-page60-question"><span>21.</span><div><p>Chunguza njia walizotumia Ali, Rose na Dule kujumlisha 2792 na 1213. Tumia njia nyingine iliyo rahisi kwako kujumlisha namba hizo.</p><div class="book-page60-methods"><div class="name">Ali:</div><div class="ali"><p>2792 + 1213 =</p><p>Jumlisha mamoja: 3 + 2 = 5.</p><p>Jumlisha makumi: 9 + 1 = 10.</p><p>Jumlisha mamia: 1 + 7 + 2 = 10.</p><p>Jumlisha maelfu: 1 + 2 + 1 = 4.</p><p>Kwa hiyo, 2792 + 1213 = 4005.</p></div><div class="name rose-name">Rose:</div><div class="rose"><p>2792 + 1213 =</p><p>Alivunja namba hizo kama ifuatavyo:</p><p>2792 + 1213 = 2700 + 2 + 3 +1 210</p><p class="indent">= &nbsp;2700 + 90 + 2 + 3 + 10 + 1200</p><p class="indent">= &nbsp;2700 + 1200 + 90 + 2 + 3 + 10</p><p class="indent">= &nbsp;3900 + 100 + 5 = 4005</p><p>Kwa hiyo, 2792 + 1213 = 4005.</p></div></div></div></div></div></section>`;
   };
@@ -509,7 +512,7 @@
   const renderPage67 = () => {
     const content=document.querySelector('#content');if(!content)return;
     const sums=[[7824,5612],[4851,3720],[4343,3231],[8899,8768],[6533,6322],[7291,3231],[69635,58313],[75757,25252],[99991,4340],[237972,112451],[823574,1230],[912345,810212],[695872,34751],[987672,34521],[652437,410316]];
-    const stack=(n,a,b)=>`<div class="book-page67-item"><span>${n}.</span><div><span>${a}</span><span>− &nbsp;${b}</span><i></i><i></i></div></div>`;
+    const stack=(n,a,b)=>`<div class="book-page67-item"><span>${n}.</span><div><span>${a}</span>${verticalOperation('−',b)}</div></div>`;
     content.className='book-page book-page-67 book-after-page15 book-after-page18 opacity-100 visible';
     content.innerHTML=`<section data-section-id="pg073_sec001"><div class="book-exercise-sheet book-page67-exercise"><h1 class="book-exercise-title">Zoezi la 7</h1><div class="book-page67-grid">${sums.map((s,i)=>stack(i+1,s[0],s[1])).join('')}</div></div><header class="book-page67-head"><h1>Kutoa namba nzima kwa kubadili</h1><h2>Kutoa namba nzima kwa ulalo</h2></header><div class="book-example-card book-page67-example"><div class="book-example-label">Mfano wa 1</div><p>5371 − 3282 =</p><h2>Hatua</h2><div class="book-page67-step"><span>1.</span><p>Toa mamoja: 1 − 2, 1 haitoshelezi kutoa 2. Chukua makumi 1 kutoka kwenye makumi 7, badili kuwa mamoja 10 kisha jumlisha na mamoja 1: 10 + 1 =11.</p></div></div></section>`;
   };
@@ -537,7 +540,7 @@
   const renderPage71 = () => {
     const content=document.querySelector('#content');if(!content)return;
     const sums=[[3822,1713],[1245,158],[45385,34392],[2083,1976],[30405,1992],[8433,6377]];
-    const stack=(n,a,b)=>`<div class="book-page71-item"><span>${n}.</span><div><span>${a}</span><span>− &nbsp;${b}</span><i></i><i></i></div></div>`;
+    const stack=(n,a,b)=>`<div class="book-page71-item"><span>${n}.</span><div><span>${a}</span>${verticalOperation('−',b)}</div></div>`;
     content.className='book-page book-page-71 book-after-page15 book-after-page18 opacity-100 visible';
     content.innerHTML=`<section data-section-id="pg077_sec001"><div class="book-example-card book-page71-cont"><div class="book-page71-row"><p>Toa maelfu: 5 − 3 = 2. Andika 2 katika nafasi ya maelfu.</p><div class="book-page71-work"><b>17 14</b><span>6854</span><span>−3887</span><i></i><span>2967</span><i></i></div></div><p>Kwa hiyo, jibu ni 2967.</p></div><div class="book-example-card book-page71-example"><div class="book-example-label">Mfano wa 2</div><div class="book-page71-stack"><span>87964</span><span>− &nbsp;49897</span><i></i><i></i></div><h2>Njia</h2><p>Hatua za kutoa kwa wima zinafanana na zile za mfano wa 1. Anza kutoa mamoja hadi makumi elfu.</p><div class="book-page71-stack answer"><span>87964</span><span>− &nbsp;49897</span><i></i><span>38067</span><i></i></div><p>Kwa hiyo, jibu ni 38067.</p></div><div class="book-exercise-sheet book-page71-exercise"><h1 class="book-exercise-title">Zoezi la 9</h1><div class="book-page71-grid">${sums.map((s,i)=>stack(i+1,s[0],s[1])).join('')}</div></div></section>`;
   };
@@ -545,7 +548,7 @@
   const renderPage72 = () => {
     const content=document.querySelector('#content');if(!content)return;
     const sums=[[3005,1992],[64536,58323],[55376,25445],[873977,762582],[682165,8987],[875924,683678],[600000,54164],[87625,9734],[666666,78947]];
-    const stack=(n,a,b)=>`<div class="book-page72-item"><span>${n}.</span><div><span>${a}</span><span>− &nbsp;${b}</span><i></i><i></i></div></div>`;
+    const stack=(n,a,b)=>`<div class="book-page72-item"><span>${n}.</span><div><span>${a}</span>${verticalOperation('−',b)}</div></div>`;
     content.className='book-page book-page-72 book-after-page15 book-after-page18 opacity-100 visible';
     content.innerHTML=`<section data-section-id="pg078_sec001"><div class="book-exercise-sheet book-page72-sheet"><div class="book-page72-grid">${sums.map((s,i)=>stack(i+7,s[0],s[1])).join('')}</div></div><h1 class="book-page72-title">Mafumbo yenye dhana ya kutoa namba nzima</h1><div class="book-example-card book-page72-example"><div class="book-example-label">Mfano wa 1</div><p>Jumla ya ng’ombe na mbuzi katika wilaya fulani ni 2,139,500. Ikiwa ng’ombe ni 1,104,563, je wilaya hiyo ina mbuzi wangapi?</p><h2>Njia</h2><div class="book-page72-solution"><p><span>Jumla ya ng’ombe na mbuzi:</span><b>2139500</b></p><p><span>Idadi ya ng’ombe:</span><b>− &nbsp;1104563</b></p><p><span>Idadi ya mbuzi:</span><b>1034937</b></p></div><p class="conclusion">Kwa hiyo, wilaya ina mbuzi 1,034,937.</p></div></section>`;
   };
@@ -567,7 +570,7 @@
   const renderPage75 = () => {
     const content=document.querySelector('#content');if(!content)return;
     const sums=[[61142,'+',4226],[8937,'−',27],[55394,'+',1295],[47326,'−',32198],[2696,'+',2398],[638345,'−',225221]];
-    const stack=(n,a,op,b)=>`<div class="book-page75-item"><span>${n}.</span><div><span>${a}</span><span>${op} &nbsp;${b}</span><i></i><i></i></div></div>`;
+    const stack=(n,a,op,b)=>`<div class="book-page75-item"><span>${n}.</span><div><span>${a}</span>${verticalOperation(op,b)}</div></div>`;
     content.className='book-page book-page-75 book-after-page15 book-after-page18 opacity-100 visible';
     content.innerHTML=`<section data-section-id="pg081_sec001"><div class="book-page75-work"><h1>Kazi ya kufanya</h1><p>Kujifunza zaidi kubaini matendo ya kujumlisha na kutoa namba nzima kwa njia ya masomo ya mtandaoni</p><h2>Maelezo</h2><p>Chunguza mifano mbalimbali ya kujumlisha na kutoa namba nzima kwa njia ya masomo ya mtandaoni.</p></div><div class="book-page75-reminder"><h1>Jikumbushe</h1><ol><li>Unapojumlisha au kutoa namba nzima, panga tarakimu kwa wima au ulalo. Anza kujumlisha au kutoa mamoja, makumi, mamia, maelfu, makumi elfu, mamia elfu na kuendelea</li><li>Unapofumbua mafumbo:<div><p>(a) &nbsp; Tafsiri maelezo kupata tendo litakalotumika</p><p>(b) &nbsp; Chambua maelezo kupata hesabu inayohusika</p><p>(c) &nbsp; Baada ya kukokotoa, rejea swali na jibu swali kwa maneno</p></div></li></ol></div><div class="book-page75-review"><h1>Zoezi la marudio</h1><div class="book-page75-grid">${sums.map((s,i)=>stack(i+1,s[0],s[1],s[2])).join('')}</div></div></section>`;
   };
@@ -576,7 +579,7 @@
     const content=document.querySelector('#content');if(!content)return;
     const words=[['17.','Salum anahitaji matofali elfu nne na mia tano sabini kujenga nyumba yake. Kwa sasa anayo matofali elfu moja mia mbili sabini. Je, anahitaji kuongeza matofali mangapi zaidi ili kujenga nyumba yake?'],['18.','Wananchi wa Tabora waliotesha miti elfu tisa mia tisa tisini katika miaka miwili. Ikiwa mwaka wa kwanza waliotesha miti elfu tano na sabini, je mwaka wa pili waliotesha miti mingapi?'],['19.','Mwalimu Mponela alikuwa na madaftari 7,568. Ikiwa aliwapatia wanafunzi wake madaftari 5,368, je alibakiwa na madaftari mangapi?'],['20.','Shule ina jumla ya wanafunzi 3,270. Kati yao wasichana ni 1,560. Je, shule hiyo ina wavulana wangapi?'],['21.','Kata moja ina wakazi 6,328 na kata nyingine ina wakazi 2,590. Je, kata zote mbili zina jumla ya wakazi wangapi?'],['22.','John anafuga kuku 4,569 na Ashura anafuga kuku 5,200. Je, wote kwa pamoja wana jumla ya kuku wangapi?']];
     content.className='book-page book-page-76 book-after-page15 book-after-page18 opacity-100 visible';
-    content.innerHTML=`<section data-section-id="pg082_sec001"><div class="book-page76-sheet"><div class="book-page76-stacks"><div><span>7.</span><div><span>55394</span><span>+ &nbsp;1295</span><i></i><i></i></div></div><div><span>8.</span><div><span>7623</span><span>− &nbsp;278</span><i></i><i></i></div></div></div><div class="book-page76-short">${[['9.','6145 + 312 ='],['10.','8912 + 88 ='],['11.','54273 + 12632 ='],['12.','76832 + 2126 ='],['13.','9051 − 4030 ='],['14.','4177 − 408 ='],['15.','548123 − 253700 ='],['16.','59635 − 926 =']].map(x=>`<p><span>${x[0]}</span><span>${x[1]}</span></p>`).join('')}</div><div class="book-page76-words">${words.map(x=>`<div><span>${x[0]}</span><p>${x[1]}</p></div>`).join('')}</div></div></section>`;
+    content.innerHTML=`<section data-section-id="pg082_sec001"><div class="book-page76-sheet"><div class="book-page76-stacks"><div><span>7.</span><div><span>55394</span>${verticalOperation('+',1295)}</div></div><div><span>8.</span><div><span>7623</span>${verticalOperation('−',278)}</div></div></div><div class="book-page76-short">${[['9.','6145 + 312 ='],['10.','8912 + 88 ='],['11.','54273 + 12632 ='],['12.','76832 + 2126 ='],['13.','9051 − 4030 ='],['14.','4177 − 408 ='],['15.','548123 − 253700 ='],['16.','59635 − 926 =']].map(x=>`<p><span>${x[0]}</span><span>${x[1]}</span></p>`).join('')}</div><div class="book-page76-words">${words.map(x=>`<div><span>${x[0]}</span><p>${x[1]}</p></div>`).join('')}</div></div></section>`;
   };
 
   const renderPage77 = () => {

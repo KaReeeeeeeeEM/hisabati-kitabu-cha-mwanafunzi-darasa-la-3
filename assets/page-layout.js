@@ -425,20 +425,20 @@
   const renderPage54 = () => {
     const content=document.querySelector('#content');if(!content)return;
     content.className='book-page book-page-54 book-after-page15 book-after-page18 opacity-100 visible';
-    content.innerHTML=`<section data-section-id="pg060_sec001"><header class="book-page54-head"><h1>Kujumlisha namba nzima kwa kubadili</h1><h2>Kujumlisha namba nzima kwa ulalo</h2></header><div class="book-example-card book-page54-example"><div class="book-example-label">Mfano wa 1</div><p>6327 + 3496 =</p><h2>Njia</h2><p>Jumlisha tarakimu kuanzia kulia kuelekea kushoto.</p><h2>Hatua</h2><ol><li>Jumlisha mamoja: 7 + 6 = 13. Andika 3 katika nafasi ya mamoja. Badili mamoja 10 kuwa makumi 1. Peleka makumi 1 kwenye nafasi ya makumi.</li><li>Jumlisha makumi: 1 + 2 + 9 = 12. Andika 2 katika nafasi ya makumi. Badili makumi 10 kuwa mamia 1. Peleka mamia moja kwenye nafasi ya mamia.</li><li>Jumlisha mamia: 1 + 3 + 4 = 8. Andika 8 katika nafasi ya mamia.</li><li>Jumlisha maelfu: 6 + 3 = 9. Andika 9 katika nafasi ya maelfu.</li></ol><div class="book-page54-equation">⁶&nbsp; ³&nbsp; ²&nbsp; ⁷ &nbsp;+&nbsp; ³&nbsp; ⁴&nbsp; ⁹&nbsp; ⁶ &nbsp;=&nbsp; ⁹&nbsp; ⁸&nbsp; ²&nbsp; ³</div><div class="book-page54-lines"></div><p class="conclusion">Kwa hiyo, &nbsp;6327 + 3496 = 9823.</p></div></section>`;
+    content.innerHTML=`<section data-section-id="pg060_sec001"><header class="book-page54-head"><h1>Kujumlisha namba nzima kwa kubadili</h1><h2>Kujumlisha namba nzima kwa ulalo</h2></header><div class="book-example-card book-page54-example"><div class="book-example-label">Mfano wa 1</div><p>6327 + 3496 =</p><h2>Njia</h2><p>Jumlisha tarakimu kuanzia kulia kuelekea kushoto.</p><h2>Hatua</h2><ol><li>Jumlisha mamoja: 7 + 6 = 13. Andika 3 katika nafasi ya mamoja. Badili mamoja 10 kuwa makumi 1. Peleka makumi 1 kwenye nafasi ya makumi.</li><li>Jumlisha makumi: 1 + 2 + 9 = 12. Andika 2 katika nafasi ya makumi. Badili makumi 10 kuwa mamia 1. Peleka mamia moja kwenye nafasi ya mamia.</li><li>Jumlisha mamia: 1 + 3 + 4 = 8. Andika 8 katika nafasi ya mamia.</li><li>Jumlisha maelfu: 6 + 3 = 9. Andika 9 katika nafasi ya maelfu.</li></ol><img class="book-arithmetic-figure book-page54-figure" src="images/pg060_addition_regrouping_transparent.png" alt="Mchoro wa kujumlisha 6327 na 3496 kwa thamani ya nafasi"><p class="conclusion">Kwa hiyo, &nbsp;6327 + 3496 = 9823.</p></div></section>`;
   };
 
   const renderPage55 = () => {
     const content=document.querySelector('#content');if(!content)return;
     content.className='book-page book-page-55 book-after-page15 book-after-page18 opacity-100 visible';
-    content.innerHTML=`<section data-section-id="pg061_sec001"><div class="book-example-card book-page55-example"><div class="book-example-label">Mfano wa 2</div><p>58271 + 32989 =</p><h2>Njia</h2><p>Jumlisha tarakimu kuanzia kulia kuelekea kushoto.</p><h2>Hatua</h2><ol><li>Jumlisha mamoja: 1 + 9 = 10. Andika 0 katika nafasi ya mamoja. Badili mamoja 10 kuwa makumi 1. Peleka makumi 1 kwenye nafasi ya makumi.</li><li>Jumlisha makumi: 1 + 7 + 8 = 16. Andika 6 katika nafasi ya makumi. Badili makumi 10 kuwa mamia 1. Peleka mamia 1 kwenye nafasi ya mamia.</li><li>Jumlisha mamia: 1 + 2 + 9 = 12. Andika 2 katika nafasi ya mamia. Badili mamia 10 kuwa maelfu 1. Peleka maelfu 1 kwenye nafasi ya maelfu.</li><li>Jumlisha maelfu: 1 + 8 + 2 = 11. Andika 1 katika nafasi ya maelfu. Badili maelfu 10 kuwa makumi elfu 1. Peleka makumi elfu 1 kwenye nafasi ya makumi elfu.</li><li>Jumlisha makumi elfu: 1 + 5 + 3 = 9. Andika 9 katika nafasi ya makumi elfu.</li></ol><div class="book-page55-equation">⁵&nbsp; ⁸&nbsp; ²&nbsp; ⁷&nbsp; ¹ &nbsp;+&nbsp; ³&nbsp; ²&nbsp; ⁹&nbsp; ⁸&nbsp; ⁹ &nbsp;=&nbsp; ⁹&nbsp; ¹&nbsp; ²&nbsp; ⁶&nbsp; ⁰</div><div class="book-page55-lines"></div><p class="conclusion">Kwa hiyo, 58271 + 32989 = 91260.</p></div></section>`;
+    content.innerHTML=`<section data-section-id="pg061_sec001"><div class="book-example-card book-page55-example"><div class="book-example-label">Mfano wa 2</div><p>58271 + 32989 =</p><h2>Njia</h2><p>Jumlisha tarakimu kuanzia kulia kuelekea kushoto.</p><h2>Hatua</h2><ol><li>Jumlisha mamoja: 1 + 9 = 10. Andika 0 katika nafasi ya mamoja. Badili mamoja 10 kuwa makumi 1. Peleka makumi 1 kwenye nafasi ya makumi.</li><li>Jumlisha makumi: 1 + 7 + 8 = 16. Andika 6 katika nafasi ya makumi. Badili makumi 10 kuwa mamia 1. Peleka mamia 1 kwenye nafasi ya mamia.</li><li>Jumlisha mamia: 1 + 2 + 9 = 12. Andika 2 katika nafasi ya mamia. Badili mamia 10 kuwa maelfu 1. Peleka maelfu 1 kwenye nafasi ya maelfu.</li><li>Jumlisha maelfu: 1 + 8 + 2 = 11. Andika 1 katika nafasi ya maelfu. Badili maelfu 10 kuwa makumi elfu 1. Peleka makumi elfu 1 kwenye nafasi ya makumi elfu.</li><li>Jumlisha makumi elfu: 1 + 5 + 3 = 9. Andika 9 katika nafasi ya makumi elfu.</li></ol><img class="book-arithmetic-figure book-page55-figure" src="images/pg061_addition_regrouping_transparent.png" alt="Mchoro wa kujumlisha 58271 na 32989 kwa thamani ya nafasi"><p class="conclusion">Kwa hiyo, 58271 + 32989 = 91260.</p></div></section>`;
   };
 
   const renderPage56 = () => {
     const content=document.querySelector('#content');if(!content)return;
     const qs=['7256 + 1796 =','7531 + 1929 =','8595 + 914 =','3598 + 179 =','4513 + 3299 =','2643 + 993 =','4951 + 1891 =','7536 + 19 =','768 + 7861 =','7816 + 1832 =','1576 + 817 =','2619 + 1786 =','1745 + 899 =','1652 + 476 =','15433 + 798 =','53415 + 21045 =','64124 + 16283 =','75520 + 9221 =','66612 + 24588 =','162845 + 134027 =','293586 + 26323 =','567183 + 484921 =','943573 + 56327 =','720852 + 279168 =','2964 + 298576 ='];
     content.className='book-page book-page-56 book-after-page15 book-after-page18 opacity-100 visible';
-    content.innerHTML=`<section data-section-id="pg062_sec001"><div class="book-example-card book-page56-example"><div class="book-example-label">Mfano wa 3</div><p>472395 + 134826 =</p><h2>Njia</h2><div class="book-page56-equation">4&nbsp; 7&nbsp; 2&nbsp; 3&nbsp; 9&nbsp; 5 &nbsp;+&nbsp; 1&nbsp; 3&nbsp; 4&nbsp; 8&nbsp; 2&nbsp; 6 &nbsp;=&nbsp; 6&nbsp; 0&nbsp; 7&nbsp; 2&nbsp; 2&nbsp; 1</div><div class="book-page56-lines"></div><p>Kwa hiyo, 472395 + 134826 = 607221.</p></div><div class="book-exercise-sheet book-page56-exercise"><h1 class="book-exercise-title">Zoezi la 3</h1><div class="book-page56-grid">${qs.map((q,i)=>`<p><span>${i+1}.</span><span>${q}</span></p>`).join('')}</div></div></section>`;
+    content.innerHTML=`<section data-section-id="pg062_sec001"><div class="book-example-card book-page56-example"><div class="book-example-label">Mfano wa 3</div><p>472395 + 134826 =</p><h2>Njia</h2><img class="book-arithmetic-figure book-regrouping-figure book-page56-figure" src="images/pg062_addition_regrouping_transparent.png" alt="Mchoro wa kujumlisha 472395 na 134826 kwa thamani ya nafasi"><p>Kwa hiyo, 472395 + 134826 = 607221.</p></div><div class="book-exercise-sheet book-page56-exercise"><h1 class="book-exercise-title">Zoezi la 3</h1><div class="book-page56-grid">${qs.map((q,i)=>`<p><span>${i+1}.</span><span>${q}</span></p>`).join('')}</div></div></section>`;
   };
 
   const renderPage57 = () => {
@@ -493,14 +493,14 @@
   const renderPage64 = () => {
     const content=document.querySelector('#content');if(!content)return;
     content.className='book-page book-page-64 book-after-page15 book-after-page18 opacity-100 visible';
-    content.innerHTML=`<section data-section-id="pg070_sec001"><header class="book-page64-head"><h1>Kutoa namba nzima bila kubadili</h1><h2>Kutoa namba nzima kwa ulalo</h2></header><div class="book-example-card book-page64-example"><div class="book-example-label">Mfano wa 1</div><p>6874 − 2430 =</p><h2>Hatua</h2><ol><li>Toa mamoja: 4 − 0 = 4. Andika 4 katika nafasi ya mamoja.</li><li>Toa makumi: 7 − 3 = 4. Andika 4 katika nafasi ya makumi.</li><li>Toa mamia: 8 − 4 = 4. Andika 4 katika nafasi ya mamia.</li><li>Toa maelfu: 6 − 2 = 4. Andika 4 katika nafasi ya maelfu.</li></ol><div class="book-page64-equation">6&nbsp; 8&nbsp; 7&nbsp; 4 &nbsp;−&nbsp; 2&nbsp; 4&nbsp; 3&nbsp; 0 &nbsp;=&nbsp; 4&nbsp; 4&nbsp; 4&nbsp; 4</div><div class="book-page64-lines"></div><p class="conclusion">Kwa hiyo, 6874 − 2430 = 4444.</p></div><div class="book-example-card book-page64-example second"><div class="book-example-label">Mfano wa 2</div><p>46781 − 1041 =</p><h2>Hatua</h2><ol><li>Toa mamoja: 1 − 1 = 0. Andika 0 katika nafasi ya mamoja.</li><li>Toa makumi: 8 − 4 = 4. Andika 4 katika nafasi ya makumi.</li><li>Toa mamia: 7 − 0 = 7. Andika 7 katika nafasi ya mamia.</li><li>Toa maelfu: 6 − 1 = 5. Andika 5 katika nafasi ya maelfu.</li><li>Toa makumi elfu: 4 − 0 = 4. Andika 4 katika nafasi ya makumi elfu.</li></ol></div></section>`;
+    content.innerHTML=`<section data-section-id="pg070_sec001"><header class="book-page64-head"><h1>Kutoa namba nzima bila kubadili</h1><h2>Kutoa namba nzima kwa ulalo</h2></header><div class="book-example-card book-page64-example"><div class="book-example-label">Mfano wa 1</div><p>6874 − 2430 =</p><h2>Hatua</h2><ol><li>Toa mamoja: 4 − 0 = 4. Andika 4 katika nafasi ya mamoja.</li><li>Toa makumi: 7 − 3 = 4. Andika 4 katika nafasi ya makumi.</li><li>Toa mamia: 8 − 4 = 4. Andika 4 katika nafasi ya mamia.</li><li>Toa maelfu: 6 − 2 = 4. Andika 4 katika nafasi ya maelfu.</li></ol><img class="book-arithmetic-figure book-page64-figure" src="images/pg070_subtraction_nochange_transparent.png" alt="Mchoro wa kutoa 2430 kutoka 6874 kwa thamani ya nafasi"><p class="conclusion">Kwa hiyo, 6874 − 2430 = 4444.</p></div><div class="book-example-card book-page64-example second"><div class="book-example-label">Mfano wa 2</div><p>46781 − 1041 =</p><h2>Hatua</h2><ol><li>Toa mamoja: 1 − 1 = 0. Andika 0 katika nafasi ya mamoja.</li><li>Toa makumi: 8 − 4 = 4. Andika 4 katika nafasi ya makumi.</li><li>Toa mamia: 7 − 0 = 7. Andika 7 katika nafasi ya mamia.</li><li>Toa maelfu: 6 − 1 = 5. Andika 5 katika nafasi ya maelfu.</li><li>Toa makumi elfu: 4 − 0 = 4. Andika 4 katika nafasi ya makumi elfu.</li></ol></div></section>`;
   };
 
   const renderPage65 = () => {
     const content=document.querySelector('#content');if(!content)return;
     const qs=['9942 − 42 =','4376 − 3245 =','3760 − 2550 =','3049 − 2017 =','8973 − 7642 =','4256 − 3132 =','65458 − 21344 =','87999 − 33422 =','623440 − 2010 =','568237 − 18113 =','784969 − 543867 =','987645 − 234 =','2000652 − 331 =','17897988 − 687888 =','6999456 − 2811222 =','3334237 − 2223126 =','9999999 − 7765555 =','1079878 − 17561 =','999789 − 347 =','1000005 − 2 ='];
     content.className='book-page book-page-65 book-after-page15 book-after-page18 opacity-100 visible';
-    content.innerHTML=`<section data-section-id="pg071_sec001"><div class="book-example-card book-page65-cont"><div class="book-page65-equation">4&nbsp; 6&nbsp; 7&nbsp; 8&nbsp; 1 &nbsp;−&nbsp; 1&nbsp; 0&nbsp; 4&nbsp; 1 &nbsp;=&nbsp; 4&nbsp; 5&nbsp; 7&nbsp; 4&nbsp; 0</div><div class="book-page65-lines"></div><p>Kwa hiyo, 46781 − 1041 = 45740.</p></div><div class="book-exercise-sheet book-page65-exercise"><h1 class="book-exercise-title">Zoezi la 6</h1><div class="book-page65-grid">${qs.map((q,i)=>`<p><span>${i+1}.</span><span>${q}</span></p>`).join('')}</div></div><h2 class="book-page65-heading">Kutoa namba nzima kwa wima</h2><div class="book-example-card book-page65-example"><div class="book-example-label">Mfano wa 1</div><div class="book-page65-stack"><span>9854</span><span>− &nbsp;8743</span><i></i><i></i></div><h2>Njia</h2><p>Panga namba nzima kwa kufuata thamani ya nafasi ya kila tarakimu katika namba. Mpangilio huo ni kama ulivyooneshwa kwenye jedwali lifuatalo:</p></div></section>`;
+    content.innerHTML=`<section data-section-id="pg071_sec001"><div class="book-example-card book-page65-cont"><img class="book-arithmetic-figure book-page65-figure" src="images/pg071_subtraction_continuation_transparent.png" alt="Mchoro wa kutoa 1041 kutoka 46781 kwa thamani ya nafasi"><p>Kwa hiyo, 46781 − 1041 = 45740.</p></div><div class="book-exercise-sheet book-page65-exercise"><h1 class="book-exercise-title">Zoezi la 6</h1><div class="book-page65-grid">${qs.map((q,i)=>`<p><span>${i+1}.</span><span>${q}</span></p>`).join('')}</div></div><h2 class="book-page65-heading">Kutoa namba nzima kwa wima</h2><div class="book-example-card book-page65-example"><div class="book-example-label">Mfano wa 1</div><div class="book-page65-stack"><span>9854</span><span>− &nbsp;8743</span><i></i><i></i></div><h2>Njia</h2><p>Panga namba nzima kwa kufuata thamani ya nafasi ya kila tarakimu katika namba. Mpangilio huo ni kama ulivyooneshwa kwenye jedwali lifuatalo:</p></div></section>`;
   };
 
   const renderPage66 = () => {
@@ -851,6 +851,458 @@
     content.innerHTML=`<section data-section-id="pg124_sec001"><h1 class="book-page118-title">Mafumbo yenye dhana ya kujumlisha sehemu</h1><div class="book-example-card book-page118-example"><div class="book-example-label">Mfano wa 1</div><p>Yona alijaza maji ³⁄₉ ya pipa na Halima alijaza ²⁄₉ ya pipa hilo. Je, Yona na Halima kwa pamoja walijaza sehemu gani ya pipa hilo?</p><h2>Njia</h2><p>Yona alijaza maji ³⁄₉ ya pipa</p><p>Halima alijaza maji ²⁄₉ ya pipa</p><p>Wote walijaza: ³⁄₉ + ²⁄₉ = (3 + 2)/9 = ⁵⁄₉.</p><p>Kwa hiyo, Yona na Halima walijaza maji ⁵⁄₉ ya pipa hilo.</p></div><div class="book-example-card book-page118-example second"><div class="book-example-label">Mfano wa 2</div><p>Nyumbani kulikuwa na mfuko mmoja wa sukari. Anna alitumia ⅜ ya sukari na Yahaya alitumia ⁴⁄₈ ya sukari katika mfuko huo. Je, jumla walitumia sehemu gani ya sukari?</p><h2>Njia</h2><p>Anna alitumia ⅜ ya sukari na Yahaya alitumia ⁴⁄₈ ya sukari.</p><p>Jumla walitumia: ⅜ + ⁴⁄₈ = (3 + 4)/8 = ⅞.</p><p>Kwa hiyo, walitumia ⅞ ya sukari katika mfuko huo.</p></div></section>`;
   };
 
+  const renderPage119 = () => {
+    const content=document.querySelector('#content');if(!content)return;
+    const questions=[
+      'Mama alimpa mwanae robo ya chapati. Baadaye alimpa robo tatu ya chapati hiyo. Jumla alimpatia sehemu gani ya chapati hiyo?',
+      'Masanja alikula ⅙ ya mkate na Amani alikula ²⁄₆ ya mkate huo. Ni sehemu gani ya mkate huo walikula wote wawili?',
+      'Mkulima aligawa shamba lake katika sehemu nane. Alitumia ⁴⁄₈ ya shamba hilo kupanda mbegu za mahindi, na ⅜ kupanda mbegu za maharage. Je, ni sehemu gani ya shamba hilo alipanda mbegu za mahindi na maharage?',
+      'Wanakijiji waliuza ⅖ ya pamba yao kwenye chama chao cha ushirika. Pia, ⅗ ya pamba yao iliuzwa kwenye chama kingine cha ushirika. Je, wanakijiji waliuza sehemu gani ya pamba yote?',
+      'Tausi alitumia ⅐ ya mshahara wake kulipia kodi. Pia, alitumia ³⁄₇ ya mshahara kwa chakula. Je, alitumia sehemu gani ya mshahara wake wote?',
+      'Maunda alinunua samaki wawili. Mmoja alikuwa na uzani wa ²⁄₄ ya kilogramu na mwingine ²⁄₄ ya kilogramu. Tafuta jumla ya uzani wa samaki hao.',
+      'Wakazi wa kijiji cha Maendeleo walitaka kujenga kituo cha afya. Wanakijiji hao walifyatua ⁵⁄₁₀ ya matofali'
+    ];
+    content.className='book-page book-page-119 book-after-page15 book-after-page18 opacity-100 visible';
+    content.innerHTML=`<section data-section-id="pg125_sec001"><div class="book-exercise-sheet book-page119-exercise"><h1 class="book-exercise-title">Zoezi la 3</h1>${questions.map((q,i)=>`<div class="book-page119-q"><span>${i+1}.</span><p>${q}</p></div>`).join('')}</div></section>`;
+  };
+
+  const renderPage120 = () => {
+    const content=document.querySelector('#content');if(!content)return;
+    const questions=[
+      ['','yaliyohitajika na ³⁄₁₀ ya matofali yalitolewa na mwenyekiti wa kijiji. Je, kijiji hicho kina sehemu gani ya matofali yote yanayohitajika?'],
+      ['8.','Nuru aliuza ³⁄₁₀ ya machungwa siku ya kwanza na ⁶⁄₁₀ ya machungwa siku ya pili. Kwa siku mbili aliuza sehemu gani ya machungwa?'],
+      ['9.','Shule ilinunua vitabu. Kati ya vitabu hivyo ⁴⁄₁₂ vilikuwa vya Hisabati, ²⁄₁₂ vya Kiswahili na ³⁄₁₂ vya Sayansi na Teknolojia. Vitabu hivyo vya masomo matatu ni sehemu gani ya vitabu vyote vilivyonunuliwa?'],
+      ['10.','Mama Jeni alinunua keki kwa ajili ya siku yake ya kuzaliwa. Akaikata hiyo vipande sita vilivyo sawa na kumpa Jeni vipande viwili. Je, Jeni alipewa sehemu gani ya ile keki?']
+    ];
+    content.className='book-page book-page-120 book-after-page15 book-after-page18 opacity-100 visible';
+    content.innerHTML=`<section data-section-id="pg126_sec001"><div class="book-exercise-sheet book-page120-exercise">${questions.map(([n,q])=>`<div class="book-page120-q"><span>${n}</span><p>${q}</p></div>`).join('')}</div><div class="book-page120-copy"><h1>Kutoa sehemu zenye asili moja</h1><p>Ili kuweza kutoa sehemu zenye asili moja, toa kiasi tu na asili isibadilike.</p></div><div class="book-example-card book-page120-example"><div class="book-example-label">Mfano wa 1</div><p>Tumia michoro kutafuta jibu sahihi la swali lifuatalo:</p><p>⅓ − ⅓ =</p></div></section>`;
+  };
+
+  const renderPage121 = () => {
+    const content=document.querySelector('#content');if(!content)return;
+    const steps=['Chora duara na gawanya duara hilo katika vipande vitatu vilivyo sawa.','Tia kivuli vipande vitatu kwenye duara hilo na andika sehemu iliyotiwa kivuli kwa numerali.','Ondoa kipande kimoja ulichotia kivuli katika hatua ya pili. Andika sehemu ya kipande hicho kwa numerali.','Chora tena kuonesha sehemu ya duara iliyobaki katika hatua ya tatu baada ya kuondoa kipande kimoja.','Andika sehemu iliyobaki katika hatua ya nne kwa numerali.'];
+    content.className='book-page book-page-121 book-after-page15 book-after-page18 opacity-100 visible';
+    content.innerHTML=`<section data-section-id="pg127_sec001"><div class="book-page121-cont"><h2>Hatua</h2><ol>${steps.map(x=>`<li>${x}</li>`).join('')}</ol><p>Hatua za awali zinaweza kuoneshwa kama ifuatavyo:</p><img src="images/pg127_im001_transparent.png" alt="Tatu ya tatu ukitoa moja ya tatu ni mbili ya tatu"><p>Kutoa sehemu zenye asili moja. Toa kiasi kama unavyotoa namba za kawaida.</p><p>Asili haibadiliki kwa kuwa sehemu zinaunda kitu kimoja.</p><p>Hivyo, ³⁄₃ − ⅓ = (3 − 1)/3 = ⅔.</p><p>Kwa hiyo, ³⁄₃ − ⅓ = ⅔.</p></div></section>`;
+  };
+
+  const renderPage122 = () => {
+    const content=document.querySelector('#content');if(!content)return;
+    const steps=['Chora tano ya sita ya duara.','Andika sehemu ya duara iliyotiwa kivuli kwa numerali.','Ondoa kipande kimoja ulichotia kivuli kwenye duara.','Andika kwa numerali sehemu uliyoiondoa.','Chora nne ya sita sehemu ya duara iliyobaki.','Andika kwa numerali sehemu ya duara iliyobaki.'];
+    content.className='book-page book-page-122 book-after-page15 book-after-page18 opacity-100 visible';
+    content.innerHTML=`<section data-section-id="pg128_sec001"><div class="book-example-card book-page122-example"><div class="book-example-label">Mfano wa 2</div><p>Kwa kutumia mchoro tafuta jibu sahihi la swali lifuatalo.</p><p>⁵⁄₆ − ⅙ =</p><h2>Hatua</h2><ol>${steps.map(x=>`<li>${x}</li>`).join('')}</ol><img src="images/pg128_im001_transparent.png" alt="Tano ya sita ukitoa moja ya sita ni nne ya sita"><p>Hivyo, ⁵⁄₆ − ⅙ = (5 − 1)/6 = ⁴⁄₆.</p><p>Kwa hiyo, ⁵⁄₆ − ⅙ = ⁴⁄₆.</p></div><div class="book-example-card book-page122-example second"><div class="book-example-label">Mfano wa 3</div><p>Tafuta thamani ya ¹¹⁄₁₂ − ⁷⁄₁₂ =</p><h2>Njia</h2><p>Toa kiasi kama unavyotoa namba, ukizingatia kuwa asili huwa haibadiliki.</p></div></section>`;
+  };
+
+  const renderPage123 = () => {
+    const content=document.querySelector('#content');if(!content)return;
+    const sums=['⅝ − ⅜ =','⅖ − ⅕ =','⁴⁄₉ − ⅑ =','⁶⁄₇ − ⁴⁄₇ =','⅔ − ⅓ =','¹⁴⁄₁₄ − ¹⁄₁₄ =','⅗ − ⅙ =','⅞ − ⅝ =','⁶⁄₁₃ − ³⁄₁₃ =','⅗ − ⅖ =','⅘ − ⅕ =','⁵⁄₇ − ³⁄₇ =','⅓ − ²⁄₆ =','²⁄₂ − ½ =','⁵⁄₁₀ − ²⁄₁₀ =','⁴⁄₄ − ²⁄₄ =','⁵⁄₁₁ − ¹⁄₁₁ =','¹⁶⁄₅₀ − ⁵⁄₅₀ =','²⁴⁄₂₅ − ²⁰⁄₂₅ =','⁷⁵⁄₁₀₀ − ⁵⁰⁄₁₀₀ =','³⁵⁄₄₀ − ²⁵⁄₄₀ =','⁴¹⁄₇₅ − ²³⁄₇₅ =','¹⁷⁄₂₀ − ⁹⁄₂₀ =','⁷⁵⁄₁₀₀ − ²⁵⁄₁₀₀ =','²⁴⁄₄₀ − ²⁰⁄₄₀ ='];
+    content.className='book-page book-page-123 book-after-page15 book-after-page18 opacity-100 visible';
+    content.innerHTML=`<section data-section-id="pg129_sec001"><div class="book-page123-cont"><p>Hivyo, ¹¹⁄₁₂ − ⁷⁄₁₂ = (11 − 7)/12 = ⁴⁄₁₂.</p><p>Kwa hiyo, ¹¹⁄₁₂ − ⁷⁄₁₂ = ⁴⁄₁₂.</p></div><div class="book-exercise-sheet book-page123-exercise"><h1 class="book-exercise-title">Zoezi la 4</h1><div class="book-page123-sums">${sums.map((x,i)=>`<p><span>${i+1}.</span>${x}</p>`).join('')}</div></div></section>`;
+  };
+
+  const renderPage124 = () => {
+    const content=document.querySelector('#content');if(!content)return;
+    content.className='book-page book-page-124 book-after-page15 book-after-page18 opacity-100 visible';
+    content.innerHTML=`<section data-section-id="pg130_sec001"><h1 class="book-page124-title">Mafumbo yenye dhana ya kutoa sehemu</h1><div class="book-example-card book-page124-example"><div class="book-example-label">Mfano wa 1</div><p>Tano ya nane ya shamba imepandwa miti ya mikaratusi. Sehemu ya shamba iliyobaki imepandwa miti ya michungwa. Sehemu gani ya shamba imepandwa miti ya michungwa?</p><h2>Njia</h2><p>Shamba lote limegawanywa katika vipande 8; sawa na ⁸⁄₈.</p><p>Sehemu iliyopandwa miti ya mikaratusi ni ⅝.</p><p>Sehemu iliyopandwa miti ya michungwa = shamba lote − sehemu iliyopandwa miti ya mikaratusi.</p><p>⁸⁄₈ − ⅝ = (8 − 5)/8 = ⅜.</p><p>Kwa hiyo, sehemu ya shamba iliyopandwa miti ya michungwa ni ⅜.</p></div><div class="book-example-card book-page124-example second"><div class="book-example-label">Mfano wa 2</div><p>Katu alifanya nne ya kumi na mbili ya usafi wa darasa lake. Je, ni sehemu gani ya darasa haikufanyiwa usafi?</p><h2>Njia</h2><p>Darasa lote lina sehemu 12; sawa na ¹²⁄₁₂.</p><p>Sehemu iliyofanyiwa usafi ni ⁴⁄₁₂.</p><p>Sehemu ambayo haikufanyiwa usafi = darasa lote − sehemu iliyofanyiwa usafi.</p></div></section>`;
+  };
+
+  const renderPage125 = () => {
+    const content=document.querySelector('#content');if(!content)return;
+    const qs=['Nusu ya shamba la Ngosha limelimwa. Je, ni sehemu gani ya shamba halijalimwa?','Aisha alivuna machungwa kutoka katika shamba lake. Ikiwa robo ya machungwa hayo yaliharibika, ni sehemu gani ya machungwa hayakuharibika?','Bahati alikata tikitimaji katika vipande 10 vinavyolingana. Iwapo vipande 7 kati ya 10 viliuzwa, ni sehemu gani ya tikitimaji haikuuzwa?','Mariam alikula moja ya sita ya muwa wote. Je, ni sehemu gani ya muwa ilibakia?','Kandi alikuwa na ⁵⁄₉ ya mkate. Akampatia Ali ⁴⁄₉ ya mkate huo. Je, alibakiwa na sehemu gani ya mkate?','Kabula alijibu ⁷⁄₁₂ ya maswali ya Hisabati asubuhi na ²⁄₁₂ ya maswali hayo mchana. Je, ni sehemu gani ya maswali ilibakia?','Johari alivuna ³⁄₁₀ ya vitunguu katika shamba. Debora alivuna ⁴⁄₁₀ ya vitunguu katika shamba hilo hilo. Nini tofauti ya sehemu ya vitunguu walivyovuna?'];
+    content.className='book-page book-page-125 book-after-page15 book-after-page18 opacity-100 visible';
+    content.innerHTML=`<section data-section-id="pg131_sec001"><div class="book-page125-cont"><p>¹²⁄₁₂ − ⁴⁄₁₂ = (12 − 4)/12 = ⁸⁄₁₂.</p><p>Kwa hiyo, sehemu ya darasa ambayo haikufanyiwa usafi ni ⁸⁄₁₂.</p></div><div class="book-exercise-sheet book-page125-exercise"><h1 class="book-exercise-title">Zoezi la 5</h1>${qs.map((q,i)=>`<div class="book-page125-q"><span>${i+1}.</span><p>${q}</p></div>`).join('')}</div></section>`;
+  };
+
+  const renderPage126 = () => {
+    const content=document.querySelector('#content');if(!content)return;
+    const qs=['Robo tatu ya shamba la Kwame ni sehemu inayopakana na barabara kuu. Sehemu gani ya shamba la Kwame haipakani na barabara kuu?','Bakari alitumia ¹⁄₁₀ ya mshahara wake kulipa kodi ya nyumba na ²⁄₁₀ kwa kulipa bili ya maji na umeme. Bakari alibakiwa na sehemu gani ya mshahara wake?','Wanakijiji walipanda miche ya miti ya matunda. Iwapo ²⁄₇ ya miti yote ilikauka, sehemu gani ya miti ilistawi?'];
+    content.className='book-page book-page-126 book-after-page15 book-after-page18 opacity-100 visible';
+    content.innerHTML=`<section data-section-id="pg132_sec001"><div class="book-exercise-sheet book-page126-exercise">${qs.map((q,i)=>`<div class="book-page126-q"><span>${i+8}.</span><p>${q}</p></div>`).join('')}</div><div class="book-page126-work"><h1>Kazi ya kufanya 2</h1><p>Kujifunza zaidi sehemu kwa njia ya masomo ya mtandaoni</p><h2>Maelezo</h2><p>Tumia masomo ya mtandaoni:</p><ol><li>Kuonesha sehemu. Mfano ½, ⅓, ⅔, ¼, ¾.</li><li>Kuchora maumbo mbalimbali, kuyagawanya katika sehemu zilizo sawa, kisha kutia kivuli na kuonesha sehemu iliyotiwa kivuli kwa namba.</li></ol></div><div class="book-page126-reminder"><h1>Jikumbushe</h1><ol><li>Baadhi ya sehemu za maumbo zina majina maalumu, mfano ¼ inaitwa ni robo, ½ ni nusu na ⅓ ni theluthi</li><li>Namba iliyo juu ya mstari wa kugawanya huitwa kiasi na iliyo chini ya mstari huitwa asili</li><li>Kujumlisha na kutoa sehemu zenye asili moja, asili huwa haibadiliki</li></ol></div></section>`;
+  };
+
+  const renderPage127 = () => {
+    const content=document.querySelector('#content');if(!content)return;
+    const vocab=[['Nusu','½','Kipande kimoja kati ya vipande viwili vilivyo sawa vya kitu kizima'],['Robo','¼','Kipande kimoja kati ya vipande vinne vilivyo sawa vya kitu kizima'],['Robo tatu','¾','vipande vitatu kati ya vipande vinne vilivyo sawa vya kitu kizima'],['Theluthi','⅓','Kipande kimoja kati ya vipande vitatu vilivyo sawa vya kitu kizima'],['Theluthi mbili','⅔','vipande viwili kati ya vipande vitatu vilivyo sawa vya kitu kizima']];
+    const sums=['³⁄₉ + ⁵⁄₉ =','⅖ + ⅖ =','²⁄₆ + ³⁄₆ =','³⁄₂₀ + ³⁄₂₀ =','³⁄₆ − ⅙ =','³⁄₁₀ + ⁵⁄₁₀ =','⁹⁄₁₆ + ²⁄₁₆ =','⅗ + ⅖ =','²⁄₆ − ²⁄₆ =','⁴⁄₁₀ + ⁵⁄₁₀ =','²⁵⁄₂₅ − ²⁰⁄₂₅ =','³⁵⁄₅₀ − ¹⁰⁄₅₀ ='];
+    content.className='book-page book-page-127 book-after-page15 book-after-page18 opacity-100 visible';
+    content.innerHTML=`<section data-section-id="pg133_sec001"><div class="book-page127-vocab"><h1>Msamiati</h1><table><tbody>${vocab.map(r=>`<tr><td>${r[0]}</td><td>= ${r[1]}</td><td>${r[2]}</td></tr>`).join('')}</tbody></table></div><div class="book-page127-review"><h1>Zoezi la Marudio</h1><div>${sums.map((x,i)=>`<p><span>${i+1}.</span>${x}</p>`).join('')}</div></div></section>`;
+  };
+
+  const renderPage128 = () => {
+    const content=document.querySelector('#content');if(!content)return;
+    const sums=['⅝ − ⅛ =','⁶⁄₇ − ⁴⁄₇ =','³⁄₂₅ + ⁴⁄₂₅ =','⁶⁄₂₀ + ¹¹⁄₂₀ =','⁹⁄₁₅ + ²⁄₁₅ =','⁸⁄₉ + ⅑ =','⁶⁄₇ − ²⁄₇ =','³⁰⁄₃₀ − ¹⁵⁄₃₀ =','¹³⁄₅₀ + ³⁰⁄₅₀ =','⁴⁰⁄₁₀₀ − ¹⁶⁄₁₀₀ =','¹⁵⁄₃₅ − ⁶⁄₃₅ ='];
+    const figs=['pg134_im001_transparent.png','pg134_im002_transparent.png','pg134_im003_transparent.png'];
+    content.className='book-page book-page-128 book-after-page15 book-after-page18 opacity-100 visible';
+    content.innerHTML=`<section data-section-id="pg134_sec001"><div class="book-page128-review"><div class="book-page128-sums">${sums.map((x,i)=>`<p><span>${i+13}.</span>${x}</p>`).join('')}</div><div class="book-page128-q"><span>24.</span><div><p>Andika kwa numerali sehemu iliyotiwa kivuli katika mchoro (a) hadi (c):</p><div>${figs.map((src,i)=>`<figure><figcaption>(${String.fromCharCode(97+i)})</figcaption><img src="images/${src}" alt="Sehemu iliyotiwa kivuli ${String.fromCharCode(97+i)}"></figure>`).join('')}</div></div></div></div></section>`;
+  };
+
+  const renderPage129 = () => {
+    const content=document.querySelector('#content');if(!content)return;
+    const qs=['Jakobo alinunua kuku wawili. Mmoja alikuwa na uzani wa ²⁄₄ ya kilogramu na mwingine ²⁄₄ ya kilogramu. Tafuta jumla ya uzani wa kuku hao.','Moja ya sita ya pipa lilijazwa maji. Je, ni sehemu gani ya pipa haikujazwa maji?','John alikata nanasi katika vipande 20 vinavyolingana. Iwapo ¹⁷⁄₂₀ ya nanasi hilo iliuzwa, ni sehemu gani ya nanasi haikuuzwa?','Wanafunzi wa darasa la tatu katika shule fulani wana mabegi ya bluu na meusi. Ikiwa ⅓ ya wanafunzi wana mabegi ya bluu, je ni sehemu gani ya wanafunzi wa darasa hilo wana mabegi meusi?','Mwalimu anataka kuwagawia wanafunzi wanne muwa wenye pingili nne zilizo sawa. Je, kila mwanafunzi atapata sehemu gani ya muwa huo?'];
+    content.className='book-page book-page-129 book-after-page15 book-after-page18 opacity-100 visible';
+    content.innerHTML=`<section data-section-id="pg135_sec001"><div class="book-page129-review">${qs.map((q,i)=>`<div class="book-page129-q"><span>${i+25}.</span><div><p>${q}</p>${i===4?'<img src="images/pg135_im001_transparent.png" alt="Mwalimu akigawa muwa kwa wanafunzi">':''}</div></div>`).join('')}</div></section>`;
+  };
+
+  const renderPage130 = () => {
+    const content=document.querySelector('#content');if(!content)return;
+    const qs=['Wanafunzi wa darasa la 3A walipewa zoezi la Hisabati. Ikiwa ³⁵⁄₄₀ ya wanafunzi hao walifanya zoezi hilo. Je, ni sehemu gani ya wanafunzi hawakufanya zoezi?','Wanafunzi walilima ⁴⁄₁₀ ya bustani siku ya kwanza na ⁵⁄₁₀ ya bustani siku ya pili. Je, wanafunzi hao walilima sehemu gani ya bustani kwa siku mbili hizo?','Burhani alikuwa na tufaa 8. Ikiwa ⅝ ya tufaa zake ziliharibika, je, alibakiwa na sehemu gani ya tufaa zilizokuwa nzima?','Ali alitumia ⁴⁄₇ ya fedha zake kununua nguo na ⅐ kununua vitabu. Je, alibakiwa na sehemu gani ya fedha zake?','Fatuma alimpa Rozi ⅖ ya pipi zake. Pia, alimpa Kabela ⅕ ya pipi zake. Je, Fatuma aliwapa Rozi na Kabela sehemu gani ya pipi zake?'];
+    content.className='book-page book-page-130 book-after-page15 book-after-page18 opacity-100 visible';
+    content.innerHTML=`<section data-section-id="pg136_sec001"><div class="book-page130-review">${qs.map((q,i)=>`<div class="book-page130-q"><span>${i+30}.</span><p>${q}</p></div>`).join('')}</div></section>`;
+  };
+
+  const renderPage131 = () => {
+    const content=document.querySelector('#content');if(!content)return;
+    const units=[
+      'Dakika moja ina sekunde 60.',
+      'Saa moja ina dakika 60.',
+      'Siku moja ina saa 24.',
+      'Wiki moja ina siku 7.',
+      'Mwaka mmoja una miezi 12.'
+    ];
+    content.className='book-page book-page-131 book-after-page15 book-after-page18 opacity-100 visible';
+    content.innerHTML=`<section data-section-id="pg137_sec001"><header class="book-page131-chapter"><h2>Sura ya Sita</h2><h1>Vipimo vya muda</h1></header><div class="book-page131-intro"><h2>Utangulizi</h2><p>Katika sura hii, utajifunza vipimo vya muda. Utasoma muda kwa mtindo wa saa 12 na saa 24. Pia, utajifunza kutambua idadi ya saa katika siku, siku katika wiki, wiki katika mwezi na miezi katika mwaka. Umahiri utakaoujenga utakuwezesha kupanga na kuzingatia muda katika shughuli mbalimbali. Shughuli hizo ni pamoja na kufuatilia ratiba ya shule, vyombo vya habari na vyombo vya usafiri.</p></div><div class="book-page131-copy"><h1>Vipimo vya muda</h1><p>Muda hupimwa kwa sekunde, dakika, saa, siku, wiki, mwezi au mwaka. Uhusiano wa vipimo vya muda ni kama ifuatavyo:</p><ol type="a">${units.map(x=>`<li>${x}</li>`).join('')}</ol><img src="images/pg137_im001_transparent.png" alt="Sekunde 60 ni dakika moja, na dakika 60 ni saa moja"></div></section>`;
+  };
+
+  const renderPage132 = () => {
+    const content=document.querySelector('#content');if(!content)return;
+    const people=[['Musa','Dakika 1 na sekunde 24'],['Neema','Dakika 1 na sekunde 40'],['Sofia','Sekunde 103'],['Hassan','Dakika 1 na sekunde 36']];
+    const questions=['Nani alitumia muda mrefu kuliko wote?','Nani alitumia muda mfupi kuliko wote?','Neema alitumia sekunde ngapi?','Musa alitumia sekunde ngapi?','Hassan alitumia sekunde ngapi?','Sofia alitumia dakika na sekunde ngapi?'];
+    const figures=[['pg138_im001_transparent.png','Saa ya mshale'],['pg138_im002_transparent.png','Saa ya kidigiti'],['pg138_im003_transparent.png','Kalenda']];
+    content.className='book-page book-page-132 book-after-page15 book-after-page18 opacity-100 visible';
+    content.innerHTML=`<section data-section-id="pg138_sec001"><div class="book-page132-copy"><h1>Vipimio vya muda</h1><p>Vipimio vya muda vinaweza kuwa saa au kalenda. Kuna aina mbili za saa ambazo ni saa ya mshale na saa ya kidigiti. Saa hutumika kupima muda kwa saa ishirini na nne za siku, Kalenda hutumika kupima siku, wiki na miezi katika mwaka.</p><div class="book-page132-figures">${figures.map(([src,label])=>`<figure><img src="images/${src}" alt="${label}"><figcaption>${label}</figcaption></figure>`).join('')}</div></div><div class="book-exercise-sheet book-page132-exercise"><h1 class="book-exercise-title">Zoezi la 1</h1><p>Jedwali lifuatalo linaonesha matokeo ya muda waliotumia wanafunzi wanne kusimama kwa mguu mmoja katika mchezo wao. Soma muda huo, kisha jibu maswali yanayofuata.</p><table><thead><tr><th>Jina</th><th>Muda</th></tr></thead><tbody>${people.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td></tr>`).join('')}</tbody></table><ol>${questions.map(q=>`<li>${q}</li>`).join('')}</ol></div></section>`;
+  };
+
+  const renderPage133 = () => {
+    const content=document.querySelector('#content');if(!content)return;
+    content.className='book-page book-page-133 book-after-page15 book-after-page18 opacity-100 visible';
+    content.innerHTML=`<section data-section-id="pg139_sec001"><div class="book-page133-copy"><h1>Kusoma muda kwa mtindo wa saa 12</h1><p>Katika kusoma saa ya mshale, mshale mfupi ni mshale wa saa. Mshale unaofuata kwa urefu ni mshale wa dakika. Mshale ulio mrefu zaidi na mwembamba ni mshale wa sekunde. Mishale yote huzunguka uso wa saa kuanzia kushoto kuelekea kulia.</p><img class="book-page133-clock" src="images/pg139_im001_transparent.png" alt="Saa ya mshale inaonyesha mishale ya sekunde, dakika na saa"><p>Katika saa ya kidigiti, saa na dakika hutenganiswa na nukta pacha (:). Tarakimu mbili za mwanzo kushoto huonesha saa. Tarakimu mbili zinazofuata huonesha dakika kama inavyooneshwa katika mchoro ufuatao:</p><img class="book-page133-digital" src="images/pg139_im002_transparent.png" alt="Saa ya kidigiti inaonyesha muda wa 03:00"></div></section>`;
+  };
+
+  const renderPage134 = () => {
+    const content=document.querySelector('#content');if(!content)return;
+    content.className='book-page book-page-134 book-after-page15 book-after-page18 opacity-100 visible';
+    content.innerHTML=`<section data-section-id="pg140_sec001"><div class="book-page134-copy"><p>Chunguza mchoro ufuatao:</p><figure class="book-page134-main"><img src="images/pg140_im001_transparent.png" alt="Uso wa saa unaoonyesha dakika 60"><figcaption>Dakika 60 ni saa moja</figcaption></figure><p>Mshale wa dakika hutumia dakika tano kuzunguka kutoka namba moja hadi nyingine kwenye uso wa saa. Muda wa dakika 30 husomwa kama nusu saa, dakika 15 husomwa kama robo saa. Hii imeoneshwa katika michoro ifuatayo.</p><div class="book-page134-parts"><figure><img src="images/pg140_im002_transparent.png" alt="Nusu saa"><figcaption>Dakika 30 ni nusu saa</figcaption></figure><figure><img src="images/pg140_im003_transparent.png" alt="Robo saa"><figcaption>Dakika 15 ni robo saa</figcaption></figure></div></div></section>`;
+  };
+
+  const renderPage135 = () => {
+    const content=document.querySelector('#content');if(!content)return;
+    const steps=['Andaa kitu cha duara kama sarafu ya shilingi 200 au 500.','Weka kitu hicho cha duara kwenye karatasi na tumia penseli kuchora duara kwa kuzungushia.','Weka alama 12 kwa kuacha nafasi zinazolingana kama zinavyoonekana katika duara lifuatalo.','Andika namba 1, 2, 3 hadi 12 kwenye alama ulizoweka.','Chora mshale mfupi kuanzia katikati kulenga namba 4.','Chora mshale mrefu kuanzia katikati kulenga namba 12.','Chora mshale mrefu wa sekunde katikati kulenga namba 12.'];
+    content.className='book-page book-page-135 book-after-page15 book-after-page18 opacity-100 visible';
+    content.innerHTML=`<section data-section-id="pg141_sec001"><div class="book-example-card book-page135-example"><div class="book-example-label">Mfano wa 1</div><p>Chora uso wa saa ya mshale unaoonesha saa 4:00.</p><h2>Hatua</h2><ol>${steps.slice(0,3).map(x=>`<li>${x}</li>`).join('')}</ol><img src="images/pg141_im001_transparent.png" alt="Uso wa saa wenye namba 1 hadi 12"><ol start="4">${steps.slice(3).map(x=>`<li>${x}</li>`).join('')}</ol><img src="images/pg141_im002_transparent.png" alt="Saa inaonyesha saa nne kamili"><div class="book-page135-last"><span>8.</span><p>Uso wa saa unaonesha saa 4.00.</p></div></div></section>`;
+  };
+
+  const renderPage136 = () => {
+    const content=document.querySelector('#content');if(!content)return;
+    const figures=[['pg142_im002_transparent.png','(a)'],['pg142_im003_transparent.png','(b)'],['pg142_im004_transparent.png','(c)']];
+    content.className='book-page book-page-136 book-after-page15 book-after-page18 opacity-100 visible';
+    content.innerHTML=`<section data-section-id="pg142_sec001"><div class="book-page136-copy"><h1>Kusoma muda katika saa na dakika</h1><p>Kusoma dakika anzia kwenye 12, kisha soma dakika kuelekea kulia hadi mshale wa dakika unapoonesha. Anza kusoma saa, kisha dakika.</p></div><div class="book-example-card book-page136-example"><div class="book-example-label">Mfano wa 2</div><p>Chora uso wa saa ya mshale kuonesha saa saba na dakika kumi na tano au saa saba na robo au saa 7:15.</p><img src="images/pg142_im001_transparent.png" alt="Saa saba na dakika kumi na tano"></div><div class="book-example-card book-page136-example second"><div class="book-example-label">Mfano wa 3</div><p>Chunguza nyuso za saa za mshale na saa za kidigiti, kisha soma muda unaooneshwa.</p><div class="book-page136-figures">${figures.map(([src,label])=>`<figure><figcaption>${label}</figcaption><img src="images/${src}" alt="Saa ${label}"></figure>`).join('')}</div><h2>Jibu</h2><div class="book-page136-answers"><span>(a) Saa 1 kamili</span><span>(b) Saa 2 kamili</span><span>(c) Saa 6 kamili</span></div></div></section>`;
+  };
+
+  const renderPage137 = () => {
+    const content=document.querySelector('#content');if(!content)return;
+    const top=[['pg143_im001_transparent.png','(a)'],['pg143_im002_transparent.png','(b)'],['pg143_im003_transparent.png','(c)']];
+    const bottom=[['pg143_im004_transparent.png','(a)'],['pg143_im005_transparent.png','(b)']];
+    content.className='book-page book-page-137 book-after-page15 book-after-page18 opacity-100 visible';
+    content.innerHTML=`<section data-section-id="pg143_sec001"><div class="book-example-card book-page137-example"><div class="book-example-label">Mfano wa 4</div><p>Soma saa za mshale zisizo na namba na za kidigiti, kisha andika muda wa saa hizo.</p><div class="book-page137-figures">${top.map(([src,label])=>`<figure><figcaption>${label}</figcaption><img src="images/${src}" alt="Saa ${label}"></figure>`).join('')}</div><h2>Jibu</h2><div class="book-page137-answers"><span>(a) Saa moja na dakika kumi na tano</span><span>(b) Saa kumi na dakika thelathini</span><span>(c) Saa nane na dakika arobaini na tano</span></div></div><div class="book-example-card book-page137-example second"><div class="book-example-label">Mfano wa 5</div><p>Soma muda katika saa zifuatazo, kisha andika muda wa saa hizo kwa numerali na kwa maneno:</p><div class="book-page137-bottom">${bottom.map(([src,label])=>`<figure><figcaption>${label}</figcaption><img src="images/${src}" alt="Saa ${label}"></figure>`).join('')}</div></div></section>`;
+  };
+
+  const renderPage138 = () => {
+    const content=document.querySelector('#content');if(!content)return;
+    const labels=['c','d','e','f','g','h','i','j'];
+    content.className='book-page book-page-138 book-after-page15 book-after-page18 opacity-100 visible';
+    content.innerHTML=`<section data-section-id="pg144_sec001"><div class="book-page138-cont">${labels.map((label,i)=>`<figure><figcaption>(${label})</figcaption><img src="images/pg144_im00${i+1}_transparent.png" alt="Saa (${label})"></figure>`).join('')}</div></section>`;
+  };
+
+  const renderPage139 = () => {
+    const content=document.querySelector('#content');if(!content)return;
+    const answers=['Saa 10 na dakika 10 (10:10).','Saa 6 na dakika 20 (6:20).','Saa 7 na dakika 35 (7:35) au saa 8 kasoro dakika 25.','Saa 2 na dakika 5 (2:05).','Saa 12 na dakika 45 au saa 1 kasoro robo (saa 1 kasoro dakika 15 au 12:45)','Saa 5 na dakika 45 au saa 6 kasoro robo (saa 6 kasoro dakika au 5:45)','Saa 9 na dakika 45 (9:45) au saa 10 kasoro robo (saa 10 kasoro dakika 15)','Saa 2 na dakika 50 (2:50) au saa 3 kasoro dakika 10','Saa 6 na dakika 40 (6:40) au saa 7 kasoro dakika 20','Saa 4 na dakika 55 (4:55) au saa 5 kasoro dakika 05'];
+    const questions=['Uso wa saa A ni wa aina gani?','Uso wa saa B unaonesha muda gani?','Uso wa saa A unaonesha muda gani?','Kuna tofauti gani kati ya uso wa saa A na B?'];
+    content.className='book-page book-page-139 book-after-page15 book-after-page18 opacity-100 visible';
+    content.innerHTML=`<section data-section-id="pg145_sec001"><div class="book-page139-answers"><h2>Majibu</h2>${answers.map((x,i)=>`<p><span>(${String.fromCharCode(97+i)})</span>${x}</p>`).join('')}</div><div class="book-exercise-sheet book-page139-exercise"><h1 class="book-exercise-title">Zoezi la 2</h1><div class="book-page139-prompt"><span>1.</span><div><p>Chunguza nyuso za saa zifuatazo, kisha jibu maswali yafuatayo:</p><div class="book-page139-clocks"><figure><figcaption>A</figcaption><img src="images/pg145_im001_transparent.png" alt="Saa A"></figure><figure><figcaption>B</figcaption><img src="images/pg145_im002_transparent.png" alt="Saa B"></figure></div>${questions.map((q,i)=>`<p>(${String.fromCharCode(97+i)})&nbsp; ${q}</p>`).join('')}</div></div></div></section>`;
+  };
+
+  const renderPage140 = () => {
+    const content=document.querySelector('#content');if(!content)return;
+    const labels=['a','b','c','d','e','f'];
+    content.className='book-page book-page-140 book-after-page15 book-after-page18 opacity-100 visible';
+    content.innerHTML=`<section data-section-id="pg146_sec001"><div class="book-exercise-sheet book-page140-exercise"><div class="book-page140-prompt"><span>2.</span><p>Soma saa zifuatazo, kisha andika muda kwa numerali na kwa maneno.</p></div><div class="book-page140-clocks">${labels.map((label,i)=>`<figure><figcaption>(${label})</figcaption><img src="images/pg146_clock${i+1}_pdf.png" alt="Saa (${label})"></figure>`).join('')}</div></div></section>`;
+  };
+
+  const renderPage141 = () => {
+    const content=document.querySelector('#content');if(!content)return;
+    const clocks=[['a','Saa 7 na dakika 5 (7:05)'],['b','Saa 2 na dakika 35 (2:35)'],['c','Saa 6 na dakika 55 au saa 7 kasoro dakika 5 (6:55)'],['d','Saa 2 na dakika 45 au Saa 3 kasoro robo (2:45)']];
+    const times=['8:45','12:10','11:40','2:25','4:35','5:05'];
+    content.className='book-page book-page-141 book-after-page15 book-after-page18 opacity-100 visible';
+    content.innerHTML=`<section data-section-id="pg147_sec001"><div class="book-exercise-sheet book-page141-exercise"><div class="book-page141-prompt"><span>3.</span><p>Chora mishale katika nyuso za saa kuonesha muda uliotajwa.</p></div><div class="book-page141-clocks">${clocks.map(([l,t])=>`<figure><figcaption>(${l})</figcaption><img src="images/pg147_blank_clock_pdf.png" alt="Uso wa saa usio na mishale"><p>${t}</p></figure>`).join('')}</div><div class="book-page141-q4"><span>4.</span><div><p>Andika muda kwa maneno.</p>${times.map((t,i)=>`<p><span>(${String.fromCharCode(97+i)})</span><b>${t}</b><i></i></p>`).join('')}</div></div></div></section>`;
+  };
+
+  const renderPage142 = () => {
+    const content=document.querySelector('#content');if(!content)return;
+    const q5=['Saa saba kamili','Saa tisa kamili','Saa mbili na dakika thelathini','Saa tatu na dakika arobaini na tano.'];
+    const q6=['Saa moja na nusu','Saa nne na dakika ishirini na tano','Saa kumi na moja kamili','Saa sita na dakika arobaini na tano'];
+    content.className='book-page book-page-142 book-after-page15 book-after-page18 opacity-100 visible';
+    content.innerHTML=`<section data-section-id="pg148_sec001"><div class="book-exercise-sheet book-page142-exercise"><div class="book-page142-q"><span>5.</span><div><p>Chora uso wa saa ya mshale na ya kidigiti inayoonesha muda katika saa zifuatazo:</p>${q5.map((x,i)=>`<p><span>(${String.fromCharCode(97+i)})</span>${x}</p>`).join('')}</div></div><div class="book-page142-q"><span>6.</span><div><p>Andika muda kwa numerali.</p>${q6.map((x,i)=>`<p><span>(${String.fromCharCode(97+i)})</span>${x}<i></i></p>`).join('')}</div></div></div><div class="book-page142-copy"><h1>Kusoma muda kwa mtindo wa saa 24</h1><p>Kielelezo kifuatacho kinaonesha saa 24 ambazo hazisomwi kwenye nyuso za saa za mshale.</p><img src="images/pg148_im001_transparent.png" alt="Kielelezo cha saa 24"></div></section>`;
+  };
+
+  const renderPage143 = () => {
+    const content=document.querySelector('#content');if(!content)return;
+    const rows=[['6:00 Usiku','Saa 0000'],['6:01 Usiku','Saa 0001'],['7:00 Usiku','Saa 0100'],['8:00 Usiku','Saa 0200'],['9:00 Usiku','Saa 0300'],['10:00 Alfajiri','Saa 0400'],['11:00 Alfajiri','Saa 0500'],['12:00 Asubuhi','Saa 0600'],['1:00 Asubuhi','Saa 0700'],['2:00 Asubuhi','Saa 0800'],['3:00 Asubuhi','Saa 0900'],['4:00 Asubuhi','Saa 1000'],['5:00 Asubuhi','Saa 1100'],['6:00 Adhuhuri','Saa 1200'],['6:01 Mchana','Saa 1201'],['7:00 Mchana','Saa 1300'],['8:00 Mchana','Saa 1400'],['9:00 Alasiri','Saa 1500'],['10:00 Jioni','Saa 1600'],['11:00 Jioni','Saa 1700'],['12:00 Jioni','Saa 1800'],['1:00 Usiku','Saa 1900'],['2:00 Usiku','Saa 2000'],['3:00 Usiku','Saa 2100'],['4:00 Usiku','Saa 2200'],['5:00 Usiku','Saa 2300'],['6:00 Usiku','Saa 0000']];
+    content.className='book-page book-page-143 book-after-page15 book-after-page18 opacity-100 visible';
+    content.innerHTML=`<section data-section-id="pg149_sec001"><div class="book-page143-copy"><p>Inafahamika kuwa mchana mmoja una saa 12 na usiku mmoja una saa 12. Katika mtindo wa saa 24, siku huanza baada ya saa 6:00 usiku. Mtindo wa saa 24 huandikwa kwa tarakimu nne. Tarakimu mbili za mwanzo kushoto huonesha saa na zilizobaki huonesha dakika. Jedwali lifuatalo linaonesha uhusiano wa muda katika mtindo wa saa 12 na saa 24.</p><table><thead><tr><th>Mtindo wa saa 12</th><th>Mtindo wa saa 24</th></tr></thead><tbody>${rows.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td></tr>`).join('')}</tbody></table></div></section>`;
+  };
+
+  const renderPage144 = () => {
+    const content=document.querySelector('#content');if(!content)return;
+    const examples=[['1','Andika saa 6:30 mchana katika mtindo wa saa 24.','Saa 6:30 mchana ni sawa na saa 1230 katika mtindo wa saa 24.'],['2','Andika 0235 katika mtindo wa saa 12.','Saa 0235 ni sawa na 8:35 usiku katika mtindo wa saa 12.'],['3','Andika saa 4:45 usiku katika mtindo wa saa 24.','Saa 4:45 usiku ni sawa na 2245 katika mtindo wa saa 24.']];
+    const qs=['Badili saa 3:47 asubuhi kwenda katika mtindo wa saa 24.','Andika saa 8:00 mchana katika mtindo wa saa 24.','Andika saa 7:00 mchana katika mtindo wa saa 24.','Badili saa 0400 kuwa katika mtindo wa saa 12.','Andika saa 1700 kuwa katika mtindo wa saa 12.','Andika saa 2200 kuwa katika mtindo wa saa 12.'];
+    content.className='book-page book-page-144 book-after-page15 book-after-page18 opacity-100 visible';
+    content.innerHTML=`<section data-section-id="pg150_sec001">${examples.map(([n,q,a])=>`<div class="book-example-card book-page144-example"><div class="book-example-label">Mfano wa ${n}</div><p>${q}</p><h2>Jibu</h2><p>${a}</p></div>`).join('')}<div class="book-exercise-sheet book-page144-exercise"><h1 class="book-exercise-title">Zoezi la 3</h1>${qs.map((q,i)=>`<div><span>${i+1}.</span><p>${q}</p></div>`).join('')}</div></section>`;
+  };
+
+  const renderPage145 = () => {
+    const content=document.querySelector('#content');if(!content)return;
+    const q1=['Saa 3:00 asubuhi','Saa 7:00 mchana','Saa 12:01 jioni','Saa 9:45 alasiri','Saa 5:00 asubuhi','Saa 10:00 jioni','Saa 6:50 usiku','Saa 2:00 asubuhi','Saa 2:34 asubuhi','Saa 11:55 alfajiri'];
+    const q2=['Saa 0012','Saa 1710','Saa 1650','Saa 0712','Saa 2010','Saa 2324','Saa 1015','Saa 0815','Saa 1918','Saa 0000'];
+    const rest=['Kuna saa ngapi kuanzia saa 1800 mpaka saa 0000?','Saa 2300 ni saa ngapi katika mtindo wa saa 12?','Sheba alimwambia Bura kuwa saa yake ilionesha saa 2:15 asubuhi. Je, hiyo ni saa ngapi katika mtindo wa saa 24?','Daktari alifanya kazi kwa saa 11. Iwapo alianza kazi saa 1:30 asubuhi, alimaliza kazi saa ngapi katika mtindo wa saa 24?','Watalii waliwasili uwanja wa ndege wa Kilimanjaro saa 1625. Andika muda huo katika mtindo wa saa 12.','Askari wa usalama barabarani aliwasili kituo cha Polisi saa 11:45 alfajiri. Je, aliwasili saa ngapi katika mtindo wa saa 24?','Asha alianza kupata maumivu ya kichwa siku ya Ijumaa saa 1808. Andika muda huo katika mtindo wa saa 12.','Safia na Ramadhani huamka saa 12:30 asubuhi ili kujiandaa kwenda shule. Andika muda huo katika mtindo wa saa 24.'];
+    const opts=a=>a.map((x,i)=>`<p><span>(${String.fromCharCode(97+i)})</span>${x}</p>`).join('');
+    content.className='book-page book-page-145 book-after-page15 book-after-page18 opacity-100 visible';
+    content.innerHTML=`<section data-section-id="pg151_sec001"><div class="book-exercise-sheet book-page145-exercise"><h1 class="book-exercise-title">Zoezi la 4</h1><div class="book-page145-q"><span>1.</span><div><p>Andika saa zifuatazo katika mtindo wa saa 24.</p><div class="book-page145-options">${opts(q1)}</div></div></div><div class="book-page145-q"><span>2.</span><div><p>Andika saa zifuatazo katika mtindo wa saa 12.</p><div class="book-page145-options">${opts(q2)}</div></div></div>${rest.map((q,i)=>`<div class="book-page145-q"><span>${i+3}.</span><p>${q}</p></div>`).join('')}</div></section>`;
+  };
+
+  const renderPage146 = () => {
+    const content=document.querySelector('#content');if(!content)return;
+    const facts=['Siku moja ina saa 24.','Wiki moja ina siku 7.','Mwezi mmoja una wiki 4.','Mwezi mmoja una siku 28, 29, 30 au 31.','Mwaka mmoja una miezi 12.'];
+    const days=['Jumatatu','Jumanne','Jumatano','Alhamisi','Ijumaa','Jumamosi','Jumapili'];
+    content.className='book-page book-page-146 book-after-page15 book-after-page18 opacity-100 visible';
+    content.innerHTML=`<section data-section-id="pg152_sec001"><div class="book-page146-copy"><h1>Uhusiano katika muda</h1><p>Mchoro huu unaonesha uhusiano wa siku katika wiki, wiki katika mwezi na miezi katika mwaka.</p><img src="images/pg152_im001.jpg" alt="Uhusiano wa saa, siku, wiki, mwezi na mwaka"><p>Kumbuka kuwa muda hupimwa kwa siku, wiki, mwezi au mwaka.</p><ol type="a">${facts.map(x=>`<li>${x}</li>`).join('')}</ol><h2>Majina ya siku katika wiki</h2><p>Wiki moja ina siku saba. Majina ya siku hizo ni kama yanavyoonekana katika jedwali lifuatalo.</p><table><thead><tr><th colspan="7">Majina ya siku katika wiki</th></tr></thead><tbody><tr>${days.map(d=>`<td>${d}</td>`).join('')}</tr></tbody></table></div></section>`;
+  };
+
+  const renderPage147 = () => {
+    const content=document.querySelector('#content');if(!content)return;
+    const months=[['Januari','Mwezi wa 1','Siku 31'],['Februari','Mwezi wa 2','Siku 28 au 29'],['Machi','Mwezi wa 3','Siku 31'],['Aprili','Mwezi wa 4','Siku 30'],['Mei','Mwezi wa 5','Siku 31'],['Juni','Mwezi wa 6','Siku 30'],['Julai','Mwezi wa 7','Siku 31'],['Agosti','Mwezi wa 8','Siku 31'],['Septemba','Mwezi wa 9','Siku 30'],['Oktoba','Mwezi wa 10','Siku 31'],['Novemba','Mwezi wa 11','Siku 30'],['Desemba','Mwezi wa 12','Siku 31']];
+    const qs=['Saa 24 ni sawa na siku ngapi?','Siku 7 ni sawa na wiki ngapi?','Mwezi mmoja una wiki ngapi?','Mwezi mmoja una siku ngapi?','Miezi 12 ni sawa na miaka mingapi?','Bakari alinunua muda wa maongezi ambao ulidumu kwa muda wa saa 48. Je, muda huu ni sawa na siku ngapi?'];
+    content.className='book-page book-page-147 book-after-page15 book-after-page18 opacity-100 visible';
+    content.innerHTML=`<section data-section-id="pg153_sec001"><div class="book-page147-copy"><h1>Majina ya miezi katika mwaka</h1><p>Mwaka mmoja una miezi kumi na mbili. Kila mwezi una jina lake kama inavyooneshwa katika jedwali lifuatalo.</p><div class="book-page147-months">${[0,4,8].map(start=>`<table><thead><tr>${months.slice(start,start+4).map(r=>`<th>${r[0]}</th>`).join('')}</tr></thead><tbody><tr>${months.slice(start,start+4).map(r=>`<td>${r[1]}</td>`).join('')}</tr><tr>${months.slice(start,start+4).map(r=>`<td>${r[2]}</td>`).join('')}</tr></tbody></table>`).join('')}</div></div><div class="book-exercise-sheet book-page147-exercise"><h1 class="book-exercise-title">Zoezi la 5</h1>${qs.map((q,i)=>`<div><span>${i+1}.</span><p>${q}</p></div>`).join('')}</div><div class="book-page147-calendar"><h2>Kalenda</h2><p>Kalenda huonesha siku, wiki, mwezi na mwaka. Kalenda huonesha tarehe za matukio muhimu ya kitaifa na kimataifa. Kalenda hutuwezesha kujua aina ya mwaka iwapo ni mfupi au mrefu. Katika mwaka mrefu mwezi Februari huwa na siku 29. Mwaka mfupi mwezi Februari una siku 28.</p></div></section>`;
+  };
+
+  const renderPage148 = () => {
+    const content=document.querySelector('#content');if(!content)return;
+    content.className='book-page book-page-148 book-after-page15 book-after-page18 opacity-100 visible';
+    content.innerHTML=`<section data-section-id="pg154_sec001"><div class="book-page148-copy"><p>Zifuatazo ni kalenda za mwaka 2019 na mwaka 2020.</p><img class="book-page148-calendar-img" src="images/pg154_im001.jpg" alt="Kalenda ya Tanzania ya mwaka 2019"><img class="book-page148-holidays" src="images/pg154_im003.png" alt="Sikukuu za Tanzania mwaka 2019"></div></section>`;
+  };
+
+  const renderPage149 = () => {
+    const content=document.querySelector('#content');if(!content)return;
+    content.className='book-page book-page-149 book-after-page15 book-after-page18 opacity-100 visible';
+    content.innerHTML=`<section data-section-id="pg155_sec001"><div class="book-page149-copy"><img class="book-page149-calendar-img" src="images/pg155_im001.jpg" alt="Kalenda ya Tanzania ya mwaka 2020"><img class="book-page149-holidays" src="images/pg155_im003.png" alt="Sikukuu za Tanzania mwaka 2020"></div></section>`;
+  };
+
+  const renderPage150 = () => {
+    const content=document.querySelector('#content');if(!content)return;
+    const qs=['Andika majina ya miezi yenye siku 30.','Andika majina yenye siku 31.','Kuna Jumapili ngapi katika mwezi Julai mwaka huu.','Taja mwezi ambao mara nyingi shule hufungwa kwa ajili ya likizo ya mwisho wa mwaka.','Mwezi Februari mwaka huu una siku ngapi?'];
+    content.className='book-page book-page-150 book-after-page15 book-after-page18 opacity-100 visible';
+    content.innerHTML=`<section data-section-id="pg156_sec001"><div class="book-exercise-sheet book-page150-exercise"><h1 class="book-exercise-title">Zoezi la 6</h1>${qs.map((q,i)=>`<div><span>${i+1}.</span><p>${q}</p></div>`).join('')}</div><div class="book-page150-work"><h1><b>Kazi ya kufanya:</b>&nbsp; Siku yangu</h1><p>Kujifunza zaidi kwa njia ya masomo ya mtandaoni kuandaa siku yangu</p><h2>Maelezo</h2><p>Tumia programu ya kompyuta kuchora (kama vile Paint) ili kuandaa ratiba yako ya siku. Chora nyuso za saa za mshale na za kidigiti kuonesha shughuli zako za siku (kama vile muda wa kuamka, muda wa kwenda shule, muda wa kula na muda wa kulala).</p></div><div class="book-page150-reminder"><h1>Jikumbushe</h1><ol><li>Katika uso wa saa, mshale mfupi huonesha saa, mshale mrefu huonesha dakika</li><li>Saa moja ni sawa na dakika 60</li><li>Muda hupimwa kwa siku, wiki, mwezi au mwaka</li></ol></div><div class="book-page150-vocab"><h1>Msamiati</h1><p><b>Nusu saa</b><span>dakika 30</span></p><p><b>Robo saa</b><span>dakika 15</span></p></div></section>`;
+  };
+
+  const renderPage151 = () => {
+    const content=document.querySelector('#content');if(!content)return;
+    const times=['12:15','1:00','11:30','2:00','8:15','10:15','1:20','2:45'];
+    const a=['Dakika 90','Mshale mrefu wa saa','Mshale mfupi wa saa','Dakika 15','Dakika 30'];
+    const b=['Unaonesha saa','Robo saa','Huonesha saa 12','Unaonesha dakika','Dakika 60','Nusu saa','Kasoro robo','Saa moja na nusu'];
+    content.className='book-page book-page-151 book-after-page15 book-after-page18 opacity-100 visible';
+    content.innerHTML=`<section data-section-id="pg157_sec001"><div class="book-page151-review"><h1>Zoezi la marudio</h1><div class="book-page151-q"><span>1.</span><div><p>Chora nyuso za saa ya mshale kuonesha muda ufuatao:</p>${['Saa sita na robo (6:15)','Saa kumi kamili (10:00)','Saa mbili na nusu (2:30)','Saa tatu na dakika arobaini na tano (3:45)'].map((x,i)=>`<p><span>(${String.fromCharCode(97+i)})</span>${x}</p>`).join('')}</div></div><div class="book-page151-q"><span>2.</span><div><p>Andika muda ufuatao kwa maneno:</p>${times.map((x,i)=>`<p class="book-page151-line"><span>(${String.fromCharCode(97+i)})</span><b>${x}</b><i></i></p>`).join('')}</div></div><div class="book-page151-q"><span>3.</span><div><p>Chagua maneno kutoka orodha B na yaandike katika orodha A ili yalete maana sahihi:</p><table><thead><tr><th>Orodha A</th><th>Orodha B</th></tr></thead><tbody>${Array.from({length:8},(_,i)=>`<tr><td>${a[i]?`(${String.fromCharCode(97+i)}) &nbsp; ${a[i]}`:''}</td><td>${b[i]}</td></tr>`).join('')}</tbody></table></div></div></div></section>`;
+  };
+
+  const renderPage152 = () => {
+    const content=document.querySelector('#content');if(!content)return;
+    const q4=['Saa 1930','Saa 2324','Saa 2127','Saa 1513','Saa 0712','Saa 0835'];
+    const q5=['Saa 2:34 usiku','Saa 2:10 asubuhi','Saa 7:05 mchana','Saa 5:30 asubuhi','Saa 11:55 alfajiri','Saa 9:51 alasiri','Saa 9:15 alasiri','Saa 10:00 jioni'];
+    const rest=['Saa 10:45 usiku ni saa ngapi katika mfumo wa saa 24?','Saa 1945 ni saa ngapi katika mtindo wa saa 12?','Kuna saa ngapi kuanzia 1500 mpaka saa 2300?','Kuna siku ngapi katika saa 72?','Je, mwaka huu ni mwaka mrefu au mfupi?','Andika jumla ya siku katika mwezi Juni, Julai na Agosti.','Katika mzunguko wa mwaka, andika miezi ambayo inafuatana na kila mmoja una siku 31.'];
+    content.className='book-page book-page-152 book-after-page15 book-after-page18 opacity-100 visible';
+    content.innerHTML=`<section data-section-id="pg158_sec001"><div class="book-page152-review">${[[4,'Andika saa zifuatazo katika mtindo wa saa 12:',q4],[5,'Andika saa zifuatazo katika mtindo wa saa 24:',q5]].map(([n,t,a])=>`<div class="book-page152-q"><span>${n}.</span><div><p>${t}</p><div>${a.map((x,i)=>`<p><span>(${String.fromCharCode(97+i)})</span>${x}</p>`).join('')}</div></div></div>`).join('')}${rest.map((q,i)=>`<div class="book-page152-q"><span>${i+6}.</span><p>${q}</p></div>`).join('')}</div></section>`;
+  };
+
+  const renderPage153 = () => {
+    const content=document.querySelector('#content');if(!content)return;
+    content.className='book-page book-page-153 book-after-page15 book-after-page18 opacity-100 visible';
+    content.innerHTML=`<section data-section-id="pg159_sec001"><header class="book-page153-chapter"><h2>Sura ya Saba</h2><h1>Fedha ya Tanzania</h1></header><div class="book-page153-intro"><h2>Utangulizi</h2><p>Katika sura hii utajifunza fedha ya Tanzania katika shilingi na senti. Vilevile, utajumlisha na kutoa fedha katika shilingi na senti. Umahiri utakaoujenga utakuwezesha kutumia fedha ya Tanzania katika kufanya manunuzi, bajeti, kusimamia pesa na kuweka akiba.</p></div><div class="book-page153-copy"><h1>Fedha ya Tanzania</h1><p>Fedha ya Tanzania ipo katika shilingi na senti. Thamani ya senti moja ni ndogo kuliko thamani ya shilingi moja. Shilingi moja ni sawa na senti mia moja. Senti huonekana zaidi katika maandishi kuliko upatikanaji wake katika matumizi ya kila siku. Fedha ya Tanzania pia ipo katika mfumo wa sarafu na noti zenye thamani mbalimbali.</p><h1>Sarafu za Tanzania</h1><p>Sarafu za Tanzania ina thamani tofauti. Katika mzunguko wa fedha kuna sarafu za shilingi hamsini, mia moja, mia mbili na mia tano. Sarafu hizi zina alama za picha za marais, wanyama pori, vitu vya kihistoria na alama za kitaifa.</p></div><div class="book-example-card book-page153-example"><div class="book-example-label">Mfano wa 1</div><p>Sarafu ya shilingi 50 ya Tanzania ina rangi gani?</p><h2>Jibu</h2><p>Sarafu ya shilingi 50 ya Tanzania ina rangi ya dhahabu.</p></div></section>`;
+  };
+
+  const renderPage154 = () => {
+    const content=document.querySelector('#content');if(!content)return;
+    const examples=[['2','Je, utatofautisha vipi sarafu ya shilingi mia moja ya Tanzania na sarafu nyingine?','Kila sarafu inaweza kutofautishwa kulingana na namba na alama zilizomo. Kwa mfano, sarafu ya shilingi mia moja imeandikwa “100” na swala wanne kwenye upande wake mmoja.'],['3','Ni sarafu ipi ina picha ya Rais wa kwanza wa Tanzania?','Sarafu ya shilingi mia moja.']];
+    const pairs=[[1,2,'a'],[3,4,'b']];
+    content.className='book-page book-page-154 book-after-page15 book-after-page18 opacity-100 visible';
+    content.innerHTML=`<section data-section-id="pg160_sec001">${examples.map(([n,q,a])=>`<div class="book-example-card book-page154-example"><div class="book-example-label">Mfano wa ${n}</div><p>${q}</p><h2>Jibu</h2><p>${a}</p></div>`).join('')}<div class="book-exercise-sheet book-page154-exercise"><h1 class="book-exercise-title">Zoezi la 1</h1><p>Chunguza sarafu za Tanzania, kisha jibu maswali yanayofuata.</p>${pairs.map(([a,b,l])=>`<figure><figcaption>(${l})</figcaption><div><img src="images/pg160_im00${a}.jpg" alt="Sarafu upande wa kwanza"><img src="images/pg160_im00${b}.jpg" alt="Sarafu upande wa pili"></div><p>Shilingi <i></i></p></figure>`).join('')}</div></section>`;
+  };
+
+  const renderPage155 = () => {
+    const content=document.querySelector('#content');if(!content)return;
+    const pairs=[[1,2,'c'],[3,4,'d']];
+    const qs=['Je, kila sarafu ina thamani gani? Andika jibu katika nafasi iliyo wazi katika kipengele (a) hadi (d).','Je, ni sarafu gani ina thamani kubwa kuliko zote?','Je, ni sarafu gani ina thamani ndogo kuliko zote?','Je, ni sarafu zipi umewahi kuziona?','Sarafu zipi umewahi kuzitumia?'];
+    content.className='book-page book-page-155 book-after-page15 book-after-page18 opacity-100 visible';
+    content.innerHTML=`<section data-section-id="pg161_sec001"><div class="book-exercise-sheet book-page155-exercise">${pairs.map(([a,b,l])=>`<figure><figcaption>(${l})</figcaption><div><img src="images/pg161_im00${a}.jpg" alt="Sarafu upande wa kwanza"><img src="images/pg161_im00${b}.jpg" alt="Sarafu upande wa pili"></div><p>Shilingi <i></i></p></figure>`).join('')}<div class="book-page155-qs">${qs.map((q,i)=>`<div><span>${i+1}.</span><p>${q}</p></div>`).join('')}</div></div><div class="book-page155-copy"><h1>Noti za Tanzania</h1><p>Tanzania ina noti zenye thamani tofauti. Thamani ya kila noti imeandikwa kwa namba. Unaweza kuitofautisha noti moja na nyingine kwa kutumia alama mbalimbali zilizopo katika noti hizo.</p></div><div class="book-example-card book-page155-example"><div class="book-example-label">Mfano</div><p>Je, noti ya shilingi elfu kumi ina rangi gani?</p><h2>Jibu</h2><p>Noti ya shilingi elfu kumi ina rangi nyekundu</p></div></section>`;
+  };
+
+  const renderPage156 = () => {
+    const content=document.querySelector('#content');if(!content)return;
+    content.className='book-page book-page-156 book-after-page15 book-after-page18 opacity-100 visible';
+    content.innerHTML=`<section data-section-id="pg162_sec001"><div class="book-exercise-sheet book-page156-exercise"><h1 class="book-exercise-title">Zoezi la 2</h1><p>Chunguza noti hizi, kisha jibu maswali yanayofuata.</p>${[1,2,3,4].map(i=>`<img src="images/pg162_im00${i}.jpg" alt="Noti ya Tanzania upande ${i}">`).join('')}</div></section>`;
+  };
+
+  const renderPage157 = () => {
+    const content=document.querySelector('#content');if(!content)return;
+    content.className='book-page book-page-157 book-after-page15 book-after-page18 opacity-100 visible';
+    content.innerHTML=`<section data-section-id="pg163_sec001"><div class="book-exercise-sheet book-page157-exercise">${[1,2,3,4].map(i=>`<img src="images/pg163_im00${i}.jpg" alt="Noti ya Tanzania upande ${i}">`).join('')}</div></section>`;
+  };
+
+  const renderPage158 = () => {
+    const content=document.querySelector('#content');if(!content)return;
+    const noteQs=['Noti ipi ina thamani kubwa kuliko zote?','Noti ipi ina thamani ndogo kuliko zote?','Alama tatu zilizopo upande wa mbele wa noti ya shilingi elfu tano ni zipi?','Alama tatu zilizopo upande wa nyuma wa noti ya shilingi elfu mbili ni zipi?','Alama tano zilizopo katika noti ya shilingi elfu moja ni zipi?'];
+    const goods=[['1,000/=','pg164_im001.png','Sahani'],['4,000/=','pg164_im002.png','Samaki'],['500/=','pg164_im003.png','Mboga za majani'],['1,000/=','pg164_im004.png','Mkate'],['5,000/=','pg164_im005.png','Sufuria']];
+    const qs=['Ni bidhaa ipi yenye bei kubwa kuliko zote?','Kati ya sahani na sufuria kipi chenye bei kubwa?','Ni bidhaa ipi yenye bei ndogo kuliko zote?','Ni bidhaa zipi zina bei sawa?'];
+    content.className='book-page book-page-158 book-after-page15 book-after-page18 opacity-100 visible';
+    content.innerHTML=`<section data-section-id="pg164_sec001"><div class="book-page158-noteqs"><h2>Maswali</h2>${noteQs.map((q,i)=>`<div><span>${i+1}.</span><p>${q}</p></div>`).join('')}</div><div class="book-exercise-sheet book-page158-exercise"><h1 class="book-exercise-title">Zoezi la 3</h1><p>Chunguza bei za bidhaa zifuatazo, kisha jibu maswali yanayofuata.</p><table><thead><tr><th>Gharama</th><th>Bidhaa</th></tr></thead><tbody>${goods.map(([price,src,name])=>`<tr><td>${price}</td><td><img src="images/${src}" alt="${name}"><span>${name}</span></td></tr>`).join('')}</tbody></table>${qs.map((q,i)=>`<div class="book-page158-q"><span>${i+1}.</span><p>${q}</p></div>`).join('')}</div></section>`;
+  };
+
+  const renderPage159 = () => {
+    const content=document.querySelector('#content');if(!content)return;
+    content.className='book-page book-page-159 book-after-page15 book-after-page18 opacity-100 visible';
+    content.innerHTML=`<section data-section-id="pg165_sec001"><div class="book-page159-copy"><h1>Kuandika fedha ya Tanzania katika shilingi na senti</h1><p>Jinsi ya kuandika fedha kwenye shilingi, anza na neno shilingi, likifuatiwa na thamani. Vilevile, kwenye senti, anza na neno senti, kisha thamani. Katika numerali, thamani ya fedha ya shilingi na senti hutenganishwa na alama ya nukta.</p></div><div class="book-example-card book-page159-example"><div class="book-example-label">Mfano wa 1</div><p>(a)&nbsp;&nbsp; Je, shilingi 1 ni sawa na senti 50 ngapi?</p><h2>Njia</h2><p>(a)&nbsp;&nbsp; Sh 1 ni sawa na senti 100 au sh1 = st 100</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; st 50 ukiongeza nyingine st 50 unapata st 100</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Kwa hiyo, shilingi 1 ni sawa na senti 50 mbili.</p><p>(b)&nbsp;&nbsp; Andika shilingi 500 na senti 50 kwa kifupi.</p><h2>Jibu</h2><p>(b)&nbsp;&nbsp; Kwa kifupi ni sh 500 st 50 au sh 500.50.</p></div><div class="book-example-card book-page159-example second"><div class="book-example-label">Mfano wa 2</div><p>(a)&nbsp;&nbsp; Andika sh 700.00 kwa maneno.</p><p>(b)&nbsp;&nbsp; Andika sh 1200 na senti 70 kwa kifupi.</p><h2>Jibu</h2><p>(a)&nbsp;&nbsp; Shilingi 700.00 kwa maneno huandikwa shilingi mia saba.</p><p>(b)&nbsp;&nbsp; Sh 1200 na senti 70 kwa kifupi huandikwa sh 1200 na senti 70.</p></div></section>`;
+  };
+
+  const renderPage160 = () => {
+    const content=document.querySelector('#content');if(!content)return;
+    const short=[['sh 5800 st 35','Shilingi elfu tano mia nane na senti thelathini na tano'],['sh 75400 st 10',''],['sh 23000 st 70',''],['sh 632 st 37',''],['sh 48350 st 05',''],['sh 3600 st 00',''],['sh 80495 st 95',''],['sh 1750 st 50',''],['sh 10000 st 00',''],['sh 1100 st 20','']];
+    const words=[['Shilingi mia mbili na senti ishirini na tano','sh 200 st 25'],['Shilingi mia tatu',''],['Shilingi elfu mbili mia mbili hamsini na senti hamsini',''],['Shilingi arobaini na tano elfu na senti thelathini',''],['Shilingi sabini na senti kumi','']];
+    content.className='book-page book-page-160 book-after-page15 book-after-page18 opacity-100 visible';
+    content.innerHTML=`<section data-section-id="pg166_sec001"><div class="book-exercise-sheet book-page160-exercise"><h1 class="book-exercise-title">Zoezi la 4</h1><div class="book-page160-q"><span>1.</span><p>Senti 50 nne ni sawa na shilingi ngapi?</p></div><div class="book-page160-q"><span>2.</span><div><p>Soma, kisha andika kwa maneno fedha iliyoandikwa kwa kifupi katika jedwali lifuatalo. Kipengele (a) ni mfano.</p><table><thead><tr><th></th><th>Fedha kwa kifupi</th><th>Fedha kwa maneno</th></tr></thead><tbody>${short.map((r,i)=>`<tr><td>(${String.fromCharCode(97+i)})</td><td>${r[0]}</td><td>${r[1]}</td></tr>`).join('')}</tbody></table></div></div><div class="book-page160-q"><span>3.</span><div><p>Soma kisha andika fedha kwa kifupi katika jedwali lifuatalo. Kipengele (a) ni mfano.</p><table><thead><tr><th></th><th>Fedha kwa maneno</th><th>Fedha kwa kifupi</th></tr></thead><tbody>${words.map((r,i)=>`<tr><td>(${String.fromCharCode(97+i)})</td><td>${r[0]}</td><td>${r[1]}</td></tr>`).join('')}</tbody></table></div></div></div></section>`;
+  };
+
+  const renderPage161 = () => {
+    const content=document.querySelector('#content');if(!content)return;
+    const rows=[['Shilingi hamsini na tano elfu na senti themanini na tano','Sh 55000 st 85'],['Shilingi mia sita arobaini na senti tano',''],['Shilingi moja na senti hamsini',''],['Shilingi tisini na tisa elfu mia nane na senti tisini',''],['Shilingi hamsini na senti sitini','']];
+    content.className='book-page book-page-161 book-after-page15 book-after-page18 opacity-100 visible';
+    content.innerHTML=`<section data-section-id="pg167_sec001"><div class="book-page161-exercise"><div class="book-page161-q"><span>4.</span><div><p>Soma kisha andika fedha kwa kifupi katika jedwali lifuatalo. Kipengele (a) ni mfano.</p><table><thead><tr><th></th><th>Fedha kwa maneno</th><th>Fedha kwa kifupi</th></tr></thead><tbody>${rows.map((r,i)=>`<tr><td>(${String.fromCharCode(97+i)})</td><td>${r[0]}</td><td>${r[1]}</td></tr>`).join('')}</tbody></table></div></div><div class="book-page161-q"><span>5.</span><p>Mshahara wa Rozi ni shilingi 315,000 na senti 80 kwa siku. Andika mshahara huo kwa kifupi.</p></div></div><div class="book-page161-copy"><h1>Kujumlisha fedha</h1><p>Unapojumlisha fedha zinazohusisha shilingi na senti zingatia kuwa shilingi moja ni sawa na senti 100.</p></div><div class="book-example-card book-page161-example"><div class="book-example-label">Mfano wa 1</div><p>sh 500 st 20 + sh 380 st 70 =</p><h2>Hatua</h2><ol><li>Jumlisha senti: st 20 + st 70 = st 90. Andika st 90 katika nafasi ya senti.</li><li>Jumlisha shilingi: sh 500 + sh 380 = sh 880. Andika sh 880 katika nafasi ya shilingi.</li></ol><p>Kwa hiyo, jibu ni sh 880 st 90</p></div></section>`;
+  };
+
+  const renderPage162 = () => {
+    const content=document.querySelector('#content');if(!content)return;
+    content.className='book-page book-page-162 book-after-page15 book-after-page18 opacity-100 visible';
+    content.innerHTML=`<section data-section-id="pg168_sec001"><div class="book-example-card book-page162-example"><div class="book-example-label">Mfano wa 2</div><img src="images/pg168_im002_seg001_v1.png" alt="Kujumlisha shilingi 4596 senti 65 na shilingi 3987 senti 75"></div><div class="book-example-card book-page162-example second"><div class="book-example-label">Mfano wa 3</div><img src="images/pg168_im002_seg002_v1.png" alt="Kujumlisha shilingi 11650 na shilingi 78450"></div></section>`;
+  };
+
+  const renderPage163 = () => {
+    const content=document.querySelector('#content');if(!content)return;
+    const sums=['sh 5000 + sh 4000 =','sh 2438 + sh 4326 =','sh 1326 + sh 1318 =','sh 625445 st 50 + sh 357223 st 85 =','sh 14955 st 50 + sh 4955 st 55 =','sh 423293 st 45 + sh 549314 st 45 =','sh 4521 + sh 2183 =','sh 1326 + sh 2788 =','sh 625 st 45 + sh 364 st 20 =','sh 5001 st 80 + sh 4999 st 45 =','sh 1060 st 05 + sh 2175 st 15 =','sh 714370 st 80 + sh 3056 st 35 =','sh 433270 st 55 + sh 433865 st 45 =','sh 385534 st 05 + sh 453057 st 45 =','sh 60250 + sh 28970 ='];
+    content.className='book-page book-page-163 book-after-page15 book-after-page18 opacity-100 visible';
+    content.innerHTML=`<section data-section-id="pg169_sec001"><div class="book-exercise-sheet book-page163-exercise"><h1 class="book-exercise-title">Zoezi la 5</h1><div class="book-page163-sums">${sums.map((x,i)=>`<div><span>${i+1}.</span><p>${x}</p><i></i><i></i></div>`).join('')}</div></div></section>`;
+  };
+
+  const renderPage164 = () => {
+    const content=document.querySelector('#content');if(!content)return;
+    const ex=[['1','Sabina aliuza kuku wawili. Kuku wa kwanza aliuzwa kwa sh 33,620 na wa pili aliuzwa kwa shilingi 22,350. Je, Sabina alipata fedha kiasi gani?','sh 33620','sh 22350','sh 55970','Kwa hiyo, Sabina alipata kiasi cha sh 55,970.'],['2','Mapunda alitumia shilingi 245,950 kwa mwezi kununua maziwa na shilingi 152,850 kwa kulipia usafiri. Jumla alitumia kiasi gani cha fedha?','sh 245950','sh 152850','sh 398800','Kwa hiyo, Mapunda alitumia jumla ya shilingi 398,800.']];
+    content.className='book-page book-page-164 book-after-page15 book-after-page18 opacity-100 visible';
+    content.innerHTML=`<section data-section-id="pg170_sec001"><h1 class="book-page164-title">Mafumbo yenye dhana ya kujumlisha fedha</h1>${ex.map(([n,q,a,b,c,d])=>`<div class="book-example-card book-page164-example"><div class="book-example-label">Mfano wa ${n}</div><p>${q}</p><h2>Njia</h2><div class="book-page164-stack"><span>${a}</span><span>+ &nbsp; ${b}</span><i></i><span>${c}</span></div><p>${d}</p></div>`).join('')}</section>`;
+  };
+
+  const renderPage165 = () => {
+    const content=document.querySelector('#content');if(!content)return;
+    const qs=['Saidi aliamua kuuza kuku wawili. Kuku wa kwanza aliuzwa kwa sh 13,600 na wa pili aliuzwa kwa Sh 16,250. Je, Saidi alipata fedha kiasi gani?','Muuza mboga alipata noti za shilingi 5000, 2000, 1000 na sarafu ya shilingi 200 baada ya mauzo ya mboga. Tafuta jumla ya fedha alizopata.','Yohana aliuza mayai kwa shilingi 8,600 na kuku kwa shilingi 17,500. Je, alipata jumla ya shilingi ngapi?','Maria aliweka akiba ya fedha benki kiasi cha shilingi 230,000. Ikiwa benki ilimwongezea shilingi 4,550 na senti 75 kama faida. Je, Maria atakuwa na jumla ya akiba ya shilingi ngapi?','Kikundi fulani cha vijana kilianzisha mradi wa kufuga nyuki. Kilitumia shilingi 42,400 kuandaa mizinga na shilingi 48,200 kununulia vifaa vya kurina asali. Je, kilitumia kiasi gani cha fedha kuanzisha mradi huo?','Mpishi alinunua gunia la mkaa kwa shilingi 43,350 na gunia la mahindi kwa shilingi 55,600. Jumla alilipa kiasi gani cha fedha?','Mwanafunzi alinunua kitabu cha Hisabati kwa shilingi 9,500 na daftari za shilingi 2,600. Je, alitumia kiasi gani cha fedha katika manunuzi yake?','Bupe alinunua mchele kwa shilingi 438,000. Baada ya kuuza alipata faida ya shilingi 96,000. Je, aliuza mchele kwa shilingi ngapi?','Jeni alipata hasara ya shilingi 2,500 baada ya kuuza bidhaa kwa shilingi 87,500. Je, bidhaa hiyo ilikuwa imenunuliwa kwa kiasi gani?'];
+    content.className='book-page book-page-165 book-after-page15 book-after-page18 opacity-100 visible';
+    content.innerHTML=`<section data-section-id="pg171_sec001"><div class="book-exercise-sheet book-page165-exercise"><h1 class="book-exercise-title">Zoezi la 6</h1>${qs.map((q,i)=>`<div><span>${i+1}.</span><p>${q}</p></div>`).join('')}</div></section>`;
+  };
+
+  const moneyOperationStack=(operator,a,b)=>`<div class="book-money-stack"><span>${a}</span><span>${operator} &nbsp; ${b}</span><i></i><i></i></div>`;
+  const moneyStack=(a,b)=>moneyOperationStack('−',a,b);
+  const renderPage166 = () => {
+    const content=document.querySelector('#content');if(!content)return;
+    content.className='book-page book-page-166 book-after-page15 book-after-page18 opacity-100 visible';
+    content.innerHTML=`<section data-section-id="pg172_sec001"><div class="book-page166-cont"><span>10.</span><p>Juhudi alipata zawadi ya shilingi 52,500 baada ya kufaulu mtihani wa Hisabati. Pia, mama yake alimpatia shilingi 21,700. Iwapo Juhudi alikuwa na shilingi 18,550 kabla ya zawadi, je, jumla alikuwa na kiasi gani cha fedha?</p></div><div class="book-page166-copy"><h1>Kutoa fedha</h1><p>Tendo la kutoa fedha hufanyika kama kutoa namba nzima kwa kuanzia kulia kwenda kushoto.</p></div><div class="book-example-card book-page166-example"><div class="book-example-label">Mfano wa 1</div><p>sh 48 965 st 95 − sh 25 843 st 85 =</p><h2>Hatua</h2><ol><li>Toa senti: 95 − 85 = st 10. Andika senti katika nafasi ya senti</li><li>Toa shilingi: 48 965 − 25 843 = sh 23 122. Andika shilingi katika nafasi ya shilingi.</li></ol><p>Kwa hiyo, jibu ni sh 23 122 st 10.</p></div><div class="book-example-card book-page166-example second"><div class="book-example-label">Mfano wa 2</div>${moneyStack('sh 83721 st 85','sh 61510 st 40')}<h2>Hatua</h2><p>Toa senti: 85 − 40 = st 45</p><p>Andika st 45 katika nafasi ya senti</p></div></section>`;
+  };
+
+  const renderPage167 = () => {
+    const content=document.querySelector('#content');if(!content)return;
+    content.className='book-page book-page-167 book-after-page15 book-after-page18 opacity-100 visible';
+    content.innerHTML=`<section data-section-id="pg173_sec001"><div class="book-example-card book-page167-cont"><p>Toa shilingi:</p><p>83721 − 61510 = sh 22211</p><p>Andika sh 22211 katika nafasi ya shilingi</p><p>Kwa hiyo, jibu ni sh 22211 st 45.</p></div><div class="book-example-card book-page167-example"><div class="book-example-label">Mfano wa 3</div>${moneyStack('sh 869335 st 30','sh 427123 st 70')}<h2>Hatua</h2><ol><li>Toa senti: 30 − 70 haitoshelezi. Chukua shilingi moja kutoka katika shilingi 5 badili kuwa na st 100. Jumlisha senti: 100 + 30 = st 130. Toa senti: 130 − 70 = st 60. Andika st 60 katika nafasi ya senti. Kumbuka umechukua shilingi 1 kwenye shilingi 5. Hivyo, umebakiwa na shilingi 4.</li><li>Toa shilingi: 869334 − 427123 = sh 442211. Andika sh 442211 katika nafasi ya shilingi</li></ol><p>Kwa hiyo, jibu ni sh 442,211 st 60.</p></div></section>`;
+  };
+
+  const renderPage168 = () => {
+    const content=document.querySelector('#content');if(!content)return;
+    const sums=['sh 4561 − sh 2364 =','sh 5751 − sh 4030 =','sh 7620 − sh 5245 =','sh 90900 − 75300 =','sh 58675 − sh 39248 =','sh 89990 − sh 68990 =','sh 914955 st 60 − sh 612950 st 05 =','sh 870300 st 40 − sh 413200 st 25 ='];
+    content.className='book-page book-page-168 book-after-page15 book-after-page18 opacity-100 visible';
+    content.innerHTML=`<section data-section-id="pg174_sec001"><div class="book-example-card book-page168-example"><div class="book-example-label">Mfano wa 4</div>${moneyStack('sh 4180','sh 2494')}<h2>Njia</h2>${moneyStack('sh 4180','sh 2494')}<p>Kwa hiyo, jibu ni sh 1,686.</p></div><div class="book-exercise-sheet book-page168-exercise"><h1 class="book-exercise-title">Zoezi la 7</h1>${sums.map((q,i)=>`<div><span>${i+1}.</span><p>${q}</p></div>`).join('')}</div></section>`;
+  };
+
+  const renderPage169 = () => {
+    const content=document.querySelector('#content');if(!content)return;
+    const sums=[['sh 4330','sh 1215'],['sh 6779','sh 4125'],['sh 80560','sh 60590'],['sh 99100','sh 65700'],['sh 75750','sh 25920'],['sh 35000','sh 20090'],['sh 21800','sh 15350'],['sh 42300','sh 18800'],['sh 720561 st 65','sh 310340 st 40'],['sh 564868 st 25','sh 19853 st 75']];
+    content.className='book-page book-page-169 book-after-page15 book-after-page18 opacity-100 visible';
+    content.innerHTML=`<section data-section-id="pg175_sec001"><div class="book-exercise-sheet book-page169-exercise"><div class="book-page169-sums">${sums.map((r,i)=>`<div><span>${i+9}.</span>${moneyStack(r[0],r[1])}</div>`).join('')}</div></div></section>`;
+  };
+
+  const renderPage170 = () => {
+    const content=document.querySelector('#content');if(!content)return;
+    const sums=[['sh 867662 st 20','sh 453221 st 10'],['sh 954330 st 30','sh 623220 st 10'],['sh 212011 st 10','sh 11102 st 60'],['sh 68654 st 14','sh 18129 st 14'],['sh 4500 st 80','sh 180 st 45'],['sh 100 st 10','sh 90 st 20'],['sh 945601 st 70','sh 431102 st 60']];
+    content.className='book-page book-page-170 book-after-page15 book-after-page18 opacity-100 visible';
+    content.innerHTML=`<section data-section-id="pg176_sec001"><div class="book-exercise-sheet book-page170-exercise"><div class="book-page170-sums">${sums.map((r,i)=>`<div><span>${i+19}.</span>${moneyStack(r[0],r[1])}</div>`).join('')}</div></div></section>`;
+  };
+
+  const renderPage171 = () => {
+    const content=document.querySelector('#content');if(!content)return;
+    const ex=[['1','Anna alikuwa na shilingi 80,800. Alitumia shilingi 20,000 kununua sare za shule na shilingi 17,500 kununua madaftari. Je, Anna alibakiwa na kiasi gani cha fedha?','Sare za shule: sh 20000','Madaftari: + sh 17500','sh 37500','Anna alitumia jumla ya shilingi 37,500 kununulia sare za shule na madaftari. Chukua kiasi alichokuwa nacho, toa kiasi alichotumia.','sh 80800','sh 37500','sh 43300','Kwa hiyo, Anna alibakiwa na shilingi 43,300.'],['2','Petro aliuza ng’ombe mmoja kwa shilingi 450,000 siku ya mnada. Baada ya mnada alimpa mtoto wake kiasi cha shilingi 215,000 kwa ajili ya mahitaji ya shule. Je, Petro alibakiwa na kiasi gani?','Bei ya ng’ombe: sh 450000','Kiasi alichotoa: − sh 215000','sh 235000','','','','','Petro alibakiwa na sh 235,000.']];
+    content.className='book-page book-page-171 book-after-page15 book-after-page18 opacity-100 visible';
+    content.innerHTML=`<section data-section-id="pg177_sec001"><h1 class="book-page171-title">Mafumbo yenye dhana ya kutoa fedha ya Tanzania</h1>${ex.map(([n,q,a,b,c,d,e,f,g,h])=>`<div class="book-example-card book-page171-example"><div class="book-example-label">Mfano wa ${n}</div><p>${q}</p><h2>Njia</h2><div class="book-page171-method"><span>${a}</span><span>${b}</span><i></i><span>${c}</span></div>${d?`<p>${d}</p>`:''}${e?`<div class="book-page171-method"><span>${e}</span><span>− &nbsp; ${f}</span><i></i><span>${g}</span></div>`:''}<p>${h}</p></div>`).join('')}</section>`;
+  };
+
+  const renderPage172 = () => {
+    const content=document.querySelector('#content');if(!content)return;
+    const qs=['Halima alikwenda dukani na shilingi 5,000 kununua sukari. Alinunua sukari kilo moja kwa shilingi 3,325. Je, Halima alirudi nyumbani na shilingi ngapi?','Musa alipata faida ya shilingi 2,070 baada ya kuuza mahindi kwa shilingi 97,650. Je, alinunua mahindi hayo kwa shilingi ngapi?','Bahati alikuwa na shilingi 10,000. Aliwapatia watoto wake wawili fedha hiyo kwa ajili ya nauli. Iwapo alimpatia mtoto mmoja shilingi 4,600, mtoto wa pili alimpatia shilingi ngapi?','Rehema alikuwa na shilingi 75,000 na alitumia shilingi 31,650. Je, Rehema alibakiwa na shilingi ngapi?','Seif alichukua shilingi 85,000 katika akiba yake iliyokuwa benki. Alilipia umeme wa shilingi 50,449 na senti 25 na maji shilingi 15,000 na senti 75. Je, Seif alibakiza kiasi gani cha fedha?','Mwanaheri alipewa sh 60,000 na baba yake kwa ajili ya kununua mahitaji ya shule. Iwapo alinunua madaftari kwa sh 31,500 na kitabu kwa sh 8,500. Je, Mwanaheri alibakiwa na shilingi ngapi?','Safina alipewa shilingi 1,000 kwa matumizi ya shule. Akanunua maji ya shilingi 450 na chapati ya shilingi 300. Je, Safina alibakiwa na shilingi ngapi?','Pendo alikuwa na shilingi 90,000. Alinunua mashuka mawili kwa shilingi 32,500 na gauni kwa shilingi 40,000. Je, alibakiwa na shilingi ngapi?','Josefu alikuwa na shilingi 350,000. Alitumia shilingi 127,500. Je, alibakiwa na shilingi ngapi?','Fabian alinunua runinga kwa shilingi 435,250. Baadae akaiuza kwa shilingi 582,950. Je, alipata kiasi gani cha fedha zaidi ya bei aliyonunulia?'];
+    content.className='book-page book-page-172 book-after-page15 book-after-page18 opacity-100 visible';
+    content.innerHTML=`<section data-section-id="pg178_sec001"><div class="book-exercise-sheet book-page172-exercise"><h1 class="book-exercise-title">Zoezi la 8</h1>${qs.map((q,i)=>`<div><span>${i+1}.</span><p>${q}</p></div>`).join('')}</div></section>`;
+  };
+
+  const renderPage173 = () => {
+    const content=document.querySelector('#content');if(!content)return;
+    content.className='book-page book-page-173 book-after-page15 book-after-page18 opacity-100 visible';
+    content.innerHTML=`<section data-section-id="pg179_sec001"><div class="book-page173-work"><h1>Kazi ya kufanya</h1><p>Kujifunza zaidi juu ya fedha ya Tanzania kwa njia ya masomo mtandaoni</p><h2>Maelezo</h2><p>Tumia masomo ya mtandaoni kujifunza hesabu za kujumlisha na kutoa fedha katika shilingi na senti.</p></div><div class="book-page173-reminder"><h1>Jikumbushe</h1><ol><li>Unapotenga shilingi na senti katika tarakimu, senti huandikwa kwa tarakimu mbili</li><li>Senti mia moja ni sawa na shilingi moja</li><li>Unapojumlisha na kutoa fedha, anza na senti kisha shilingi</li><li>Fedha ya Tanzania ipo katika sarafu na noti zenye thamani mbalimbali</li><li>Fedha hutumika wakati wa kufanya malipo. Aidha, huonesha thamani ya vitu kwa njia ya bei</li></ol></div><div class="book-page173-vocab"><h1>Msamiati</h1><p><b>Noti</b><span>Fedha iliyotengenezwa kwa kipande cha karatasi maalumu.</span></p><p><b>Sarafu</b><span>Fedha iliyotengenezwa kwa kutumia madini.</span></p></div></section>`;
+  };
+
+  const renderPage174 = () => {
+    const content=document.querySelector('#content');if(!content)return;
+    content.className='book-page book-page-174 book-after-page15 book-after-page18 opacity-100 visible';
+    content.innerHTML=`<section data-section-id="pg180_sec001"><div class="book-page174-review"><h1>Zoezi la Marudio</h1><p>Chunguza noti zifuatazo, kisha jibu swali la 1 hadi 3.</p><figure><figcaption>(a)</figcaption><img src="images/pg180_im001.jpg" alt="Noti ya shilingi elfu tano upande wa mbele"><img src="images/pg180_im002.jpg" alt="Noti ya shilingi elfu tano upande wa nyuma"></figure><figure><figcaption>(b)</figcaption><img src="images/pg180_im003.jpg" alt="Noti ya shilingi elfu kumi upande wa mbele"></figure></div></section>`;
+  };
+
+  const renderPage175 = () => {
+    const content=document.querySelector('#content');if(!content)return;
+    const sums=['sh 600 + sh 400 =','sh 4000 + sh 3700 =','sh 8700 + sh 900 =','sh 450 + sh 7300 + sh 100 =','sh 25300 + sh 60200 =','sh 52670 + sh 17380 =','sh 11500 + sh 80150 ='];
+    content.className='book-page book-page-175 book-after-page15 book-after-page18 opacity-100 visible';
+    content.innerHTML=`<section data-section-id="pg181_sec001"><div class="book-page175-review"><img src="images/pg181_im001.jpg" alt="Noti ya shilingi elfu kumi upande wa nyuma"><div class="book-page175-q"><span>1.</span><p>Taja majina ya noti (a) na (b).</p></div><div class="book-page175-q"><span>2.</span><p>Taja alama tatu zilizopo katika noti (a)</p></div><div class="book-page175-q"><span>3.</span><p>Taja alama tatu zilizopo katika noti (b)</p></div><div class="book-page175-q"><span>4.</span><div><p>Andika kiasi cha fedha zifuatazo kwa kifupi:</p><table><thead><tr><th>Fedha kwa maneno</th><th>Fedha kwa kifupi</th></tr></thead><tbody><tr><td>(a) Shilingi elfu moja mia moja na senti ishirini</td><td></td></tr><tr><td>(b) Shilingi mia sita arobaini na senti tano</td><td></td></tr></tbody></table></div></div>${sums.map((q,i)=>`<div class="book-page175-q"><span>${i+5}.</span><p>${q}</p></div>`).join('')}</div></section>`;
+  };
+
+  const renderPage176 = () => {
+    const content=document.querySelector('#content');if(!content)return;
+    const text=['sh 36800 + sh 44000 =','sh 63435 st 10 − sh 8375 st 65 =','sh 145489 st 15 − sh 51432 st 45 =','sh 32456 st 10 + sh 63367 st 65 =','sh 25445 st 50 + sh 57223 st 85 =','sh 7535 − sh 6025 =','sh 4050 − sh 2500 =','sh 392450 − sh 138510 =','sh 174000 − sh 35600 ='];
+    const stacks=[['sh 6430','sh 5240'],['sh 9883','sh 3265'],['sh 90527 st 85','sh 30210 st 80'],['sh 71171 st 00','sh 15101 st 50'],['sh 67501 st 70','sh 35322 st 35'],['sh 868660 st 45','sh 534330 st 15']];
+    content.className='book-page book-page-176 book-after-page15 book-after-page18 opacity-100 visible';
+    content.innerHTML=`<section data-section-id="pg182_sec001"><div class="book-page176-review">${text.map((q,i)=>`<div class="book-page176-line"><span>${i+12}.</span><p>${q}</p></div>`).join('')}<div class="book-page176-stacks">${stacks.map((r,i)=>`<div><span>${i+21}.</span>${moneyStack(r[0],r[1])}</div>`).join('')}</div></div></section>`;
+  };
+
+  const renderPage177 = () => {
+    const content=document.querySelector('#content');if(!content)return;
+    const stacks=[['+','sh 27800','sh 39400'],['+','sh 156280 st 15','sh 138270 st 30'],['+','sh 70880','sh 16970'],['+','sh 178850 st 45','sh 235112 st 55'],['+','sh 5075 st 05','sh 3350 st 50'],['−','sh 263009 st 65','sh 124087 st 55']];
+    const qs=['Suzana alipata shilingi 5,380 siku ya Jumamosi na shilingi 2,010 siku ya Jumatatu. Je, jumla alipata shilingi ngapi?','Paza hutumia shilingi 45,000 kwa mwezi kununua maziwa na shilingi 52,500 kwa usafiri. Jumla hutumia kiasi gani cha fedha?','Obedi anahitaji shilingi 5,500 ili aweze kununua viatu. Ikiwa ana shilingi 2,600, amepungukiwa shilingi ngapi ili aweze kununua viatu hivyo?','Diana alinunua mbuzi kwa shilingi 55,000 na akamuuza kwa shilingi 70,500. Je, alipata faida kiasi gani?'];
+    content.className='book-page book-page-177 book-after-page15 book-after-page18 opacity-100 visible';
+    content.innerHTML=`<section data-section-id="pg183_sec001"><div class="book-page177-review"><div class="book-page177-stacks">${stacks.map((r,i)=>`<div><span>${i+27}.</span>${moneyOperationStack(r[0],r[1],r[2])}</div>`).join('')}</div>${qs.map((q,i)=>`<div class="book-page177-q"><span>${i+33}.</span><p>${q}</p></div>`).join('')}</div></section>`;
+  };
+
+  const renderPage178 = () => {
+    const content=document.querySelector('#content');if(!content)return;
+    const qs=['Safina alipewa shilingi 1,000 kwa matumizi ya shule. Alinunua maji kwa shilingi 500 na pipi za shilingi 250. Safina alibakiwa na shilingi ngapi?','Nasibu alitoa noti ya shilingi 10,000 kulipia nauli ya basi kiasi cha shilingi 6,500. Alirudishiwa kiasi gani cha fedha?','Mwezi uliopita Skola aliweka akiba ya shilingi 5,600 na mwezi huu tayari ameweka shilingi 2,500. Je, mpaka sasa ana kiasi gani cha fedha?','Ali alitumia shilingi 25,000 kununua viatu, shilingi 30,000 kwa ajili ya nauli na shilingi 45,000 kwa ajili ya sare. Je, jumla alitumia shilingi ngapi?'];
+    content.className='book-page book-page-178 book-after-page15 book-after-page18 opacity-100 visible';
+    content.innerHTML=`<section data-section-id="pg184_sec001"><div class="book-page178-review">${qs.map((q,i)=>`<div><span>${i+37}.</span><p>${q}</p></div>`).join('')}</div></section>`;
+  };
+
   if (page === 22) renderPage16();
   if (page === 23) renderPage17();
   if (page === 24) renderPage18();
@@ -954,6 +1406,66 @@
   if (page === 122) renderPage116();
   if (page === 123) renderPage117();
   if (page === 124) renderPage118();
+  if (page === 125) renderPage119();
+  if (page === 126) renderPage120();
+  if (page === 127) renderPage121();
+  if (page === 128) renderPage122();
+  if (page === 129) renderPage123();
+  if (page === 130) renderPage124();
+  if (page === 131) renderPage125();
+  if (page === 132) renderPage126();
+  if (page === 133) renderPage127();
+  if (page === 134) renderPage128();
+  if (page === 135) renderPage129();
+  if (page === 136) renderPage130();
+  if (page === 137) renderPage131();
+  if (page === 138) renderPage132();
+  if (page === 139) renderPage133();
+  if (page === 140) renderPage134();
+  if (page === 141) renderPage135();
+  if (page === 142) renderPage136();
+  if (page === 143) renderPage137();
+  if (page === 144) renderPage138();
+  if (page === 145) renderPage139();
+  if (page === 146) renderPage140();
+  if (page === 147) renderPage141();
+  if (page === 148) renderPage142();
+  if (page === 149) renderPage143();
+  if (page === 150) renderPage144();
+  if (page === 151) renderPage145();
+  if (page === 152) renderPage146();
+  if (page === 153) renderPage147();
+  if (page === 154) renderPage148();
+  if (page === 155) renderPage149();
+  if (page === 156) renderPage150();
+  if (page === 157) renderPage151();
+  if (page === 158) renderPage152();
+  if (page === 159) renderPage153();
+  if (page === 160) renderPage154();
+  if (page === 161) renderPage155();
+  if (page === 162) renderPage156();
+  if (page === 163) renderPage157();
+  if (page === 164) renderPage158();
+  if (page === 165) renderPage159();
+  if (page === 166) renderPage160();
+  if (page === 167) renderPage161();
+  if (page === 168) renderPage162();
+  if (page === 169) renderPage163();
+  if (page === 170) renderPage164();
+  if (page === 171) renderPage165();
+  if (page === 172) renderPage166();
+  if (page === 173) renderPage167();
+  if (page === 174) renderPage168();
+  if (page === 175) renderPage169();
+  if (page === 176) renderPage170();
+  if (page === 177) renderPage171();
+  if (page === 178) renderPage172();
+  if (page === 179) renderPage173();
+  if (page === 180) renderPage174();
+  if (page === 181) renderPage175();
+  if (page === 182) renderPage176();
+  if (page === 183) renderPage177();
+  if (page === 184) renderPage178();
 
   // Fidelity corrections shared by the addition chapter and repeated layouts.
   if (page === 40) {

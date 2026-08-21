@@ -66,6 +66,16 @@ body, p, h1, h2, h3, h4, h5, h6, span, div, button, input, textarea, select {
   font-family: "Sassoon Primary", sans-serif;
 }
 
+/* The HTML book reproduces a printed page, not an answer form. Hide exported
+   activity controls immediately; book-fidelity.js then removes them from the
+   live document and suppresses the delayed submission action. */
+#content input,
+#content textarea,
+#content select,
+#content button {
+  display: none !important;
+}
+
 /* The print book uses the upright Sassoon face throughout. Several converted
    pages carried Tailwind's `italic` utility even though the PDF text is not an
    italic face, so normalize all book content here. */
@@ -115,19 +125,27 @@ body, p, h1, h2, h3, h4, h5, h6, span, div, button, input, textarea, select {
 
 /* Preliminary titles begin below the 118px top fade. */
 [data-section-type="table_of_contents"] > div:first-child {
-  padding-top: 138px !important;
+  padding-top: 152px !important;
   padding-bottom: 34px !important;
   background-image: none !important;
   background-color: transparent !important;
 }
 
 [data-section-type="credits"] > div {
-  padding-top: 138px !important;
+  padding-top: 153px !important;
 }
 
 [data-section-type="credits"] > div > .pt-10 {
   padding-top: 0 !important;
-  padding-bottom: 28px !important;
+  padding-bottom: 45px !important;
+}
+
+[data-section-type="credits"] .adt-body,
+[data-section-type="credits"] .adt-body *,
+[data-section-type="credits"] p,
+[data-section-type="credits"] p * {
+  font-size: 24px !important;
+  line-height: 1.28 !important;
 }
 
 [data-section-type="foreword"] {
@@ -136,7 +154,25 @@ body, p, h1, h2, h3, h4, h5, h6, span, div, button, input, textarea, select {
 }
 
 [data-section-type="foreword"] > .relative.z-10.flex-1 {
-  padding-top: 138px !important;
+  padding-top: 153px !important;
+}
+
+[data-section-type="foreword"] h1 {
+  margin-bottom: 0 !important;
+}
+
+[data-section-type="foreword"] .adt-body,
+[data-section-type="foreword"] .adt-body * {
+  font-size: 24px !important;
+  line-height: 1.25 !important;
+}
+
+[data-section-type="foreword"] p.mb-6 {
+  margin-bottom: 20px !important;
+}
+
+[data-section-type="foreword"] .flex.flex-col.items-start.gap-5 {
+  gap: 40px !important;
 }
 
 [data-section-type="table_of_contents"] h1,
@@ -320,33 +356,34 @@ main {
 }
 
 [data-section-type="front_cover"] .pt-16 {
-  padding-top: 22px !important;
+  padding-top: 88px !important;
 }
 
 [data-section-type="front_cover"] .adt-h1 {
   font-family: "Sassoon Primary", sans-serif;
-  font-size: 92px;
+  font-size: 90px;
   line-height: 1;
   letter-spacing: .035em;
   color: var(--book-primary) !important;
+  transform: scaleX(1.18);
 }
 
 [data-section-type="front_cover"] .adt-h2 {
-  font-size: 44px;
+  font-size: 36px;
   line-height: 1.15;
   color: var(--book-primary) !important;
 }
 
 [data-section-type="front_cover"] .adt-h3 {
-  font-size: 34px;
+  font-size: 30px;
   line-height: 1.15;
   color: var(--book-primary) !important;
 }
 
 [data-section-type="front_cover"] .max-w-3xl {
-  width: 468px;
+  width: 510px;
   max-width: 100%;
-  margin-top: 58px !important;
+  margin-top: 22px !important;
 }
 
 [data-section-type="front_cover"] .max-w-3xl img {
@@ -364,7 +401,13 @@ main {
 
 /* Copyright/inside-cover page. */
 [data-section-type="inside_cover"] > .relative {
-  padding: 104px 86px 48px !important;
+  padding: 129px 46px 48px !important;
+}
+
+[data-section-type="inside_cover"] .adt-body,
+[data-section-type="inside_cover"] .adt-body * {
+  font-size: 24px !important;
+  line-height: 1.28 !important;
 }
 
 [data-section-type="inside_cover"] .min-h-\[1360px\] {
@@ -449,7 +492,7 @@ main {
 
 .chapter-title-block {
   width: 100%;
-  margin-top: 106px;
+  margin-top: 120px;
   padding: 15px 24px 18px;
   border: 0;
   border-radius: 0 16px 0 16px;
@@ -948,6 +991,19 @@ input[data-activity-item]:focus {
   padding-bottom: 102px !important;
 }
 
+#content#content [data-section-id="pg010_sec001"] {
+  padding-top: 70px !important;
+}
+
+#content#content [data-section-id="pg010_sec001"] .space-y-4 {
+  row-gap: 8px !important;
+}
+
+#content#content [data-section-id="pg010_sec001"] table :is(th, td) {
+  padding-top: 9px !important;
+  padding-bottom: 9px !important;
+}
+
 /* All activity pages use the same horizontal column established on page iv. */
 #content:has(> section[data-section-type^="activity_"]) {
   padding-left: 0 !important;
@@ -1364,6 +1420,132 @@ input[data-activity-item]:focus {
   font-size: 24px !important;
 }
 
+/* Printed page 5: one continuous Zoezi surface, compact option grids, and the
+   highlighted-digit artwork cropped directly from the PDF. */
+#content#content [data-section-id="pg011_sec001"] {
+  padding-top: 63px !important;
+}
+
+#content#content [data-section-id="pg011_sec001"] > div {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+#content#content [data-section-id="pg011_sec001"] > div:first-child .grid > div {
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+}
+
+#content#content [data-section-id="pg011_sec001"] > div:first-child .grid {
+  gap: 14px 34px !important;
+}
+
+#content#content [data-section-id="pg011_sec001"] > div:first-child .grid > div > div {
+  margin-bottom: 0 !important;
+}
+
+#content#content [data-section-id="pg011_sec001"] > div:first-child .font-semibold {
+  font-weight: 400 !important;
+  -webkit-text-stroke: 0 !important;
+}
+
+#content#content [data-section-id="pg011_sec001"] .book-page5-q7-artwork {
+  display: block !important;
+  width: 580px !important;
+  max-width: 100% !important;
+  height: auto !important;
+  margin: 8px auto 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+#content#content [data-section-id="pg011_sec001"] fieldset {
+  padding: 0 !important;
+}
+
+#content#content [data-section-id="pg011_sec001"] fieldset ol {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 24px !important;
+}
+
+#content#content [data-section-id="pg011_sec001"] fieldset li,
+#content#content [data-section-id="pg011_sec001"] fieldset li > div > div {
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+#content#content [data-section-id="pg011_sec001"] fieldset li > div {
+  row-gap: 0 !important;
+}
+
+#content#content [data-section-id="pg011_sec001"] fieldset label::after {
+  content: "________";
+  margin-left: 8px;
+  letter-spacing: 1px;
+}
+
+/* Printed page 6: restore the source top margin and table proportions. */
+#content#content [data-section-id="pg012_sec001"] {
+  padding-top: 78px !important;
+}
+
+#content#content [data-section-id="pg012_sec001"] .overflow-x-auto:has(> table) {
+  padding-top: 36px !important;
+}
+
+#content#content [data-section-id="pg012_sec001"] table {
+  height: 508px !important;
+}
+
+/* Printed page 7: static answer rules replace the removed form fields while
+   preserving the two-line rhythm of every option. */
+#content#content [data-section-id="pg013_sec001"] {
+  padding-top: 76px !important;
+}
+
+#content#content [data-section-id="pg013_sec001"] header {
+  margin-bottom: 10px !important;
+}
+
+#content#content [data-section-id="pg013_sec001"] ol {
+  row-gap: 8px !important;
+}
+
+#content#content [data-section-id="pg013_sec001"] li {
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+}
+
+#content#content [data-section-id="pg013_sec001"] li strong {
+  font-weight: 400 !important;
+  -webkit-text-stroke: 0 !important;
+}
+
+#content#content [data-section-id="pg013_sec001"] li label::after {
+  content: "_____";
+  display: inline-block;
+  margin-left: 5px;
+  letter-spacing: 1px;
+}
+
+#content#content [data-section-id="pg013_sec001"] li > div > div {
+  column-gap: 8px !important;
+  row-gap: 0 !important;
+  line-height: 30px !important;
+}
+
 /* Final enlarged book scale, matching the printed text inside Q7's diagram. */
 #content#content :is(.adt-body, .fitb-sentence, .text-base, .text-lg, .text-xl, p, label, li, td, th) {
   font-size: 28px !important;
@@ -1536,6 +1718,7 @@ input[data-activity-item]:focus {
 }
 
 #content#content [data-section-id="pg014_sec001"] {
+  padding-top: 66px !important;
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
@@ -1547,6 +1730,47 @@ input[data-activity-item]:focus {
 
 #content#content [data-section-id="pg014_sec001"] .space-y-5:has([data-id="pg014_n0004"]) > div > div {
   gap: 10px !important;
+}
+
+/* Non-interactive answer rules preserve the printed page without exposing
+   form controls or submission behaviour. */
+#content#content .book-static-answer-rule {
+  display: inline-block !important;
+  width: var(--book-answer-width, 80px) !important;
+  min-width: var(--book-answer-width, 80px) !important;
+  height: 0.9em !important;
+  margin: 0 3px !important;
+  border: 0 !important;
+  border-bottom: 1.5px solid #333 !important;
+  background: transparent !important;
+  vertical-align: baseline !important;
+}
+
+#content#content .book-static-answer-area {
+  display: block !important;
+  width: var(--book-answer-width, 180px) !important;
+  height: var(--book-answer-height, 70px) !important;
+  border: 0 !important;
+  border-bottom: 1.5px solid #333 !important;
+  background: transparent !important;
+}
+
+#content#content [data-section-id="pg014_sec001"] .space-y-5:has([data-id="pg014_n0004"]) {
+  row-gap: 8px !important;
+}
+
+#content#content#content [data-section-id="pg014_sec001"] :is(
+  [data-id="pg014_n0005"],
+  [data-id="pg014_n0008"],
+  [data-id="pg014_n0011"],
+  [data-id="pg014_n0014"]
+) label > .book-static-answer-rule {
+  display: inline-block !important;
+  width: 66px !important;
+  min-width: 66px !important;
+  height: 25px !important;
+  margin-left: 6px !important;
+  border-bottom: 1.5px solid #333 !important;
 }
 
 [data-section-id="pg014_sec001"] :is(
@@ -1597,11 +1821,58 @@ input[data-activity-item]:focus {
 }
 
 #content#content .book-example-card {
+  box-sizing: border-box !important;
+  width: 704px !important;
+  max-width: calc(100% - 24px) !important;
+  margin: 60px 0 0 !important;
+  align-self: flex-start !important;
   overflow: visible !important;
   border: 1.5px solid #9b8705 !important;
   border-radius: 0 14px 0 14px !important;
   background: #fff !important;
   box-shadow: none !important;
+}
+
+/* A converter wrapper may contain several real Mfano cards. It is layout
+   only: styling it as another card creates the random connecting rules. */
+#content#content .book-example-card:has(> .book-example-card) {
+  width: 704px !important;
+  max-width: calc(100% - 24px) !important;
+  margin: 0 !important;
+  align-self: flex-start !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+#content#content .book-example-card:has(> .book-example-card) > .book-example-card {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+#content#content .book-example-card:has(> .book-example-card) > .book-example-card + .book-example-card {
+  margin-top: 52px !important;
+}
+
+/* Source prose is justified to a clean left and right edge. Component labels,
+   captions and compact arithmetic remain naturally left-aligned. */
+#content#content section p {
+  text-align: justify !important;
+  text-justify: inter-word;
+}
+#content#content :is(
+  .book-example-card,
+  .book-exercise-panel,
+  .book-work-dialog,
+  .book-recall-dialog,
+  figure,
+  figcaption,
+  .adt-caption,
+  .book-arithmetic-stack
+) p {
+  text-align: left !important;
 }
 
 /* Abacus diagrams in examples are compact and centred in the printed book. */
@@ -1647,10 +1918,26 @@ input[data-activity-item]:focus {
 
 /* Shared Zoezi treatment, matching the peach-and-cream panel on page 3. */
 #content#content .book-exercise-panel {
+  box-sizing: border-box !important;
+  width: 704px !important;
+  max-width: calc(100% - 24px) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
   border: 0 !important;
-  border-radius: 0 !important;
+  border-radius: 0 0 0 12px !important;
   background: #f7f4e8 !important;
   background-color: #f7f4e8 !important;
+  box-shadow: none !important;
+}
+
+/* The section around a Zoezi is only a positioning wrapper. Converter sky
+   fills and padding create the false outer border seen on printed page 119. */
+#content#content > section:has(> .book-exercise-panel) {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
   box-shadow: none !important;
 }
 
@@ -1665,7 +1952,7 @@ input[data-activity-item]:focus {
   margin-right: 0 !important;
   padding: 7px 10px !important;
   border: 0 !important;
-  border-radius: 0 !important;
+  border-radius: 0 12px 0 12px !important;
   background: #f7c79d !important;
   text-align: left !important;
   box-shadow: 0 5px 8px rgba(0, 0, 0, .14) !important;
@@ -1683,6 +1970,19 @@ input[data-activity-item]:focus {
   font-weight: 700 !important;
   line-height: 1.18 !important;
   box-shadow: none !important;
+}
+
+#content#content .book-exercise-heading.book-exercise-heading-row {
+  display: block !important;
+  width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding: 7px 10px !important;
+  border: 0 !important;
+  border-radius: 0 12px 0 12px !important;
+  background: #f7c79d !important;
+  text-align: left !important;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, .14) !important;
 }
 
 /* Printed page 9: the title is only slightly larger than the 28px body copy. */
@@ -1720,7 +2020,8 @@ input[data-activity-item]:focus {
 }
 
 #content#content [data-section-id="pg015_sec001"] > div:last-child [data-id="pg015_n0009"] {
-  font-size: 0 !important;
+  color: #fff !important;
+  font-size: 25px !important;
 }
 
 /* The generated wrapper was drawing a second tab around the real label. */
@@ -1733,13 +2034,23 @@ input[data-activity-item]:focus {
 }
 
 #content#content [data-section-id="pg015_sec001"] > div:last-child [data-id="pg015_n0009"]::after {
-  content: "Mfano wa 1";
-  color: #fff;
-  font-size: 25px;
+  content: none !important;
 }
 
 #content#content [data-section-id="pg015_sec001"] > div:last-child > div:last-child {
   padding: 14px 10px 28px !important;
+}
+
+#content#content [data-section-id="pg015_sec001"] [data-id="pg015_im001"] {
+  width: 480px !important;
+  max-width: 480px !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+#content#content [data-section-id="pg015_sec001"] > div:has(> [data-id="pg015_im001"]) {
+  margin-bottom: 22px !important;
 }
 
 /* Page 10 continues the same example frame and the same page-wide alignment. */
@@ -1773,25 +2084,48 @@ input[data-activity-item]:focus {
 }
 
 #content#content [data-section-id="pg016_sec001"] [data-id="pg016_n0008"] {
-  font-size: 0 !important;
+  color: #fff !important;
+  font-size: 25px !important;
 }
 
 #content#content [data-section-id="pg016_sec001"] [data-id="pg016_n0008"]::after {
-  content: "Mfano wa 2";
-  color: #fff;
-  font-size: 25px;
+  content: none !important;
+}
+
+#content#content [data-section-id="pg016_sec001"] :is([data-id="pg016_im001"], [data-id="pg016_im002"]) {
+  width: 300px !important;
+  max-width: 300px !important;
+  margin-bottom: 10px !important;
+  background: transparent !important;
 }
 
 /* Page 11: Mfano 3 has no nested answer card; Zoezi 2 is one cream panel. */
 #content#content [data-section-id="pg017_sec001"] {
   width: 650px !important;
-  padding: 0 !important;
+  padding: 95px 0 0 !important;
   background: transparent !important;
 }
 
 #content#content [data-section-id="pg017_sec001"] > div:first-child {
   margin: 0 0 18px !important;
-  padding: 14px 10px 12px !important;
+  padding: 10px 8px 8px !important;
+}
+
+#content#content [data-section-id="pg017_sec001"] > div:first-child > p {
+  margin: 0 0 2px !important;
+  font-size: 22px !important;
+  white-space: nowrap !important;
+}
+
+#content#content [data-section-id="pg017_sec001"] > div:first-child > div:has(> [data-id="pg017_im001"]) {
+  margin: 0 !important;
+}
+
+#content#content [data-section-id="pg017_sec001"] [data-id="pg017_im001"] {
+  width: 300px !important;
+  max-width: 300px !important;
+  margin-bottom: 0 !important;
+  background: transparent !important;
 }
 
 #content#content [data-section-id="pg017_sec001"] > div:first-child > div:last-child {
@@ -1852,7 +2186,7 @@ input[data-activity-item]:focus {
 /* Page 12 continues Zoezi 2: restored PDF diagrams for 3-6 and plain Q7. */
 #content#content [data-section-id="pg018_sec001"] {
   width: 650px !important;
-  padding: 0 !important;
+  padding: 75px 0 0 !important;
   background: transparent !important;
 }
 
@@ -1977,7 +2311,7 @@ input[data-activity-item]:focus {
 }
 
 #content#content:has([data-section-id="pg019_sec001"]) {
-  padding-top: 92px !important;
+  padding-top: 144px !important;
   background: #fff !important;
 }
 
@@ -2099,6 +2433,29 @@ input[data-activity-item]:focus {
   text-underline-offset: 4px;
 }
 
+#content#content:has([data-section-id="pg020_sec001"]) {
+  padding-top: 84px !important;
+}
+
+#content#content [data-section-id="pg020_sec001"] .book-static-answer-rule,
+#content#content [data-section-id="pg020_sec001"] .book-static-answer-area {
+  display: none !important;
+}
+
+#content#content [data-section-id="pg020_sec001"] .mb-8 > .grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  column-gap: 30px !important;
+  row-gap: 4px !important;
+  padding-left: 58px !important;
+}
+
+#content#content [data-section-id="pg020_sec001"] .mb-8 > .grid > div {
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+}
+
 #content#content.book-after-page13 :is(.adt-h1, .adt-h2):not(.book-example-label) {
   font-size: 28px !important;
   line-height: 1.18 !important;
@@ -2187,10 +2544,77 @@ input[data-activity-item]:focus {
 #content .book-tree-values { position: absolute !important; z-index: 2 !important; left: 0 !important; right: 0 !important; bottom: 0 !important; display: grid !important; grid-template-columns: repeat(4, 1fr) !important; justify-items: center !important; }
 #content .book-tree-values span { width: 59px !important; height: 59px !important; }
 
+/* Printed page 16: one continuous exercise sheet, not vertically distributed
+   cards. The title spans the sheet exactly as in the source. */
+#content#content [data-section-id="pg022_sec001"] {
+  display: block !important;
+  width: 650px !important;
+  min-height: 0 !important;
+  padding: 0 10px 18px !important;
+  background: #f7f4e8 !important;
+}
+
+#content#content [data-section-id="pg022_sec001"] [data-id="pg022_n0002"] {
+  display: block !important;
+  width: calc(100% + 20px) !important;
+  position: static !important;
+  inset: auto !important;
+  transform: none !important;
+  float: none !important;
+  margin: 0 -10px 12px !important;
+  padding: 7px 10px 8px !important;
+  border: 0 !important;
+  border-radius: 0 13px 0 13px !important;
+  background: #f7c79d !important;
+  box-shadow: 4px 5px 7px rgba(90, 80, 65, .25) !important;
+  color: #202020 !important;
+  font-size: 29px !important;
+  line-height: 1.05 !important;
+  text-align: left !important;
+}
+
+#content#content [data-section-id="pg022_sec001"] .book-exercise-title {
+  display: block !important;
+  position: static !important;
+  width: 100% !important;
+  inset: auto !important;
+  transform: none !important;
+  margin: 0 0 12px !important;
+  text-align: left !important;
+}
+
+#content#content [data-section-id="pg022_sec001"] > [data-id="pg022_n0002"] + div {
+  margin-top: 12px !important;
+}
+
+#content#content [data-section-id="pg022_sec001"] > div {
+  margin-bottom: 26px !important;
+}
+
+#content#content [data-section-id="pg022_sec001"] > div > .flex {
+  gap: 10px !important;
+}
+
+#content#content [data-section-id="pg022_sec001"] .activity-text > div {
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+}
+
+#content#content [data-section-id="pg022_sec001"] .activity-text label {
+  font-weight: 400 !important;
+}
+
+#content#content [data-section-id="pg022_sec001"] .book-static-answer-rule,
+#content#content [data-section-id="pg022_sec001"] .book-static-answer-area {
+  display: none !important;
+}
+
 /* Printed page 17: continuation of Zoezi la 4 and reading introduction. */
-#content.book-page-17 { padding-top: 88px !important; }
+#content.book-page-17 { padding-top: 112px !important; }
 #content#content.book-page-17 > section { min-height: 1078px !important; justify-content: flex-start !important; }
-#content .book-page17-exercise { padding: 8px 12px 28px !important; }
+#content .book-page17-exercise { width: 650px !important; margin-left: auto !important; margin-right: auto !important; padding: 8px 12px 28px !important; }
 #content .book-page17-trees { grid-template-columns: 1fr 1fr !important; gap: 24px 28px !important; margin: 0 !important; }
 #content .book-page17-trees .book-tree-diagram { height: 220px !important; }
 #content .book-page17-question4 { margin-top: 28px !important; }
@@ -2214,11 +2638,17 @@ input[data-activity-item]:focus {
 }
 
 /* Printed page 18: native HTML example and number-reading exercise. */
-#content.book-page-18 { padding-top: 86px !important; }
+#content.book-page-18 { padding-top: 115px !important; }
 #content#content.book-page-18 > section { min-height: 1088px !important; justify-content: flex-start !important; }
 #content .book-page18-continuation { margin: 0 0 52px !important; font-size: 27px !important; line-height: 1.34 !important; }
 #content .book-page18-example { position: relative !important; width: 100% !important; margin: 0 0 48px !important; padding: 38px 12px 16px !important; font-size: 26px !important; line-height: 1.28 !important; }
 #content .book-page18-example > .book-example-label { position: absolute !important; top: -22px !important; left: 52px !important; }
+
+#content#content.book-page-18 .book-page18-example {
+  margin-top: 12px !important;
+  margin-bottom: 47px !important;
+  padding-bottom: 38px !important;
+}
 #content .book-page18-example p { margin: 0 !important; }
 #content .book-page18-example-options { display: grid !important; grid-template-columns: repeat(3, 1fr) !important; margin: 2px 0 12px !important; }
 #content .book-page18-example .book-example-answer-heading { margin: 0 0 2px !important; font-size: 26px !important; }
@@ -2229,9 +2659,9 @@ input[data-activity-item]:focus {
 #content .book-page18-number-table td { height: 41px !important; padding: 0 5px !important; border: 1px solid #a99020 !important; background: transparent !important; text-align: center !important; font-size: 22px !important; line-height: 1 !important; font-weight: 400 !important; }
 
 /* Printed page 19: native HTML example and hundreds table. */
-#content.book-page-19 { padding-top: 88px !important; }
+#content.book-page-19 { padding-top: 73px !important; }
 #content#content.book-page-19 > section { min-height: 1085px !important; justify-content: flex-start !important; }
-#content .book-page19-example { position: relative !important; margin: 0 0 42px !important; padding: 38px 12px 17px !important; font-size: 25px !important; line-height: 1.28 !important; }
+#content .book-page19-example { position: relative !important; margin: 0 0 36px !important; padding: 38px 12px 70px !important; font-size: 25px !important; line-height: 1.28 !important; }
 #content .book-page19-example > .book-example-label { position: absolute !important; top: -22px !important; left: 50px !important; }
 #content .book-page19-example > p { margin: 0 !important; }
 #content .book-page19-example-options { display: grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 1px 18px !important; margin: 3px 0 22px !important; }
@@ -2239,19 +2669,20 @@ input[data-activity-item]:focus {
 #content .book-page19-answers { display: grid !important; gap: 8px !important; }
 #content .book-page19-answers p { margin: 0 !important; }
 #content .book-page19-exercise { padding-bottom: 30px !important; }
+#content#content.book-page-19 .book-page19-exercise { margin-top: 36px !important; }
 #content .book-page19-exercise > p { margin: 8px 0 9px !important; font-size: 25px !important; line-height: 1.2 !important; }
 #content .book-page19-number-table { width: 100% !important; border-collapse: collapse !important; table-layout: fixed !important; background: transparent !important; }
-#content .book-page19-number-table td { height: 52px !important; padding: 0 3px !important; border: 1px solid #a99020 !important; background: transparent !important; text-align: center !important; font-size: 20px !important; line-height: 1 !important; font-weight: 400 !important; }
+#content .book-page19-number-table td { height: 41px !important; padding: 0 3px !important; border: 1px solid #a99020 !important; background: transparent !important; text-align: center !important; font-size: 20px !important; line-height: 1 !important; font-weight: 400 !important; }
 
 /* Printed page 20: full-width Zoezi tables, never centered cards. */
-#content.book-page-20 { padding: 86px 58px 122px !important; }
+#content.book-page-20 { padding: 112px 58px 122px !important; }
 #content#content.book-page-20 > section { min-height: 1090px !important; justify-content: flex-start !important; width: 100% !important; }
 #content .book-page20-exercise { width: 100% !important; padding: 0 12px 30px !important; }
 #content .book-page20-question { margin: 14px 0 34px !important; }
 #content .book-page20-question:last-child { margin-bottom: 0 !important; }
 #content .book-page20-question > p { display: grid !important; grid-template-columns: 42px 1fr !important; margin: 0 0 8px !important; font-size: 24px !important; line-height: 1.25 !important; }
 #content .book-page20-question table { width: 100% !important; border-collapse: collapse !important; table-layout: fixed !important; background: transparent !important; }
-#content .book-page20-question td { height: 47px !important; padding: 0 3px !important; border: 1px solid #a99020 !important; background: transparent !important; text-align: center !important; font-size: 20px !important; line-height: 1 !important; font-weight: 400 !important; }
+#content .book-page20-question td { height: 43px !important; padding: 0 3px !important; border: 1px solid #a99020 !important; background: transparent !important; text-align: center !important; font-size: 20px !important; line-height: 1 !important; font-weight: 400 !important; }
 
 /* Rebuilt pages from 20 onward use the complete aligned content column. */
 #content#content.book-after-page18 > section,
@@ -2260,11 +2691,11 @@ input[data-activity-item]:focus {
 }
 
 /* Printed page 21: exercise continuation, body text, and native example. */
-#content.book-page-21 { padding-top: 88px !important; }
+#content.book-page-21 { padding-top: 115px !important; }
 #content#content.book-page-21 > section { min-height: 1085px !important; justify-content: flex-start !important; }
-#content .book-page21-q3 { padding: 8px 12px 18px !important; margin-bottom: 38px !important; }
+#content .book-page21-q3 { padding: 8px 12px 18px !important; margin-bottom: 54px !important; }
 #content .book-page21-q3-options { display: grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 10px 34px !important; margin-top: 8px !important; }
-#content .book-page21-intro { margin: 0 12px 58px !important; }
+#content .book-page21-intro { margin: 0 12px 30px !important; }
 #content .book-page21-intro h1 { margin: 0 0 3px !important; font-size: 28px !important; line-height: 1.2 !important; font-weight: 700 !important; }
 #content .book-page21-intro p { margin: 0 !important; font-size: 26px !important; line-height: 1.34 !important; }
 #content .book-page21-example { position: relative !important; padding: 38px 14px 14px !important; font-size: 24px !important; line-height: 1.22 !important; }
@@ -2278,13 +2709,14 @@ input[data-activity-item]:focus {
 #content .book-page21-answer-table th:first-child, #content .book-page21-answer-table td:first-child { width: 56px !important; }
 
 /* Printed page 22: continued answer table and two native examples. */
-#content.book-page-22 { padding-top: 92px !important; }
+#content.book-page-22 { padding-top: 126px !important; }
 #content#content.book-page-22 > section { min-height: 1080px !important; justify-content: flex-start !important; }
-#content .book-page22-continuation { width: 88% !important; margin: 0 0 50px !important; border-collapse: collapse !important; table-layout: fixed !important; }
-#content .book-page22-continuation td { height: 46px !important; padding: 2px 9px !important; border: 1px solid #a99020 !important; background: #f7f4e8 !important; font-size: 22px !important; font-weight: 400 !important; }
+#content .book-page22-continuation { width: 88% !important; margin: 0 !important; border-collapse: collapse !important; table-layout: fixed !important; }
+#content .book-page22-continuation td { height: 43px !important; padding: 2px 9px !important; border: 1px solid #a99020 !important; background: #f7f4e8 !important; font-size: 22px !important; font-weight: 400 !important; }
 #content .book-page22-continuation td:first-child { width: 56px !important; }
 #content .book-page22-example { position: relative !important; margin: 0 0 64px !important; padding: 38px 12px 17px !important; font-size: 24px !important; line-height: 1.25 !important; }
 #content .book-page22-example:last-child { margin-bottom: 0 !important; }
+#content#content.book-page-22 .book-page22-continuation + .book-page22-example { margin-top: 0 !important; }
 #content .book-page22-example > .book-example-label { position: absolute !important; top: -22px !important; left: 50px !important; }
 #content .book-page22-example > p { margin: 0 0 7px !important; }
 #content .book-page22-three { display: grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 12px 24px !important; }
@@ -2293,14 +2725,14 @@ input[data-activity-item]:focus {
 #content .book-page22-answers p, #content .book-page22-prompts p { margin: 0 !important; }
 
 /* Printed page 23: native place-value table and question list. */
-#content.book-page-23 { padding: 86px 60px 122px !important; }
+#content.book-page-23 { padding: 112px 60px 122px !important; }
 #content#content.book-page-23 > section { min-height: 1090px !important; justify-content: flex-start !important; }
 #content .book-page23-exercise { padding-bottom: 24px !important; }
 #content .book-page23-question { display: grid !important; grid-template-columns: 44px 1fr !important; margin: 12px 0 28px !important; font-size: 23px !important; line-height: 1.27 !important; }
 #content .book-page23-question p { margin: 0 0 10px !important; }
 #content .book-page23-table { width: 100% !important; border-collapse: collapse !important; table-layout: fixed !important; }
-#content .book-page23-table th, #content .book-page23-table td { height: 43px !important; padding: 2px 7px !important; border: 1px solid #a99020 !important; background: transparent !important; font-size: 19px !important; font-weight: 400 !important; }
-#content .book-page23-table th { height: 102px !important; background: #efe8c9 !important; font-weight: 700 !important; }
+#content .book-page23-table th, #content .book-page23-table td { height: 46px !important; padding: 2px 7px !important; border: 1px solid #a99020 !important; background: transparent !important; font-size: 19px !important; font-weight: 400 !important; }
+#content .book-page23-table th { height: 130px !important; background: #efe8c9 !important; font-weight: 700 !important; }
 #content .book-page23-table th:nth-child(-n+4) { width: 39px !important; writing-mode: vertical-rl !important; transform: rotate(180deg) !important; }
 #content .book-page23-table th:nth-child(5) { width: 124px !important; }
 #content .book-page23-table .sample td { background: #e7f7fb !important; }
@@ -2308,13 +2740,15 @@ input[data-activity-item]:focus {
 #content .book-page23-options { display: grid !important; grid-template-columns: repeat(3, 1fr) !important; gap: 12px 28px !important; }
 
 /* Printed page 24: two full-width native exercise tables. */
-#content.book-page-24 { padding: 86px 60px 122px !important; }
+#content.book-page-24 { padding: 112px 60px 122px !important; }
 #content#content.book-page-24 > section { min-height: 1090px !important; justify-content: flex-start !important; }
 #content .book-page24-sheet { padding: 8px 12px 22px !important; }
 #content .book-page24-question { display: grid !important; grid-template-columns: 44px 1fr !important; margin: 0 0 34px !important; font-size: 22px !important; line-height: 1.22 !important; }
 #content .book-page24-question:last-child { margin-bottom: 0 !important; }
 #content .book-page24-question p { margin: 0 0 9px !important; font-size: 23px !important; }
-#content .book-page24-q3, #content .book-page24-q4 { width: 100% !important; border-collapse: collapse !important; table-layout: fixed !important; }
+#content .book-page24-q3, #content .book-page24-q4 { border-collapse: collapse !important; table-layout: fixed !important; }
+#content .book-page24-q3 { width: 584px !important; }
+#content .book-page24-q4 { width: 623px !important; }
 #content .book-page24-q3 td, #content .book-page24-q4 th, #content .book-page24-q4 td { height: 42px !important; padding: 2px 8px !important; border: 1px solid #a99020 !important; background: transparent !important; font-size: 21px !important; font-weight: 400 !important; text-align: left !important; }
 #content .book-page24-q3 td:first-child { width: 55px !important; }
 #content .book-page24-q3 td:last-child { width: 86px !important; }
@@ -2322,15 +2756,15 @@ input[data-activity-item]:focus {
 #content .book-page24-q4 th:first-child { width: 50% !important; }
 
 /* Printed page 25: continued number table and correctness exercise. */
-#content.book-page-25 { padding: 86px 60px 122px !important; }
+#content.book-page-25 { padding: 110px 60px 122px !important; }
 #content#content.book-page-25 > section { min-height: 1090px !important; justify-content: flex-start !important; }
-#content .book-page25-sheet { padding: 8px 12px 22px !important; }
-#content .book-page25-cont { width: 100% !important; margin-bottom: 54px !important; border-collapse: collapse !important; table-layout: fixed !important; }
-#content .book-page25-cont td { height: 43px !important; padding: 2px 8px !important; border: 1px solid #a99020 !important; background: transparent !important; font-size: 21px !important; }
+#content .book-page25-sheet { width: 650px !important; margin-left: auto !important; margin-right: auto !important; padding: 8px 12px 22px !important; }
+#content .book-page25-cont { width: 623px !important; margin-bottom: 54px !important; border-collapse: collapse !important; table-layout: fixed !important; }
+#content .book-page25-cont td { height: 39px !important; padding: 2px 8px !important; border: 1px solid #a99020 !important; background: transparent !important; font-size: 21px !important; }
 #content .book-page25-cont td:first-child { width: 47% !important; }
 #content .book-page25-question { display: grid !important; grid-template-columns: 52px 1fr !important; font-size: 22px !important; line-height: 1.3 !important; }
 #content .book-page25-question > div > p:first-child { margin: 0 0 10px !important; }
-#content .book-page25-check { width: 100% !important; border-collapse: collapse !important; table-layout: fixed !important; }
+#content .book-page25-check { width: 605px !important; border-collapse: collapse !important; table-layout: fixed !important; }
 #content .book-page25-check th, #content .book-page25-check td { height: 43px !important; padding: 2px 8px !important; border: 1px solid #a99020 !important; background: transparent !important; font-size: 19px !important; font-weight: 400 !important; }
 #content .book-page25-check th { background: #efe8c9 !important; font-weight: 700 !important; }
 #content .book-page25-check th:first-child { width: 155px !important; }
@@ -2339,25 +2773,25 @@ input[data-activity-item]:focus {
 #content .book-page25-b { margin: 14px 0 0 !important; font-size: 22px !important; line-height: 1.35 !important; }
 
 /* Printed page 26: native text with the two genuine source photographs. */
-#content.book-page-26 { padding: 86px 60px 122px !important; }
+#content.book-page-26 { padding: 112px 60px 122px !important; }
 #content#content.book-page-26 > section { min-height: 1090px !important; justify-content: flex-start !important; }
-#content .book-page26-sheet { padding: 8px 12px 22px !important; }
+#content .book-page26-sheet { width: 650px !important; margin-left: auto !important; margin-right: auto !important; padding: 8px 12px 22px !important; }
 #content .book-page26-question { display: grid !important; grid-template-columns: 44px 1fr !important; font-size: 23px !important; line-height: 1.3 !important; }
 #content .book-page26-question p { margin: 0 0 10px !important; }
 #content .book-page26-question figure { margin: 0 0 28px !important; }
 #content .book-page26-question figure:last-child { margin-bottom: 0 !important; }
-#content#content .book-page26-question img { display: block !important; width: 100% !important; max-width: none !important; height: 344px !important; object-fit: cover !important; border: 0 !important; border-radius: 0 !important; background: transparent !important; box-shadow: none !important; }
-#content#content .book-page26-question figure:last-child img { height: 394px !important; }
+#content#content .book-page26-question img { display: block !important; width: 531px !important; max-width: 531px !important; height: 317px !important; margin-left: auto !important; margin-right: auto !important; object-fit: fill !important; border: 0 !important; border-radius: 0 !important; background: transparent !important; box-shadow: none !important; }
+#content#content .book-page26-question figure:last-child img { width: 555px !important; max-width: 555px !important; height: 402px !important; }
 #content#content .book-page26-question figcaption { margin-top: 7px !important; font-size: 19px !important; line-height: 1.35 !important; text-align: center !important; }
 #content .book-page26-question figcaption strong { font-weight: 700 !important; }
 
 /* Printed page 27: follow-up questions, section introduction, and example. */
-#content.book-page-27 { padding-top: 86px !important; }
+#content.book-page-27 { padding-top: 112px !important; }
 #content#content.book-page-27 > section { min-height: 1090px !important; justify-content: flex-start !important; }
-#content .book-page27-questions { padding: 8px 12px 16px !important; margin-bottom: 32px !important; }
+#content .book-page27-questions { padding: 8px 12px 16px !important; margin-bottom: 6px !important; }
 #content .book-page27-questions h1 { margin: 0 0 5px !important; font-size: 25px !important; line-height: 1.2 !important; font-weight: 700 !important; }
 #content .book-page27-questions p { margin: 0 0 4px !important; font-size: 24px !important; line-height: 1.32 !important; }
-#content .book-page27-intro { margin: 0 12px 50px !important; }
+#content .book-page27-intro { margin: 0 12px 18px !important; }
 #content .book-page27-intro h1 { margin: 0 0 12px !important; color: #00b0f0 !important; font-size: 28px !important; line-height: 1.25 !important; font-weight: 700 !important; }
 #content .book-page27-intro p { margin: 0 !important; font-size: 25px !important; line-height: 1.42 !important; }
 #content .book-page27-example { position: relative !important; padding: 40px 12px 20px !important; font-size: 24px !important; line-height: 1.35 !important; }
@@ -2369,9 +2803,9 @@ input[data-activity-item]:focus {
 #content .book-page27-answer .conclusion { margin-top: 22px !important; }
 
 /* Printed page 28: two native HTML place-value examples. */
-#content.book-page-28 { padding-top: 88px !important; }
+#content.book-page-28 { padding-top: 72px !important; }
 #content#content.book-page-28 > section { min-height: 1088px !important; justify-content: flex-start !important; }
-#content .book-page28-example { position: relative !important; margin: 0 0 42px !important; padding: 38px 12px 18px !important; font-size: 23px !important; line-height: 1.3 !important; }
+#content .book-page28-example { position: relative !important; margin: 0 0 23px !important; padding: 38px 12px 63px !important; font-size: 23px !important; line-height: 1.3 !important; }
 #content .book-page28-example:last-child { margin-bottom: 0 !important; }
 #content .book-page28-example > .book-example-label { position: absolute !important; top: -22px !important; left: 50px !important; }
 #content .book-page28-example > p { margin: 0 0 18px !important; }
@@ -2381,9 +2815,10 @@ input[data-activity-item]:focus {
 #content .book-page28-lines .conclusion { margin-top: 10px !important; }
 
 /* Printed page 29: three compact native examples and place-value table. */
-#content.book-page-29 { padding-top: 88px !important; }
+#content.book-page-29 { padding-top: 72px !important; }
 #content#content.book-page-29 > section { min-height: 1088px !important; justify-content: flex-start !important; }
-#content .book-page29-example { position: relative !important; margin: 0 0 42px !important; padding: 36px 12px 14px !important; font-size: 21px !important; line-height: 1.23 !important; }
+#content .book-page29-example { position: relative !important; margin: 0 0 32px !important; padding: 36px 12px 14px !important; font-size: 21px !important; line-height: 1.23 !important; }
+#content .book-page29-example:first-child { padding-bottom: 48px !important; }
 #content .book-page29-example:last-child { margin-bottom: 0 !important; }
 #content .book-page29-example > .book-example-label { position: absolute !important; top: -22px !important; left: 50px !important; }
 #content .book-page29-example > p { margin: 0 0 5px !important; }
@@ -2401,7 +2836,7 @@ input[data-activity-item]:focus {
 #content .book-page29-last td[rowspan] { text-align: left !important; vertical-align: top !important; }
 
 /* Printed page 30: native Zoezi text with a transparent genuine abacus. */
-#content.book-page-30 { padding: 86px 58px 122px !important; }
+#content.book-page-30 { padding: 112px 58px 122px !important; }
 #content#content.book-page-30 > section { min-height: 1090px !important; justify-content: flex-start !important; }
 #content .book-page30-sheet { padding-bottom: 18px !important; }
 #content#content .book-page30-question { display: grid !important; grid-template-columns: 45px 1fr !important; margin: 10px 0 20px !important; font-size: 20px !important; line-height: 1.22 !important; }
@@ -2411,13 +2846,13 @@ input[data-activity-item]:focus {
 #content .book-page30-q2 { display: grid !important; gap: 6px !important; }
 #content .book-page30-q2 p { margin: 0 !important; }
 #content .book-page30-q3 { margin-bottom: 0 !important; }
-#content .book-page30-q3 img { display: block !important; width: 600px !important; max-width: 100% !important; height: auto !important; margin: -4px auto 0 !important; border: 0 !important; border-radius: 0 !important; background: transparent !important; box-shadow: none !important; }
+#content .book-page30-q3 img { display: block !important; width: 428px !important; max-width: 100% !important; height: auto !important; margin: -4px auto 0 !important; border: 0 !important; border-radius: 0 !important; background: transparent !important; box-shadow: none !important; }
 
 /* Printed page 31: transparent abacus and compact native question groups. */
-#content.book-page-31 { padding: 86px 60px 122px !important; }
+#content.book-page-31 { padding: 112px 60px 122px !important; }
 #content#content.book-page-31 > section { min-height: 1090px !important; justify-content: flex-start !important; }
 #content .book-page31-sheet { padding: 8px 12px 18px !important; }
-#content#content .book-page31-abacus img { display: block !important; width: 520px !important; max-width: 100% !important; height: auto !important; margin: -22px auto 18px !important; border: 0 !important; border-radius: 0 !important; background: transparent !important; box-shadow: none !important; }
+#content#content .book-page31-abacus img { display: block !important; width: 440px !important; max-width: 100% !important; height: 240px !important; object-fit: contain !important; margin: -22px auto 18px !important; border: 0 !important; border-radius: 0 !important; background: transparent !important; box-shadow: none !important; }
 #content .book-page31-question { display: grid !important; grid-template-columns: 48px 1fr !important; margin: 0 0 24px !important; font-size: 19px !important; line-height: 1.2 !important; }
 #content#content .book-page31-question :is(p,span,div) { font-size: 19px !important; line-height: 1.2 !important; }
 #content .book-page31-question p { margin: 0 0 8px !important; }
@@ -2428,12 +2863,12 @@ input[data-activity-item]:focus {
 #content .book-page31-question.last { margin-bottom: 0 !important; }
 
 /* Printed page 32: comparison introduction, example, and exercise. */
-#content.book-page-32 { padding: 86px 58px 122px !important; }
+#content.book-page-32 { padding: 111px 58px 122px !important; }
 #content#content.book-page-32 > section { min-height: 1090px !important; justify-content: flex-start !important; }
-#content .book-page32-intro { margin: 0 12px 42px !important; }
+#content .book-page32-intro { margin: 0 12px 17px !important; }
 #content .book-page32-intro h1 { margin: 0 0 9px !important; color: #00b0f0 !important; font-size: 28px !important; line-height: 1.2 !important; font-weight: 700 !important; }
 #content .book-page32-intro p { margin: 0 !important; font-size: 24px !important; line-height: 1.4 !important; }
-#content .book-page32-example { position: relative !important; margin-bottom: 42px !important; padding: 38px 12px 16px !important; font-size: 22px !important; line-height: 1.25 !important; }
+#content .book-page32-example { position: relative !important; margin-bottom: 86px !important; padding: 38px 12px 57px !important; font-size: 22px !important; line-height: 1.25 !important; }
 #content .book-page32-example > .book-example-label { position: absolute !important; top: -22px !important; left: 50px !important; }
 #content .book-page32-example > p { margin: 0 0 7px !important; }
 #content .book-page32-pairs { display: grid !important; grid-template-columns: repeat(2,1fr) !important; gap: 15px 28px !important; }
@@ -2463,7 +2898,7 @@ input[data-activity-item]:focus {
 #content .book-page33-question.last { margin-bottom: 0 !important; }
 
 /* Printed page 34: genuine pencil/cap figures with native surrounding text. */
-#content.book-page-34 { padding: 86px 60px 122px !important; }
+#content.book-page-34 { padding: 112px 60px 122px !important; }
 #content#content.book-page-34 > section { min-height: 1090px !important; justify-content: flex-start !important; }
 #content .book-page34-sheet { padding: 8px 12px 18px !important; margin-bottom: 32px !important; }
 #content .book-page34-question { display: grid !important; grid-template-columns: 44px 1fr !important; font-size: 21px !important; line-height: 1.25 !important; }
@@ -2471,7 +2906,7 @@ input[data-activity-item]:focus {
 #content .book-page34-question p { margin: 0 0 8px !important; }
 #content .book-page34-pencils { display: grid !important; grid-template-columns: repeat(2,1fr) !important; gap: 46px !important; width: 520px !important; max-width: 100% !important; margin: 0 auto 12px !important; }
 #content .book-page34-pencils figure { margin: 0 !important; text-align: center !important; }
-#content#content .book-page34-pencils img { display: block !important; width: 100% !important; height: 198px !important; object-fit: contain !important; border: 0 !important; background: transparent !important; }
+#content#content .book-page34-pencils img { display: block !important; width: 100% !important; height: 221px !important; object-fit: contain !important; border: 0 !important; background: transparent !important; }
 #content .book-page34-pencils figcaption { margin-top: 2px !important; }
 #content .book-page34-questions { display: grid !important; gap: 7px !important; }
 #content .book-page34-questions p { margin: 0 !important; }
@@ -2484,9 +2919,9 @@ input[data-activity-item]:focus {
 #content .book-page34-groups figcaption { margin-top: 2px !important; font-size: 20px !important; }
 
 /* Printed page 35: sequence explanation and worked native example. */
-#content.book-page-35 { padding-top: 88px !important; }
+#content.book-page-35 { padding-top: 116px !important; }
 #content#content.book-page-35 > section { min-height: 1088px !important; justify-content: flex-start !important; }
-#content .book-page35-intro { margin: 0 12px 70px !important; font-size: 24px !important; line-height: 1.35 !important; }
+#content .book-page35-intro { margin: 0 12px 27px !important; font-size: 24px !important; line-height: 1.35 !important; }
 #content .book-page35-example { position: relative !important; padding: 40px 12px 18px !important; font-size: 22px !important; line-height: 1.34 !important; }
 #content .book-page35-example > .book-example-label { position: absolute !important; top: -22px !important; left: 50px !important; }
 #content .book-page35-example > p { margin: 0 0 16px !important; }
@@ -2495,9 +2930,9 @@ input[data-activity-item]:focus {
 #content .book-page35-example .conclusion { margin: 0 !important; }
 
 /* Printed page 36: two sequence examples with native working. */
-#content.book-page-36 { padding-top: 88px !important; }
+#content.book-page-36 { padding-top: 72px !important; }
 #content#content.book-page-36 > section { min-height: 1088px !important; justify-content: flex-start !important; }
-#content .book-page36-example { position: relative !important; margin: 0 0 58px !important; padding: 40px 12px 18px !important; font-size: 22px !important; line-height: 1.32 !important; }
+#content .book-page36-example { position: relative !important; margin: 0 0 49px !important; padding: 40px 12px 18px !important; font-size: 22px !important; line-height: 1.32 !important; }
 #content .book-page36-example:last-child { margin-bottom: 0 !important; }
 #content .book-page36-example > .book-example-label { position: absolute !important; top: -22px !important; left: 50px !important; }
 #content .book-page36-example > p { margin: 0 0 14px !important; }
@@ -2505,6 +2940,9 @@ input[data-activity-item]:focus {
 #content .book-page36-working { display: grid !important; gap: 7px !important; width: 210px !important; margin: 8px 0 8px 100px !important; }
 #content .book-page36-example .conclusion { margin: 0 !important; }
 #content .book-page37 .book-page36-working.wide { width: 260px !important; }
+#content.book-page-37 { padding-top: 76px !important; }
+#content#content.book-page-37 .book-page36-example { margin-bottom: 38px !important; }
+#content#content.book-page-37 .book-page36-example:first-child { padding-bottom: 60px !important; }
 
 /* Printed page 38: native sequence tables and compact lists. */
 #content.book-page-38 { padding: 86px 58px 122px !important; }
@@ -2538,7 +2976,7 @@ input[data-activity-item]:focus {
 #content .book-page39-question.last { margin-bottom: 0 !important; }
 
 /* Printed page 40: closing problems, online work, and reminder panels. */
-#content.book-page-40 { padding: 86px 58px 122px !important; }
+#content.book-page-40 { padding: 112px 58px 122px !important; }
 #content#content.book-page-40 > section { min-height: 1090px !important; justify-content: flex-start !important; }
 #content .book-page40-problems { padding: 8px 12px 18px !important; margin-bottom: 32px !important; }
 #content .book-page40-problems > div { display: grid !important; grid-template-columns: 58px 1fr !important; margin-bottom: 18px !important; font-size: 22px !important; line-height: 1.42 !important; }
@@ -2609,6 +3047,10 @@ input[data-activity-item]:focus {
   border-radius: 0 !important;
   background: transparent !important;
   box-shadow: none !important;
+}
+
+#content#content:has([data-section-id="pg021_sec001"]) {
+  padding-top: 147px !important;
 }
 
 #content#content [data-section-id="pg021_sec001"] [data-id="pg021_n0001"] {
@@ -2704,9 +3146,9 @@ input[data-activity-item]:focus {
 }
 
 /* Printed page 41 — vocabulary and chapter review. */
-#content.book-page-41 { padding: 88px 60px 102px !important; }
+#content.book-page-41 { padding: 122px 60px 102px !important; }
 #content.book-page-41 > section { width: 100%; min-height: 1101px; display: block; }
-.book-page41-vocab { width: 690px; margin: 0 auto 31px; border: 1px solid #ef6617; background: #fff; }
+.book-page41-vocab { width: 650px; margin: 0 auto 31px; border: 1px solid #ef6617; background: #fff; }
 .book-page41-vocab h1 { margin: 0; padding: 7px 14px 6px; background: #fa6513; color: #fff; font-size: 25px; line-height: 1.1; font-weight: 700; }
 .book-page41-vocab dl { margin: 0; padding: 10px 14px 9px; display: grid; grid-template-columns: 150px 1fr; column-gap: 4px; row-gap: 8px; font-size: 23px; line-height: 1.34; }
 .book-page41-vocab dt, .book-page41-vocab dd { margin: 0; font-weight: 400; }
@@ -2723,9 +3165,9 @@ input[data-activity-item]:focus {
 .book-page41-sums { margin-top: 10px; display: grid; row-gap: 7px; }
 
 /* Printed page 42 — continuation of the same review sheet. */
-#content.book-page-42 { padding: 84px 62px 102px !important; }
+#content.book-page-42 { padding: 108px 62px 102px !important; }
 #content.book-page-42 > section { width: 100%; min-height: 1121px; }
-.book-page42-sheet { width: 704px; margin: 0 auto; padding: 8px 9px 13px; background: #e4f6fc; border-radius: 0 11px 0 11px; font-size: 21px; line-height: 1.27; }
+.book-page42-sheet { width: 662px; margin: 0 auto; padding: 8px 9px 13px; background: #e4f6fc; border-radius: 0 11px 0 11px; font-size: 21px; line-height: 1.27; }
 .book-page42-sheet :is(p,span) { font-size: 21px !important; line-height: 1.27 !important; }
 .book-page42-sheet p { margin: 0; }
 .book-page42-top { margin-left: 61px; display: grid; row-gap: 4px; }
@@ -2740,9 +3182,9 @@ input[data-activity-item]:focus {
 .book-page42-grid { margin-top: 5px; display: grid; grid-template-columns: repeat(3,1fr); row-gap: 4px; }
 
 /* Printed page 43 — review continuation and genuine abacus figure. */
-#content.book-page-43 { padding: 83px 63px 102px !important; }
+#content.book-page-43 { padding: 105px 63px 102px !important; }
 #content.book-page-43 > section { width: 100%; min-height: 1122px; }
-.book-page43-sheet { width: 704px; min-height: 1008px; margin: 0 auto; padding: 8px 9px 16px; background: #e4f6fc; border-radius: 0 0 0 11px; font-size: 21px; line-height: 1.27; }
+.book-page43-sheet { width: 662px; min-height: 1008px; margin: 0 auto; padding: 8px 9px 16px; background: #e4f6fc; border-radius: 0 0 0 11px; font-size: 21px; line-height: 1.27; }
 .book-page43-sheet :is(p,span) { font-size: 21px !important; line-height: 1.27 !important; }
 .book-page43-sheet p { margin: 0; }
 .book-page43-question { display: grid; grid-template-columns: 51px 1fr; column-gap: 9px; }
@@ -2751,24 +3193,25 @@ input[data-activity-item]:focus {
 .book-page43-lines > p { display: grid; grid-template-columns: 59px 1fr; }
 .book-page43-question.abacus { margin-top: 35px; }
 .book-page43-question .label { margin-top: 22px; }
-.book-page43-question figure { width: 430px; margin: -4px 0 0 31px; position: relative; }
-.book-page43-question figure img { display: block; width: 430px; height: auto; }
+.book-page43-question figure { width: 390px; margin: -4px 0 0 31px; position: relative; }
+.book-page43-question figure img { display: block; width: 390px; height: auto; }
 .book-page43-abacus-labels { display: grid; grid-template-columns: repeat(5,1fr); margin: 0 2px -4px; }
 .book-page43-abacus-labels span { font-size: 16px !important; font-weight: 700; text-align: center; transform: rotate(-34deg); transform-origin: center bottom; white-space: nowrap; }
 
 /* Printed page 44 — genuine continuation abacuses. */
 #content.book-page-44 { padding: 88px 61px 102px !important; }
 #content.book-page-44 > section { width: 100%; min-height: 1117px; }
-.book-page44-sheet { width: 704px; min-height: 1002px; margin: 0 auto; padding: 9px 12px 18px; background: #e4f6fc; border-radius: 0 0 0 10px; }
+.book-page44-sheet { width: 662px; min-height: 1002px; margin: 0 auto; padding: 9px 12px 18px; background: #e4f6fc; border-radius: 0 0 0 10px; }
 .book-page44-sheet figure { margin: 0; }
 .book-page44-sheet figure + figure { margin-top: 76px; }
 .book-page44-sheet figcaption { margin: 0 0 -18px; font-size: 21px; line-height: 1; }
-.book-page44-sheet img { display: block; width: 470px; height: auto; margin: 0 auto; }
+.book-page44-sheet img { display: block; width: 400px; height: auto; margin: 0 auto; }
+.book-page44-sheet figure:nth-of-type(2) img { width: 458px; }
 
 /* Printed page 45 — final review abacus and questions. */
-#content.book-page-45 { padding: 84px 62px 102px !important; }
+#content.book-page-45 { padding: 99px 62px 102px !important; }
 #content.book-page-45 > section { width:100%; min-height:1121px; }
-.book-page45-sheet { width:704px; min-height:1005px; margin:0 auto; padding:8px 10px 15px; background:#e4f6fc; border-radius:0 0 0 10px; font-size:21px; line-height:1.27; }
+.book-page45-sheet { width:662px; min-height:1005px; margin:0 auto; padding:8px 10px 15px; background:#e4f6fc; border-radius:0 0 0 10px; font-size:21px; line-height:1.27; }
 .book-page45-sheet :is(p,span) { font-size:21px !important; line-height:1.27 !important; }
 .book-page45-sheet p { margin:0; }
 .book-page45-sheet figure { width:500px; margin:0 auto 29px; position:relative; }
@@ -2783,9 +3226,9 @@ input[data-activity-item]:focus {
 .book-page45-seqs { margin-top:10px; display:grid; row-gap:10px; }
 
 /* Printed page 46 — sequence review conclusion. */
-#content.book-page-46 { padding:88px 62px 102px !important; }
+#content.book-page-46 { padding:110px 62px 102px !important; }
 #content.book-page-46 > section { width:100%; min-height:1117px; }
-.book-page46-sheet { width:704px; min-height:1002px; margin:0 auto; padding:6px 9px 15px; background:#e4f6fc; border-radius:0 0 0 10px; font-size:21px; line-height:1.28; }
+.book-page46-sheet { width:662px; min-height:1002px; margin:0 auto; padding:6px 9px 15px; background:#e4f6fc; border-radius:0 0 0 10px; font-size:21px; line-height:1.28; }
 .book-page46-sheet :is(p,span) { font-size:21px !important; line-height:1.28 !important; }
 .book-page46-sheet p { margin:0; }
 .book-page46-question { display:grid; grid-template-columns:52px 1fr; column-gap:8px; }
@@ -2796,9 +3239,9 @@ input[data-activity-item]:focus {
 .book-page46-question.prose { margin-top:34px; }
 
 /* Printed page 47 — closing review word problems. */
-#content.book-page-47 { padding:88px 62px 102px !important; }
+#content.book-page-47 { padding:110px 62px 102px !important; }
 #content.book-page-47 > section { width:100%; min-height:1117px; }
-.book-page47-sheet { width:704px; margin:0 auto; padding:6px 10px 27px; background:#e4f6fc; font-size:21px; line-height:1.31; }
+.book-page47-sheet { width:662px; margin:0 auto; padding:6px 10px 27px; background:#e4f6fc; font-size:21px; line-height:1.31; }
 .book-page47-sheet :is(p,span) { font-size:21px !important; line-height:1.31 !important; }
 .book-page47-sheet p { margin:0; }
 .book-page47-question { display:grid; grid-template-columns:52px 1fr; column-gap:8px; }
@@ -2806,26 +3249,27 @@ input[data-activity-item]:focus {
 .book-page47-options { margin-top:7px; display:grid; row-gap:7px; }
 
 /* Printed page 48 — chapter two opening. */
-#content.book-page-48 { padding:92px 61px 102px !important; }
+#content.book-page-48 { padding:120px 61px 102px !important; }
 #content.book-page-48 > section { width:100%; min-height:1113px; }
-.book-page48-chapter { width:690px; margin:0 auto 47px; padding:8px 10px 12px; text-align:center; background:linear-gradient(#bceafa,#90d5ed); border-radius:0 12px 0 12px; box-shadow:5px 5px 7px rgba(0,0,0,.22); }
+.book-page48-chapter { width:645px; height:102px; box-sizing:border-box; margin:0 auto 47px; padding:8px 10px 12px; display:flex; flex-direction:column; justify-content:center; text-align:center; background:linear-gradient(#bceafa,#90d5ed); border-radius:0 12px 0 12px; box-shadow:5px 5px 7px rgba(0,0,0,.22); }
 .book-page48-chapter h2 { margin:0; color:#00aeef; font-size:27px; line-height:1.1; font-weight:700; }
 .book-page48-chapter h1 { margin:8px 0 0; color:#111; font-size:31px; line-height:1.08; font-weight:700; }
-.book-page48-intro { width:684px; margin:0 auto 31px; padding:5px 8px 13px; background:#fae0d1; border:1px solid #e67536; }
+.book-page48-intro { width:643px; margin:0 auto 31px; padding:5px 8px 13px; background:#fae0d1; border:1px solid #e67536; }
 .book-page48-intro h2 { margin:0; font-size:24px; line-height:1.2; font-weight:700; }
 .book-page48-intro p, .book-page48-copy p, .book-page48-example p { margin:0; font-size:21px !important; line-height:1.33 !important; }
-.book-page48-copy { width:684px; margin:0 auto; }
+.book-page48-copy { width:643px; margin:0 auto; }
 .book-page48-copy h2 { margin:0 0 3px; color:#00b0f0; font-size:24px; line-height:1.2; font-weight:700; }
 .book-page48-copy p + h2 { margin-top:22px; }
 .book-page48-copy h3 { margin:25px 0 0; color:#111; font-size:21px; line-height:1.2; font-weight:700; }
-.book-page48-example { width:704px; margin:29px auto 0 !important; padding:32px 9px 12px !important; min-height:186px; }
+.book-page48-example { width:668px; margin:29px auto 0 !important; padding:32px 9px 12px !important; min-height:186px; }
 .book-page48-example .book-example-label { top:-21px; left:50px; }
 .book-page48-example .book-example-answer-heading { margin-top:16px; }
 
 /* Printed page 49 — native worked addition examples. */
-#content.book-page-49 { padding:85px 61px 102px !important; }
+#content.book-page-49 { padding:0 61px 102px !important; }
 #content.book-page-49 > section { width:100%; min-height:1120px; }
-.book-page49-example { width:704px; margin:0 auto !important; padding:10px 14px 14px !important; font-size:20px; line-height:1.25; }
+#content#content.book-page-49 > section { margin-top:-41px !important; }
+.book-page49-example { width:650px; margin:0 auto !important; padding:10px 14px 14px !important; font-size:20px; line-height:1.25; }
 #content#content.book-page-49 .book-page49-example :is(p,li,span) { font-size:20px !important; line-height:1.25 !important; }
 .book-page49-example h2 { margin:10px 0 2px; font-size:22px; line-height:1.15; font-weight:700; }
 .book-page49-example ol { margin:4px 0 0 27px; padding-left:22px; display:grid; row-gap:6px; }
@@ -2836,19 +3280,21 @@ input[data-activity-item]:focus {
 .book-page49-tables th:nth-child(1),.book-page49-tables td:nth-child(1){background:#a8d8ef}.book-page49-tables th:nth-child(2),.book-page49-tables td:nth-child(2){background:#efbbd2}.book-page49-tables th:nth-child(3),.book-page49-tables td:nth-child(3){background:#f7ddb2}.book-page49-tables th:nth-child(4),.book-page49-tables td:nth-child(4){background:#b8d9b9}
 .book-page49-sum { width:450px; margin:18px auto 12px; display:flex; justify-content:space-between; font-size:22px; }
 .book-page49-example .conclusion { margin-top:5px; }
-.book-page49-example.second { margin-top:49px !important; padding-top:39px !important; min-height:405px; }
+.book-page49-example.second { margin-top:5px !important; padding-top:39px !important; min-height:405px; }
 .book-page49-example.second .book-example-label { top:-22px; left:50px; }
 .book-page49-example.second h2 { margin-top:14px; }
 
 /* Printed page 50 — continued worked sums. */
 #content.book-page-50 { padding:83px 60px 102px !important; }
 #content.book-page-50 > section { width:100%; min-height:1122px; }
-.book-page50-cont,.book-page50-example { width:704px; margin:0 auto !important; padding:10px 10px 14px !important; font-size:20px; line-height:1.25; }
+#content#content.book-page-50 > section { margin-top:-43px !important; }
+.book-page50-cont,.book-page50-example { width:650px; margin:0 auto !important; padding:10px 10px 14px !important; font-size:20px; line-height:1.25; }
+.book-page50-cont { min-height:232px; }
 #content#content.book-page-50 :is(p,li,span) { font-size:20px !important; line-height:1.25 !important; }
 .book-page50-equation { width:600px; margin:0 auto; text-align:center; font-size:21px; letter-spacing:4px; }
 .book-page50-connectors { width:590px; height:124px; margin:5px auto 8px; background:repeating-linear-gradient(90deg,transparent 0 66px,rgba(0,176,240,.8) 66px 69px,transparent 69px 82px); border-bottom:3px solid #00a7d7; }
 .book-page50-cont p { margin:0; }
-.book-page50-example { margin-top:79px !important; padding-top:38px !important; min-height:677px; }
+.book-page50-example { margin-top:98px !important; padding-top:38px !important; min-height:677px; }
 .book-page50-example .book-example-label { top:-22px; left:50px; }
 .book-page50-example h2 { margin:18px 0 4px; font-size:22px; font-weight:700; }
 .book-page50-example ol { margin:0 0 0 25px; padding-left:20px; display:grid; row-gap:10px; }
@@ -2857,14 +3303,14 @@ input[data-activity-item]:focus {
 .book-page50-example .conclusion { margin:0 0 0 60px; }
 
 /* Printed page 51 — Zoezi la 1 and vertical addition. */
-#content.book-page-51 { padding:85px 61px 102px !important; }
+#content.book-page-51 { padding:105px 61px 102px !important; }
 #content.book-page-51 > section { width:100%; min-height:1120px; }
 .book-page51-exercise { width:704px; margin:0 auto; padding:48px 14px 16px !important; background:#f7f4e8 !important; border-radius:0 0 0 12px !important; }
 .book-page51-exercise .book-exercise-title { background:#f7cba8 !important; color:#111 !important; top:0 !important; left:0 !important; right:0 !important; width:auto !important; border-radius:0 12px 0 12px !important; box-shadow:4px 4px 7px rgba(0,0,0,.22); font-size:25px !important; }
 .book-page51-grid { display:grid; grid-template-columns:1fr 1fr; grid-auto-flow:column; grid-template-rows:repeat(8,auto); column-gap:55px; row-gap:6px; }
 .book-page51-grid p { margin:0; display:grid; grid-template-columns:40px 1fr; font-size:20px !important; line-height:1.25 !important; }
-.book-page51-heading { width:680px; margin:38px auto 49px; font-size:21px; line-height:1.2; font-weight:700; }
-.book-page51-example { width:704px; margin:0 auto !important; padding:33px 12px 12px !important; min-height:527px; }
+.book-page51-heading { width:650px; margin:38px auto 0; font-size:21px; line-height:1.2; font-weight:700; }
+.book-page51-example { width:650px; margin:-31px auto 0 !important; padding:33px 12px 12px !important; min-height:527px; }
 .book-page51-example .book-example-label { top:-22px; left:50px; }
 #content#content.book-page-51 .book-page51-example :is(p,li,span) { font-size:20px !important; line-height:1.25 !important; }
 .book-page51-stack { width:95px; margin:0 0 12px 38px; display:grid; text-align:right; }
@@ -2875,6 +3321,7 @@ input[data-activity-item]:focus {
 /* Printed page 52 — vertical addition examples 2 and 3. */
 #content.book-page-52 { padding:92px 60px 102px !important; }
 #content.book-page-52 > section { width:100%; min-height:1113px; }
+#content#content.book-page-52 > section { margin-top:-33px !important; }
 .book-page52-example { width:704px; margin:0 auto !important; padding:34px 10px 12px !important; }
 .book-page52-example .book-example-label { top:-22px; left:50px; }
 #content#content.book-page-52 .book-page52-example :is(p,li,span) { font-size:19px !important; line-height:1.24 !important; }
@@ -2890,7 +3337,8 @@ input[data-activity-item]:focus {
 /* Printed page 53 — worked sum and vertical-addition exercise. */
 #content.book-page-53 { padding:86px 60px 102px !important; }
 #content.book-page-53 > section { width:100%; min-height:1119px; }
-.book-page53-example { width:704px; margin:0 auto 32px !important; padding:31px 14px 9px !important; min-height:138px; }
+#content#content.book-page-53 > section { margin-top:-20px !important; }
+.book-page53-example { width:650px; margin:0 auto 89px !important; padding:31px 14px 9px !important; min-height:105px; }
 .book-page53-example .book-example-label { top:-22px; left:50px; }
 .book-page53-example-grid { display:grid; grid-template-columns:1fr 130px 1fr; align-items:start; }
 .book-page53-example-grid h2 { margin:0; text-align:center; font-size:22px; font-weight:700; }
@@ -2905,7 +3353,7 @@ input[data-activity-item]:focus {
 .book-page53-item i + i { margin-top:22px; }
 
 /* Printed page 54 — regrouping addition introduction. */
-#content.book-page-54 { padding:92px 60px 102px !important; }
+#content.book-page-54 { padding:120px 60px 102px !important; }
 #content.book-page-54 > section { width:100%; min-height:1113px; }
 .book-page54-head { width:684px; margin:0 auto 48px; }
 .book-page54-head h1 { margin:0; color:#00b0f0; font-size:24px; line-height:1.2; font-weight:700; }
@@ -2919,10 +3367,12 @@ input[data-activity-item]:focus {
 .book-page54-equation { width:520px; margin:27px auto 0; text-align:center; font-size:21px; letter-spacing:4px; }
 .book-page54-lines { width:430px; height:102px; margin:4px auto 12px; border-bottom:3px solid #00a7d7; background:repeating-linear-gradient(90deg,transparent 0 75px,#00b0f0 75px 78px,transparent 78px 95px); }
 .book-page54-example .conclusion { width:520px; margin:0 auto; }
+.book-page54-example .book-page54-figure { width:370px !important; max-width:370px !important; margin:12px auto 8px !important; }
 
 /* Printed page 55 — regrouping addition example 2. */
 #content.book-page-55 { padding:86px 60px 102px !important; }
 #content.book-page-55 > section { width:100%; min-height:1119px; }
+#content#content.book-page-55 > section { margin-top:-20px !important; }
 .book-page55-example { width:704px; min-height:1000px; margin:0 auto !important; padding:35px 10px 13px !important; }
 .book-page55-example .book-example-label { top:-22px; left:50px; }
 #content#content.book-page-55 .book-page55-example :is(p,li,span) { font-size:19px !important; line-height:1.27 !important; }
@@ -2932,14 +3382,17 @@ input[data-activity-item]:focus {
 .book-page55-equation { width:610px; margin:21px auto 0; text-align:center; font-size:20px; letter-spacing:3px; }
 .book-page55-lines { width:600px; height:112px; margin:3px auto 12px; border-bottom:3px solid #00a7d7; background:repeating-linear-gradient(90deg,transparent 0 75px,#00b0f0 75px 78px,transparent 78px 93px); }
 .book-page55-example .conclusion { width:530px; margin:0 auto; }
+.book-page55-example .book-page55-figure { width:610px !important; max-width:610px !important; margin:14px auto 10px !important; }
 
 /* Printed page 56 — example 3 and Zoezi la 3. */
 #content.book-page-56 { padding:84px 60px 102px !important; }
+#content#content.book-page-56 > section { margin-top:-20px !important; }
 #content.book-page-56 > section { width:100%; min-height:1121px; }
 .book-page56-example { width:704px; margin:0 auto 38px !important; padding:35px 10px 13px !important; min-height:342px; }
 .book-page56-example .book-example-label { top:-22px; left:50px; }
 #content#content.book-page-56 .book-page56-example :is(p,span) { font-size:19px !important; line-height:1.25 !important; }
 .book-page56-example h2 { margin:18px 0 0; font-size:21px; font-weight:700; }
+.book-page56-example .book-page56-figure { width:630px !important; max-width:630px !important; margin:4px auto 8px !important; }
 .book-page56-equation { margin:1px auto 0; width:650px; text-align:center; font-size:18px; letter-spacing:2px; }
 .book-page56-lines { width:635px; height:123px; margin:2px auto 8px; border-bottom:3px solid #00a7d7; background:repeating-linear-gradient(90deg,transparent 0 70px,#00b0f0 70px 73px,transparent 73px 88px); }
 .book-page56-exercise { width:704px; min-height:585px; margin:0 auto; padding:56px 13px 14px !important; background:#f7f4e8!important; border-radius:0 0 0 12px!important; }
@@ -2951,6 +3404,7 @@ input[data-activity-item]:focus {
 #content .book-page33-question table td:nth-child(2) { background:#fffca8 !important; }
 #content .book-page33-question table td:nth-child(3) { background:#f0f8f9 !important; }
 #content .book-page33-question table td:nth-child(4) { background:#fbf1f4 !important; }
+#content#content .book-page33-question:has(table) { margin-bottom: 70px !important; }
 
 #content .book-page34-groups figcaption { display:none !important; }
 
@@ -2964,7 +3418,8 @@ input[data-activity-item]:focus {
 .book-page41-question.second { margin-top:10px; }
 
 .book-page44-sheet figure { position:relative; }
-.book-page44-labels { position:absolute; top:7px; left:117px; width:430px; display:grid; grid-template-columns:repeat(6,1fr); align-items:end; z-index:2; }
+.book-page44-labels { position:absolute; top:20px; left:50%; width:365px; transform:translateX(-50%); display:grid; grid-template-columns:repeat(6,1fr); align-items:end; z-index:2; }
+.book-page44-sheet figure:nth-of-type(2) .book-page44-labels { width:420px; }
 .book-page44-labels span { display:block; color:#111; font-size:17px !important; line-height:1 !important; font-weight:700; text-align:center; white-space:nowrap; transform:rotate(-38deg); transform-origin:center bottom; }
 
 #content#content :is(.book-page48-example,.book-page49-example,.book-page50-cont,.book-page50-example,.book-page51-example,.book-page52-example,.book-page53-example,.book-page54-example,.book-page55-example,.book-page56-example) {
@@ -2975,8 +3430,8 @@ input[data-activity-item]:focus {
   overflow:visible !important;
 }
 #content:is(.book-page-48,.book-page-49,.book-page-50,.book-page-51,.book-page-52,.book-page-53,.book-page-54,.book-page-55,.book-page-56) > section { justify-content:flex-start !important; }
-.book-page49-example.first { min-height:505px; padding:12px 14px 15px !important; }
-.book-page49-example.second { margin-top:47px !important; min-height:410px; padding:38px 14px 15px !important; }
+.book-page49-example.first { min-height:466px; padding:0 14px 15px !important; }
+.book-page49-example.second { margin-top:5px !important; min-height:410px; padding:38px 14px 15px !important; }
 .book-page49-example ol { row-gap:3px; }
 
 .book-arithmetic-figure { display:block !important; width:auto !important; max-width:650px !important; height:auto !important; margin:10px auto 8px !important; border:0 !important; background:transparent !important; object-fit:contain !important; }
@@ -3005,7 +3460,7 @@ input[data-activity-item]:focus {
 .book-page57-heading { width:680px; margin:0 auto 38px; font-size:21px; line-height:1.2; font-weight:700; }
 .book-page57-example { width:704px; margin:0 auto !important; padding:34px 10px 12px !important; min-height:934px; }
 .book-page57-example .book-example-label { top:-22px; left:50px; }
-#content#content.book-page-57 .book-page57-example :is(p,span) { font-size:18px!important; line-height:1.27!important; }
+#content#content.book-page-57 .book-page57-example :is(p,span) { font-size:20px!important; line-height:1.27!important; }
 .book-page57-stack { width:102px; margin:0 0 7px 42px; display:grid; text-align:right; font-size:19px; }
 .book-page57-stack i { height:1px; border-top:1px solid #222; margin-top:3px; }
 .book-page57-stack i+i { margin-top:22px; }
@@ -3013,6 +3468,10 @@ input[data-activity-item]:focus {
 .book-page57-example > p { margin:0; }
 .book-page57-table { margin-top:10px; display:grid; grid-template-columns:1fr 148px; border:1px solid #333; }
 .book-page57-table > div { min-height:127px; padding:6px 7px; border-bottom:1px solid #333; }
+.book-page57-table > div:nth-child(-n+2) { min-height:143px; }
+.book-page57-table > div:nth-child(n+3):nth-child(-n+4) { min-height:137px; }
+.book-page57-table > div:nth-child(n+5):nth-child(-n+6) { min-height:143px; }
+.book-page57-table > div:nth-child(n+7):nth-child(-n+8) { min-height:164px; }
 .book-page57-table > div:nth-child(even) { border-left:1px solid #333; }
 .book-page57-table > div:nth-last-child(-n+2) { border-bottom:0; }
 .book-page57-table .text { display:grid; grid-template-columns:34px 1fr; }
@@ -3025,7 +3484,7 @@ input[data-activity-item]:focus {
 /* Printed page 58 — vertical regrouping example 2. */
 #content.book-page-58 { padding:85px 60px 102px !important; }
 #content.book-page-58 > section { width:100%; min-height:1120px; }
-.book-page58-example { width:704px; min-height:922px; margin:0 auto !important; padding:34px 10px 15px !important; }
+.book-page58-example { width:650px; min-height:873px; margin:0 auto !important; padding:34px 10px 15px !important; }
 .book-page58-example .book-example-label { top:-22px; left:50px; }
 #content#content.book-page-58 .book-page58-example :is(p,li,span) { font-size:19px!important; line-height:1.31!important; }
 .book-page58-stack { width:132px; margin:0 0 26px 56px; display:grid; text-align:right; }
@@ -3033,7 +3492,8 @@ input[data-activity-item]:focus {
 .book-page58-stack i+i { margin-top:22px; }
 .book-page58-example h2 { margin:0 0 6px; font-size:21px; font-weight:700; }
 .book-page58-example ol { margin:0 0 0 21px; padding-left:20px; display:grid; row-gap:14px; }
-.book-page58-example .conclusion { margin:39px 0 0 40px; }
+.book-page58-example .conclusion { margin:63px 0 0 40px; }
+#content#content.book-page-58 > section { margin-top:-20px !important; }
 
 /* Printed page 59 — place-value cards and Zoezi la 4. */
 #content.book-page-59 { padding:85px 60px 102px !important; }
@@ -3041,7 +3501,7 @@ input[data-activity-item]:focus {
 .book-page59-top { width:704px; margin:0 auto 24px; padding:7px 10px 12px; border-left:1px solid #9b891b; border-right:1px solid #9b891b; border-bottom:1px solid #9b891b; }
 #content#content.book-page-59 .book-page59-top p { margin:0; font-size:19px!important; line-height:1.3!important; }
 .book-page59-place-value { display:block!important; width:676px!important; max-width:100%!important; height:auto!important; margin:15px auto 9px!important; border:0!important; border-radius:0!important; box-shadow:none!important; }
-.book-page59-exercise { width:704px; min-height:636px; margin:0 auto; padding:58px 13px 28px!important; background:#f7f4e8!important; border-radius:0 0 0 12px!important; }
+.book-page59-exercise { width:704px; min-height:550px; margin:0 auto; padding:58px 13px 18px!important; background:#f7f4e8!important; border-radius:0 0 0 12px!important; }
 .book-page59-exercise .book-exercise-title { top:0!important;left:0!important;right:0!important;width:auto!important;background:#f7cba8!important;color:#111!important;border-radius:0 12px 0 12px!important;box-shadow:4px 4px 7px rgba(0,0,0,.22);font-size:25px!important; }
 .book-page59-grid { display:grid; grid-template-columns:repeat(3,1fr); column-gap:46px; row-gap:70px; }
 .book-page59-item { display:grid; grid-template-columns:33px auto; align-items:start; font-size:22px; line-height:1.18; }
@@ -3053,9 +3513,9 @@ input[data-activity-item]:focus {
 .book-page59-item i+i { margin-top:22px; }
 
 /* Printed page 60 — exercise continuation and method comparison. */
-#content.book-page-60 { padding:87px 61px 102px !important; }
+#content.book-page-60 { padding:109px 61px 102px !important; }
 #content.book-page-60 > section { width:100%; min-height:1118px; }
-.book-page60-sheet { width:704px; min-height:1002px; margin:0 auto; padding:6px 12px 10px!important; background:#f7f4e8!important; border-radius:0 0 0 12px!important; }
+.book-page60-sheet { width:704px; min-height:970px; margin:0 auto; padding:6px 12px 10px!important; background:#f7f4e8!important; border-radius:0 0 0 12px!important; }
 .book-page60-grid { display:grid; grid-template-columns:repeat(3,1fr); column-gap:47px; row-gap:27px; }
 .book-page60-item { display:grid; grid-template-columns:36px auto; align-items:start; font-size:22px; line-height:1.18; }
 .book-page60-item > span:first-child { font-size:22px!important; line-height:1.18!important; }
@@ -3078,27 +3538,27 @@ input[data-activity-item]:focus {
 .book-page60-methods .indent { padding-left:145px; }
 
 /* Printed page 61 — Dule's method and addition word problems. */
-#content.book-page-61 { padding:86px 60px 102px !important; }
+#content.book-page-61 { padding:114px 60px 102px !important; }
 #content.book-page-61 > section { width:100%; min-height:1119px; }
-.book-page61-dule { width:704px; margin:0 auto 41px; padding:7px 9px 13px; display:grid; grid-template-columns:90px 1fr; background:#f7f4e8; }
+.book-page61-dule { width:704px; min-height:297px; margin:0 auto 41px; padding:7px 9px 13px; display:grid; grid-template-columns:90px 1fr; background:#f7f4e8; }
 .book-page61-dule h2 { margin:0; padding:0 6px; border:1px solid #333; border-right:0; background:#fff3c7; font-size:21px; font-weight:700; }
 .book-page61-dule > div { padding:3px 7px; border:1px solid #333; background:#fff3c7; display:grid; row-gap:5px; }
-#content#content.book-page-61 .book-page61-dule p { margin:0; font-size:18px!important; line-height:1.25!important; }
+#content#content.book-page-61 .book-page61-dule p { margin:0; font-size:20px!important; line-height:1.25!important; }
 .book-page61-title { width:680px; margin:0 auto 44px; color:#00b0f0; font-size:23px; line-height:1.2; font-weight:700; }
 .book-page61-example { width:704px; margin:0 auto!important; padding:33px 10px 14px!important; min-height:349px; }
 .book-page61-example .book-example-label { top:-22px; left:50px; }
-#content#content.book-page-61 .book-page61-example :is(p,span,b) { font-size:18px!important; line-height:1.28!important; }
+#content#content.book-page-61 .book-page61-example :is(p,span,b) { font-size:20px!important; line-height:1.28!important; }
 .book-page61-example h2 { margin:13px 0 3px; font-size:20px; font-weight:700; }
 .book-page61-solution p { display:grid; grid-template-columns:1fr 110px; }
 .book-page61-solution b { text-align:right; font-weight:400; }
 .book-page61-example.second { margin-top:49px!important; min-height:150px; }
 
 /* Printed page 62 — example 2 solution and Zoezi la 5. */
-#content.book-page-62 { padding:84px 61px 102px !important; }
+#content.book-page-62 { padding:101px 61px 102px !important; }
 #content.book-page-62 > section { width:100%; min-height:1121px; }
 .book-page62-solution { width:704px; margin:0 auto 42px!important; padding:8px 10px 18px!important; min-height:220px; border-top:0!important; border-radius:0 0 12px 0!important; }
 .book-page62-solution h2 { margin:0 0 3px; font-size:20px; font-weight:700; }
-#content#content.book-page-62 .book-page62-solution :is(p,span,b) { font-size:19px!important; line-height:1.28!important; }
+#content#content.book-page-62 .book-page62-solution :is(p,span,b) { font-size:20px!important; line-height:1.28!important; }
 .book-page62-solution > div { width:390px; display:grid; }
 .book-page62-solution > div p { margin:0; display:grid; grid-template-columns:1fr 104px; }
 .book-page62-solution b { text-align:right; font-weight:400; }
@@ -3107,82 +3567,85 @@ input[data-activity-item]:focus {
 .book-page62-exercise .book-exercise-title { top:0!important;left:0!important;right:0!important;width:auto!important;background:#f7cba8!important;color:#111!important;border-radius:0 12px 0 12px!important;box-shadow:4px 4px 7px rgba(0,0,0,.22);font-size:25px!important; }
 .book-page62-questions { display:grid; row-gap:18px; }
 .book-page62-questions > div { display:grid; grid-template-columns:39px 1fr; }
-#content#content.book-page-62 .book-page62-questions :is(p,span) { margin:0; font-size:18px!important; line-height:1.33!important; }
+#content#content.book-page-62 .book-page62-questions :is(p,span) { margin:0; font-size:20px!important; line-height:1.33!important; }
 
 /* Printed page 63 — Zoezi la 5 continuation and subtraction intro. */
-#content.book-page-63 { padding:84px 61px 102px !important; }
+#content.book-page-63 { padding:101px 61px 102px !important; }
 #content.book-page-63 > section { width:100%; min-height:1121px; }
-.book-page63-sheet { width:704px; margin:0 auto; padding:8px 13px 18px!important; min-height:762px; background:#f7f4e8!important; border-radius:0 0 0 12px!important; }
+.book-page63-sheet { width:704px; margin:0 auto; padding:8px 13px 18px!important; min-height:739px; background:#f7f4e8!important; border-radius:0 0 0 12px!important; }
 .book-page63-questions { display:grid; row-gap:19px; }
 .book-page63-questions > div { display:grid; grid-template-columns:40px 1fr; }
-#content#content.book-page-63 .book-page63-questions :is(p,span) { margin:0; font-size:18px!important; line-height:1.34!important; }
+#content#content.book-page-63 .book-page63-questions :is(p,span) { margin:0; font-size:20px!important; line-height:1.34!important; }
 .book-page63-intro { width:680px; margin:48px auto 0; }
 .book-page63-intro h1 { margin:0 0 13px; color:#00b0f0; font-size:24px; line-height:1.2; font-weight:700; }
-#content#content.book-page-63 .book-page63-intro p { margin:0; font-size:19px!important; line-height:1.35!important; }
+#content#content.book-page-63 .book-page63-intro p { margin:0; font-size:20px!important; line-height:1.35!important; }
 
 /* Printed page 64 — subtraction without regrouping. */
-#content.book-page-64 { padding:91px 60px 102px !important; }
+#content.book-page-64 { padding:119px 60px 102px !important; }
 #content.book-page-64 > section { width:100%; min-height:1114px; }
 .book-page64-head { width:684px; margin:0 auto 45px; }
 .book-page64-head h1 { margin:0; color:#00b0f0; font-size:24px; line-height:1.2; font-weight:700; }
 .book-page64-head h2 { margin:18px 0 0; font-size:21px; line-height:1.2; font-weight:700; }
 .book-page64-example { width:704px; margin:0 auto!important; padding:34px 10px 13px!important; min-height:447px; }
 .book-page64-example .book-example-label { top:-22px; left:50px; }
-#content#content.book-page-64 .book-page64-example :is(p,li,span) { font-size:18px!important; line-height:1.25!important; }
+#content#content.book-page-64 .book-page64-example :is(p,li,span) { font-size:20px!important; line-height:1.25!important; }
 .book-page64-example h2 { margin:8px 0 3px; font-size:20px; font-weight:700; }
 .book-page64-example ol { margin:0 0 0 22px; padding-left:20px; display:grid; row-gap:6px; }
 .book-page64-equation { width:440px; margin:17px auto 0; text-align:center; font-size:20px; letter-spacing:3px; }
 .book-page64-lines { width:350px; height:91px; margin:3px auto 8px; border-bottom:3px solid #00a7d7; background:repeating-linear-gradient(90deg,transparent 0 66px,#00b0f0 66px 69px,transparent 69px 86px); }
 .book-page64-example .conclusion { width:510px; margin:0 auto; }
+.book-page64-example .book-page64-figure { width:320px !important; max-width:320px !important; margin:9px auto 8px !important; }
 .book-page64-example.second { margin-top:43px!important; min-height:344px; }
 .book-page64-example.second h2 { margin-top:24px; }
 
 /* Printed page 65 — Zoezi la 6 and vertical subtraction intro. */
-#content.book-page-65 { padding:85px 60px 102px !important; }
+#content.book-page-65 { padding:104px 60px 102px !important; }
 #content.book-page-65 > section { width:100%; min-height:1120px; }
 .book-page65-cont { width:704px; margin:0 auto 25px!important; padding:8px 10px 12px!important; min-height:191px; border-top:0!important; }
 .book-page65-equation { width:610px; margin:0 auto; text-align:center; font-size:18px; letter-spacing:3px; }
 .book-page65-lines { width:620px; height:117px; margin:2px auto 5px; border-bottom:3px solid #00a7d7; background:repeating-linear-gradient(90deg,transparent 0 74px,#00b0f0 74px 77px,transparent 77px 92px); }
 #content#content.book-page-65 .book-page65-cont p { width:520px; margin:0 auto; font-size:18px!important; line-height:1.2!important; }
-.book-page65-exercise { width:704px; margin:0 auto; padding:54px 13px 12px!important; min-height:394px; background:#f7f4e8!important; border-radius:0 0 0 12px!important; }
+.book-page65-cont .book-page65-figure { width:630px !important; max-width:630px !important; margin:0 auto 5px !important; }
+#content#content.book-page-65 .book-page65-cont p { font-size:20px!important; }
+.book-page65-exercise { width:704px; margin:0 auto; padding:54px 13px 12px!important; min-height:418px; background:#f7f4e8!important; border-radius:0 0 0 12px!important; }
 .book-page65-exercise .book-exercise-title { top:0!important;left:0!important;right:0!important;width:auto!important;background:#f7cba8!important;color:#111!important;border-radius:0 12px 0 12px!important;box-shadow:4px 4px 7px rgba(0,0,0,.22);font-size:25px!important; }
 .book-page65-grid { display:grid; grid-template-columns:1fr 1fr; grid-auto-flow:column; grid-template-rows:repeat(10,auto); column-gap:55px; row-gap:6px; }
-.book-page65-grid p { margin:0; display:grid; grid-template-columns:38px 1fr; font-size:17px!important; line-height:1.22!important; }
+.book-page65-grid p { margin:0; display:grid; grid-template-columns:38px 1fr; font-size:20px!important; line-height:1.22!important; }
 .book-page65-heading { width:680px; margin:31px auto 40px; font-size:21px; font-weight:700; }
 .book-page65-example { width:704px; margin:0 auto!important; padding:35px 10px 13px!important; min-height:240px; }
 .book-page65-example .book-example-label { top:-22px; left:50px; }
 .book-page65-stack { width:110px; margin:0 0 7px 54px; display:grid; text-align:right; font-size:18px; }
 .book-page65-stack i { height:1px; border-top:1px solid #222; margin-top:3px; }.book-page65-stack i+i{margin-top:22px}
 .book-page65-example h2 { margin:5px 0 2px; font-size:20px; font-weight:700; }
-#content#content.book-page-65 .book-page65-example p { margin:0; font-size:18px!important; line-height:1.25!important; }
+#content#content.book-page-65 .book-page65-example p { margin:0; font-size:20px!important; line-height:1.25!important; }
 
 /* Printed page 66 — vertical subtraction examples 1–3. */
-#content.book-page-66 { padding:85px 60px 102px !important; }
+#content.book-page-66 { padding:104px 60px 102px !important; }
 #content.book-page-66 > section { width:100%; min-height:1120px; }
 .book-page66-cont { width:704px; margin:0 auto 38px!important; padding:8px 10px 13px!important; min-height:164px; border-top:0!important; }
 .book-page66-cont table { width:455px; margin:0 0 8px 44px; border-collapse:collapse; text-align:center; font-size:17px; }
 .book-page66-cont th,.book-page66-cont td { border:1px solid #333; padding:3px; font-weight:400; }
 .book-page66-cont th:nth-child(1),.book-page66-cont td:nth-child(1){background:#a8d8ef}.book-page66-cont th:nth-child(2),.book-page66-cont td:nth-child(2){background:#efbbd2}.book-page66-cont th:nth-child(3),.book-page66-cont td:nth-child(3){background:#f7ddb2}.book-page66-cont th:nth-child(4),.book-page66-cont td:nth-child(4){background:#a9dbaa}.book-page66-cont tbody tr:last-child td{background:#ddd}
-#content#content.book-page-66 .book-page66-cont p { margin:0; font-size:18px!important; }
-.book-page66-example { width:704px; margin:0 auto!important; padding:33px 10px 12px!important; min-height:355px; }
+#content#content.book-page-66 .book-page66-cont p { margin:0; font-size:20px!important; }
+.book-page66-example { width:704px; margin:0 auto!important; padding:33px 10px 12px!important; min-height:397px; }
 .book-page66-example .book-example-label { top:-22px; left:50px; }
-#content#content.book-page-66 .book-page66-example :is(p,li,span) { font-size:18px!important; line-height:1.23!important; }
+#content#content.book-page-66 .book-page66-example :is(p,li,span) { font-size:20px!important; line-height:1.23!important; }
 .book-page66-stack { width:130px; margin:0 0 5px 55px; display:grid; text-align:right; }
 .book-page66-stack i { height:1px; border-top:1px solid #222; margin-top:3px; }.book-page66-stack i+i{margin-top:22px}
 .book-page66-example h2 { margin:5px 0 2px; font-size:20px; font-weight:700; }
 .book-page66-example ol { margin:0 0 0 22px; padding-left:20px; display:grid; row-gap:4px; }
-.book-page66-example.third { margin-top:39px!important; min-height:330px; }
+.book-page66-example.third { margin-top:39px!important; min-height:339px; }
 .book-page66-example.third h2 { margin-top:0; }
 .book-page66-example.third > p { margin:0; }
 .book-page66-stack.answer { margin-top:12px; }
 
 /* Printed page 67 — Zoezi la 7 and regrouping subtraction intro. */
-#content.book-page-67 { padding:85px 60px 102px !important; }
+#content.book-page-67 { padding:105px 60px 102px !important; }
 #content.book-page-67 > section { width:100%; min-height:1120px; }
-.book-page67-exercise { width:704px; margin:0 auto; padding:58px 13px 13px!important; min-height:646px; background:#f7f4e8!important; border-radius:0 0 0 12px!important; }
+.book-page67-exercise { width:704px; margin:0 auto; padding:58px 13px 13px!important; min-height:629px; background:#f7f4e8!important; border-radius:0 0 0 12px!important; }
 .book-page67-exercise .book-exercise-title { top:0!important;left:0!important;right:0!important;width:auto!important;background:#f7cba8!important;color:#111!important;border-radius:0 12px 0 12px!important;box-shadow:4px 4px 7px rgba(0,0,0,.22);font-size:25px!important; }
 .book-page67-grid { display:grid; grid-template-columns:repeat(3,1fr); column-gap:50px; row-gap:25px; }
-.book-page67-item { display:grid; grid-template-columns:34px 1fr; font-size:18px; line-height:1.2; }
+.book-page67-item { display:grid; grid-template-columns:34px 1fr; font-size:20px; line-height:1.2; }
 .book-page67-item > div { display:grid; text-align:right; }
 .book-page67-item i { height:1px; border-top:1px solid #222; margin-top:3px; }.book-page67-item i+i{margin-top:23px}
 .book-page67-head { width:680px; margin:27px auto 46px; }
@@ -3190,38 +3653,38 @@ input[data-activity-item]:focus {
 .book-page67-head h2 { margin:9px 0 0; font-size:21px; font-weight:700; }
 .book-page67-example { width:704px; margin:0 auto!important; padding:34px 10px 12px!important; min-height:242px; }
 .book-page67-example .book-example-label { top:-22px; left:50px; }
-#content#content.book-page-67 .book-page67-example :is(p,span) { font-size:18px!important; line-height:1.3!important; }
+#content#content.book-page-67 .book-page67-example :is(p,span) { font-size:20px!important; line-height:1.3!important; }
 .book-page67-example h2 { margin:14px 0 5px; font-size:20px; font-weight:700; }
 .book-page67-step { display:grid; grid-template-columns:44px 1fr; }.book-page67-step p{margin:0}
 
 /* Printed page 68 — regrouping subtraction continuation. */
-#content.book-page-68 { padding:85px 60px 102px !important; }
+#content.book-page-68 { padding:104px 60px 102px !important; }
 #content.book-page-68 > section { width:100%; min-height:1120px; }
-.book-page68-cont { width:704px; margin:0 auto 43px!important; padding:7px 10px 16px!important; min-height:441px; border-top:0!important; }
+.book-page68-cont { width:704px; margin:0 auto 43px!important; padding:7px 10px 16px!important; min-height:425px; border-top:0!important; }
 .book-page68-follow,.book-page68-steps { display:grid; grid-template-columns:42px 1fr; row-gap:14px; }
-#content#content.book-page-68 :is(.book-page68-follow,.book-page68-steps) :is(p,span) { margin:0; font-size:18px!important; line-height:1.31!important; }
-.book-page68-example { width:704px; margin:0 auto!important; padding:35px 10px 14px!important; min-height:491px; }
+#content#content.book-page-68 :is(.book-page68-follow,.book-page68-steps) :is(p,span) { margin:0; font-size:20px!important; line-height:1.31!important; }
+.book-page68-example { width:704px; margin:0 auto!important; padding:35px 10px 14px!important; min-height:499px; }
 .book-page68-example .book-example-label { top:-22px; left:50px; }
-#content#content.book-page-68 .book-page68-example > p { margin:0; font-size:18px!important; }
+#content#content.book-page-68 .book-page68-example > p { margin:0; font-size:20px!important; }
 .book-page68-example h2 { margin:22px 0 7px; font-size:20px; font-weight:700; }
 .book-page68-steps { row-gap:15px; }
 
 /* Printed page 69 — example 2 conclusion and Zoezi la 8. */
-#content.book-page-69 { padding:85px 60px 102px !important; }
+#content.book-page-69 { padding:104px 60px 102px !important; }
 #content.book-page-69 > section { width:100%; min-height:1120px; }
-.book-page69-cont { width:704px; margin:0 auto 44px!important; padding:8px 10px 15px!important; min-height:448px; border-top:0!important; }
+.book-page69-cont { width:704px; margin:0 auto 44px!important; padding:8px 10px 15px!important; min-height:433px; border-top:0!important; }
 .book-page69-steps { display:grid; grid-template-columns:42px 1fr; row-gap:15px; }
-#content#content.book-page-69 .book-page69-steps :is(p,span) { margin:0; font-size:18px!important; line-height:1.31!important; }
-.book-page69-exercise { width:704px; margin:0 auto; padding:58px 13px 13px!important; min-height:471px; background:#f7f4e8!important; border-radius:0 0 0 12px!important; }
+#content#content.book-page-69 .book-page69-steps :is(p,span) { margin:0; font-size:20px!important; line-height:1.31!important; }
+.book-page69-exercise { width:704px; margin:0 auto; padding:58px 13px 13px!important; min-height:454px; background:#f7f4e8!important; border-radius:0 0 0 12px!important; }
 .book-page69-exercise .book-exercise-title { top:0!important;left:0!important;right:0!important;width:auto!important;background:#f7cba8!important;color:#111!important;border-radius:0 12px 0 12px!important;box-shadow:4px 4px 7px rgba(0,0,0,.22);font-size:25px!important; }
 .book-page69-grid { display:grid; grid-template-columns:1fr 1fr; grid-auto-flow:column; grid-template-rows:repeat(8,auto); column-gap:56px; row-gap:11px; }
-.book-page69-grid p { margin:0; display:grid; grid-template-columns:39px 1fr; font-size:18px!important; line-height:1.24!important; }
+.book-page69-grid p { margin:0; display:grid; grid-template-columns:39px 1fr; font-size:20px!important; line-height:1.24!important; }
 
 /* Printed page 70 — vertical regrouping worked table. */
-#content.book-page-70 { padding:91px 60px 102px !important; }
+#content.book-page-70 { padding:119px 60px 102px !important; }
 #content.book-page-70 > section { width:100%; min-height:1114px; }
 .book-page70-heading { width:680px; margin:0 auto 44px; font-size:21px; font-weight:700; }
-.book-page70-example { width:704px; margin:0 auto!important; padding:34px 10px 12px!important; min-height:920px; }
+.book-page70-example { width:704px; margin:0 auto!important; padding:34px 10px 12px!important; min-height:865px; }
 .book-page70-example .book-example-label { top:-22px; left:50px; }
 .book-page70-stack { width:110px; margin:0 0 36px 55px; display:grid; text-align:right; font-size:18px; }
 .book-page70-stack i { height:1px;border-top:1px solid #222;margin-top:3px}.book-page70-stack i+i{margin-top:22px}
@@ -3230,111 +3693,112 @@ input[data-activity-item]:focus {
 .book-page70-table > *:nth-child(even) { border-left:1px solid #333; }
 .book-page70-table > *:nth-last-child(-n+2) { border-bottom:0; }
 .book-page70-table h2 { font-size:20px; font-weight:700; }
-#content#content.book-page-70 .book-page70-table p { font-size:17px!important; line-height:1.29!important; }
+#content#content.book-page-70 .book-page70-table p { font-size:21px!important; line-height:1.29!important; }
 .book-page70-work { display:grid; align-content:center; text-align:right; padding-right:14px!important; font-size:16px; }
 .book-page70-work b { color:#e33; font-weight:400; }.book-page70-work i{height:1px;border-top:1px solid #222;margin-top:2px}
 
 /* Printed page 71 — example continuation, example 2, and Zoezi la 9. */
-#content.book-page-71 { padding:87px 60px 102px !important; }
+#content.book-page-71 { padding:115px 60px 102px !important; }
 #content.book-page-71 > section { width:100%; min-height:1118px; }
 .book-page71-cont { width:704px; margin:0 auto 37px!important; padding:8px 10px 13px!important; min-height:207px; border-top:0!important; }
 .book-page71-row { display:grid; grid-template-columns:1fr 100px; border:1px solid #333; }
-#content#content.book-page-71 .book-page71-row p { margin:0; padding:7px; font-size:18px!important; line-height:1.3!important; }
+#content#content.book-page-71 .book-page71-row p { margin:0; padding:7px; font-size:20px!important; line-height:1.3!important; }
 .book-page71-work { padding:6px 15px; border-left:1px solid #333; display:grid; text-align:right; font-size:16px; }
 .book-page71-work b { color:#e33;font-weight:400}.book-page71-work i{height:1px;border-top:1px solid #222;margin-top:2px}
-#content#content.book-page-71 .book-page71-cont > p { margin:8px 0 0; font-size:18px!important; }
-.book-page71-example { width:704px; margin:0 auto 47px!important; padding:34px 10px 12px!important; min-height:339px; }
+#content#content.book-page-71 .book-page71-cont > p { margin:8px 0 0; font-size:20px!important; }
+.book-page71-example { width:704px; margin:0 auto 47px!important; padding:34px 10px 12px!important; min-height:371px; }
 .book-page71-example .book-example-label { top:-22px;left:50px }
 .book-page71-stack { width:130px;margin:0 0 8px 58px;display:grid;text-align:right;font-size:18px}.book-page71-stack i{height:1px;border-top:1px solid #222;margin-top:2px}.book-page71-stack i+i{margin-top:22px}
-.book-page71-example h2{margin:5px 0 2px;font-size:20px;font-weight:700}#content#content.book-page-71 .book-page71-example p{margin:0;font-size:18px!important;line-height:1.25!important}.book-page71-stack.answer{margin-top:11px}
-.book-page71-exercise { width:704px; margin:0 auto; padding:57px 13px 12px!important; min-height:281px; background:#f7f4e8!important; border-radius:0 0 0 12px!important; }
+.book-page71-example h2{margin:5px 0 2px;font-size:20px;font-weight:700}#content#content.book-page-71 .book-page71-example p{margin:0;font-size:20px!important;line-height:1.25!important}.book-page71-stack.answer{margin-top:11px}
+.book-page71-exercise { width:704px; margin:0 auto; padding:57px 13px 12px!important; min-height:295px; background:#f7f4e8!important; border-radius:0 0 0 12px!important; }
 .book-page71-exercise .book-exercise-title{top:0!important;left:0!important;right:0!important;width:auto!important;background:#f7cba8!important;color:#111!important;border-radius:0 12px 0 12px!important;box-shadow:4px 4px 7px rgba(0,0,0,.22);font-size:25px!important}
-.book-page71-grid{display:grid;grid-template-columns:repeat(3,1fr);column-gap:52px;row-gap:31px}.book-page71-item{display:grid;grid-template-columns:34px 1fr;font-size:18px;line-height:1.2}.book-page71-item>div{display:grid;text-align:right}.book-page71-item i{height:1px;border-top:1px solid #222;margin-top:3px}.book-page71-item i+i{margin-top:23px}
+.book-page71-grid{display:grid;grid-template-columns:repeat(3,1fr);column-gap:52px;row-gap:31px}.book-page71-item{display:grid;grid-template-columns:34px 1fr;font-size:20px;line-height:1.2}.book-page71-item>div{display:grid;text-align:right}.book-page71-item i{height:1px;border-top:1px solid #222;margin-top:3px}.book-page71-item i+i{margin-top:23px}
 
 /* Printed page 72 — Zoezi la 9 continuation and subtraction word problem. */
-#content.book-page-72 { padding:85px 60px 102px !important; }
+#content.book-page-72 { padding:104px 60px 102px !important; }
 #content.book-page-72 > section { width:100%; min-height:1120px; }
-.book-page72-sheet { width:704px; margin:0 auto; padding:7px 13px 14px!important; min-height:374px; background:#f7f4e8!important; border-radius:0 0 0 12px!important; }
-.book-page72-grid { display:grid;grid-template-columns:repeat(3,1fr);column-gap:52px;row-gap:28px }.book-page72-item{display:grid;grid-template-columns:34px 1fr;font-size:18px;line-height:1.2}.book-page72-item>div{display:grid;text-align:right}.book-page72-item i{height:1px;border-top:1px solid #222;margin-top:3px}.book-page72-item i+i{margin-top:23px}
+.book-page72-sheet { width:704px; margin:0 auto; padding:7px 13px 14px!important; min-height:363px; background:#f7f4e8!important; border-radius:0 0 0 12px!important; }
+.book-page72-grid { display:grid;grid-template-columns:repeat(3,1fr);column-gap:52px;row-gap:28px }.book-page72-item{display:grid;grid-template-columns:34px 1fr;font-size:20px;line-height:1.2}.book-page72-item>div{display:grid;text-align:right}.book-page72-item i{height:1px;border-top:1px solid #222;margin-top:3px}.book-page72-item i+i{margin-top:23px}
 .book-page72-title { width:680px; margin:67px auto 59px; color:#00b0f0; font-size:23px; line-height:1.2; font-weight:700; }
-.book-page72-example { width:704px; margin:0 auto!important; padding:34px 10px 14px!important; min-height:370px; }
+.book-page72-example { width:704px; margin:0 auto!important; padding:34px 10px 14px!important; min-height:384px; }
 .book-page72-example .book-example-label{top:-22px;left:50px}
-#content#content.book-page-72 .book-page72-example :is(p,span,b){font-size:18px!important;line-height:1.28!important}.book-page72-example>p{margin:0}.book-page72-example h2{margin:37px 0 5px;font-size:20px;font-weight:700}
+#content#content.book-page-72 .book-page72-example :is(p,span,b){font-size:20px!important;line-height:1.28!important}.book-page72-example>p{margin:0}.book-page72-example h2{margin:37px 0 5px;font-size:20px;font-weight:700}
 .book-page72-solution { width:560px; display:grid; }.book-page72-solution p{margin:0;display:grid;grid-template-columns:1fr 120px}.book-page72-solution b{text-align:right;font-weight:400}.book-page72-example .conclusion{margin-top:55px}
 
 /* Printed page 73 — subtraction word problem and Zoezi la 10. */
-#content.book-page-73 { padding:84px 60px 102px !important; }
+#content.book-page-73 { padding:104px 60px 102px !important; }
 #content.book-page-73 > section { width:100%; min-height:1121px; }
-.book-page73-example { width:704px; margin:0 auto 44px!important; padding:34px 10px 14px!important; min-height:311px; }
-.book-page73-example .book-example-label{top:-22px;left:50px}#content#content.book-page-73 .book-page73-example :is(p,span,b){font-size:18px!important;line-height:1.28!important}.book-page73-example>p{margin:0}.book-page73-example h2{margin:17px 0 5px;font-size:20px;font-weight:700}
+.book-page73-example { width:704px; margin:0 auto 44px!important; padding:34px 10px 14px!important; min-height:300px; }
+.book-page73-example .book-example-label{top:-22px;left:50px}#content#content.book-page-73 .book-page73-example :is(p,span,b){font-size:20px!important;line-height:1.28!important}.book-page73-example>p{margin:0}.book-page73-example h2{margin:17px 0 5px;font-size:20px;font-weight:700}
 .book-page73-solution{width:610px;display:grid}.book-page73-solution p{margin:0;display:grid;grid-template-columns:1fr 120px}.book-page73-solution b{text-align:right;font-weight:400}.book-page73-example>.book-page73-solution+p{margin-top:11px}
 .book-page73-exercise { width:704px; margin:0 auto; padding:59px 13px 14px!important; min-height:608px; background:#f7f4e8!important; border-radius:0 0 0 12px!important; }
 .book-page73-exercise .book-exercise-title{top:0!important;left:0!important;right:0!important;width:auto!important;background:#f7cba8!important;color:#111!important;border-radius:0 12px 0 12px!important;box-shadow:4px 4px 7px rgba(0,0,0,.22);font-size:25px!important}
-.book-page73-questions{display:grid;row-gap:14px}.book-page73-questions>div{display:grid;grid-template-columns:40px 1fr}#content#content.book-page-73 .book-page73-questions :is(p,span){margin:0;font-size:18px!important;line-height:1.32!important}
+.book-page73-questions{display:grid;row-gap:14px}.book-page73-questions>div{display:grid;grid-template-columns:40px 1fr}#content#content.book-page-73 .book-page73-questions :is(p,span){margin:0;font-size:20px!important;line-height:1.32!important}
 
 /* Printed page 74 — Zoezi la 10 continuation. */
-#content.book-page-74 { padding:85px 61px 102px !important; }
+#content.book-page-74 { padding:104px 61px 102px !important; }
 #content.book-page-74 > section { width:100%; min-height:1120px; }
-.book-page74-sheet { width:704px; min-height:1001px; margin:0 auto; padding:8px 13px 14px!important; background:#f7f4e8!important; border-radius:0 0 0 12px!important; }
-.book-page74-questions{display:grid;row-gap:18px}.book-page74-questions>div{display:grid;grid-template-columns:42px 1fr}#content#content.book-page-74 .book-page74-questions :is(p,span){margin:0;font-size:18px!important;line-height:1.34!important}
+.book-page74-sheet { width:704px; min-height:970px; margin:0 auto; padding:8px 13px 14px!important; background:#f7f4e8!important; border-radius:0 0 0 12px!important; }
+.book-page74-questions{display:grid;row-gap:18px}.book-page74-questions>div{display:grid;grid-template-columns:42px 1fr}#content#content.book-page-74 .book-page74-questions :is(p,span){margin:0;font-size:20px!important;line-height:1.34!important}
 
 /* Printed page 75 — activity, reminder, and review. */
-#content.book-page-75 { padding:85px 61px 102px !important; }
+#content.book-page-75 { padding:107px 61px 102px !important; }
 #content.book-page-75 > section { width:100%; min-height:1120px; }
-.book-page75-work { width:704px; margin:0 auto 46px; padding:0 10px 18px; background:#eaf8fd; box-shadow:4px 4px 7px rgba(0,0,0,.2); }
+.book-page75-work { width:704px; min-height:263px; margin:0 auto 46px; padding:0 10px 18px; background:#eaf8fd; box-shadow:4px 4px 7px rgba(0,0,0,.2); }
 .book-page75-work h1 { margin:0 -10px 12px; padding:5px 10px 6px; color:#00b0f0; font-size:23px; border-bottom:1px solid #00a8d7; font-weight:700; }
 .book-page75-work h2 { margin:21px 0 3px; color:#00b0f0; font-size:22px; font-weight:700; }
-#content#content.book-page-75 .book-page75-work p { margin:0; font-size:18px!important; line-height:1.3!important; }
-.book-page75-reminder { width:704px; margin:0 auto 38px; padding:10px 11px 12px; background:#fbf3fc; border:1px solid #a84aa2; box-shadow:4px 4px 7px rgba(0,0,0,.2); }
+#content#content.book-page-75 .book-page75-work p { margin:0; font-size:20px!important; line-height:1.3!important; }
+.book-page75-reminder { width:704px; min-height:349px; margin:0 auto 38px; padding:10px 11px 12px; background:#fbf3fc; border:1px solid #a84aa2; box-shadow:4px 4px 7px rgba(0,0,0,.2); }
 .book-page75-reminder h1 { margin:0 0 5px; color:#92278f; font-size:23px; font-weight:700; }
 .book-page75-reminder ol { margin:0; padding-left:40px; display:grid; row-gap:18px; }
-#content#content.book-page-75 .book-page75-reminder :is(li,p) { margin:0; font-size:18px!important; line-height:1.3!important; }
-.book-page75-review { width:704px; min-height:280px; margin:0 auto; padding:55px 13px 12px; position:relative; background:#e4f6fc; border-radius:0 0 0 12px; }
+#content#content.book-page-75 .book-page75-reminder :is(li,p) { margin:0; font-size:20px!important; line-height:1.3!important; }
+.book-page75-review { width:704px; min-height:273px; margin:0 auto; padding:55px 13px 12px; position:relative; background:#e4f6fc; border-radius:0 0 0 12px; }
 .book-page75-review h1 { position:absolute; top:0; left:0; right:0; margin:0; padding:7px 10px; background:linear-gradient(90deg,#d7f4f8,#65cdb4); color:#00a8dd; font-size:23px; font-weight:700; }
-.book-page75-grid { display:grid;grid-template-columns:repeat(3,1fr);column-gap:52px;row-gap:23px}.book-page75-item{display:grid;grid-template-columns:34px 1fr;font-size:18px;line-height:1.2}.book-page75-item>div{display:grid;text-align:right}.book-page75-item i{height:1px;border-top:1px solid #222;margin-top:3px}.book-page75-item i+i{margin-top:23px}
+.book-page75-grid { display:grid;grid-template-columns:repeat(3,1fr);column-gap:52px;row-gap:23px}.book-page75-item{display:grid;grid-template-columns:34px 1fr;font-size:20px;line-height:1.2}.book-page75-item>div{display:grid;text-align:right}.book-page75-item i{height:1px;border-top:1px solid #222;margin-top:3px}.book-page75-item i+i{margin-top:23px}
 
 /* Printed page 76 — review continuation. */
-#content.book-page-76 { padding:86px 61px 102px !important; }
+#content.book-page-76 { padding:105px 61px 102px !important; }
 #content.book-page-76 > section { width:100%; min-height:1119px; }
-.book-page76-sheet { width:704px; min-height:999px; margin:0 auto; padding:8px 12px 15px; background:#e4f6fc; border-radius:0 0 0 12px; }
-.book-page76-stacks { display:grid;grid-template-columns:1fr 1fr;column-gap:90px }.book-page76-stacks>div{display:grid;grid-template-columns:42px 1fr;font-size:18px}.book-page76-stacks>div>div{width:130px;display:grid;text-align:right}.book-page76-stacks i{height:1px;border-top:1px solid #222;margin-top:3px}.book-page76-stacks i+i{margin-top:23px}
+.book-page76-sheet { width:704px; min-height:907px; margin:0 auto; padding:8px 12px 15px; background:#e4f6fc; border-radius:0 0 0 12px; }
+.book-page76-stacks { display:grid;grid-template-columns:1fr 1fr;column-gap:90px }.book-page76-stacks>div{display:grid;grid-template-columns:42px 1fr;font-size:20px}.book-page76-stacks>div>div{width:120px;display:grid;text-align:right}.book-page76-stacks i{height:1px;border-top:1px solid #222;margin-top:3px}.book-page76-stacks i+i{margin-top:23px}
+#content#content.book-page-76 .book-page76-stacks > div > div { width:120px !important; max-width:120px !important; }
 .book-page76-short { margin-top:17px; display:grid; grid-template-columns:1fr 1fr; column-gap:55px; row-gap:8px; }
-.book-page76-short p{margin:0;display:grid;grid-template-columns:43px 1fr;font-size:18px!important;line-height:1.25!important}
+.book-page76-short p{margin:0;display:grid;grid-template-columns:43px 1fr;font-size:20px!important;line-height:1.25!important}
 .book-page76-words { margin-top:19px; display:grid; row-gap:15px; }
-.book-page76-words>div{display:grid;grid-template-columns:44px 1fr}#content#content.book-page-76 .book-page76-words :is(p,span){margin:0;font-size:18px!important;line-height:1.32!important}
+.book-page76-words>div{display:grid;grid-template-columns:44px 1fr}#content#content.book-page-76 .book-page76-words :is(p,span){margin:0;font-size:20px!important;line-height:1.32!important}
 
 /* Printed page 77 — chapter three opening. */
-#content.book-page-77 { padding:93px 60px 102px !important; }
+#content.book-page-77 { padding:120px 60px 102px !important; }
 #content.book-page-77 > section { width:100%; min-height:1112px; }
-.book-page77-chapter{width:690px;margin:0 auto 48px;padding:8px 10px 12px;text-align:center;background:linear-gradient(#bceafa,#90d5ed);border-radius:0 12px 0 12px;box-shadow:5px 5px 7px rgba(0,0,0,.22)}.book-page77-chapter h2{margin:0;color:#00aeef;font-size:27px;line-height:1.1;font-weight:700}.book-page77-chapter h1{margin:10px 0 0;color:#111;font-size:31px;line-height:1.08;font-weight:700}
-.book-page77-intro{width:684px;margin:0 auto 33px;padding:5px 8px 13px;background:#fae0d1;border:1px solid #e67536}.book-page77-intro h2{margin:0;font-size:22px;font-weight:700}#content#content.book-page-77 .book-page77-intro p{margin:7px 0 0;font-size:18px!important;line-height:1.35!important}
-.book-page77-copy{width:684px;margin:0 auto}.book-page77-copy h2{margin:0 0 6px;color:#00b0f0;font-size:23px;font-weight:700}.book-page77-copy p+h2{margin-top:45px}#content#content.book-page-77 .book-page77-copy p{margin-bottom:0;font-size:18px!important;line-height:1.37!important}
+.book-page77-chapter{width:645px;height:102px;box-sizing:border-box;margin:0 auto 48px;padding:8px 10px 12px;display:flex;flex-direction:column;justify-content:center;text-align:center;background:linear-gradient(#bceafa,#90d5ed);border-radius:0 12px 0 12px;box-shadow:5px 5px 7px rgba(0,0,0,.22)}.book-page77-chapter h2{margin:0;color:#00aeef;font-size:27px;line-height:1.1;font-weight:700}.book-page77-chapter h1{margin:8px 0 0;color:#111;font-size:31px;line-height:1.08;font-weight:700}
+.book-page77-intro{box-sizing:border-box;width:643px;min-height:192px;margin:0 auto 37px;padding:7px 10px 13px;background:#fae0d1;border:1px solid #e67536}.book-page77-intro h2{margin:0;font-size:22px;font-weight:700}#content#content.book-page-77 .book-page77-intro p{margin:7px 0 0;font-size:20px!important;line-height:1.35!important}
+.book-page77-copy{width:643px;margin:0 auto}.book-page77-copy h2{margin:0 0 6px;color:#00b0f0;font-size:20px;font-weight:700}.book-page77-copy p+h2{margin-top:37px}#content#content.book-page-77 .book-page77-copy p{margin-bottom:0;font-size:20px!important;line-height:1.37!important}
 
 /* Printed page 78 — genuine measuring illustration and activity. */
 #content.book-page-78 { padding:84px 60px 102px !important; }
 #content.book-page-78 > section { width:100%; min-height:1121px; }
 .book-page78-figure { width:520px; height:385px; margin:0 auto 22px; display:flex; align-items:center; justify-content:center; }
 .book-page78-figure img { display:block; max-width:520px; max-height:385px; width:auto; height:auto; }
-.book-page78-work { width:704px; margin:0 auto 39px; padding:0 10px 13px; background:#eaf8fd; box-shadow:4px 4px 7px rgba(0,0,0,.2); }
+.book-page78-work { box-sizing:border-box; width:650px; margin:0 auto 39px; padding:0 10px 13px; background:#eaf8fd; box-shadow:4px 4px 7px rgba(0,0,0,.2); }
 .book-page78-work h1 { margin:0 -10px 8px; padding:5px 10px 6px; border-bottom:1px solid #00a8d7; font-size:18px; font-weight:400; }
 .book-page78-work h1 b { color:#00b0f0; font-size:22px; }
 .book-page78-work ol { margin:0; padding-left:34px; }
 #content#content.book-page-78 .book-page78-work li { font-size:17px!important; line-height:1.28!important; margin-bottom:4px; }
-.book-page78-copy { width:680px; margin:0 auto; }
+.book-page78-copy { width:643px; margin:0 auto; }
 .book-page78-copy h1 { margin:0 0 10px; color:#00b0f0; font-size:23px; font-weight:700; }
-#content#content.book-page-78 .book-page78-copy p { margin:0; font-size:18px!important; line-height:1.34!important; }
+#content#content.book-page-78 .book-page78-copy p { margin:0; font-size:18px!important; line-height:1.34!important; text-align:justify; }
 
 /* Printed page 79 — genuine ruler/tape figures and activities. */
 #content.book-page-79 { padding:85px 60px 102px !important; }
 #content.book-page-79 > section { width:100%; min-height:1120px; }
-#content#content.book-page-79 .book-page79-lead { width:680px; margin:0 auto 10px; font-size:18px!important; line-height:1.25!important; }
-.book-page79-tools { width:680px; margin:0 auto 28px; }
+#content#content.book-page-79 .book-page79-lead { width:643px; margin:0 auto 10px; font-size:18px!important; line-height:1.25!important; }
+.book-page79-tools { width:643px; margin:0 auto 28px; }
 .book-page79-tools figure { margin:0; text-align:center; }
 .book-page79-tools .ruler img { display:block; width:590px; height:auto; margin:0 auto; }
 .book-page79-tools figcaption,.book-page79-tools>p { margin:4px 0 0; text-align:center; font-size:18px; }
 .book-page79-tools .tapes { height:190px; display:flex; align-items:center; justify-content:space-around; }
 .book-page79-tools .tapes img { max-width:205px; max-height:178px; width:auto; height:auto; }
-.book-page79-work { width:704px; margin:0 auto 43px; padding:0 10px 13px; background:#eaf8fd; box-shadow:4px 4px 7px rgba(0,0,0,.2); }
+.book-page79-work { box-sizing:border-box; width:650px; margin:0 auto 43px; padding:0 10px 13px; background:#eaf8fd; box-shadow:4px 4px 7px rgba(0,0,0,.2); }
 .book-page79-work h1 { margin:0 -10px 8px; padding:5px 10px 6px; border-bottom:1px solid #00a8d7; font-size:18px; font-weight:400; }
 .book-page79-work h1 b { color:#00b0f0; font-size:22px; }
 .book-page79-work ol { margin:0; padding-left:34px; }
@@ -3344,13 +3808,13 @@ input[data-activity-item]:focus {
 /* Printed page 80 — millimetres/centimetres and genuine ruler examples. */
 #content.book-page-80 { padding:86px 60px 102px !important; }
 #content.book-page-80 > section { width:100%; min-height:1119px; }
-.book-page80-work { width:704px; margin:0 auto 58px; padding:7px 10px 10px; background:#eaf8fd; box-shadow:4px 4px 7px rgba(0,0,0,.2); }
+.book-page80-work { box-sizing:border-box; width:650px; margin:0 auto 58px; padding:7px 10px 10px; background:#eaf8fd; box-shadow:4px 4px 7px rgba(0,0,0,.2); }
 .book-page80-work ol { margin:0; padding-left:34px; }
 #content#content.book-page-80 .book-page80-work li { font-size:17px!important; line-height:1.25!important; margin-bottom:5px; }
-.book-page80-copy { width:680px; margin:0 auto 46px; }
+.book-page80-copy { width:643px; margin:0 auto 46px; }
 .book-page80-copy h1 { margin:0 0 17px; font-size:21px; font-weight:700; }
-#content#content.book-page-80 .book-page80-copy p { margin:0; font-size:18px!important; line-height:1.35!important; }
-.book-page80-example { width:704px; margin:0 auto!important; padding:34px 10px 13px!important; min-height:238px; }
+#content#content.book-page-80 .book-page80-copy p { margin:0; font-size:18px!important; line-height:1.35!important; text-align:justify; }
+.book-page80-example { box-sizing:border-box; width:650px; margin:0 auto!important; padding:34px 10px 13px!important; min-height:238px; }
 .book-page80-example .book-example-label{top:-22px;left:50px}#content#content.book-page-80 .book-page80-example p{margin:0;font-size:17px!important;line-height:1.28!important}.book-page80-example img{display:block;width:auto;height:95px;max-width:360px;margin:8px auto 3px}.book-page80-example h2{margin:0 0 2px;font-size:20px;font-weight:700}
 .book-page80-example.second { margin-top:51px!important; min-height:240px; }.book-page80-example.second img{height:110px}
 
@@ -3586,22 +4050,26 @@ input[data-activity-item]:focus {
 /* Cover typography measured against the original PDF. A late utility rule
    had collapsed the main title to 44px. */
 #content#content [data-section-type="front_cover"] [data-id="pg001_n0002"] {
-  font-size: 104px !important;
+  font-size: 90px !important;
   line-height: 1 !important;
 }
 
 #content#content [data-section-type="front_cover"] [data-id="pg001_n0003"] {
-  font-size: 46px !important;
+  font-size: 36px !important;
   line-height: 1.12 !important;
 }
 
 #content#content [data-section-type="front_cover"] [data-id="pg001_n0004"] {
-  font-size: 38px !important;
+  font-size: 30px !important;
   line-height: 1.12 !important;
 }
 
 #content#content [data-section-type="front_cover"] [data-id="pg001_n0017"] {
   font-size: 32px !important;
+}
+
+#content#content [data-section-type="front_cover"] .pt-16 > .mt-2 {
+  margin-top: 18px !important;
 }
 
 /* Vertical arithmetic questions use two answer rules that start directly
@@ -3744,14 +4212,14 @@ input[data-activity-item]:focus {
 }
 
 #content#content :is(.book-page59-item, .book-page60-item) > div {
-  width: 125px !important;
-  max-width: 125px !important;
+  width: 110px !important;
+  max-width: 110px !important;
   justify-self: start !important;
 }
 
 #content#content :is(.book-page59-item, .book-page60-item) > div.wide {
-  width: 145px !important;
-  max-width: 145px !important;
+  width: 125px !important;
+  max-width: 125px !important;
 }
 
 #content#content.book-page-59 > section {
@@ -3768,9 +4236,9 @@ input[data-activity-item]:focus {
   .book-page110-chapter
 ) {
   box-sizing: border-box !important;
-  width: 690px !important;
+  width: 645px !important;
   max-width: 100% !important;
-  padding: 15px 24px 18px !important;
+  padding: 8px 10px 12px !important;
   border: 0 !important;
   border-radius: 0 16px 0 16px !important;
   background: var(--book-alternative) !important;
@@ -3786,7 +4254,7 @@ input[data-activity-item]:focus {
 ) > h2 {
   margin: 0 !important;
   color: var(--book-primary) !important;
-  font-size: 31px !important;
+  font-size: 27px !important;
   font-weight: 700 !important;
   line-height: 1.15 !important;
   -webkit-text-stroke: .45px currentColor !important;
@@ -3800,11 +4268,208 @@ input[data-activity-item]:focus {
 ) > h1 {
   margin: 8px 0 0 !important;
   color: #18181b !important;
-  font-size: 40px !important;
+  font-size: 31px !important;
   font-weight: 700 !important;
   line-height: 1.1 !important;
   -webkit-text-stroke: .55px currentColor !important;
 }
+
+/* PDF-measured geometry for printed pages 81–84. */
+#content.book-page-81 { padding-top:111px !important; }
+.book-page81-exercise { box-sizing:border-box !important; width:650px !important; }
+.book-page81-copy { width:643px !important; }
+.book-page81-work { box-sizing:border-box !important; width:650px !important; }
+#content#content.book-page-81 .book-page81-copy p { text-align:justify !important; }
+
+#content.book-page-82 { padding-top:120px !important; }
+.book-page82-copy { width:643px !important; }
+.book-page82-exercise { box-sizing:border-box !important; width:650px !important; min-height:726px !important; }
+#content#content.book-page-82 .book-page82-copy p { text-align:justify !important; }
+
+#content.book-page-83 { padding-top:122px !important; }
+.book-page83-copy { width:643px !important; }
+.book-page83-buckets img { height:255px !important; max-width:240px !important; }
+.book-page83-scales img { height:145px !important; }
+
+#content.book-page-84 { padding-top:120px !important; }
+.book-page84-copy { width:643px !important; }
+.book-page84-work { box-sizing:border-box !important; width:650px !important; }
+.book-page84-exercise { box-sizing:border-box !important; width:650px !important; min-height:334px !important; }
+
+/* PDF-measured geometry for printed pages 85–90. */
+#content.book-page-85 { padding-top:109px !important; }
+.book-page85-exercise { box-sizing:border-box !important; width:650px !important; }
+.book-page85-copy { width:643px !important; }
+#content#content.book-page-85 .book-page85-copy p { text-align:justify !important; }
+
+#content.book-page-86 { padding-top:119px !important; }
+.book-page86-copy { width:643px !important; }
+.book-page86-copy img { height:392px !important; }
+.book-page86-work { box-sizing:border-box !important; width:650px !important; }
+
+#content.book-page-87 { padding-top:119px !important; }
+.book-page87-copy { width:643px !important; }
+.book-page87-copy tbody tr:nth-child(1) td { height:182px !important; }
+.book-page87-copy tbody tr:nth-child(2) td { height:268px !important; }
+.book-page87-copy tbody tr:nth-child(3) td { height:260px !important; }
+
+#content.book-page-88 { padding-top:117px !important; }
+.book-page88-copy { width:643px !important; }
+.book-page88-work,.book-page88-exercise { box-sizing:border-box !important; width:650px !important; }
+
+#content.book-page-89 { padding-top:112px !important; }
+.book-page89-exercise,.book-page89-work { box-sizing:border-box !important; width:650px !important; }
+
+#content.book-page-90 { padding-top:106px !important; }
+.book-page90-reminder,.book-page90-review { box-sizing:border-box !important; width:650px !important; }
+.book-page90-vocab { box-sizing:border-box !important; width:643px !important; }
+.book-page90-reminder { min-height:284px !important; }
+.book-page90-vocab { min-height:195px !important; }
+.book-page90-review { min-height:434px !important; }
+
+/* PDF-measured geometry for printed pages 91–94. */
+#content.book-page-91 { padding-top:112px !important; }
+.book-page91-sheet { box-sizing:border-box !important; width:650px !important; }
+
+#content.book-page-92 { padding-top:112px !important; }
+.book-page92-sheet { box-sizing:border-box !important; width:650px !important; min-height:946px !important; }
+#content#content.book-page-92 .book-page92-sheet :is(p,span) { font-size:18px !important; line-height:1.32 !important; }
+
+#content.book-page-93 { padding-top:120px !important; }
+.book-page93-chapter { box-sizing:border-box !important; width:645px !important; height:102px !important; display:flex !important; flex-direction:column; justify-content:center; }
+.book-page93-intro { box-sizing:border-box !important; width:643px !important; min-height:273px !important; }
+.book-page93-copy { width:643px !important; }
+#content#content.book-page-93 :is(.book-page93-intro,.book-page93-copy) p { font-size:18px !important; text-align:justify !important; }
+
+#content.book-page-94 { padding-top:117px !important; }
+.book-page94-work,.book-page94-example { box-sizing:border-box !important; width:650px !important; }
+.book-page94-copy { width:643px !important; }
+
+/* PDF-measured geometry for printed pages 95–100. */
+#content.book-page-95 { padding-top:119px !important; }
+.book-page95-copy { width:643px !important; }
+.book-page95-work { box-sizing:border-box !important; width:650px !important; min-height:788px !important; }
+
+#content.book-page-96 { padding-top:112px !important; }
+.book-page96-work { box-sizing:border-box !important; width:650px !important; height:279px !important; }
+.book-page96-copy { width:643px !important; }
+.book-page96-example { box-sizing:border-box !important; width:650px !important; min-height:462px !important; }
+
+#content.book-page-97 { padding-top:132px !important; }
+.book-page97-example { box-sizing:border-box !important; width:650px !important; }
+.book-page97-example:first-child { min-height:300px !important; }
+.book-page97-example.second { min-height:234px !important; }
+.book-page97-example.third { min-height:308px !important; }
+
+#content.book-page-98 { padding-top:114px !important; }
+.book-page98-exercise { box-sizing:border-box !important; width:650px !important; min-height:471px !important; }
+.book-page98-copy { width:643px !important; }
+
+#content.book-page-99 { padding-top:119px !important; }
+.book-page99-work,.book-page99-example { box-sizing:border-box !important; width:650px !important; }
+
+#content.book-page-100 { padding-top:133px !important; }
+.book-page100-example,.book-page100-work,.book-page100-exercise { box-sizing:border-box !important; width:650px !important; }
+
+/* PDF-measured geometry for printed pages 101–104. */
+#content.book-page-101 { padding-top:112px !important; }
+.book-page101-exercise,.book-page101-work { box-sizing:border-box !important; width:650px !important; }
+.book-page101-copy { width:643px !important; }
+
+#content.book-page-102 { padding-top:116px !important; }
+.book-page102-work,.book-page102-exercise { box-sizing:border-box !important; width:650px !important; }
+.book-page102-work { min-height:189px !important; }
+.book-page102-exercise { min-height:741px !important; }
+
+#content.book-page-103 { padding-top:120px !important; }
+.book-page103-copy { width:643px !important; }
+.book-page103-shapes { width:560px !important; gap:20px 80px !important; }
+.book-page103-shapes img { width:190px !important; height:170px !important; }
+
+#content.book-page-104 { padding-top:119px !important; }
+.book-page104-work,.book-page104-example { box-sizing:border-box !important; width:650px !important; }
+.book-page104-work { min-height:295px !important; }
+.book-page104-example { min-height:623px !important; }
+
+/* PDF-measured geometry for printed pages 105–110. */
+#content.book-page-105 { padding-top:112px !important; }
+.book-page105-exercise { box-sizing:border-box !important; width:650px !important; min-height:972px !important; }
+
+#content.book-page-106 { padding-top:119px !important; }
+.book-page106-work,.book-page106-reminder { box-sizing:border-box !important; width:650px !important; }
+.book-page106-vocab { box-sizing:border-box !important; width:643px !important; }
+.book-page106-work { min-height:250px !important; }
+.book-page106-reminder { min-height:323px !important; }
+.book-page106-vocab { min-height:270px !important; }
+
+#content.book-page-107,#content.book-page-108,#content.book-page-109 { padding-top:109px !important; }
+.book-page107-review,.book-page108-review,.book-page109-review { box-sizing:border-box !important; width:650px !important; min-height:975px !important; }
+
+#content.book-page-110 { padding-top:120px !important; }
+.book-page110-chapter { box-sizing:border-box !important; width:645px !important; height:102px !important; display:flex !important; flex-direction:column; justify-content:center; }
+.book-page110-intro { box-sizing:border-box !important; width:643px !important; min-height:207px !important; }
+.book-page110-copy { width:643px !important; }
+.book-page110-work { box-sizing:border-box !important; width:650px !important; min-height:365px !important; }
+#content#content.book-page-110 :is(.book-page110-intro,.book-page110-copy) p { text-align:justify !important; }
+
+/* PDF-measured geometry for printed pages 111–114. */
+#content.book-page-111 { padding-top:133px !important; }
+.book-page111-example { box-sizing:border-box !important; width:650px !important; }
+.book-page111-example:first-child { min-height:508px !important; }
+.book-page111-example.second { min-height:370px !important; }
+
+#content.book-page-112 { padding-top:111px !important; }
+.book-page112-exercise { box-sizing:border-box !important; width:650px !important; min-height:975px !important; }
+.book-page112-q img { height:450px !important; }
+
+#content.book-page-113,#content.book-page-114 { padding-top:114px !important; }
+.book-page113-exercise,.book-page114-exercise { box-sizing:border-box !important; width:650px !important; min-height:972px !important; }
+
+/* PDF-measured geometry for printed pages 115–118. */
+#content.book-page-115 { padding-top:120px !important; }
+.book-page115-copy { width:643px !important; }
+.book-page115-example { box-sizing:border-box !important; width:650px !important; }
+
+#content.book-page-116 { padding-top:137px !important; }
+.book-page116-example,.book-page116-exercise { box-sizing:border-box !important; width:650px !important; }
+.book-page116-example { min-height:366px !important; }
+.book-page116-exercise { min-height:546px !important; }
+
+#content.book-page-117 { padding-top:112px !important; }
+.book-page117-exercise { box-sizing:border-box !important; width:650px !important; min-height:973px !important; }
+
+#content.book-page-118 { padding-top:120px !important; }
+.book-page118-title { width:643px !important; }
+.book-page118-example { box-sizing:border-box !important; width:650px !important; min-height:450px !important; }
+.book-page118-example.second { min-height:397px !important; }
+
+/* Printed pages 119–120 rebuilt as static HTML: no answer fields or nested
+   question cards, while retaining the exact exercise flow from the PDF. */
+#content.book-page-119 { padding:112px 60px 102px !important; }
+#content.book-page-119 > section { width:100%; min-height:1113px; }
+.book-page119-exercise { box-sizing:border-box; width:650px; min-height:973px; margin:0 auto; padding:58px 13px 14px!important; background:#f7f4e8!important; border-radius:0 0 0 12px!important; }
+.book-page119-exercise .book-exercise-title { top:0!important; left:0!important; right:0!important; width:auto!important; background:#f7cba8!important; color:#111!important; border-radius:0 12px 0 12px!important; box-shadow:4px 4px 7px rgba(0,0,0,.22); font-size:25px!important; }
+.book-page119-q,.book-page120-q { display:grid; grid-template-columns:45px 1fr; margin-bottom:19px; }
+#content#content :is(.book-page119-q,.book-page120-q) :is(p,span) { margin:0; font-size:18px!important; line-height:1.34!important; }
+
+#content.book-page-120 { padding:112px 60px 102px !important; }
+#content.book-page-120 > section { width:100%; min-height:1113px; }
+.book-page120-exercise { box-sizing:border-box; width:650px; min-height:621px; margin:0 auto 37px; padding:12px 13px 14px!important; background:#f7f4e8!important; border-radius:0 0 0 12px!important; }
+.book-page120-copy { width:643px; margin:0 auto 46px; }
+.book-page120-copy h1 { margin:0 0 7px; color:#00b0f0; font-size:22px; font-weight:700; }
+#content#content.book-page-120 .book-page120-copy p { margin:0; font-size:18px!important; line-height:1.34!important; }
+.book-page120-example { box-sizing:border-box; width:650px; min-height:220px; margin:0 auto!important; padding:34px 10px 12px!important; }
+.book-page120-example .book-example-label { top:-22px; left:50px; }
+#content#content.book-page-120 .book-page120-example p { margin:3px 0; font-size:18px!important; line-height:1.3!important; }
+
+/* Printed pages 121–124 rebuilt from the PDF's static reading layout. */
+#content:is(.book-page-121,.book-page-122,.book-page-123,.book-page-124) { padding:112px 60px 102px!important; }
+#content#content:is(.book-page-121,.book-page-122,.book-page-123,.book-page-124)>section { width:100%;min-height:1113px;justify-content:flex-start!important; }
+.book-page121-cont { box-sizing:border-box;width:650px;min-height:973px;margin:0 auto;padding:0 10px 12px;border:1.5px solid #9b8705;border-top:0;border-radius:0 0 0 12px; }
+.book-page121-cont h2{margin:0 0 4px;font-size:20px;font-weight:700}.book-page121-cont ol{margin:0;padding-left:32px}.book-page121-cont li{margin-bottom:13px}#content#content.book-page-121 .book-page121-cont :is(p,li){font-size:18px!important;line-height:1.3!important}.book-page121-cont img{display:block;width:560px;height:250px;object-fit:contain;margin:24px auto 14px}
+.book-page122-example,.book-page124-example{box-sizing:border-box;width:650px;margin:0 auto 40px!important;padding:34px 10px 12px!important}.book-page122-example .book-example-label,.book-page124-example .book-example-label{top:-22px;left:50px}#content#content :is(.book-page122-example,.book-page124-example) :is(p,li){margin:3px 0;font-size:18px!important;line-height:1.3!important}.book-page122-example h2,.book-page124-example h2{margin:5px 0 2px;font-size:20px}.book-page122-example ol{margin:0;padding-left:31px}.book-page122-example img{display:block;width:540px;height:195px;object-fit:contain;margin:5px auto}.book-page122-example:first-child{min-height:705px}.book-page122-example.second{min-height:220px;margin-bottom:0!important}
+.book-page123-cont{box-sizing:border-box;width:650px;min-height:142px;margin:0 auto 28px;padding:0 10px 10px;border:1.5px solid #9b8705;border-top:0;border-radius:0 0 12px 12px}#content#content.book-page-123 .book-page123-cont p{margin:5px 0;font-size:18px!important;line-height:1.3!important}.book-page123-exercise{box-sizing:border-box;width:650px;min-height:803px;margin:0 auto;padding:58px 13px 12px!important;background:#f7f4e8!important;border-radius:0 0 0 12px!important}.book-page123-exercise .book-exercise-title{top:0!important;left:0!important;right:0!important;width:auto!important;background:#f7cba8!important;color:#111!important;border-radius:0 12px 0 12px!important;box-shadow:4px 4px 7px rgba(0,0,0,.22);font-size:25px!important}.book-page123-sums{display:grid;grid-template-columns:repeat(3,1fr);gap:25px 38px}.book-page123-sums p{display:grid;grid-template-columns:40px 1fr;margin:0;font-size:18px!important;line-height:1.2!important}
+.book-page124-title{width:643px;margin:0 auto 28px;color:#00b0f0;font-size:22px;font-weight:700}.book-page124-example:first-of-type{min-height:501px}.book-page124-example.second{min-height:360px;margin-bottom:0!important}
 
 /* Printed page 130: questions are plain content on the Zoezi background,
    without converter-created cards or answer controls. */
@@ -3840,13 +4505,17 @@ input[data-activity-item]:focus {
   box-sizing: border-box !important;
   width: 704px !important;
   max-width: calc(100% - 24px) !important;
-  margin-left: auto !important;
+  margin-left: 0 !important;
   margin-right: auto !important;
   overflow: visible !important;
   border: 1.5px solid #9b8705 !important;
   border-radius: 0 14px 0 14px !important;
   background: #fff !important;
   box-shadow: none !important;
+}
+
+#content#content.book-page .book-example-card:not(:has(> .book-example-card)) {
+  margin-top: 60px !important;
 }
 
 /* Mfano and Zoezi are parallel printed dialogues and share one column width. */
@@ -3940,19 +4609,33 @@ input[data-activity-item]:focus {
 /* One book-wide content column, taken from the approved page 3 layout. */
 #content#content[id][class] > section {
   box-sizing: border-box !important;
-  width: 760px !important;
+  width: 650px !important;
   max-width: 100% !important;
   margin-left: auto !important;
   margin-right: auto !important;
   zoom: 1 !important;
 }
 
+#content#content[id][class] > section :is(
+  .book-example-card,
+  .book-exercise-panel,
+  .book-work-dialog,
+  .book-recall-dialog
+) {
+  max-width: 100% !important;
+}
+
 /* Every primary page block is centered inside the canonical column.  Keep
    vertical margins page-specific, but never allow a legacy one-sided margin
    to create unequal horizontal whitespace. */
-#content#content[id][class] > section > :not(script,style) {
+#content#content[id][class] > section > :not(script,style,.book-example-card) {
   box-sizing: border-box !important;
   margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+#content#content[id][class] > section > .book-example-card {
+  margin-left: 0 !important;
   margin-right: auto !important;
 }
 
@@ -3974,6 +4657,24 @@ input[data-activity-item]:focus {
   display: none !important;
 }
 
+/* Printed page 2: the first two prompts are single lines and their answer
+   lists use the compact source-book leading rather than web-form spacing. */
+#content#content [data-section-id="pg008_sec001"] :is(
+  [data-id="pg008_n0005"],
+  [data-id="pg008_n0020"]
+) {
+  white-space: nowrap !important;
+}
+
+#content#content [data-section-id="pg008_sec001"] .book-example-card .space-y-2 {
+  row-gap: 0 !important;
+}
+
+#content#content [data-section-id="pg008_sec001"] .book-example-card .space-y-2 > p,
+#content#content [data-section-id="pg008_sec001"] .book-example-card .space-y-2 > p * {
+  line-height: 30px !important;
+}
+
 /* Page 3: semantic Mfano content stays HTML; only the labelled diagrams are
    a transparent image extracted from the printed artwork. */
 #content#content .book-page3-example {
@@ -3986,6 +4687,19 @@ input[data-activity-item]:focus {
   border-radius: 0 14px 0 14px !important;
   background: #fff !important;
   box-shadow: none !important;
+}
+
+#content#content [data-section-id="pg009_sec001"] {
+  padding-top: 64px !important;
+}
+
+#content#content [data-section-id="pg009_sec001"] .book-exercise-panel > div:last-child {
+  padding-top: 14px !important;
+  padding-bottom: 14px !important;
+}
+
+#content#content [data-section-id="pg009_sec001"] .book-exercise-panel .space-y-4 {
+  row-gap: 8px !important;
 }
 
 #content#content .book-page3-example > .book-example-label {
@@ -4166,3 +4880,82 @@ input[data-activity-item]:focus {
   font-size: 22px !important;
   line-height: 1.3 !important;
 }
+
+/* Printed pages 128–130: static blue review continuation. */
+#content:is(.book-page-128,.book-page-129,.book-page-130){padding:112px 60px 102px!important}#content#content:is(.book-page-128,.book-page-129,.book-page-130)>section{width:100%;min-height:1113px;justify-content:flex-start!important}.book-page128-review,.book-page129-review,.book-page130-review{box-sizing:border-box;width:650px;min-height:973px;margin:0 auto;padding:12px 13px 14px;background:#e4f6fc;border-radius:0 0 11px 11px}.book-page128-sums{display:grid;grid-template-columns:repeat(3,1fr);gap:35px 38px;margin-bottom:40px}.book-page128-sums p{display:grid;grid-template-columns:42px 1fr;margin:0;font-size:18px!important;line-height:1.2!important}.book-page128-q{display:grid;grid-template-columns:45px 1fr}.book-page128-q>span,#content#content.book-page-128 .book-page128-q p{margin:0;font-size:18px!important;line-height:1.3!important}.book-page128-q>div>div{display:grid;grid-template-columns:1fr 1.35fr;gap:12px 28px;margin-top:18px}.book-page128-q figure{margin:0}.book-page128-q figure:last-child{grid-column:1}.book-page128-q figcaption{font-size:18px}.book-page128-q img{display:block;width:100%;height:205px;object-fit:contain}.book-page128-q figure:last-child img{height:230px}
+.book-page129-q,.book-page130-q{display:grid;grid-template-columns:55px 1fr;margin-bottom:24px}#content#content :is(.book-page129-q,.book-page130-q) :is(p,span){margin:0;font-size:18px!important;line-height:1.34!important}.book-page129-q img{display:block;width:520px;height:355px;object-fit:contain;margin:12px auto 0}.book-page130-review{min-height:716px}.book-page130-q{margin-bottom:34px}
+
+/* Printed pages 125–127 rebuilt as static exercise and recap layouts. */
+#content:is(.book-page-125,.book-page-126,.book-page-127){padding:112px 60px 102px!important}#content#content:is(.book-page-125,.book-page-126,.book-page-127)>section{width:100%;min-height:1113px;justify-content:flex-start!important}
+.book-page125-cont{box-sizing:border-box;width:650px;min-height:126px;margin:0 auto 42px;padding:0 10px 10px;border:1.5px solid #9b8705;border-top:0;border-radius:0 0 12px 12px}#content#content.book-page-125 .book-page125-cont p{margin:5px 0;font-size:18px!important;line-height:1.3!important}.book-page125-exercise{box-sizing:border-box;width:650px;min-height:803px;margin:0 auto;padding:58px 13px 12px!important;background:#f7f4e8!important;border-radius:0 0 0 12px!important}.book-page125-exercise .book-exercise-title{top:0!important;left:0!important;right:0!important;width:auto!important;background:#f7cba8!important;color:#111!important;border-radius:0 12px 0 12px!important;box-shadow:4px 4px 7px rgba(0,0,0,.22);font-size:25px!important}.book-page125-q,.book-page126-q{display:grid;grid-template-columns:45px 1fr;margin-bottom:19px}#content#content :is(.book-page125-q,.book-page126-q) :is(p,span){margin:0;font-size:18px!important;line-height:1.34!important}
+.book-page126-exercise{box-sizing:border-box;width:650px;min-height:323px;margin:0 auto 34px;padding:12px 13px 14px!important;background:#f7f4e8!important;border-radius:0 0 0 12px!important}.book-page126-work{box-sizing:border-box;width:650px;min-height:269px;margin:0 auto 20px;background:#eaf8fd;box-shadow:4px 5px 7px rgba(0,0,0,.2);padding:0 10px 10px}.book-page126-work h1{margin:0 -10px;padding:6px 10px;border-bottom:2px solid #00a8d7;color:#00b0f0;font-size:22px}.book-page126-work h2{margin:8px 0 2px;color:#00b0f0;font-size:20px}.book-page126-work ol{margin:0;padding-left:28px}#content#content.book-page-126 .book-page126-work :is(p,li){margin:4px 0;font-size:18px!important;line-height:1.3!important}.book-page126-reminder{box-sizing:border-box;width:650px;min-height:292px;margin:0 auto;padding:8px 12px 10px;border:1.5px solid #912e8c;border-radius:0 12px 0 12px;background:#fbf4fb;box-shadow:4px 4px 7px rgba(0,0,0,.2)}.book-page126-reminder h1{margin:0 0 5px;color:#722077;font-size:22px}.book-page126-reminder ol{margin:0;padding-left:29px}#content#content.book-page-126 .book-page126-reminder li{font-size:18px!important;line-height:1.34!important;margin-bottom:8px}
+.book-page127-vocab{box-sizing:border-box;width:643px;margin:0 auto 45px;border:1px solid #ef6617}.book-page127-vocab h1{margin:0;padding:7px 14px;background:#fa6513;color:#fff;font-size:23px}.book-page127-vocab table{width:100%;border-collapse:collapse}.book-page127-vocab td{border:1px solid #ef6617;padding:7px;font-size:18px;line-height:1.25}.book-page127-vocab td:first-child{width:165px}.book-page127-vocab td:nth-child(2){width:80px}.book-page127-review{box-sizing:border-box;width:650px;min-height:450px;margin:0 auto;background:#e4f6fc}.book-page127-review h1{margin:0;padding:7px 10px;background:linear-gradient(90deg,#c9f1f7,#68cdb8);color:#00a8dd;font-size:24px}.book-page127-review>div{display:grid;grid-template-columns:repeat(3,1fr);gap:25px 38px;padding:18px 13px}.book-page127-review p{display:grid;grid-template-columns:40px 1fr;margin:0;font-size:18px!important;line-height:1.2!important}
+
+/* Printed page 131: chapter six opening, measured against the source PDF. */
+#content.book-page-131{padding:120px 60px 102px!important}#content#content.book-page-131>section{width:100%;min-height:1105px;justify-content:flex-start!important}.book-page131-chapter{box-sizing:border-box;width:645px;height:102px;margin:0 auto 44px;padding:8px 10px 12px;display:flex;flex-direction:column;justify-content:center;text-align:center;background:linear-gradient(#bceafa,#90d5ed);border-radius:0 12px 0 12px;box-shadow:5px 5px 7px rgba(0,0,0,.22)}.book-page131-chapter h2{margin:0;color:#00aeef;font-size:27px;font-weight:700;line-height:1.1}.book-page131-chapter h1{margin:8px 0 0;font-size:31px;font-weight:700;line-height:1.1}.book-page131-intro{box-sizing:border-box;width:643px;min-height:273px;margin:0 auto 35px;padding:7px 10px 12px;background:#fae0d1;border:1px solid #e67536}.book-page131-intro h2{margin:0 0 2px;font-size:22px;font-weight:700}.book-page131-copy{box-sizing:border-box;width:643px;margin:0 auto}.book-page131-copy h1{margin:0 0 5px;color:#00b0f0;font-size:22px;font-weight:700}.book-page131-copy ol{margin:5px 0 8px;padding-left:35px}#content#content.book-page-131 :is(.book-page131-intro,.book-page131-copy) :is(p,li){margin:0;font-size:18px!important;line-height:1.34!important;text-align:justify}.book-page131-copy li{padding-left:4px}.book-page131-copy img{display:block;width:560px;height:250px;margin:8px auto 0;object-fit:contain}
+
+/* Printed page 132: time instruments and Zoezi la 1. */
+#content.book-page-132{padding:143px 60px 102px!important}#content#content.book-page-132>section{width:100%;min-height:1082px;justify-content:flex-start!important}.book-page132-copy{box-sizing:border-box;width:643px;margin:0 auto 32px}.book-page132-copy h1{margin:0 0 5px;color:#00b0f0;font-size:22px;font-weight:700}#content#content.book-page-132 .book-page132-copy p{margin:0;font-size:18px!important;line-height:1.34!important;text-align:justify}.book-page132-figures{display:grid;grid-template-columns:repeat(3,1fr);align-items:end;gap:22px;margin-top:16px}.book-page132-figures figure{margin:0;text-align:center}.book-page132-figures img{display:block;width:100%;height:210px;object-fit:contain}.book-page132-figures figcaption{margin-top:3px;font-size:18px;line-height:1.2}.book-page132-exercise{box-sizing:border-box;width:650px;min-height:485px;margin:0 auto;padding:55px 12px 12px!important;background:#f7f4e8!important;border-radius:0 0 0 11px!important}.book-page132-exercise .book-exercise-title{top:0!important;left:0!important;right:0!important;width:auto!important;background:#f7cba8!important;color:#111!important;border-radius:0 11px 0 11px!important;box-shadow:4px 4px 7px rgba(0,0,0,.2);font-size:24px!important}.book-page132-exercise>p{margin:0 0 8px;font-size:18px!important;line-height:1.3!important;text-align:justify}.book-page132-exercise table{width:450px;margin:0 0 7px;border-collapse:collapse;background:transparent}.book-page132-exercise :is(th,td){border:1px solid #a29013;padding:1px 5px;font-size:18px;line-height:1.05;text-align:left}.book-page132-exercise th{font-weight:700;background:#e3e2cf}.book-page132-exercise ol{margin:0;padding-left:31px}.book-page132-exercise li{margin:0 0 2px;font-size:18px!important;line-height:1.25!important}
+
+/* Printed page 133: analogue and digital clock reading. */
+#content.book-page-133{padding:143px 60px 102px!important}#content#content.book-page-133>section{width:100%;min-height:1082px;justify-content:flex-start!important}.book-page133-copy{box-sizing:border-box;width:643px;margin:0 auto}.book-page133-copy h1{margin:0 0 5px;color:#00b0f0;font-size:22px;font-weight:700}#content#content.book-page-133 .book-page133-copy p{margin:0;font-size:18px!important;line-height:1.34!important;text-align:justify}.book-page133-clock{display:block;width:470px;height:420px;margin:15px auto 27px;object-fit:contain}.book-page133-digital{display:block;width:280px;height:122px;margin:30px auto 0;object-fit:contain}
+
+/* Printed page 134: minute, half-hour, and quarter-hour diagrams. */
+#content.book-page-134{padding:143px 60px 102px!important}#content#content.book-page-134>section{width:100%;min-height:1082px;justify-content:flex-start!important}.book-page134-copy{box-sizing:border-box;width:643px;margin:0 auto}#content#content.book-page-134 .book-page134-copy>p{margin:0;font-size:18px!important;line-height:1.34!important;text-align:justify}.book-page134-copy figure{margin:0;text-align:center}.book-page134-copy figcaption{font-size:18px;line-height:1.2}.book-page134-main img{display:block;width:430px;height:425px;margin:4px auto 0;object-fit:contain}.book-page134-main{margin-bottom:35px!important}.book-page134-parts{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:10px}.book-page134-parts img{display:block;width:100%;height:260px;object-fit:contain}
+
++/* Printed pages 141–145: static clock activities and 24-hour time. */
+#content:is(.book-page-141,.book-page-142,.book-page-143,.book-page-144,.book-page-145){padding:143px 60px 102px!important}#content#content:is(.book-page-141,.book-page-142,.book-page-143,.book-page-144,.book-page-145)>section{width:100%;min-height:1082px;justify-content:flex-start!important}.book-page141-exercise,.book-page142-exercise,.book-page145-exercise{box-sizing:border-box;width:650px;margin:0 auto;padding:10px 12px!important;background:#f7f4e8!important;border-radius:0 0 0 11px!important}.book-page141-exercise{min-height:980px}.book-page141-prompt,.book-page141-q4,.book-page142-q,.book-page145-q{display:grid;grid-template-columns:36px 1fr}.book-page141-prompt :is(span,p),.book-page141-q4 :is(span,p),.book-page142-q :is(span,p),.book-page145-q :is(span,p){margin:0;font-size:18px!important;line-height:1.28!important}.book-page141-clocks{display:grid;grid-template-columns:1fr 1fr;gap:24px 44px;margin:9px 16px 30px}.book-page141-clocks figure{margin:0}.book-page141-clocks figcaption{font-size:18px}.book-page141-clocks img{display:block;width:100%;height:225px;object-fit:contain}.book-page141-clocks p{text-align:center;font-size:18px!important;line-height:1.2!important}.book-page141-q4>div>p:not(:first-child){display:grid;grid-template-columns:38px 70px 180px;align-items:end}.book-page141-q4 b{font-weight:400}.book-page141-q4 i{border-bottom:1px solid #111;height:1em}
+.book-page142-exercise{min-height:380px;margin-bottom:28px}.book-page142-q{margin-bottom:22px}.book-page142-q>div>p:not(:first-child){display:grid;grid-template-columns:38px 1fr 165px}.book-page142-q i{border-bottom:1px solid #111}.book-page142-copy{box-sizing:border-box;width:643px;margin:0 auto}.book-page142-copy h1{margin:0 0 4px;color:#00b0f0;font-size:22px}.book-page142-copy p{margin:0;font-size:18px!important;line-height:1.3!important}.book-page142-copy img{display:block;width:470px;height:510px;margin:8px auto 0;object-fit:contain}
+.book-page143-copy{box-sizing:border-box;width:643px;margin:0 auto}.book-page143-copy>p{margin:0 0 8px;font-size:18px!important;line-height:1.3!important;text-align:justify}.book-page143-copy table{width:100%;border-collapse:collapse}.book-page143-copy :is(th,td){border:1px solid #111;padding:2px 6px;font-size:15px;line-height:1.08;text-align:center}.book-page143-copy th{background:#f07b2d;color:#fff;font-weight:700}
+.book-page144-example{box-sizing:border-box;width:650px;min-height:140px;margin:0 auto 38px!important;padding:30px 10px 8px!important;border:1.5px solid #9b8705!important;border-radius:0 12px 0 12px!important;background:#fff!important}.book-page144-example .book-example-label{left:48px!important;top:-20px!important;font-size:22px!important}.book-page144-example :is(p,h2){margin:0;font-size:18px!important;line-height:1.3!important}.book-page144-example h2{margin-top:8px;font-weight:700}.book-page144-exercise{box-sizing:border-box;width:650px;min-height:340px;margin:0 auto;padding:55px 12px 10px!important;background:#f7f4e8!important;border-radius:0 0 0 11px!important}.book-page144-exercise .book-exercise-title,.book-page145-exercise .book-exercise-title{top:0!important;left:0!important;right:0!important;width:auto!important;background:#f7cba8!important;color:#111!important;border-radius:0 11px 0 11px!important;box-shadow:4px 4px 7px rgba(0,0,0,.2);font-size:24px!important}.book-page144-exercise>div{display:grid;grid-template-columns:35px 1fr;margin-bottom:8px}.book-page144-exercise :is(span,p){margin:0;font-size:18px!important;line-height:1.28!important}
+.book-page145-exercise{min-height:980px;padding-top:56px!important}.book-page145-q{margin-bottom:12px}.book-page145-options{display:grid;grid-template-columns:1fr 1fr}.book-page145-options p{display:grid;grid-template-columns:38px 1fr}.book-page145-q>p{text-align:justify}
+
+
++/* Printed pages 146–150: time relationships, calendars, and recap. */
+#content:is(.book-page-146,.book-page-147,.book-page-148,.book-page-149,.book-page-150){padding:143px 60px 102px!important}#content#content:is(.book-page-146,.book-page-147,.book-page-148,.book-page-149,.book-page-150)>section{width:100%;min-height:1082px;justify-content:flex-start!important}.book-page146-copy,.book-page147-copy,.book-page147-calendar,.book-page148-copy,.book-page149-copy{box-sizing:border-box;width:643px;margin-left:auto;margin-right:auto}.book-page146-copy h1{margin:0 0 4px;color:#00b0f0;font-size:22px}.book-page146-copy :is(p,li),.book-page147-copy p,.book-page147-calendar p,.book-page148-copy p{font-size:18px!important;line-height:1.3!important}.book-page146-copy p{margin:0}.book-page146-copy>img{display:block;width:530px;height:430px;margin:4px auto 5px;object-fit:contain}.book-page146-copy ol{margin:3px 0 24px;padding-left:31px}.book-page146-copy h2,.book-page147-copy h1,.book-page147-calendar h2{margin:0 0 3px;font-size:20px;font-weight:700}.book-page146-copy table,.book-page147-months table{width:100%;border-collapse:collapse}.book-page146-copy :is(th,td),.book-page147-months :is(th,td){border:1px solid #a08c18;padding:3px 4px;font-size:17px;line-height:1.1;text-align:center}.book-page146-copy th,.book-page147-months th{background:#d8d09c;font-weight:700}
+.book-page147-copy{margin-bottom:34px}.book-page147-copy>p{margin:0 0 8px}.book-page147-months{display:grid;gap:14px}.book-page147-exercise{box-sizing:border-box;width:650px;min-height:310px;margin:0 auto 25px;padding:55px 12px 10px!important;background:#f7f4e8!important;border-radius:0 0 0 11px!important}.book-page147-exercise .book-exercise-title,.book-page150-exercise .book-exercise-title{top:0!important;left:0!important;right:0!important;width:auto!important;background:#f7cba8!important;color:#111!important;border-radius:0 11px 0 11px!important;box-shadow:4px 4px 7px rgba(0,0,0,.2);font-size:24px!important}.book-page147-exercise>div,.book-page150-exercise>div{display:grid;grid-template-columns:35px 1fr;margin-bottom:6px}.book-page147-exercise :is(span,p),.book-page150-exercise :is(span,p){margin:0;font-size:18px!important;line-height:1.28!important}.book-page147-calendar p{margin:0;text-align:justify}
+.book-page148-copy>p{margin:0 0 8px}.book-page148-calendar-img,.book-page149-calendar-img{display:block;width:620px;height:725px;margin:0 auto;object-fit:contain}.book-page148-holidays,.book-page149-holidays{display:block;width:620px;height:245px;margin:4px auto 0;object-fit:contain}.book-page149-calendar-img{height:745px}.book-page149-holidays{height:235px}
+.book-page150-exercise{box-sizing:border-box;width:650px;min-height:255px;margin:0 auto 24px;padding:55px 12px 10px!important;background:#f7f4e8!important;border-radius:0 0 0 11px!important}.book-page150-work{box-sizing:border-box;width:650px;min-height:267px;margin:0 auto 24px;padding:0 10px 10px;background:#eaf8fd;box-shadow:4px 5px 7px rgba(0,0,0,.2)}.book-page150-work h1{margin:0 -10px;padding:6px 10px;border-bottom:2px solid #00a8d7;font-size:18px}.book-page150-work h1 b,.book-page150-work h2{color:#00b0f0;font-size:20px}.book-page150-work h2{margin:8px 0 0}.book-page150-work p{margin:2px 0;font-size:18px!important;line-height:1.3!important}.book-page150-reminder{box-sizing:border-box;width:650px;min-height:193px;margin:0 auto 20px;padding:8px 12px;border:1.5px solid #912e8c;border-radius:0 12px 0 12px;background:#fbf4fb;box-shadow:4px 4px 7px rgba(0,0,0,.2)}.book-page150-reminder h1{margin:0;color:#722077;font-size:22px}.book-page150-reminder ol{margin:5px 0 0;padding-left:27px}.book-page150-reminder li{font-size:18px!important;line-height:1.3!important}.book-page150-vocab{box-sizing:border-box;width:620px;margin:0 auto;border:1px solid #f35d0b;background:#fff0e7}.book-page150-vocab h1{margin:0;padding:6px 12px;background:#f35d0b;color:#fff;font-size:21px}.book-page150-vocab p{display:grid;grid-template-columns:135px 1fr;margin:0;padding:5px 12px;font-size:18px!important;line-height:1.2!important}.book-page150-vocab b{font-weight:400}
+
+
++/* Printed pages 151–155: time review and Tanzania money opening. */
+#content:is(.book-page-151,.book-page-152,.book-page-153,.book-page-154,.book-page-155){padding:143px 60px 102px!important}#content#content:is(.book-page-151,.book-page-152,.book-page-153,.book-page-154,.book-page-155)>section{width:100%;min-height:1082px;justify-content:flex-start!important}.book-page151-review,.book-page152-review{box-sizing:border-box;width:650px;min-height:980px;margin:0 auto;padding:55px 12px 12px;background:#e4f6fc}.book-page151-review>h1{margin:-55px -12px 8px;padding:7px 10px;background:linear-gradient(90deg,#c9f1f7,#68cdb8);color:#00a8dd;font-size:24px}.book-page151-q,.book-page152-q{display:grid;grid-template-columns:36px 1fr;margin-bottom:24px}.book-page151-q :is(span,p),.book-page152-q :is(span,p){margin:0;font-size:18px!important;line-height:1.28!important}.book-page151-q>div>p:not(:first-child){display:grid;grid-template-columns:38px 1fr}.book-page151-line{grid-template-columns:38px 65px 1fr!important}.book-page151-line b{font-weight:400}.book-page151-line i{border-bottom:1px solid #111}.book-page151-q table{width:100%;margin-top:8px;border-collapse:collapse}.book-page151-q :is(th,td){border:1px solid #9a8c22;padding:4px 7px;font-size:17px;line-height:1.1;text-align:left}.book-page151-q th{background:#d8d09c}.book-page152-review{padding-top:12px}.book-page152-q>div>div{display:grid;grid-template-columns:1fr 1fr}.book-page152-q>div>div p{display:grid;grid-template-columns:38px 1fr}
+.book-page153-chapter{box-sizing:border-box;width:645px;height:102px;margin:0 auto 44px;display:flex;flex-direction:column;justify-content:center;text-align:center;background:linear-gradient(#bceafa,#90d5ed);border-radius:0 12px 0 12px;box-shadow:5px 5px 7px rgba(0,0,0,.22)}.book-page153-chapter h2{margin:0;color:#00aeef;font-size:27px}.book-page153-chapter h1{margin:8px 0 0;font-size:31px}.book-page153-intro{box-sizing:border-box;width:643px;min-height:196px;margin:0 auto 24px;padding:7px 10px;background:#fae0d1;border:1px solid #e67536}.book-page153-intro h2{margin:0;font-size:22px}.book-page153-copy{box-sizing:border-box;width:643px;margin:0 auto 30px}.book-page153-copy h1{margin:0 0 3px;color:#00b0f0;font-size:22px}.book-page153-intro p,.book-page153-copy p{margin:0;font-size:18px!important;line-height:1.3!important;text-align:justify}.book-page153-copy p{margin-bottom:18px}.book-page153-example,.book-page154-example,.book-page155-example{box-sizing:border-box;width:650px;margin:0 auto!important;padding:30px 10px 8px!important;border:1.5px solid #9b8705!important;border-radius:0 12px 0 12px!important;background:#fff!important}.book-page153-example{min-height:140px}.book-page153-example .book-example-label,.book-page154-example .book-example-label,.book-page155-example .book-example-label{left:48px!important;top:-20px!important;font-size:22px!important}.book-page153-example :is(p,h2),.book-page154-example :is(p,h2),.book-page155-example :is(p,h2){margin:0;font-size:18px!important;line-height:1.3!important}.book-page153-example h2,.book-page154-example h2,.book-page155-example h2{margin-top:8px}
+.book-page154-example{min-height:180px;margin-bottom:42px!important}.book-page154-example:nth-of-type(2){min-height:130px}.book-page154-exercise,.book-page155-exercise{box-sizing:border-box;width:650px;margin:0 auto;padding:55px 12px 10px!important;background:#f7f4e8!important}.book-page154-exercise{min-height:515px}.book-page154-exercise .book-exercise-title{top:0!important;left:0!important;right:0!important;width:auto!important;background:#f7cba8!important;color:#111!important;border-radius:0 11px 0 11px!important;font-size:24px!important}.book-page154-exercise>p{margin:0 0 10px;font-size:18px!important}.book-page154-exercise figure,.book-page155-exercise figure{margin:0 0 18px}.book-page154-exercise figcaption,.book-page155-exercise figcaption{font-size:18px}.book-page154-exercise figure>div,.book-page155-exercise figure>div{display:grid;grid-template-columns:1fr 1fr;gap:35px}.book-page154-exercise img,.book-page155-exercise img{display:block;width:100%;height:155px;object-fit:contain}.book-page154-exercise figure>p,.book-page155-exercise figure>p{display:flex;align-items:end;justify-content:center;margin:4px 0;font-size:18px!important}.book-page154-exercise i,.book-page155-exercise i{width:260px;border-bottom:1px solid #111}
+.book-page155-exercise{min-height:585px;padding-top:12px!important;display:grid;grid-template-columns:1fr 1fr;gap:22px}.book-page155-exercise img{height:145px}.book-page155-qs{grid-column:1/-1}.book-page155-qs>div{display:grid;grid-template-columns:35px 1fr}.book-page155-qs :is(span,p){margin:0;font-size:18px!important;line-height:1.28!important}.book-page155-copy{box-sizing:border-box;width:643px;margin:22px auto 40px}.book-page155-copy h1{margin:0;color:#00b0f0;font-size:22px}.book-page155-copy p{margin:0;font-size:18px!important;line-height:1.3!important;text-align:justify}.book-page155-example{min-height:140px}
+
+
++/* Printed pages 156–160: banknotes, goods, and money notation. */
+#content:is(.book-page-156,.book-page-157,.book-page-158,.book-page-159,.book-page-160){padding:143px 60px 102px!important}#content#content:is(.book-page-156,.book-page-157,.book-page-158,.book-page-159,.book-page-160)>section{width:100%;min-height:1082px;justify-content:flex-start!important}.book-page156-exercise,.book-page157-exercise,.book-page158-exercise,.book-page160-exercise{box-sizing:border-box;width:650px;margin:0 auto;background:#f7f4e8!important}.book-page156-exercise{min-height:980px;padding:55px 88px 12px!important}.book-page156-exercise .book-exercise-title,.book-page158-exercise .book-exercise-title,.book-page160-exercise .book-exercise-title{top:0!important;left:0!important;right:0!important;width:auto!important;background:#f7cba8!important;color:#111!important;border-radius:0 11px 0 11px!important;font-size:24px!important}.book-page156-exercise>p{margin:0 0 8px;font-size:18px!important}.book-page156-exercise img,.book-page157-exercise img{display:block;width:470px;height:218px;margin:0 auto 10px;object-fit:contain}.book-page157-exercise{min-height:980px;padding:10px 88px!important}.book-page157-exercise img{height:225px}
+.book-page158-noteqs{box-sizing:border-box;width:650px;min-height:248px;margin:0 auto 24px;padding:8px 10px;background:#f7f4e8}.book-page158-noteqs h2{margin:0 0 3px;font-size:20px}.book-page158-noteqs>div,.book-page158-q{display:grid;grid-template-columns:35px 1fr}.book-page158-noteqs :is(span,p),.book-page158-q :is(span,p){margin:0;font-size:18px!important;line-height:1.25!important}.book-page158-exercise{min-height:690px;padding:55px 10px 10px!important}.book-page158-exercise>p{margin:0 0 5px;font-size:18px!important}.book-page158-exercise table{width:100%;border-collapse:collapse;margin-bottom:8px}.book-page158-exercise :is(th,td){border:1px solid #9a8c22;padding:2px 8px;font-size:18px;text-align:left}.book-page158-exercise th{background:#e7e1b8}.book-page158-exercise td:first-child{width:185px}.book-page158-exercise td:nth-child(2){display:flex;align-items:center;gap:16px}.book-page158-exercise td img{width:170px;height:72px;object-fit:contain}
+.book-page159-copy{box-sizing:border-box;width:643px;margin:0 auto 55px}.book-page159-copy h1{margin:0 0 5px;color:#00b0f0;font-size:22px}.book-page159-copy p{margin:0;font-size:18px!important;line-height:1.3!important;text-align:justify}.book-page159-example{box-sizing:border-box;width:650px;min-height:385px;margin:0 auto 48px!important;padding:31px 10px 10px!important;border:1.5px solid #9b8705!important;border-radius:0 12px 0 12px!important;background:#fff!important}.book-page159-example.second{min-height:270px}.book-page159-example .book-example-label{left:48px!important;top:-20px!important;font-size:22px!important}.book-page159-example :is(p,h2){margin:0 0 6px;font-size:18px!important;line-height:1.28!important}.book-page159-example h2{font-weight:700}
+.book-page160-exercise{min-height:980px;padding:55px 12px 10px!important}.book-page160-q{display:grid;grid-template-columns:35px 1fr;margin-bottom:24px}.book-page160-q :is(span,p){margin:0;font-size:18px!important;line-height:1.28!important}.book-page160-q table{width:100%;border-collapse:collapse;margin-top:8px}.book-page160-q :is(th,td){border:1px solid #9a8c22;padding:3px 6px;font-size:16px;line-height:1.15;text-align:left}.book-page160-q th{background:#e7e1b8}.book-page160-q td:first-child{width:35px}.book-page160-q th:nth-child(2),.book-page160-q td:nth-child(2){width:245px}
+
+
++/* Printed pages 161–165: addition of money. */
+#content:is(.book-page-161,.book-page-162,.book-page-163,.book-page-164,.book-page-165){padding:143px 60px 102px!important}#content#content:is(.book-page-161,.book-page-162,.book-page-163,.book-page-164,.book-page-165)>section{width:100%;min-height:1082px;justify-content:flex-start!important}.book-page161-exercise{box-sizing:border-box;width:650px;min-height:460px;margin:0 auto 40px;padding:10px 12px;background:#f7f4e8}.book-page161-q{display:grid;grid-template-columns:35px 1fr;margin-bottom:18px}.book-page161-q :is(span,p){margin:0;font-size:18px!important;line-height:1.28!important}.book-page161-q table{width:100%;margin-top:8px;border-collapse:collapse}.book-page161-q :is(th,td){border:1px solid #9a8c22;padding:4px 6px;font-size:16px;line-height:1.2;text-align:left}.book-page161-q th{background:#e7e1b8}.book-page161-copy{box-sizing:border-box;width:643px;margin:0 auto 40px}.book-page161-copy h1,.book-page164-title{margin:0 0 4px;color:#00b0f0;font-size:22px}.book-page161-copy p{margin:0;font-size:18px!important;line-height:1.3!important}.book-page161-example,.book-page162-example,.book-page164-example{box-sizing:border-box;width:650px;margin:0 auto!important;padding:31px 10px 10px!important;border:1.5px solid #9b8705!important;border-radius:0 12px 0 12px!important;background:#fff!important}.book-page161-example{min-height:280px}.book-page161-example .book-example-label,.book-page162-example .book-example-label,.book-page164-example .book-example-label{left:48px!important;top:-20px!important;font-size:22px!important}.book-page161-example :is(p,h2,li){font-size:18px!important;line-height:1.3!important}.book-page161-example p,.book-page161-example h2{margin:0}.book-page161-example ol{margin:4px 0;padding-left:31px}
+.book-page162-example{min-height:500px;margin-bottom:45px!important}.book-page162-example.second{min-height:400px}.book-page162-example img{display:block;width:100%;height:450px;object-fit:contain}.book-page162-example.second img{height:350px}.book-page163-exercise,.book-page165-exercise{box-sizing:border-box;width:650px;min-height:980px;margin:0 auto;padding:55px 12px 10px!important;background:#f7f4e8!important}.book-page163-exercise .book-exercise-title,.book-page165-exercise .book-exercise-title{top:0!important;left:0!important;right:0!important;width:auto!important;background:#f7cba8!important;color:#111!important;border-radius:0 11px 0 11px!important;font-size:24px!important}.book-page163-sums{display:grid;grid-template-columns:1fr 1fr;gap:22px 42px}.book-page163-sums>div{display:grid;grid-template-columns:35px 1fr}.book-page163-sums :is(span,p){margin:0;font-size:18px!important;line-height:1.25!important}.book-page163-sums i{grid-column:2;width:150px;border-bottom:1px solid #111;margin-top:7px}
+.book-page164-title{box-sizing:border-box;width:643px;margin:0 auto 50px}.book-page164-example{min-height:370px;margin-bottom:72px!important}.book-page164-example :is(p,h2,span){margin:0;font-size:18px!important;line-height:1.3!important}.book-page164-stack{width:190px;margin:8px 0 20px 55px;text-align:right}.book-page164-stack{display:grid}.book-page164-stack i{border-bottom:1px solid #111}.book-page165-exercise>div{display:grid;grid-template-columns:35px 1fr;margin-bottom:15px}.book-page165-exercise :is(span,p){margin:0;font-size:18px!important;line-height:1.3!important;text-align:justify}
+
+
++/* Printed pages 166–170: subtraction of money. */
+#content:is(.book-page-166,.book-page-167,.book-page-168,.book-page-169,.book-page-170){padding:143px 60px 102px!important}#content#content:is(.book-page-166,.book-page-167,.book-page-168,.book-page-169,.book-page-170)>section{width:100%;min-height:1082px;justify-content:flex-start!important}.book-page166-cont{box-sizing:border-box;width:650px;min-height:150px;margin:0 auto 48px;padding:8px 10px;background:#f7f4e8;display:grid;grid-template-columns:35px 1fr}.book-page166-cont :is(span,p),.book-page166-copy p{margin:0;font-size:18px!important;line-height:1.3!important;text-align:justify}.book-page166-copy{box-sizing:border-box;width:643px;margin:0 auto 48px}.book-page166-copy h1{margin:0 0 4px;color:#00b0f0;font-size:22px}.book-page166-example,.book-page167-cont,.book-page167-example,.book-page168-example{box-sizing:border-box;width:650px;margin:0 auto!important;padding:31px 10px 10px!important;border:1.5px solid #9b8705!important;border-radius:0 12px 0 12px!important;background:#fff!important}.book-page166-example{min-height:260px;margin-bottom:48px!important}.book-page166-example.second{min-height:285px}.book-page166-example .book-example-label,.book-page167-example .book-example-label,.book-page168-example .book-example-label{left:48px!important;top:-20px!important;font-size:22px!important}.book-page166-example :is(p,h2,li),.book-page167-cont :is(p,h2,li),.book-page167-example :is(p,h2,li),.book-page168-example :is(p,h2,li){margin:0;font-size:18px!important;line-height:1.28!important}.book-page166-example ol,.book-page167-example ol{margin:4px 0;padding-left:31px}.book-money-stack{display:grid;width:200px;margin:8px 0 12px 55px;text-align:right}.book-money-stack i{border-bottom:1px solid #111;margin-top:6px}.book-page167-cont{min-height:190px;margin-bottom:60px!important;padding-top:10px!important}.book-page167-example{min-height:690px}.book-page168-example{min-height:360px;margin-bottom:70px!important}.book-page168-exercise,.book-page169-exercise,.book-page170-exercise{box-sizing:border-box;width:650px;margin:0 auto;padding:55px 12px 10px!important;background:#f7f4e8!important}.book-page168-exercise{min-height:445px}.book-page168-exercise .book-exercise-title{top:0!important;left:0!important;right:0!important;width:auto!important;background:#f7cba8!important;color:#111!important;border-radius:0 11px 0 11px!important;font-size:24px!important}.book-page168-exercise>div{display:grid;grid-template-columns:35px 1fr;margin-bottom:10px}.book-page168-exercise :is(span,p){margin:0;font-size:18px!important;line-height:1.25!important}
+.book-page169-exercise,.book-page170-exercise{min-height:980px;padding-top:12px!important}.book-page169-sums,.book-page170-sums{display:grid;grid-template-columns:1fr 1fr;gap:34px 42px}.book-page169-sums>div,.book-page170-sums>div{display:grid;grid-template-columns:35px 1fr}.book-page169-sums .book-money-stack,.book-page170-sums .book-money-stack{width:190px;margin:0}.book-page169-sums>div>span,.book-page170-sums>div>span{font-size:18px}.book-page170-sums{gap:42px}.book-page170-sums>div:last-child{grid-column:1}
+
+
+/* Printed pages 171–178: final money examples and whole-book review. */
+#content:is(.book-page-171,.book-page-172,.book-page-173,.book-page-174,.book-page-175,.book-page-176,.book-page-177,.book-page-178){padding:143px 60px 102px!important}#content#content:is(.book-page-171,.book-page-172,.book-page-173,.book-page-174,.book-page-175,.book-page-176,.book-page-177,.book-page-178)>section{width:100%;min-height:1082px;justify-content:flex-start!important}.book-page171-title{box-sizing:border-box;width:643px;margin:0 auto 50px;color:#00b0f0;font-size:22px}.book-page171-example{box-sizing:border-box;width:650px;min-height:395px;margin:0 auto 55px!important;padding:31px 10px 10px!important;border:1.5px solid #9b8705!important;border-radius:0 12px 0 12px!important;background:#fff!important}.book-page171-example:last-child{min-height:325px;margin-bottom:0!important}.book-page171-example .book-example-label{left:48px!important;top:-20px!important;font-size:22px!important}.book-page171-example :is(p,h2,span){margin:0;font-size:18px!important;line-height:1.3!important}.book-page171-method{display:grid;width:230px;margin:8px 0 12px 55px;text-align:right}.book-page171-method i{border-bottom:1px solid #111;margin-top:3px}
+.book-page172-exercise{box-sizing:border-box;width:650px;min-height:980px;margin:0 auto;padding:55px 12px 10px!important;background:#f7f4e8!important}.book-page172-exercise .book-exercise-title{top:0!important;left:0!important;right:0!important;width:auto!important;background:#f7cba8!important;color:#111!important;border-radius:0 11px 0 11px!important;font-size:24px!important}.book-page172-exercise>div{display:grid;grid-template-columns:35px 1fr;margin-bottom:17px}.book-page172-exercise :is(span,p){margin:0;font-size:18px!important;line-height:1.28!important;text-align:justify}
+.book-page173-work,.book-page173-reminder,.book-page173-vocab{box-sizing:border-box;width:650px;margin-left:auto;margin-right:auto}.book-page173-work{min-height:245px;margin-bottom:35px;padding:0 10px 10px;background:#eaf8fd;box-shadow:4px 5px 7px rgba(0,0,0,.2)}.book-page173-work h1{margin:0 -10px;padding:6px 10px;border-bottom:2px solid #00a8d7;color:#00b0f0;font-size:22px}.book-page173-work h2{margin:10px 0 2px;color:#00b0f0;font-size:20px}.book-page173-work p{margin:4px 0;font-size:18px!important;line-height:1.3!important}.book-page173-reminder{min-height:345px;margin-bottom:32px;padding:8px 12px 10px;border:1.5px solid #912e8c;border-radius:0 12px 0 12px;background:#fbf4fb;box-shadow:4px 4px 7px rgba(0,0,0,.2)}.book-page173-reminder h1{margin:0 0 5px;color:#722077;font-size:22px}.book-page173-reminder ol{margin:0;padding-left:29px}.book-page173-reminder li{margin-bottom:8px;font-size:18px!important;line-height:1.3!important}.book-page173-vocab{border:1px solid #ef6617}.book-page173-vocab h1{margin:0;padding:6px 12px;background:#fa6513;color:#fff;font-size:22px}.book-page173-vocab p{display:grid;grid-template-columns:105px 1fr;margin:0;padding:6px 10px;border-top:1px solid #ef6617;font-size:18px!important;line-height:1.25!important}
+.book-page174-review,.book-page175-review,.book-page176-review,.book-page177-review,.book-page178-review{box-sizing:border-box;width:650px;min-height:980px;margin:0 auto;background:#e4f6fc}.book-page174-review h1{margin:0;padding:7px 10px;background:linear-gradient(90deg,#c9f1f7,#68cdb8);color:#00a8dd;font-size:24px}.book-page174-review>p{margin:10px 12px 5px;font-size:18px!important}.book-page174-review figure{margin:0 70px 14px}.book-page174-review figcaption{font-size:18px}.book-page174-review img{display:block;width:500px;height:205px;object-fit:contain;margin:0 auto 7px}.book-page175-review{padding:8px 12px}.book-page175-review>img{display:block;width:500px;height:200px;margin:0 auto 12px;object-fit:contain}.book-page175-q,.book-page176-line,.book-page177-q,.book-page178-review>div{display:grid;grid-template-columns:38px 1fr;margin-bottom:13px}.book-page175-q :is(span,p),.book-page176-line :is(span,p),.book-page177-q :is(span,p),.book-page178-review>div :is(span,p){margin:0;font-size:18px!important;line-height:1.28!important}.book-page175-q table{width:100%;border-collapse:collapse;margin-top:7px}.book-page175-q :is(th,td){border:1px solid #777;padding:5px 7px;font-size:16px;line-height:1.2;text-align:left}.book-page175-q th{background:#d1d2d4}.book-page176-review,.book-page177-review,.book-page178-review{padding:12px}.book-page178-review{min-height:420px}.book-page176-line{margin-bottom:16px}.book-page176-stacks,.book-page177-stacks{display:grid;grid-template-columns:1fr 1fr;gap:34px 42px;margin-top:22px}.book-page176-stacks>div,.book-page177-stacks>div{display:grid;grid-template-columns:35px 1fr}.book-page176-stacks .book-money-stack,.book-page177-stacks .book-money-stack{width:205px;margin:0}.book-page176-stacks>div>span,.book-page177-stacks>div>span{font-size:18px}.book-page177-stacks{margin:0 0 42px;gap:38px 42px}.book-page177-q{margin-bottom:22px}.book-page178-review>div{margin-bottom:35px}
+
+.book-page176-stacks .book-money-stack,.book-page177-stacks .book-money-stack{width:230px;white-space:nowrap}.book-page177-stacks{column-gap:24px}
+#content#content .sr-only{display:none!important}.book-page104-signs figure,.book-page137-figures figure{min-width:0!important;max-width:100%!important}.book-page104-signs img,.book-page137-figures img{max-width:100%!important}
+
+/* Printed pages 135–140: shared clock examples and Zoezi continuation. */
+#content:is(.book-page-135,.book-page-136,.book-page-137,.book-page-138,.book-page-139,.book-page-140){padding:143px 60px 102px!important}#content#content:is(.book-page-135,.book-page-136,.book-page-137,.book-page-138,.book-page-139,.book-page-140)>section{width:100%;min-height:1082px;justify-content:flex-start!important}.book-page135-example,.book-page136-example,.book-page137-example{box-sizing:border-box;width:650px;margin-left:auto!important;margin-right:auto!important;padding:31px 10px 10px!important;border:1.5px solid #9b8705!important;border-radius:0 12px 0 12px!important;background:#fff!important}.book-page135-example{min-height:955px}.book-page135-example .book-example-label,.book-page136-example .book-example-label,.book-page137-example .book-example-label{left:46px!important;top:-20px!important;font-size:22px!important}.book-page135-example :is(p,li),.book-page136-example :is(p,li),.book-page137-example :is(p,li){font-size:18px!important;line-height:1.28!important}.book-page135-example>p{margin:0 0 4px}.book-page135-example h2{margin:0;font-size:18px;font-weight:700}.book-page135-example ol{margin:0;padding-left:31px}.book-page135-example img{display:block;width:300px;height:250px;margin:4px auto;object-fit:contain}.book-page135-example img:nth-of-type(2){height:215px}.book-page135-last{display:grid;grid-template-columns:30px 1fr}.book-page135-last p{margin:0}
+.book-page136-copy{box-sizing:border-box;width:643px;margin:0 auto 35px}.book-page136-copy h1{margin:0;font-size:21px;font-weight:700}.book-page136-copy p{margin:2px 0 0;font-size:18px!important;line-height:1.32!important;text-align:justify}.book-page136-example{min-height:370px;margin-bottom:46px!important}.book-page136-example>p,.book-page137-example>p{margin:0;font-size:18px!important;line-height:1.3!important}.book-page136-example>img{display:block;width:340px;height:285px;margin:5px auto 0;object-fit:contain}.book-page136-example.second{min-height:378px;margin-bottom:0!important}.book-page136-figures,.book-page137-figures{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin-top:6px}.book-page136-figures figure,.book-page137-figures figure,.book-page137-bottom figure{margin:0}.book-page136-figures figcaption,.book-page137-figures figcaption,.book-page137-bottom figcaption{font-size:18px}.book-page136-figures img{display:block;width:100%;height:170px;object-fit:contain}.book-page136-example h2,.book-page137-example h2{margin:3px 0 0;font-size:18px}.book-page136-answers,.book-page137-answers{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.book-page136-answers span,.book-page137-answers span{font-size:18px;line-height:1.2}
+.book-page137-example{min-height:510px;margin-bottom:58px!important}.book-page137-figures img{display:block;width:100%;height:225px;object-fit:contain}.book-page137-answers span{text-align:center}.book-page137-example.second{min-height:415px;margin-bottom:0!important}.book-page137-bottom{display:grid;grid-template-columns:1fr 1fr;gap:45px;margin-top:8px}.book-page137-bottom img{display:block;width:100%;height:300px;object-fit:contain}
+.book-page138-cont{box-sizing:border-box;width:650px;min-height:980px;margin:0 auto;padding:0 12px 10px;border-left:1.5px solid #9b8705;border-right:1.5px solid #9b8705;display:grid;grid-template-columns:1fr 1fr;gap:16px 34px}.book-page138-cont figure{margin:0}.book-page138-cont figcaption{font-size:18px}.book-page138-cont img{display:block;width:100%;height:220px;object-fit:contain}
+.book-page139-answers{box-sizing:border-box;width:650px;min-height:460px;margin:0 auto 42px;padding:8px 10px;border-left:1.5px solid #9b8705;border-right:1.5px solid #9b8705;border-bottom:1.5px solid #9b8705;border-radius:0 0 0 12px}.book-page139-answers h2{margin:0 0 4px;font-size:19px}.book-page139-answers p{display:grid;grid-template-columns:35px 1fr;margin:0 0 3px;font-size:18px!important;line-height:1.25!important}.book-page139-exercise{box-sizing:border-box;width:650px;min-height:485px;margin:0 auto;padding:55px 12px 10px!important;background:#f7f4e8!important;border-radius:0 0 0 11px!important}.book-page139-exercise .book-exercise-title{top:0!important;left:0!important;right:0!important;width:auto!important;background:#f7cba8!important;color:#111!important;border-radius:0 11px 0 11px!important;box-shadow:4px 4px 7px rgba(0,0,0,.2);font-size:24px!important}.book-page139-prompt{display:grid;grid-template-columns:35px 1fr}.book-page139-prompt>span,.book-page139-prompt p{margin:0;font-size:18px!important;line-height:1.25!important}.book-page139-clocks{display:grid;grid-template-columns:1fr 1fr;gap:55px;margin:8px 0}.book-page139-clocks figure{margin:0}.book-page139-clocks figcaption{font-size:18px}.book-page139-clocks img{display:block;width:100%;height:185px;object-fit:contain}
+.book-page140-exercise{box-sizing:border-box;width:650px;min-height:980px;margin:0 auto;padding:10px 12px!important;background:#f7f4e8!important;border-radius:0 0 0 11px!important}.book-page140-prompt{display:grid;grid-template-columns:35px 1fr}.book-page140-prompt :is(span,p){margin:0;font-size:18px!important;line-height:1.3!important}.book-page140-clocks{display:grid;grid-template-columns:1fr 1fr;gap:35px 52px;margin:18px 25px 0}.book-page140-clocks figure{margin:0}.book-page140-clocks figcaption{font-size:18px}.book-page140-clocks img{display:block;width:100%;height:245px;object-fit:contain}

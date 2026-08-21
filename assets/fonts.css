@@ -3803,7 +3803,7 @@ input[data-activity-item]:focus {
 #content#content.book-page .book-example-card {
   position: relative !important;
   box-sizing: border-box !important;
-  width: 680px !important;
+  width: 704px !important;
   max-width: calc(100% - 24px) !important;
   margin-left: auto !important;
   margin-right: auto !important;
@@ -3812,6 +3812,15 @@ input[data-activity-item]:focus {
   border-radius: 0 14px 0 14px !important;
   background: #fff !important;
   box-shadow: none !important;
+}
+
+/* Mfano and Zoezi are parallel printed dialogues and share one column width. */
+#content#content.book-page .book-exercise-sheet {
+  box-sizing: border-box !important;
+  width: 704px !important;
+  max-width: calc(100% - 24px) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 #content#content.book-page .book-example-card > .book-example-label {
@@ -3858,6 +3867,31 @@ input[data-activity-item]:focus {
   margin: 0 !important;
   text-align: right !important;
   line-height: 1.2 !important;
+}
+
+/* All operands and answers occupy the same right-aligned place-value grid. */
+#content#content :is(
+  .book-page51-stack, .book-page52-stack, .book-page53-stack,
+  .book-page57-stack, .book-page58-stack, .book-page65-stack,
+  .book-page66-stack, .book-page70-stack, .book-page70-work,
+  .book-page71-stack, .book-page71-work
+) :is(span, b) {
+  font-variant-numeric: tabular-nums lining-nums !important;
+  font-feature-settings: "tnum" 1, "lnum" 1 !important;
+}
+
+#content#content :is(
+  .book-page51-stack, .book-page52-stack, .book-page53-stack,
+  .book-page57-stack, .book-page58-stack, .book-page65-stack,
+  .book-page66-stack, .book-page70-stack, .book-page70-work,
+  .book-page71-stack, .book-page71-work
+) > span:not(.book-example-label),
+#content#content .book-vertical-result {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  display: block !important;
+  text-align: right !important;
+  white-space: nowrap !important;
 }
 
 #content#content .book-vertical-operation > i:has(+ .book-vertical-result) {

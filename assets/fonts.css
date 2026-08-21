@@ -4965,4 +4965,6 @@ input[data-activity-item]:focus {
    column. Regular pages receive enough usable inner width while page
    furniture and the front cover remain unchanged. */
 #content#content:has(>section:not([data-section-type="front_cover"])){padding-left:35px!important;padding-right:35px!important}
-#content#content > section:not([data-section-type="front_cover"]) > :not(.source-page-number){box-sizing:border-box!important;width:min(100%,845px)!important;max-width:845px!important;margin-left:auto!important;margin-right:auto!important}
+#content#content[id][class] > section:not([data-section-type="front_cover"]){box-sizing:border-box!important;width:min(100%,845px)!important;max-width:845px!important;margin-left:auto!important;margin-right:auto!important}
+#content#content[id][class] > section:not([data-section-type="front_cover"]) > :not(.source-page-number),
+#content#content[id][class] > section:not([data-section-type="front_cover"]) :is(.book-example-card,.book-exercise-panel,.book-exercise-sheet,.book-work-dialog,.book-recall-dialog){box-sizing:border-box!important;width:100%!important;max-width:845px!important;margin-left:auto!important;margin-right:auto!important}

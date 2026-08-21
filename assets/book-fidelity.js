@@ -323,8 +323,10 @@
         element.style.setProperty('font-size', '28px', 'important');
         element.style.setProperty('line-height', '1.18', 'important');
       });
+      const applyNumberGap = () => row.querySelector('.book-q10-ina')?.style.setProperty('margin-left', '1.15rem', 'important');
       if (row.querySelector('[data-q10-blank]')) {
         sizeQuestionCopy();
+        applyNumberGap();
         return;
       }
       row.innerHTML = `<span class="book-q10-line book-q10-line-one">` +
@@ -335,6 +337,19 @@
         `<span class="book-q10-term">makumi <span data-q10-blank aria-hidden="true"></span></span>` +
         `<span>na</span><span class="book-q10-term">mamoja <span data-q10-blank aria-hidden="true"></span>.</span></span>`;
       sizeQuestionCopy();
+      applyNumberGap();
+    });
+  };
+
+  const normalisePageEightContentScale = () => {
+    if (page !== 14) return;
+    const pageSection = document.querySelector('#content [data-section-id="pg014_sec001"]');
+    if (!pageSection) return;
+    pageSection.style.setProperty('font-size', '28px', 'important');
+    pageSection.style.setProperty('line-height', '1.18', 'important');
+    pageSection.querySelectorAll('[data-id]').forEach((element) => {
+      element.style.setProperty('font-size', '28px', 'important');
+      element.style.setProperty('line-height', '1.18', 'important');
     });
   };
 
@@ -848,6 +863,7 @@
 
   removeAnswerInteractions();
   restorePlaceValueAnswerRules();
+  normalisePageEightContentScale();
   ensureSourcePageNumber();
 
   normaliseLateExampleCards();
@@ -875,6 +891,7 @@
     normaliseBodyTypeScale();
     removeAnswerInteractions();
     restorePlaceValueAnswerRules();
+    normalisePageEightContentScale();
     ensureSourcePageNumber();
     cleanFlattenedAccessibilityCopy();
     normaliseVerticalArithmetic();
@@ -890,6 +907,7 @@
     normaliseBodyTypeScale();
     removeAnswerInteractions();
     restorePlaceValueAnswerRules();
+    normalisePageEightContentScale();
     ensureSourcePageNumber();
   });
   cleanupObserver.observe(document.querySelector('#content'), {
@@ -906,6 +924,7 @@
   window.setTimeout(() => {
     removeAnswerInteractions();
     restorePlaceValueAnswerRules();
+    normalisePageEightContentScale();
     interactionObserver.disconnect();
   }, 10000);
 

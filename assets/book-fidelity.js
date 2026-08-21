@@ -328,7 +328,7 @@
         return;
       }
       row.innerHTML = `<span class="book-q10-line book-q10-line-one">` +
-        `<span class="book-q10-number">${match[1]}</span><span>ina</span>` +
+        `<span class="book-q10-number">${match[1]}</span><span class="book-q10-ina">ina</span>` +
         `<span class="book-q10-term">maelfu <span data-q10-blank aria-hidden="true"></span>,</span>` +
         `<span class="book-q10-term">mamia <span data-q10-blank aria-hidden="true"></span>,</span></span>` +
         `<span class="book-q10-line book-q10-line-two">` +

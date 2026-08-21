@@ -697,6 +697,41 @@ input[data-activity-item]:focus {
   margin-right: auto !important;
 }
 
+/* Keep every primary content section on the paper's horizontal centre line,
+   including legacy converter pages that attempted edge alignment. */
+#content#content > section {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  transform-origin: top center;
+}
+
+#content#content.book-after-page18 > section[data-section-type^="activity_"] {
+  justify-content: flex-start !important;
+}
+
+/* Printed page 140: the source uses three compact rows of two clocks. */
+#content#content [data-section-id="pg146_sec001"] > div:nth-child(2) {
+  padding: 14px 22px !important;
+}
+#content#content [data-section-id="pg146_sec001"] {
+  min-height: 0 !important;
+  justify-content: flex-start !important;
+}
+#content#content [data-section-id="pg146_sec001"] > div:nth-child(2) > .grid {
+  gap: 12px 38px !important;
+}
+#content#content [data-section-id="pg146_sec001"] img {
+  width: 174px !important;
+  max-width: 174px !important;
+  height: 174px !important;
+  margin: 0 auto 2px !important;
+  object-fit: contain !important;
+  background: transparent !important;
+}
+#content#content [data-section-id="pg146_sec001"] .flex.flex-col {
+  gap: 0 !important;
+}
+
 /* The source book uses compact textbook spacing, not web-card spacing. */
 #content .mb-10 { margin-bottom: 28px !important; }
 #content .mb-8 { margin-bottom: 24px !important; }

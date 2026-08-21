@@ -12,11 +12,17 @@
   const fitLegacyPage = () => {
     const content = document.querySelector('#content');
     if (page < 125 || content.classList.contains('book-page')) return;
-    const currentScale = Math.min(0.85, Number.parseFloat(section.style.zoom || '0.85'));
+    section.style.removeProperty('zoom');
+    section.style.removeProperty('transform');
+    section.style.removeProperty('margin-bottom');
     const top = section.getBoundingClientRect().top;
     const visualHeight = Math.max(...Array.from(section.querySelectorAll('*'), (node) => node.getBoundingClientRect().bottom - top), section.getBoundingClientRect().height);
-    const scale = Math.min(currentScale, currentScale * 1080 / Math.max(visualHeight, 1));
-    section.style.zoom = String(scale);
+    const scale = Math.min(1, 1080 / Math.max(visualHeight, 1));
+    if (scale >= 0.995) return;
+    section.classList.add('book-height-fitted');
+    section.style.transform = `scale(${scale})`;
+    section.style.transformOrigin = 'top center';
+    section.style.marginBottom = `${-visualHeight * (1 - scale)}px`;
   };
   window.setTimeout(fitLegacyPage, 80);
   window.setTimeout(fitLegacyPage, 700);
@@ -352,7 +358,26 @@
       const candidate = original.replace(/\.(?:jpe?g|png)(?=$|\?)/i, '_transparent.png');
       if (candidate === original) return;
       const probe = new Image();
-      probe.onload = () => image.setAttribute('src', candidate);
+      probe.onload = () => {
+        try {
+          const canvas = document.createElement('canvas');
+          canvas.width = Math.min(probe.naturalWidth, 96);
+          canvas.height = Math.min(probe.naturalHeight, 96);
+          const context = canvas.getContext('2d', { willReadFrequently: true });
+          context.drawImage(probe, 0, 0, canvas.width, canvas.height);
+          const pixels = context.getImageData(0, 0, canvas.width, canvas.height).data;
+          let opaque = 0;
+          let dark = 0;
+          for (let index = 0; index < pixels.length; index += 4) {
+            if (pixels[index + 3] < 20) continue;
+            opaque += 1;
+            if (pixels[index] < 32 && pixels[index + 1] < 32 && pixels[index + 2] < 32) dark += 1;
+          }
+          if (!opaque || dark / opaque <= 0.45) image.setAttribute('src', candidate);
+        } catch (_) {
+          /* Keep the original extraction when a candidate cannot be audited. */
+        }
+      };
       probe.src = candidate;
     });
   };

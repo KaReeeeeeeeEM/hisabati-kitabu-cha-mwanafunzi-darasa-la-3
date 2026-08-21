@@ -3476,3 +3476,18 @@ input[data-activity-item]:focus {
 #content.book-after-page18:not(.book-page){width:920px!important;height:1307px!important;min-height:1307px!important;max-height:1307px!important;overflow:hidden!important;padding:84px 60px 102px!important}#content.book-after-page18:not(.book-page)>section{width:100%!important;max-width:none!important;margin:0 auto!important;justify-content:flex-start!important}#content.book-after-page18:not(.book-page)>section>div{width:100%!important;max-width:none!important}
 #content.book-after-page18:not(.book-page)>section{zoom:.85;width:117.647%!important}
 #content.book-after-page18:not(.book-page){padding-left:45px!important;padding-right:45px!important}#content.book-after-page18:not(.book-page)>section{width:100%!important}
+
+/* Follow-up fidelity audit: printed pages 33–56. */
+#content#content.book-page-41>section{justify-content:flex-start!important;align-content:start!important}
+.book-page41-vocab{margin-bottom:31px!important;background:#f7f4ef!important}
+.book-page41-vocab dl{background:#f7f4ef!important}
+.book-page41-review{margin-top:0!important;background:#e4f6fc!important}
+.book-page41-review>h1{background:linear-gradient(90deg,#c9f1f7 0%,#9ce0d7 52%,#68cdb8 100%)!important}
+.book-page41-review-body{background:#e4f6fc!important}
+
+#content#content.book-page-53 :is(.book-page53-example,.book-page53-exercise) :is(p,span){font-size:20px!important;line-height:1.25!important}
+#content#content.book-page-53 .book-page53-item{font-size:20px!important;line-height:1.25!important}
+#content#content.book-page-56 .book-page56-exercise :is(p,span){font-size:20px!important;line-height:1.25!important}
+
+/* Keep the established example typography consistent through the following addition pages. */
+#content#content:is(.book-page-48,.book-page-49,.book-page-50,.book-page-51,.book-page-52,.book-page-53,.book-page-54,.book-page-55,.book-page-56) .book-example-card :is(p,li){font-size:20px!important;line-height:1.27!important}

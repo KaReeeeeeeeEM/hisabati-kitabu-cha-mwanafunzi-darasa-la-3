@@ -3656,3 +3656,65 @@ input[data-activity-item]:focus {
   max-width: 100% !important;
   min-width: 0 !important;
 }
+
+/* Printed exercise alignment: three bounded columns, with each arithmetic
+   stack consuming only the space assigned to it. */
+#content#content :is(
+  .book-page53-grid,
+  .book-page59-grid,
+  .book-page60-grid,
+  .book-page67-grid,
+  .book-page71-grid,
+  .book-page72-grid,
+  .book-page75-grid
+) {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+}
+
+#content#content :is(
+  .book-page53-item,
+  .book-page59-item,
+  .book-page60-item,
+  .book-page67-item,
+  .book-page71-item,
+  .book-page72-item,
+  .book-page75-item
+) {
+  min-width: 0 !important;
+}
+
+#content#content :is(
+  .book-page53-item,
+  .book-page59-item,
+  .book-page60-item,
+  .book-page67-item,
+  .book-page71-item,
+  .book-page72-item,
+  .book-page75-item
+) > div {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+}
+
+#content#content .book-vertical-operation {
+  box-sizing: border-box !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+#content#content .book-vertical-operation > span {
+  justify-content: space-between !important;
+}
+
+#content#content :is(.book-page59-item, .book-page60-item) > div {
+  width: 140px !important;
+  max-width: 140px !important;
+  justify-self: start !important;
+}
+
+#content#content :is(.book-page59-item, .book-page60-item) > div.wide {
+  width: 160px !important;
+  max-width: 160px !important;
+}

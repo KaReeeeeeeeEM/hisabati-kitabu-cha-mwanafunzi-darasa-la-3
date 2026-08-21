@@ -4964,7 +4964,10 @@ input[data-activity-item]:focus {
 /* Final global content measure. This is 20% wider than the previous 704px
    column. Regular pages receive enough usable inner width while page
    furniture and the front cover remain unchanged. */
+#content#content[id][class]{width:min(100%,1104px)!important;max-width:1104px!important}
 #content#content:has(>section:not([data-section-type="front_cover"])){padding-left:35px!important;padding-right:35px!important}
 #content#content[id][class] > section:not([data-section-type="front_cover"]){box-sizing:border-box!important;width:min(100%,845px)!important;max-width:845px!important;margin-left:auto!important;margin-right:auto!important}
 #content#content[id][class] > section:not([data-section-type="front_cover"]) > :not(.source-page-number),
 #content#content[id][class] > section:not([data-section-type="front_cover"]) :is(.book-example-card,.book-exercise-panel,.book-exercise-sheet,.book-work-dialog,.book-recall-dialog){box-sizing:border-box!important;width:100%!important;max-width:845px!important;margin-left:auto!important;margin-right:auto!important}
+#content#content[id][class] > section[data-section-type="table_of_contents"] > div > div,
+#content#content[id][class] > section[data-section-type="table_of_contents"] .max-w-3xl{box-sizing:border-box!important;width:100%!important;max-width:845px!important;margin-left:auto!important;margin-right:auto!important}

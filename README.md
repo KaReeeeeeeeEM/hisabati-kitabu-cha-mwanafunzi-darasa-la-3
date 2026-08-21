@@ -45,6 +45,8 @@ This repository contains the completed accessible digital textbook produced with
   compact the responsible images, gaps or component layout instead.
 - A layout wrapper containing multiple Mfano cards is never itself a Mfano
   card. It has no border or background, preventing rules between examples.
+- Real Mfano cards reserve `44px` above the border. Because their label sits
+  `22px` above that border, this leaves a visible `22px` gap from prior content.
 - Audit transparent figure variants before using them. If a generated variant
   renders predominantly black, retain the original extracted figure until a
   clean background-free crop is available.

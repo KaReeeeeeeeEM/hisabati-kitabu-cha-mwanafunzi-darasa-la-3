@@ -3568,3 +3568,49 @@ input[data-activity-item]:focus {
 #content#content [data-section-type="front_cover"] [data-id="pg001_n0017"] {
   font-size: 32px !important;
 }
+
+/* Vertical arithmetic questions use two answer rules that start directly
+   beneath the operation sign.  Keep them long enough for the printed answer,
+   but never let them project to the left of + or −. */
+#content#content :is(
+  .book-page53-item,
+  .book-page59-item,
+  .book-page60-item,
+  .book-page67-item,
+  .book-page71-item,
+  .book-page72-item,
+  .book-page75-item
+) > div {
+  width: 150px !important;
+  max-width: 150px !important;
+}
+
+#content#content :is(.book-page59-item, .book-page60-item) > div {
+  width: 140px !important;
+  max-width: 140px !important;
+}
+
+#content#content :is(.book-page59-item, .book-page60-item) > div.wide {
+  width: 160px !important;
+  max-width: 160px !important;
+}
+
+#content#content .book-page76-stacks > div > div {
+  width: 150px !important;
+  max-width: 150px !important;
+}
+
+#content#content :is(
+  .book-page53-item,
+  .book-page59-item,
+  .book-page60-item,
+  .book-page67-item,
+  .book-page71-item,
+  .book-page72-item,
+  .book-page75-item
+) > div > i,
+#content#content .book-page76-stacks > div > div > i {
+  box-sizing: border-box !important;
+  width: calc(100% - 22px) !important;
+  margin-left: 22px !important;
+}

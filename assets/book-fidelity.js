@@ -2,7 +2,7 @@
   if (!document.querySelector('link[data-book-fidelity-styles]')) {
     const auditedStyles = document.createElement('link');
     auditedStyles.rel = 'stylesheet';
-    auditedStyles.href = './assets/fonts.css?v=20260821-fidelity-pass-18';
+    auditedStyles.href = './assets/fonts.css?v=20260821-fidelity-pass-20';
     auditedStyles.dataset.bookFidelityStyles = 'true';
     document.head.append(auditedStyles);
   }
@@ -590,17 +590,18 @@
       '#content :is(.book-exercise-sheet,.book-exercise-panel,.book-zoezi-dialog,[class*="-exercise"])'
     );
     exercises.forEach((exercise) => {
-      exercise.querySelectorAll('span').forEach((number) => {
+      exercise.querySelectorAll('span,p,div,b,strong').forEach((number) => {
         if (number.children.length || !/^\d{1,3}[.)]$/.test(number.textContent.trim())) return;
         if (number.closest('table,.source-page-number,.book-exercise-title,.book-exercise-heading')) return;
         const row = number.parentElement;
         if (!row) return;
         const peer = [...row.children].find((child) => child !== number && child.textContent.trim());
         if (!peer) return;
-        const text = peer.matches('p,li,span')
-          ? peer
-          : peer.querySelector('p,li,span') || peer;
-        const size = Number.parseFloat(getComputedStyle(text).fontSize);
+        const candidates = [peer, ...peer.querySelectorAll('p,li,span,div')]
+          .filter((candidate) => candidate.textContent.trim() && !/^\d{1,3}[.)]$/.test(candidate.textContent.trim()));
+        const size = Math.max(...candidates.map((candidate) =>
+          Number.parseFloat(getComputedStyle(candidate).fontSize)
+        ).filter(Number.isFinite));
         if (!Number.isFinite(size) || size < 8) return;
         number.style.setProperty('font-size', `${size}px`, 'important');
         number.dataset.bookQuestionNumber = 'matched';

@@ -3491,3 +3491,56 @@ input[data-activity-item]:focus {
 
 /* Keep the established example typography consistent through the following addition pages. */
 #content#content:is(.book-page-48,.book-page-49,.book-page-50,.book-page-51,.book-page-52,.book-page-53,.book-page-54,.book-page-55,.book-page-56) .book-example-card :is(p,li){font-size:20px!important;line-height:1.27!important}
+
+/* Printed page 119 onward: keep every converter variant on the same Mfano
+   card geometry established on the early pages. */
+#content#content.book-after-page18:not(.book-page) .book-late-example-card {
+  position: relative !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 0 52px !important;
+  padding: 38px 14px 16px !important;
+  overflow: visible !important;
+  border: 1.5px solid #9b8705 !important;
+  border-radius: 0 14px 0 14px !important;
+  background: #fff !important;
+  box-shadow: none !important;
+}
+
+#content#content.book-after-page18:not(.book-page) .book-late-example-card > .book-example-label {
+  position: absolute !important;
+  top: -22px !important;
+  left: 50px !important;
+  z-index: 2 !important;
+  margin: 0 !important;
+}
+
+#content#content.book-after-page18:not(.book-page) .book-late-example-card :is(p,li,span,td,th) {
+  font-size: 20px !important;
+  line-height: 1.28 !important;
+}
+
+#content#content .book-example-card img.book-hidden-example-raster {
+  display: none !important;
+}
+
+/* When the source only contains a faithful composite figure, retain the
+   figure but remove the converter's nested frame and oversized rounding. */
+#content#content.book-after-page18:not(.book-page) .book-late-example-raster {
+  padding: 10px !important;
+}
+
+#content#content.book-after-page18:not(.book-page) .book-late-example-raster img {
+  width: 100% !important;
+  max-width: none !important;
+  height: auto !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+#content#content.book-after-page18:not(.book-page) .book-late-example-raster [class*="border"] {
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}

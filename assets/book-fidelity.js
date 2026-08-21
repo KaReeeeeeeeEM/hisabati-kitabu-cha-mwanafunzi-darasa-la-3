@@ -15,7 +15,7 @@
     const currentScale = Math.min(0.85, Number.parseFloat(section.style.zoom || '0.85'));
     const top = section.getBoundingClientRect().top;
     const visualHeight = Math.max(...Array.from(section.querySelectorAll('*'), (node) => node.getBoundingClientRect().bottom - top), section.getBoundingClientRect().height);
-    const scale = Math.min(currentScale, currentScale * 1120 / Math.max(visualHeight, 1));
+    const scale = Math.min(currentScale, currentScale * 1080 / Math.max(visualHeight, 1));
     section.style.zoom = String(scale);
   };
   window.setTimeout(fitLegacyPage, 80);
@@ -105,6 +105,54 @@
         heading.textContent = 'Zoezi la I';
       }
     }
+  };
+
+  /* Later converter pages used several unrelated wrappers for examples.  Work
+     backwards safely by identifying the actual "Mfano" leaf label, then give
+     its complete panel the same card and tab used by the early book pages. */
+  const normaliseLateExampleCards = () => {
+    if (page < 125) return;
+
+    const labels = [...document.querySelectorAll('#content *')].filter((element) =>
+      element.childElementCount === 0 && /^Mfano(?:\s+wa\s+.+)?$/i.test(element.textContent.trim())
+    );
+
+    labels.forEach((label) => {
+      let card = label.closest('.book-example-card');
+      if (!card) {
+        card = label.closest('[class*="border"]');
+      }
+      if (!card || card === section) return;
+
+      card.classList.add('book-example-card', 'book-late-example-card');
+
+      const hiddenBody = label.closest('.hidden');
+      const hiddenCopy = hiddenBody && hiddenBody.querySelectorAll('[data-id], p, h2, ol, table').length > 2;
+      const screenReaderCopy = label.classList.contains('sr-only') && card.querySelectorAll('.sr-only').length > 2;
+      const compositeImage = [...card.querySelectorAll('img')].find((image) =>
+        /^Mfano\b/i.test(image.alt.trim()) || /_seg\d+_v\d+\./i.test(image.src)
+      );
+
+      if (hiddenCopy) {
+        hiddenBody.classList.remove('hidden');
+        hiddenBody.removeAttribute('aria-hidden');
+        compositeImage?.classList.add('book-hidden-example-raster');
+      } else if (screenReaderCopy) {
+        card.querySelectorAll('.sr-only').forEach((element) => element.classList.remove('sr-only'));
+        compositeImage?.classList.add('book-hidden-example-raster');
+      }
+
+      const hasHtmlBody = hiddenCopy || screenReaderCopy || !label.classList.contains('hidden');
+      if (!hasHtmlBody) {
+        card.classList.add('book-late-example-raster');
+        return;
+      }
+
+      label.classList.remove('hidden', 'sr-only');
+      label.removeAttribute('aria-hidden');
+      label.classList.add('book-example-label');
+      if (label.parentElement !== card) card.prepend(label);
+    });
   };
 
   document.querySelectorAll(
@@ -228,8 +276,12 @@
     });
   }
 
+  normaliseLateExampleCards();
   cleanFlattenedAccessibilityCopy();
-  window.setTimeout(cleanFlattenedAccessibilityCopy, 0);
+  window.setTimeout(() => {
+    normaliseLateExampleCards();
+    cleanFlattenedAccessibilityCopy();
+  }, 0);
   const cleanupObserver = new MutationObserver(cleanFlattenedAccessibilityCopy);
   cleanupObserver.observe(document.querySelector('#content'), {
     childList: true,

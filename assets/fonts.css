@@ -3798,3 +3798,60 @@ input[data-activity-item]:focus {
 #content#content [data-section-id="pg136_sec001"] input {
   display: none !important;
 }
+
+/* Canonical Mfano dialogue, inherited from the approved pages 1–20. */
+#content#content.book-page .book-example-card {
+  position: relative !important;
+  box-sizing: border-box !important;
+  overflow: visible !important;
+  border: 1.5px solid #9b8705 !important;
+  border-radius: 0 14px 0 14px !important;
+  background: #fff !important;
+  box-shadow: none !important;
+}
+
+#content#content.book-page .book-example-card > .book-example-label {
+  position: absolute !important;
+  top: -22px !important;
+  left: 50px !important;
+  z-index: 2 !important;
+  margin: 0 !important;
+}
+
+/* Mfano arithmetic follows the same geometry as Zoezi arithmetic. */
+#content#content :is(
+  .book-page51-stack, .book-page52-stack, .book-page53-stack,
+  .book-page57-stack, .book-page58-stack, .book-page65-stack,
+  .book-page66-stack, .book-page70-stack, .book-page70-work,
+  .book-page71-stack, .book-page71-work
+) {
+  box-sizing: border-box !important;
+  width: 145px !important;
+  max-width: 145px !important;
+  display: grid !important;
+  text-align: right !important;
+}
+
+#content#content :is(
+  .book-page51-stack, .book-page52-stack, .book-page53-stack,
+  .book-page57-stack, .book-page58-stack, .book-page65-stack,
+  .book-page66-stack, .book-page70-stack, .book-page70-work,
+  .book-page71-stack, .book-page71-work
+) > .book-vertical-operation {
+  width: 145px !important;
+  max-width: 145px !important;
+}
+
+#content#content .book-vertical-result {
+  margin: 0 !important;
+  text-align: right !important;
+  line-height: 1.2 !important;
+}
+
+#content#content .book-vertical-operation > i:has(+ .book-vertical-result) {
+  margin-top: 3px !important;
+}
+
+#content#content .book-vertical-result + i {
+  margin-top: 3px !important;
+}

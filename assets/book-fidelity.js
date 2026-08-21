@@ -179,6 +179,45 @@
     });
   };
 
+  /* Canonical vertical arithmetic used by both Mfano and Zoezi.  The rules
+     live in the same wrapper as the operation sign, so they begin at +/−,
+     retain the printed gap, and never inherit the width of the outer card. */
+  const normaliseVerticalArithmetic = () => {
+    const selector = [
+      '.book-page51-stack', '.book-page52-stack', '.book-page53-stack',
+      '.book-page57-stack', '.book-page58-stack', '.book-page65-stack',
+      '.book-page66-stack', '.book-page70-stack', '.book-page70-work',
+      '.book-page71-stack', '.book-page71-work',
+    ].join(',');
+    document.querySelectorAll(selector).forEach((stack) => {
+      if (stack.querySelector(':scope > .book-vertical-operation')) return;
+      const children = [...stack.children];
+      const operand = children.find((child) => child.matches('span') && /^[+−-]/.test(child.textContent.trim()));
+      const rules = children.filter((child) => child.matches('i'));
+      if (!operand || rules.length < 2) return;
+      const match = operand.textContent.trim().match(/^([+−-])\s*(.*)$/);
+      if (!match) return;
+      const firstRuleIndex = children.indexOf(rules[0]);
+      const secondRuleIndex = children.indexOf(rules[1]);
+      const result = children.slice(firstRuleIndex + 1, secondRuleIndex).find((child) => child.matches('span'));
+      const operation = document.createElement('div');
+      operation.className = 'book-vertical-operation';
+      const row = document.createElement('span');
+      const sign = document.createElement('b');
+      sign.textContent = match[1] === '-' ? '−' : match[1];
+      const value = document.createElement('span');
+      value.textContent = match[2];
+      row.append(sign, value);
+      operation.append(row, rules[0]);
+      if (result) {
+        result.classList.add('book-vertical-result');
+        operation.append(result);
+      }
+      operation.append(rules[1]);
+      operand.replaceWith(operation);
+    });
+  };
+
   /* From printed page 50 onward, prefer a background-free asset whenever the
      audited transparent counterpart exists. Missing assets keep the original. */
   const useTransparentFigureAssets = () => {
@@ -317,14 +356,17 @@
   }
 
   normaliseLateExampleCards();
+  normaliseVerticalArithmetic();
   useTransparentFigureAssets();
   increaseBookTypeScale();
   cleanFlattenedAccessibilityCopy();
   window.setTimeout(() => {
     normaliseLateExampleCards();
+    normaliseVerticalArithmetic();
     useTransparentFigureAssets();
     increaseBookTypeScale();
     cleanFlattenedAccessibilityCopy();
+    normaliseVerticalArithmetic();
   }, 0);
   const cleanupObserver = new MutationObserver(() => {
     cleanFlattenedAccessibilityCopy();

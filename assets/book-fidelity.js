@@ -155,6 +155,36 @@
     });
   };
 
+  /* Preserve every established hierarchy while raising the whole book by the
+     same two-pixel increment requested during the print comparison. */
+  const increaseBookTypeScale = () => {
+    document.querySelectorAll('#content *').forEach((element) => {
+      if (element.dataset.bookTypeBoost === '2' || element.matches('.sr-only, script, style, input, textarea, select, option')) return;
+      const ownsText = [...element.childNodes].some((node) => node.nodeType === Node.TEXT_NODE && node.textContent.trim());
+      if (!ownsText) return;
+      const size = Number.parseFloat(getComputedStyle(element).fontSize);
+      if (!Number.isFinite(size) || size < 8) return;
+      element.style.setProperty('font-size', `${size + 2}px`, 'important');
+      element.dataset.bookTypeBoost = '2';
+    });
+  };
+
+  /* From printed page 50 onward, prefer a background-free asset whenever the
+     audited transparent counterpart exists. Missing assets keep the original. */
+  const useTransparentFigureAssets = () => {
+    if (page < 56) return;
+    document.querySelectorAll('#content img[src]').forEach((image) => {
+      if (image.dataset.transparentAudit || /_transparent\.png(?:$|\?)/i.test(image.src)) return;
+      image.dataset.transparentAudit = 'checked';
+      const original = image.getAttribute('src');
+      const candidate = original.replace(/\.(?:jpe?g|png)(?=$|\?)/i, '_transparent.png');
+      if (candidate === original) return;
+      const probe = new Image();
+      probe.onload = () => image.setAttribute('src', candidate);
+      probe.src = candidate;
+    });
+  };
+
   document.querySelectorAll(
     '#content [data-section-type="activity_fill_in_a_table"] table input'
   ).forEach((input) => {
@@ -277,12 +307,20 @@
   }
 
   normaliseLateExampleCards();
+  useTransparentFigureAssets();
+  increaseBookTypeScale();
   cleanFlattenedAccessibilityCopy();
   window.setTimeout(() => {
     normaliseLateExampleCards();
+    useTransparentFigureAssets();
+    increaseBookTypeScale();
     cleanFlattenedAccessibilityCopy();
   }, 0);
-  const cleanupObserver = new MutationObserver(cleanFlattenedAccessibilityCopy);
+  const cleanupObserver = new MutationObserver(() => {
+    cleanFlattenedAccessibilityCopy();
+    useTransparentFigureAssets();
+    increaseBookTypeScale();
+  });
   cleanupObserver.observe(document.querySelector('#content'), {
     childList: true,
     characterData: true,

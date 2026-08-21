@@ -3544,3 +3544,24 @@ input[data-activity-item]:focus {
   border-radius: 0 !important;
   box-shadow: none !important;
 }
+
+/* Cover typography measured against the original PDF. A late utility rule
+   had collapsed the main title to 44px. */
+#content#content [data-section-type="front_cover"] [data-id="pg001_n0002"] {
+  font-size: 104px !important;
+  line-height: 1 !important;
+}
+
+#content#content [data-section-type="front_cover"] [data-id="pg001_n0003"] {
+  font-size: 46px !important;
+  line-height: 1.12 !important;
+}
+
+#content#content [data-section-type="front_cover"] [data-id="pg001_n0004"] {
+  font-size: 38px !important;
+  line-height: 1.12 !important;
+}
+
+#content#content [data-section-type="front_cover"] [data-id="pg001_n0017"] {
+  font-size: 32px !important;
+}

@@ -4064,3 +4064,70 @@ input[data-activity-item]:focus {
 #content#content[id][class] .book-zoezi-question:last-child {
   margin-bottom: 0 !important;
 }
+
+/* Canonical Jikumbushe summary from the printed book. */
+#content#content .book-recall-dialog {
+  position: relative !important;
+  box-sizing: border-box !important;
+  width: 704px !important;
+  max-width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding: 12px 16px 14px !important;
+  overflow: hidden !important;
+  border: 1.5px solid #b16ab3 !important;
+  border-radius: 0 18px 0 18px !important;
+  background: #faf5fb !important;
+  box-shadow: 5px 6px 9px rgba(0,0,0,.2) !important;
+}
+
+#content#content .book-recall-dialog .book-recall-heading {
+  display: block !important;
+  margin: 0 0 9px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  color: #7d2d91 !important;
+  box-shadow: none !important;
+  font-size: 26px !important;
+  font-weight: 700 !important;
+  line-height: 1.15 !important;
+  text-align: left !important;
+}
+
+#content#content .book-recall-body {
+  display: grid !important;
+  gap: 12px !important;
+}
+
+#content#content .book-recall-body > :is(p,div,li,span),
+#content#content .book-recall-dialog .book-recall-row > * {
+  margin: 0 !important;
+  color: #18181b !important;
+  font-size: 22px !important;
+  font-weight: 400 !important;
+  line-height: 1.3 !important;
+}
+
+#content#content .book-recall-row {
+  display: grid !important;
+  grid-template-columns: 38px minmax(0,1fr) !important;
+  gap: 7px !important;
+  align-items: start !important;
+}
+
+#content#content .book-recall-body :is(ul,ol) {
+  margin: 0 !important;
+  padding-left: 31px !important;
+}
+
+#content#content :is(ul,ol).book-recall-body {
+  margin: 0 !important;
+  padding-left: 31px !important;
+}
+
+#content#content .book-recall-body li {
+  margin: 0 0 10px !important;
+  font-size: 22px !important;
+  line-height: 1.3 !important;
+}

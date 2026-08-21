@@ -291,6 +291,56 @@
     });
   };
 
+  /* Jikumbushe is a semantic summary component.  Rebuild converter raster
+     panels from their embedded transcription and preserve list numbering as
+     aligned HTML rows. */
+  const normaliseRecallDialogs = () => {
+    document.querySelectorAll('#content .sr-only').forEach((hidden) => {
+      const children = [...hidden.children];
+      const titleIndex = children.findIndex((child) => /^Jikumbushe\b/i.test(child.textContent.trim()));
+      const image = hidden.parentElement?.querySelector(':scope > img');
+      if (titleIndex < 0 || !image) return;
+      const panel = hidden.parentElement;
+      const heading = document.createElement('h1');
+      heading.className = 'book-recall-heading';
+      heading.textContent = 'Jikumbushe';
+      const body = document.createElement('div');
+      body.className = 'book-recall-body';
+      const rest = children.slice(titleIndex + 1);
+      for (let index = 0; index < rest.length; index += 1) {
+        const child = rest[index];
+        if (/^\d+\.$/.test(child.textContent.trim()) && rest[index + 1]) {
+          const row = document.createElement('div');
+          row.className = 'book-recall-row';
+          row.append(child.cloneNode(true), rest[index + 1].cloneNode(true));
+          body.append(row);
+          index += 1;
+        } else {
+          body.append(child.cloneNode(true));
+        }
+      }
+      panel.replaceChildren(heading, body);
+      panel.className = 'book-recall-dialog';
+    });
+
+    document.querySelectorAll('#content *').forEach((candidate) => {
+      if (candidate.children.length || candidate.closest('.sr-only')) return;
+      if (!/^Jikumbushe\b/i.test(candidate.textContent.trim())) return;
+      const panel = candidate.closest('.book-recall-dialog,[class*="rounded"]') || candidate.parentElement;
+      if (!panel || panel === section) return;
+      panel.classList.add('book-recall-dialog');
+      const heading = candidate.closest('h1,h2,h3') || candidate;
+      heading.classList.add('book-recall-heading');
+      const body = heading.nextElementSibling;
+      body?.classList.add('book-recall-body');
+      body?.querySelectorAll(':scope > .flex').forEach((row) => row.classList.add('book-recall-row'));
+    });
+
+    document.querySelectorAll('#content .book-recall-dialog [data-book-type-boost]').forEach((node) => {
+      node.style.removeProperty('font-size');
+    });
+  };
+
   /* From printed page 50 onward, prefer a background-free asset whenever the
      audited transparent counterpart exists. Missing assets keep the original. */
   const useTransparentFigureAssets = () => {
@@ -432,6 +482,7 @@
   normaliseVerticalArithmetic();
   normaliseWorkDialogs();
   normaliseZoeziQuestionCards();
+  normaliseRecallDialogs();
   useTransparentFigureAssets();
   increaseBookTypeScale();
   cleanFlattenedAccessibilityCopy();
@@ -440,6 +491,7 @@
     normaliseVerticalArithmetic();
     normaliseWorkDialogs();
     normaliseZoeziQuestionCards();
+    normaliseRecallDialogs();
     useTransparentFigureAssets();
     increaseBookTypeScale();
     cleanFlattenedAccessibilityCopy();
@@ -449,6 +501,7 @@
     cleanFlattenedAccessibilityCopy();
     normaliseWorkDialogs();
     normaliseZoeziQuestionCards();
+    normaliseRecallDialogs();
     useTransparentFigureAssets();
     increaseBookTypeScale();
   });

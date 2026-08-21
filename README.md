@@ -21,6 +21,9 @@ This repository contains the completed accessible digital textbook produced with
 - A **Zoezi** has one continuous exercise background. Individual questions
   are plain aligned content without rounded cards, borders, white panels or
   separate shadows unless the PDF explicitly contains a real table/figure.
+- Every **Jikumbushe** summary is HTML. It uses the shared pale-purple surface,
+  purple heading/border, asymmetric corners, lower/right shadow and aligned
+  numbered rows. Never retain a complete Jikumbushe block as a raster image.
 - Every **Mfano** uses the approved pages 1–20 dialogue: white card, `#9b8705`
   1.5px border, asymmetric `0 14px 0 14px` corners, no outer shadow, and the
   gold label positioned `22px` above and `50px` from the left. Later cards are

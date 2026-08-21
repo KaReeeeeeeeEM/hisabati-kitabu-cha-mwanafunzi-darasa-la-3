@@ -3709,12 +3709,12 @@ input[data-activity-item]:focus {
 }
 
 #content#content :is(.book-page59-item, .book-page60-item) > div {
-  width: 140px !important;
-  max-width: 140px !important;
+  width: 125px !important;
+  max-width: 125px !important;
   justify-self: start !important;
 }
 
 #content#content :is(.book-page59-item, .book-page60-item) > div.wide {
-  width: 160px !important;
-  max-width: 160px !important;
+  width: 145px !important;
+  max-width: 145px !important;
 }

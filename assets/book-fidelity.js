@@ -160,6 +160,16 @@
   const increaseBookTypeScale = () => {
     document.querySelectorAll('#content *').forEach((element) => {
       if (element.dataset.bookTypeBoost === '2' || element.matches('.sr-only, script, style, input, textarea, select, option')) return;
+      if (element.matches(':is(.book-page48-chapter,.book-page77-chapter,.book-page93-chapter,.book-page110-chapter) > h2')) {
+        element.style.setProperty('font-size', '33px', 'important');
+        element.dataset.bookTypeBoost = '2';
+        return;
+      }
+      if (element.matches(':is(.book-page48-chapter,.book-page77-chapter,.book-page93-chapter,.book-page110-chapter) > h1')) {
+        element.style.setProperty('font-size', '42px', 'important');
+        element.dataset.bookTypeBoost = '2';
+        return;
+      }
       const ownsText = [...element.childNodes].some((node) => node.nodeType === Node.TEXT_NODE && node.textContent.trim());
       if (!ownsText) return;
       const size = Number.parseFloat(getComputedStyle(element).fontSize);

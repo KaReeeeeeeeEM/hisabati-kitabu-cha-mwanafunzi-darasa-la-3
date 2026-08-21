@@ -3722,3 +3722,79 @@ input[data-activity-item]:focus {
 #content#content.book-page-59 > section {
   justify-content: flex-start !important;
 }
+
+/* Every later chapter opener uses the exact component established by Sura ya
+   Kwanza: the same asymmetric corners, flat secondary blue, shadow and type
+   scale. */
+#content#content :is(
+  .book-page48-chapter,
+  .book-page77-chapter,
+  .book-page93-chapter,
+  .book-page110-chapter
+) {
+  box-sizing: border-box !important;
+  width: 690px !important;
+  max-width: 100% !important;
+  padding: 15px 24px 18px !important;
+  border: 0 !important;
+  border-radius: 0 16px 0 16px !important;
+  background: var(--book-alternative) !important;
+  box-shadow: 7px 8px 8px rgba(0, 0, 0, .18) !important;
+  text-align: center !important;
+}
+
+#content#content :is(
+  .book-page48-chapter,
+  .book-page77-chapter,
+  .book-page93-chapter,
+  .book-page110-chapter
+) > h2 {
+  margin: 0 !important;
+  color: var(--book-primary) !important;
+  font-size: 31px !important;
+  font-weight: 700 !important;
+  line-height: 1.15 !important;
+  -webkit-text-stroke: .45px currentColor !important;
+}
+
+#content#content :is(
+  .book-page48-chapter,
+  .book-page77-chapter,
+  .book-page93-chapter,
+  .book-page110-chapter
+) > h1 {
+  margin: 8px 0 0 !important;
+  color: #18181b !important;
+  font-size: 40px !important;
+  font-weight: 700 !important;
+  line-height: 1.1 !important;
+  -webkit-text-stroke: .55px currentColor !important;
+}
+
+/* Printed page 130: questions are plain content on the Zoezi background,
+   without converter-created cards or answer controls. */
+#content#content [data-section-id="pg136_sec001"] > div {
+  padding: 24px 30px !important;
+  border: 0 !important;
+  border-radius: 0 0 0 12px !important;
+  background: var(--book-exercise-bg, #f7f4e8) !important;
+  box-shadow: none !important;
+}
+
+#content#content [data-section-id="pg136_sec001"] > div > div {
+  margin: 0 0 22px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+#content#content [data-section-id="pg136_sec001"] > div > div:last-child {
+  margin-bottom: 0 !important;
+}
+
+#content#content [data-section-id="pg136_sec001"] label,
+#content#content [data-section-id="pg136_sec001"] input {
+  display: none !important;
+}

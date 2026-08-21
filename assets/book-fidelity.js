@@ -355,7 +355,7 @@
 
   /* Body copy in the reference pages uses one consistent optical size. Some
      late converter templates dropped prose, questions, table copy, and list
-     items to 18–21px; raise only undersized body text to the established 24px
+     items to 18–24px; raise normal body text to the established 28px
      size without flattening the separate title and component-label scale. */
   const normaliseBodyTypeScale = () => {
     const excluded = [
@@ -502,7 +502,31 @@
       const ownsText = [...element.childNodes].some((node) => node.nodeType === Node.TEXT_NODE && node.textContent.trim());
       if (!ownsText) return;
       const size = Number.parseFloat(getComputedStyle(element).fontSize);
-      if (Number.isFinite(size) && size !== 24) element.style.setProperty('font-size', '24px', 'important');
+      if (Number.isFinite(size) && size !== 28) element.style.setProperty('font-size', '28px', 'important');
+    });
+  };
+
+  /* The verified question-10 body size is the book-wide normal-copy standard.
+     Apply it after page-specific reconstruction so later templates cannot
+     fall back to their converter-era 18–24px body sizes. Keep true headings,
+     component tabs, page furniture, tables, and diagram typography distinct. */
+  const enforceBookWideNormalTypeScale = () => {
+    const excluded = [
+      'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'table', 'svg', 'math', 'sub', 'sup',
+      '.source-page-number', '.book-example-label', '.book-exercise-heading',
+      '.book-exercise-title', '.book-work-heading', '.book-recall-heading',
+      '.book-chapter-tab', '.sr-only', 'script', 'style', 'input', 'textarea',
+      'select', 'option', 'button',
+    ].join(',');
+    document.querySelectorAll('#content *').forEach((element) => {
+      if (element.matches(excluded) || element.closest(excluded)) return;
+      const ownsText = [...element.childNodes].some((node) =>
+        node.nodeType === Node.TEXT_NODE && node.textContent.trim()
+      );
+      if (!ownsText) return;
+      element.style.setProperty('font-size', '28px', 'important');
+      element.style.setProperty('line-height', '1.18', 'important');
+      element.dataset.bookNormalType = '28';
     });
   };
 
@@ -876,6 +900,7 @@
   useTransparentFigureAssets();
   increaseBookTypeScale();
   normaliseBodyTypeScale();
+  enforceBookWideNormalTypeScale();
   removeAnswerInteractions();
   cleanFlattenedAccessibilityCopy();
   window.setTimeout(() => {
@@ -889,6 +914,7 @@
     useTransparentFigureAssets();
     increaseBookTypeScale();
     normaliseBodyTypeScale();
+    enforceBookWideNormalTypeScale();
     removeAnswerInteractions();
     restorePlaceValueAnswerRules();
     normalisePageEightContentScale();
@@ -905,6 +931,7 @@
     useTransparentFigureAssets();
     increaseBookTypeScale();
     normaliseBodyTypeScale();
+    enforceBookWideNormalTypeScale();
     removeAnswerInteractions();
     restorePlaceValueAnswerRules();
     normalisePageEightContentScale();

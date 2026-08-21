@@ -191,6 +191,7 @@
       pg007_n0012: '24px',
     };
     document.querySelectorAll('#content *').forEach((element) => {
+      if (element.closest('.book-q10-copy,.book-q10-option')) return;
       if (element.dataset.bookTypeBoost === '2' || element.matches('.sr-only, script, style, input, textarea, select, option')) return;
       if (page === 1 && coverType[element.dataset.id]) {
         element.style.setProperty('font-size', coverType[element.dataset.id], 'important');
@@ -309,9 +310,23 @@
     const prefix = page === 13 ? 'pg013_' : 'pg014_';
     document.querySelectorAll(`#content [data-id^="${prefix}"]`).forEach((row) => {
       const match = row.textContent.trim().match(/^(\d+)\s*ina\s+maelfu\b/i);
-      if (!match || (row.dataset.q10Restored === '1' && row.querySelector('[data-q10-blank]'))) return;
+      if (!match) return;
       row.dataset.q10Restored = '1';
       row.classList.add('book-q10-copy');
+      row.style.setProperty('font-size', '28px', 'important');
+      row.style.setProperty('line-height', '1.18', 'important');
+      const option = row.parentElement?.querySelector(':scope > span[data-id]');
+      option?.classList.add('book-q10-option');
+      option?.style.setProperty('font-size', '28px', 'important');
+      option?.style.setProperty('line-height', '1.18', 'important');
+      const sizeQuestionCopy = () => row.querySelectorAll('.book-q10-line, .book-q10-line > span').forEach((element) => {
+        element.style.setProperty('font-size', '28px', 'important');
+        element.style.setProperty('line-height', '1.18', 'important');
+      });
+      if (row.querySelector('[data-q10-blank]')) {
+        sizeQuestionCopy();
+        return;
+      }
       row.innerHTML = `<span class="book-q10-line book-q10-line-one">` +
         `<span class="book-q10-number">${match[1]}</span><span>ina</span>` +
         `<span class="book-q10-term">maelfu <span data-q10-blank aria-hidden="true"></span>,</span>` +
@@ -319,6 +334,7 @@
         `<span class="book-q10-line book-q10-line-two">` +
         `<span class="book-q10-term">makumi <span data-q10-blank aria-hidden="true"></span></span>` +
         `<span>na</span><span class="book-q10-term">mamoja <span data-q10-blank aria-hidden="true"></span>.</span></span>`;
+      sizeQuestionCopy();
     });
   };
 
@@ -334,6 +350,7 @@
       'script', 'style', 'input', 'textarea', 'select', 'option', 'button',
     ].join(',');
     document.querySelectorAll('#content *').forEach((element) => {
+      if (element.closest('.book-q10-copy,.book-q10-option')) return;
       if (element.matches(excluded) || element.closest('h1,h2,h3,h4,h5,h6,.source-page-number,.book-example-label,.book-exercise-heading,.book-work-heading,.book-recall-heading,.sr-only')) return;
       if (page === 35 && element.closest('.book-page29-example')) return;
       if (page === 36 && element.closest('.book-page30-sheet')) return;

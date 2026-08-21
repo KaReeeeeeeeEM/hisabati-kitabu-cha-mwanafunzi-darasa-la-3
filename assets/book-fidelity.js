@@ -218,6 +218,79 @@
     });
   };
 
+  /* Kazi ya kufanya is always semantic HTML.  A few converter pages retained
+     a full-panel raster with an equivalent sr-only transcription; rebuild
+     those panels from that transcription, then apply one shared component to
+     every Kazi panel in the book. */
+  const normaliseWorkDialogs = () => {
+    document.querySelectorAll('#content .sr-only').forEach((hidden) => {
+      const children = [...hidden.children];
+      const titleIndex = children.findIndex((child) => /^Kazi ya kufanya\b/i.test(child.textContent.trim()));
+      const image = hidden.parentElement?.querySelector(':scope > img');
+      if (titleIndex < 0 || !image) return;
+      const panel = hidden.parentElement;
+      const heading = document.createElement('h1');
+      heading.className = 'book-work-heading';
+      heading.textContent = children[titleIndex].textContent.trim();
+      const body = document.createElement('div');
+      body.className = 'book-work-body';
+      children.slice(titleIndex + 1).forEach((child, index) => {
+        const clone = child.cloneNode(true);
+        if (index === 0) clone.classList.add('book-work-subtitle');
+        if (/^Maelezo$/i.test(clone.textContent.trim())) clone.classList.add('book-work-subheading');
+        body.append(clone);
+      });
+      panel.replaceChildren(heading, body);
+      panel.className = 'book-work-dialog';
+    });
+
+    document.querySelectorAll('#content *').forEach((candidate) => {
+      if (candidate.children.length || candidate.closest('.sr-only')) return;
+      if (!/^Kazi ya kufanya\b/i.test(candidate.textContent.trim())) return;
+      let panel = candidate.closest('.book-work-dialog,[class*="book-page"][class*="-work"]');
+      if (!panel) panel = candidate.closest('[class*="rounded"], article, section > div');
+      if (!panel || panel === section || panel.closest('.book-example-card')) return;
+      panel.classList.add('book-work-dialog');
+      const heading = candidate.closest('h1,h2,h3') || candidate;
+      if (!heading.classList.contains('book-work-heading')) {
+        const title = candidate.textContent.trim();
+        const full = heading.textContent.trim();
+        if (candidate !== heading && full.length > title.length) {
+          const subtitleText = full.slice(full.indexOf(title) + title.length).trim();
+          heading.textContent = title;
+          if (subtitleText) {
+            const subtitle = document.createElement('p');
+            subtitle.className = 'book-work-subtitle';
+            subtitle.textContent = subtitleText;
+            heading.after(subtitle);
+          }
+        }
+        heading.classList.add('book-work-heading');
+      }
+      [...panel.querySelectorAll('h2,h3,p,strong')].forEach((element) => {
+        if (/^Maelezo$/i.test(element.textContent.trim())) element.classList.add('book-work-subheading');
+      });
+    });
+  };
+
+  /* Printed Zoezi questions share one continuous exercise surface.  Remove
+     only converter-created question cards; keep the outer Zoezi dialogue and
+     genuine tables/figures intact. */
+  const normaliseZoeziQuestionCards = () => {
+    document.querySelectorAll('#content :is(article,div,label)[class*="rounded"][class*="border"]').forEach((card) => {
+      if (card.closest('.book-work-dialog,.book-example-card')) return;
+      if (card.querySelector('.book-exercise-heading,.book-exercise-title')) return;
+      const text = card.textContent.replace(/\s+/g, ' ').trim();
+      if (!/^(?:\d+\.|\([a-z]\))/i.test(text)) return;
+      card.classList.add('book-zoezi-question');
+    });
+    document.querySelectorAll('#content :is(article,label)[class*="rounded"]').forEach((card) => {
+      if (card.closest('.book-work-dialog,.book-example-card')) return;
+      const text = card.textContent.replace(/\s+/g, ' ').trim();
+      if (/^(?:\d+\.|\([a-z]\))/i.test(text)) card.classList.add('book-zoezi-question');
+    });
+  };
+
   /* From printed page 50 onward, prefer a background-free asset whenever the
      audited transparent counterpart exists. Missing assets keep the original. */
   const useTransparentFigureAssets = () => {
@@ -357,12 +430,16 @@
 
   normaliseLateExampleCards();
   normaliseVerticalArithmetic();
+  normaliseWorkDialogs();
+  normaliseZoeziQuestionCards();
   useTransparentFigureAssets();
   increaseBookTypeScale();
   cleanFlattenedAccessibilityCopy();
   window.setTimeout(() => {
     normaliseLateExampleCards();
     normaliseVerticalArithmetic();
+    normaliseWorkDialogs();
+    normaliseZoeziQuestionCards();
     useTransparentFigureAssets();
     increaseBookTypeScale();
     cleanFlattenedAccessibilityCopy();
@@ -370,6 +447,8 @@
   }, 0);
   const cleanupObserver = new MutationObserver(() => {
     cleanFlattenedAccessibilityCopy();
+    normaliseWorkDialogs();
+    normaliseZoeziQuestionCards();
     useTransparentFigureAssets();
     increaseBookTypeScale();
   });

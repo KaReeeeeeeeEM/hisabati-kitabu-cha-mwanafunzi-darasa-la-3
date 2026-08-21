@@ -12,6 +12,12 @@ This repository contains the completed accessible digital textbook produced with
   image assets with transparent backgrounds. Never rasterize the entire Mfano.
 - A Mfano title has exactly one visible source. Do not combine a real HTML
   label with a CSS `::before`/`::after` fallback containing the same title.
+- Every **Kazi ya kufanya** is HTML and uses the shared pale-blue dialogue:
+  `#eaf8fd` body, primary-blue heading and divider, asymmetric corners and a
+  restrained lower/right shadow. Never keep a full Kazi panel as an image.
+- A **Zoezi** has one continuous exercise background. Individual questions
+  are plain aligned content without rounded cards, borders, white panels or
+  separate shadows unless the PDF explicitly contains a real table/figure.
 - Every **Mfano** uses the approved pages 1–20 dialogue: white card, `#9b8705`
   1.5px border, asymmetric `0 14px 0 14px` corners, no outer shadow, and the
   gold label positioned `22px` above and `50px` from the left. Later cards are

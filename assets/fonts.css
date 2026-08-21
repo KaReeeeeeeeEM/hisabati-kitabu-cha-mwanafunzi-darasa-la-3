@@ -3980,3 +3980,78 @@ input[data-activity-item]:focus {
   border-radius: 0 !important;
   background: transparent !important;
 }
+
+/* Canonical Kazi ya kufanya component from the printed reference. */
+#content#content .book-work-dialog {
+  position: relative !important;
+  box-sizing: border-box !important;
+  width: 704px !important;
+  max-width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding: 0 12px 14px !important;
+  overflow: hidden !important;
+  border: 0 !important;
+  border-radius: 0 18px 0 18px !important;
+  background: #eaf8fd !important;
+  box-shadow: 5px 6px 9px rgba(0,0,0,.2) !important;
+}
+
+#content#content .book-work-dialog > .book-work-heading,
+#content#content .book-work-dialog .book-work-heading {
+  display: block !important;
+  box-sizing: border-box !important;
+  width: auto !important;
+  margin: 0 -12px 8px !important;
+  padding: 7px 13px 8px !important;
+  border: 0 !important;
+  border-bottom: 2px solid #00b0f0 !important;
+  border-radius: 0 18px 0 0 !important;
+  background: #eaf8fd !important;
+  color: #00b0f0 !important;
+  box-shadow: 3px 4px 6px rgba(0,0,0,.18) !important;
+  font-size: 25px !important;
+  font-weight: 700 !important;
+  line-height: 1.15 !important;
+  text-align: left !important;
+}
+
+#content#content .book-work-dialog .book-work-body {
+  padding: 0 2px !important;
+}
+
+#content#content .book-work-dialog .book-work-subtitle {
+  margin: 6px 0 18px !important;
+  color: #111 !important;
+  font-size: 22px !important;
+  font-weight: 400 !important;
+  line-height: 1.25 !important;
+}
+
+#content#content .book-work-dialog .book-work-subheading {
+  margin: 4px 0 7px !important;
+  color: #00b0f0 !important;
+  font-size: 23px !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+}
+
+#content#content .book-work-dialog :is(p,li,span):not(.book-work-heading) {
+  line-height: 1.3 !important;
+}
+
+/* Zoezi has one outer dialogue, never a separate rounded/bordered card for
+   each question. */
+#content#content[id][class] .book-zoezi-question {
+  box-sizing: border-box !important;
+  margin: 0 0 18px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+#content#content[id][class] .book-zoezi-question:last-child {
+  margin-bottom: 0 !important;
+}

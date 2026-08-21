@@ -1,4 +1,11 @@
 (() => {
+  if (!document.querySelector('link[data-book-fidelity-styles]')) {
+    const auditedStyles = document.createElement('link');
+    auditedStyles.rel = 'stylesheet';
+    auditedStyles.href = './assets/fonts.css?v=20260821-fidelity-pass-18';
+    auditedStyles.dataset.bookFidelityStyles = 'true';
+    document.head.append(auditedStyles);
+  }
   const section = document.querySelector('#content > section');
   const page = Number(document.querySelector('meta[name="page-section-id"]')?.content || 0);
   if (!section || !page) return;
@@ -22,14 +29,16 @@
   window.setTimeout(fitLegacyPage, 700);
   window.setTimeout(fitLegacyPage, 1600);
 
-  if (page > 1 && !document.querySelector('#content > .source-page-number')) {
+  const ensureSourcePageNumber = () => {
+    if (page <= 1 || document.querySelector('#content > .source-page-number')) return;
     const roman = ['','i','ii','iii','iv','v','vi'];
     const marker = document.createElement('div');
     marker.className = 'source-page-number';
     marker.setAttribute('aria-hidden', 'true');
     marker.textContent = page <= 6 ? roman[page] : String(page - 6);
     document.querySelector('#content').append(marker);
-  }
+  };
+  ensureSourcePageNumber();
 
   const cleanFlattenedAccessibilityCopy = () => {
     document.querySelectorAll('#content [data-id]').forEach((element) => {
@@ -799,6 +808,7 @@
   }
 
   removeAnswerInteractions();
+  ensureSourcePageNumber();
 
   normaliseLateExampleCards();
   restorePageFiveArtwork();
@@ -824,6 +834,7 @@
     increaseBookTypeScale();
     normaliseBodyTypeScale();
     removeAnswerInteractions();
+    ensureSourcePageNumber();
     cleanFlattenedAccessibilityCopy();
     normaliseVerticalArithmetic();
   }, 0);
@@ -837,6 +848,7 @@
     increaseBookTypeScale();
     normaliseBodyTypeScale();
     removeAnswerInteractions();
+    ensureSourcePageNumber();
   });
   cleanupObserver.observe(document.querySelector('#content'), {
     childList: true,

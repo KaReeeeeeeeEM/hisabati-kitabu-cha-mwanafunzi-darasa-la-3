@@ -2525,7 +2525,7 @@ input[data-activity-item]:focus {
 #content .book-option-list { margin: 3px 0 0 0 !important; }
 #content .book-option-list p { display: grid !important; grid-template-columns: 62px 1fr !important; margin: 0 !important; }
 
-#content .book-expansion-table { width: 100% !important; margin-top: 7px !important; border-collapse: collapse !important; table-layout: fixed !important; background: transparent !important; font-size: 22px !important; }
+#content .book-expansion-table { width: 660px !important; max-width: 100% !important; margin: 7px auto 0 0 !important; border-collapse: collapse !important; table-layout: fixed !important; background: transparent !important; font-size: 22px !important; }
 #content .book-expansion-table th, #content .book-expansion-table td { height: 31px !important; padding: 0 7px !important; border: 1px solid #a99020 !important; background: transparent !important; text-align: center !important; font-weight: 400 !important; }
 #content .book-expansion-table th { width: 100px !important; background: #efc2b8 !important; }
 #content .book-expansion-table td:nth-child(even) { width: 48px !important; }
@@ -4972,5 +4972,6 @@ input[data-activity-item]:focus {
 #content#content[id][class] > section[data-section-type="table_of_contents"] > div > div,
 #content#content[id][class] > section[data-section-type="table_of_contents"] .max-w-3xl{box-sizing:border-box!important;width:100%!important;max-width:845px!important;margin-left:auto!important;margin-right:auto!important}
 
-/* Page vi institution line: page-canvas footer placement. */
-#content#content[id][class] > [data-id="pg006_institution"]{position:absolute!important;z-index:20;right:178px!important;bottom: 210px!important;width:auto!important;max-width:none!important;margin:0!important;text-align:right!important;white-space:nowrap}
+/* Page vi: the publisher line is footer furniture in the source PDF, not part
+   of the QR/content flow. Anchor it independently in the lower-right zone. */
+#content#content[id][class] > section[data-section-id="pg006_sec001"] > [data-id="pg006_institution"]{position:absolute!important;z-index:20;right:48px!important;bottom:118px!important;transform:translateY(179px);width:auto!important;max-width:none!important;margin:0!important;text-align:right!important;white-space:nowrap}

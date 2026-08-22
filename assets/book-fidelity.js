@@ -2,7 +2,7 @@
   if (!document.querySelector('link[data-book-fidelity-styles]')) {
     const auditedStyles = document.createElement('link');
     auditedStyles.rel = 'stylesheet';
-    auditedStyles.href = './assets/fonts.css?v=20260821-fidelity-pass-26';
+    auditedStyles.href = './assets/fonts.css?v=20260822-fidelity-pass-27';
     auditedStyles.dataset.bookFidelityStyles = 'true';
     document.head.append(auditedStyles);
   }

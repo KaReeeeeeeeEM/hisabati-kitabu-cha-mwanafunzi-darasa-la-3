@@ -2,7 +2,7 @@
   if (!document.querySelector('link[data-book-fidelity-styles]')) {
     const auditedStyles = document.createElement('link');
     auditedStyles.rel = 'stylesheet';
-    auditedStyles.href = './assets/fonts.css?v=20260822-fidelity-pass-27';
+    auditedStyles.href = './assets/fonts.css?v=20260822-fidelity-pass-28';
     auditedStyles.dataset.bookFidelityStyles = 'true';
     document.head.append(auditedStyles);
   }
@@ -379,6 +379,15 @@
       part.style.setProperty('border', '0', 'important');
       part.style.setProperty('background', 'transparent', 'important');
     });
+  };
+
+  const tightenPageSixteenExerciseFlow = () => {
+    if (page !== 22) return;
+    const exercise = document.querySelector('#content [data-section-id="pg022_sec001"]');
+    if (!exercise) return;
+    exercise.style.setProperty('display', 'flex', 'important');
+    exercise.style.setProperty('flex-direction', 'column', 'important');
+    exercise.style.setProperty('justify-content', 'flex-start', 'important');
   };
 
   /* Body copy in the reference pages uses one consistent optical size. Some
@@ -917,6 +926,7 @@
   restorePlaceValueAnswerRules();
   normalisePageEightContentScale();
   restorePageTwelveExerciseSurface();
+  tightenPageSixteenExerciseFlow();
   ensureSourcePageNumber();
 
   normaliseLateExampleCards();
@@ -948,6 +958,7 @@
     restorePlaceValueAnswerRules();
     normalisePageEightContentScale();
     restorePageTwelveExerciseSurface();
+    tightenPageSixteenExerciseFlow();
     ensureSourcePageNumber();
     cleanFlattenedAccessibilityCopy();
     normaliseVerticalArithmetic();
@@ -966,6 +977,7 @@
     restorePlaceValueAnswerRules();
     normalisePageEightContentScale();
     restorePageTwelveExerciseSurface();
+    tightenPageSixteenExerciseFlow();
     ensureSourcePageNumber();
   });
   cleanupObserver.observe(document.querySelector('#content'), {

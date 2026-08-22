@@ -2583,6 +2583,10 @@ input[data-activity-item]:focus {
   text-align: left !important;
 }
 
+#content#content [data-section-id="pg022_sec001"] {
+  justify-content: flex-start !important;
+}
+
 #content#content [data-section-id="pg022_sec001"] > [data-id="pg022_n0002"] + div {
   margin-top: 12px !important;
 }

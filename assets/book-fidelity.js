@@ -353,6 +353,34 @@
     });
   };
 
+  const restorePageTwelveExerciseSurface = () => {
+    if (page !== 18) return;
+    const pageSection = document.querySelector('#content [data-section-id="pg018_sec001"]');
+    const first = pageSection?.children[0];
+    const second = pageSection?.children[1];
+    if (!first || !second) return;
+    [first, second].forEach((panel) => {
+      panel.style.setProperty('margin-top', '0', 'important');
+      panel.style.setProperty('margin-bottom', '0', 'important');
+      panel.style.setProperty('border', '0', 'important');
+      panel.style.setProperty('border-radius', '0', 'important');
+      panel.style.setProperty('background', '#f7f3e8', 'important');
+      panel.style.setProperty('box-shadow', 'none', 'important');
+    });
+    first.style.setProperty('padding', '18px 24px 0', 'important');
+    second.style.setProperty('padding', '0 24px 18px', 'important');
+    first.querySelectorAll('li').forEach((item) => {
+      item.style.setProperty('border', '0', 'important');
+      item.style.setProperty('border-radius', '0', 'important');
+      item.style.setProperty('background', 'transparent', 'important');
+      item.style.setProperty('box-shadow', 'none', 'important');
+    });
+    second.querySelectorAll(':scope > div').forEach((part) => {
+      part.style.setProperty('border', '0', 'important');
+      part.style.setProperty('background', 'transparent', 'important');
+    });
+  };
+
   /* Body copy in the reference pages uses one consistent optical size. Some
      late converter templates dropped prose, questions, table copy, and list
      items to 18–24px; raise normal body text to the established 28px
@@ -888,6 +916,7 @@
   removeAnswerInteractions();
   restorePlaceValueAnswerRules();
   normalisePageEightContentScale();
+  restorePageTwelveExerciseSurface();
   ensureSourcePageNumber();
 
   normaliseLateExampleCards();
@@ -918,6 +947,7 @@
     removeAnswerInteractions();
     restorePlaceValueAnswerRules();
     normalisePageEightContentScale();
+    restorePageTwelveExerciseSurface();
     ensureSourcePageNumber();
     cleanFlattenedAccessibilityCopy();
     normaliseVerticalArithmetic();
@@ -935,6 +965,7 @@
     removeAnswerInteractions();
     restorePlaceValueAnswerRules();
     normalisePageEightContentScale();
+    restorePageTwelveExerciseSurface();
     ensureSourcePageNumber();
   });
   cleanupObserver.observe(document.querySelector('#content'), {

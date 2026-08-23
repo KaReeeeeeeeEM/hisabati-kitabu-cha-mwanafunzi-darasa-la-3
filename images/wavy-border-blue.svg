@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" preserveAspectRatio="none">
+  <defs>
+    <path id="wave" d="M4 4 q3 -2.5 6 0 t6 0" fill="none" stroke="#98def8" stroke-width="1.7"/>
+    <g id="edge">
+      <use href="#wave" x="0"/><use href="#wave" x="12"/><use href="#wave" x="24"/><use href="#wave" x="36"/>
+      <use href="#wave" x="48"/><use href="#wave" x="60"/><use href="#wave" x="72"/><use href="#wave" x="84"/>
+      <use href="#wave" x="96"/><use href="#wave" x="108"/><use href="#wave" x="120"/><use href="#wave" x="132"/>
+      <use href="#wave" x="144"/><use href="#wave" x="156"/><use href="#wave" x="168"/><use href="#wave" x="180"/>
+    </g>
+  </defs>
+  <use href="#edge"/>
+  <use href="#edge" transform="rotate(90 100 100)"/>
+  <use href="#edge" transform="rotate(180 100 100)"/>
+  <use href="#edge" transform="rotate(270 100 100)"/>
+</svg>

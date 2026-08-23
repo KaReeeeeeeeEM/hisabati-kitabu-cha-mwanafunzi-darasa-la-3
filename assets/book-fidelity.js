@@ -2,7 +2,7 @@
   if (!document.querySelector('link[data-book-fidelity-styles]')) {
     const auditedStyles = document.createElement('link');
     auditedStyles.rel = 'stylesheet';
-    auditedStyles.href = './assets/fonts.css?v=20260822-fidelity-pass-28';
+    auditedStyles.href = './assets/fonts.css?v=20260823-page138-side-borders-151';
     auditedStyles.dataset.bookFidelityStyles = 'true';
     document.head.append(auditedStyles);
   }
@@ -14,6 +14,8 @@
   if (page >= 21) document.querySelector('#content').classList.add('book-after-page14');
   if (page >= 22) document.querySelector('#content').classList.add('book-after-page15');
   if (page >= 25) document.querySelector('#content').classList.add('book-after-page18');
+  if (page >= 66) document.querySelector('#content').classList.add('book-from-print-page60');
+  if (page >= 90) document.querySelector('#content').classList.add('book-from-print-page84');
   document.querySelector('#content').classList.add(`book-source-page-${page}`);
 
   const fitLegacyPage = () => {
@@ -402,6 +404,7 @@
       'script', 'style', 'input', 'textarea', 'select', 'option', 'button',
     ].join(',');
     document.querySelectorAll('#content *').forEach((element) => {
+      if (element.closest('.book-page43-abacus-labels,.book-page44-labels,.book-page45-labels')) return;
       if (element.closest('.book-q10-copy,.book-q10-option')) return;
       if (element.matches(excluded) || element.closest('h1,h2,h3,h4,h5,h6,.source-page-number,.book-example-label,.book-exercise-heading,.book-work-heading,.book-recall-heading,.sr-only')) return;
       if (page === 35 && element.closest('.book-page29-example')) return;
@@ -553,7 +556,16 @@
       '.source-page-number', '.book-example-label', '.book-exercise-heading',
       '.book-exercise-title', '.book-work-heading', '.book-recall-heading',
       '.book-chapter-tab', '.sr-only', 'script', 'style', 'input', 'textarea',
-      'select', 'option', 'button',
+      'select', 'option', 'button', '.book-page43-abacus-labels',
+      '.book-page44-labels', '.book-page45-labels',
+      '.book-fraction',
+      '.book-page162-stack',
+      '.book-calendar-days',
+      '.book-calendar-weekdays',
+      '.book-page148-calendar-heading',
+      '.book-page150-reminder',
+      '.book-page150-vocab',
+      '.book-note-sample > span',
     ].join(',');
     document.querySelectorAll('#content *').forEach((element) => {
       if (element.matches(excluded) || element.closest(excluded)) return;
@@ -591,6 +603,7 @@
       '.book-page57-stack', '.book-page58-stack', '.book-page65-stack',
       '.book-page66-stack', '.book-page70-stack', '.book-page70-work',
       '.book-page71-stack', '.book-page71-work',
+      '.book-page164-stack',
     ].join(',');
     document.querySelectorAll(selector).forEach((stack) => {
       if (stack.querySelector(':scope > .book-vertical-operation')) return;
@@ -618,6 +631,61 @@
       }
       operation.append(rules[1]);
       operand.replaceWith(operation);
+    });
+  };
+
+  /* Printed page 73 arrived as a flattened inline equation, so the generic
+     stack detector could not restore the two horizontal rules. Rebuild this
+     single solution as the same semantic vertical operation used elsewhere. */
+  const restorePageSeventyThreeOperation = () => {
+    if (page !== 79) return;
+    const source = document.querySelector('[data-id="pg079_n0012"]');
+    if (!source || source.classList.contains('book-vertical-operation')) return;
+    const operation = document.createElement('div');
+    operation.className = 'book-vertical-operation book-page73-operation';
+    operation.dataset.id = 'pg079_n0012';
+    operation.setAttribute('aria-label', '72324 toa 45458 ni 26866');
+    operation.innerHTML = [
+      '<span>72324</span>',
+      '<span><b>−</b><span>45458</span></span>',
+      '<i aria-hidden="true"></i>',
+      '<span class="book-vertical-result">26866</span>',
+      '<i aria-hidden="true"></i>',
+    ].join('');
+    source.replaceWith(operation);
+  };
+
+  /* Sassoon Primary does not expose every arithmetic glyph consistently in
+     browsers. From source page 66 onward, keep the surrounding book typeface
+     but render each operator with a reliable glyph font. */
+  const normaliseArithmeticSymbols = () => {
+    const sourcePage = Number(document.querySelector('meta[name="page-section-id"]')?.content || 0);
+    if (sourcePage < 72) return;
+    const root = document.querySelector('#content');
+    if (!root) return;
+    const nodes = [];
+    [root, ...root.querySelectorAll('*')].forEach((parent) => {
+      if (parent.closest?.('.book-arithmetic-symbol, script, style')) return;
+      [...parent.childNodes].forEach((node) => {
+        if (node.nodeType === 3 && /[−–×÷+=≤≥]|(?:\s-\s)/.test(node.textContent)) nodes.push(node);
+      });
+    });
+    nodes.forEach((node) => {
+      const pieces = node.textContent.split(/([−–×÷+=≤≥]|(?<=\s)-(?=\s))/g);
+      if (pieces.length < 2) return;
+      const fragment = document.createDocumentFragment();
+      pieces.forEach((piece) => {
+        if (!piece) return;
+        if (/^[−–×÷+=≤≥-]$/.test(piece)) {
+          const symbol = document.createElement('span');
+          symbol.className = 'book-arithmetic-symbol';
+          symbol.textContent = piece === '-' || piece === '–' ? '−' : piece;
+          fragment.append(symbol);
+        } else {
+          fragment.append(document.createTextNode(piece));
+        }
+      });
+      node.replaceWith(fragment);
     });
   };
 
@@ -656,18 +724,10 @@
       panel.classList.add('book-work-dialog');
       const heading = candidate.closest('h1,h2,h3') || candidate;
       if (!heading.classList.contains('book-work-heading')) {
-        const title = candidate.textContent.trim();
-        const full = heading.textContent.trim();
-        if (candidate !== heading && full.length > title.length) {
-          const subtitleText = full.slice(full.indexOf(title) + title.length).trim();
-          heading.textContent = title;
-          if (subtitleText) {
-            const subtitle = document.createElement('p');
-            subtitle.className = 'book-work-subtitle';
-            subtitle.textContent = subtitleText;
-            heading.after(subtitle);
-          }
-        }
+        /* Keep the complete printed heading in one title line.  Earlier this
+           normaliser split a nested bold prefix (for example “Kazi ya
+           kufanya 5:”) from the descriptive title and several page-specific
+           layouts then hid or misplaced the generated paragraph. */
         heading.classList.add('book-work-heading');
       }
       [...panel.querySelectorAll('h2,h3,p,strong')].forEach((element) => {
@@ -701,7 +761,7 @@
      table cells, option letters, or the footer page-number badge. */
   const normaliseExerciseQuestionNumbers = () => {
     const exercises = document.querySelectorAll(
-      '#content :is(.book-exercise-sheet,.book-exercise-panel,.book-zoezi-dialog,[class*="-exercise"])'
+      '#content :is(.book-exercise-sheet,.book-exercise-panel,.book-zoezi-dialog,[class*="-exercise"],[class*="-review"],[class*="-sheet"])'
     );
     exercises.forEach((exercise) => {
       exercise.querySelectorAll('span,p,div,b,strong').forEach((number) => {
@@ -711,6 +771,11 @@
         if (!row) return;
         const peer = [...row.children].find((child) => child !== number && child.textContent.trim());
         if (!peer) return;
+        if (getComputedStyle(row).display === 'block' && row.children.length >= 2) {
+          row.style.setProperty('display', 'grid', 'important');
+          row.style.setProperty('grid-template-columns', '45px minmax(0, 1fr)', 'important');
+          row.style.setProperty('align-items', 'start', 'important');
+        }
         const candidates = [peer, ...peer.querySelectorAll('p,li,span,div')]
           .filter((candidate) => candidate.textContent.trim() && !/^\d{1,3}[.)]$/.test(candidate.textContent.trim()));
         const size = Math.max(...candidates.map((candidate) =>
@@ -932,6 +997,8 @@
   normaliseLateExampleCards();
   restorePageFiveArtwork();
   normaliseVerticalArithmetic();
+  restorePageSeventyThreeOperation();
+  normaliseArithmeticSymbols();
   normaliseWorkDialogs();
   normaliseZoeziQuestionCards();
   normaliseExerciseQuestionNumbers();
@@ -940,12 +1007,15 @@
   increaseBookTypeScale();
   normaliseBodyTypeScale();
   enforceBookWideNormalTypeScale();
+  normaliseExerciseQuestionNumbers();
   removeAnswerInteractions();
   cleanFlattenedAccessibilityCopy();
   window.setTimeout(() => {
     normaliseLateExampleCards();
     restorePageFiveArtwork();
     normaliseVerticalArithmetic();
+    restorePageSeventyThreeOperation();
+    normaliseArithmeticSymbols();
     normaliseWorkDialogs();
     normaliseZoeziQuestionCards();
     normaliseExerciseQuestionNumbers();
@@ -954,6 +1024,7 @@
     increaseBookTypeScale();
     normaliseBodyTypeScale();
     enforceBookWideNormalTypeScale();
+    normaliseExerciseQuestionNumbers();
     removeAnswerInteractions();
     restorePlaceValueAnswerRules();
     normalisePageEightContentScale();
@@ -962,6 +1033,7 @@
     ensureSourcePageNumber();
     cleanFlattenedAccessibilityCopy();
     normaliseVerticalArithmetic();
+    normaliseArithmeticSymbols();
   }, 0);
   const cleanupObserver = new MutationObserver(() => {
     cleanFlattenedAccessibilityCopy();
@@ -973,12 +1045,15 @@
     increaseBookTypeScale();
     normaliseBodyTypeScale();
     enforceBookWideNormalTypeScale();
+    normaliseExerciseQuestionNumbers();
     removeAnswerInteractions();
     restorePlaceValueAnswerRules();
     normalisePageEightContentScale();
     restorePageTwelveExerciseSurface();
     tightenPageSixteenExerciseFlow();
     ensureSourcePageNumber();
+    normaliseArithmeticSymbols();
+    restorePageSeventyThreeOperation();
   });
   cleanupObserver.observe(document.querySelector('#content'), {
     childList: true,
@@ -1001,9 +1076,9 @@
   /* Load the audited, page-specific HTML layouts on every page. Keeping this
      here makes the shared correction layer authoritative without duplicating
      a script tag across 184 generated HTML files. */
-  if (!document.querySelector('script[data-book-page-layout]')) {
+  if (![...document.scripts].some((script) => script.src.includes('/assets/page-layout.js'))) {
     const pageLayout = document.createElement('script');
-    pageLayout.src = './assets/page-layout.js?v=20260821-page-audit-11';
+    pageLayout.src = './assets/page-layout.js?v=20260823-page138-side-borders-151';
     pageLayout.dataset.bookPageLayout = 'true';
     document.head.append(pageLayout);
   }

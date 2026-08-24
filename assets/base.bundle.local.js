@@ -26498,7 +26498,7 @@ function useAtomValueWithDelay<Value>(
   // src/shared/state/ui.atoms.ts
   var easyReadModeAtom = persistedBoolAtom("easyReadMode", false);
   var eli5ModeAtom = persistedBoolAtom("eli5Mode", false);
-  var signLanguageModeAtom = persistedBoolAtom("signLanguageMode", false);
+  var signLanguageModeAtom = persistedBoolAtom("signLanguageMode", true);
   var glossaryModeAtom = persistedBoolAtom("glossaryMode", false);
   var syllablesModeAtom = persistedBoolAtom("syllablesMode", false);
   var stateModeAtom = persistedBoolAtom("stateMode", false);
@@ -41306,7 +41306,7 @@ function useAtomValueWithDelay<Value>(
   });
 
   // src/features/audio/state/audio.atoms.ts
-  var readAloudModeAtom = persistedBoolAtom("readAloudMode", false);
+  var readAloudModeAtom = persistedBoolAtom("readAloudMode", true);
   var autoplayModeAtom = persistedBoolAtom("autoplayMode", true);
   var wordHighlightModeAtom = persistedBoolAtom("wordHighlightMode", true);
   var describeImagesModeAtom = persistedBoolAtom("describeImagesMode", false);
@@ -41388,10 +41388,6 @@ function useAtomValueWithDelay<Value>(
     (0, import_react13.useEffect)(() => {
       setAspectRatio(null);
     }, [src]);
-    (0, import_react13.useEffect)(() => {
-      if (activeMedia !== "tts") return;
-      videoRef.current?.pause();
-    }, [activeMedia]);
     if (src === null) return null;
     const positioned = position !== null;
     const baseWidth = 320;
@@ -41438,6 +41434,7 @@ function useAtomValueWithDelay<Value>(
               ref: videoRef,
               src,
               autoPlay: true,
+              muted: true,
               playsInline: true,
               controls: true,
               onLoadedMetadata: (e) => {
@@ -45311,19 +45308,6 @@ function useAtomValueWithDelay<Value>(
       setIsPlaying(false);
       setCurrentIndex(0);
     }, [readAloudMode, stopAndClear, setIsPlaying, setCurrentIndex]);
-    (0, import_react20.useEffect)(() => {
-      if (activeMedia !== "sign-language") return;
-      stopAndClear();
-      setIsPlaying(false);
-      setCurrentIndex(0);
-      setReadAloudMode(false);
-    }, [
-      activeMedia,
-      stopAndClear,
-      setIsPlaying,
-      setCurrentIndex,
-      setReadAloudMode
-    ]);
     (0, import_react20.useEffect)(() => {
       if (audioRef.current) audioRef.current.playbackRate = speed;
     }, [speed]);
@@ -54070,11 +54054,8 @@ function useAtomValueWithDelay<Value>(
           el.setAttribute("alt", text);
           return;
         }
-      const htmlElement = el;
-      // Preserve authored answer controls nested inside translated content.
-      // Replacing this container's innerHTML would delete the controls.
-      if (htmlElement.querySelector("[data-activity-item], math")) return;
-      setEasyReadTextFormatting(htmlElement, isEasyRead);
+        const htmlElement = el;
+        setEasyReadTextFormatting(htmlElement, isEasyRead);
         if (isEasyRead) {
           htmlElement.removeAttribute("data-tts-original-html");
           applyPlainTextWithLineBreaks(htmlElement, text);

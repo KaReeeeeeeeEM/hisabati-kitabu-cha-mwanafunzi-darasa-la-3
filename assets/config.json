@@ -1,6 +1,6 @@
 {
   "title": "HISABATI--DRS-3--complete-184-pages",
-  "bundleVersion": "12",
+  "bundleVersion": "13",
   "languages": {
     "available": [
       "sw-TZ"
@@ -8,7 +8,7 @@
     "default": "sw-TZ"
   },
   "features": {
-    "signLanguage": false,
+    "signLanguage": true,
     "easyRead": false,
     "glossary": false,
     "eli5": false,

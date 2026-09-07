@@ -5239,3 +5239,12 @@ input[data-activity-item]:focus { outline-offset: 2px; outline: rgb(56, 189, 248
   font-weight:400 !important;
   line-height:1.22 !important;
 }
+/* The book itself must remain visible even if the optional ADT interface or
+   read-aloud runtime initializes slowly or fails. Every page is generated with
+   Tailwind's opacity-0 class, so reveal the semantic page at the stylesheet
+   layer instead of waiting for JavaScript to remove that class. */
+html body #content {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}

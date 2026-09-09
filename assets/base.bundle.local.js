@@ -45059,6 +45059,54 @@ function useAtomValueWithDelay<Value>(
 
   // src/features/audio/hooks/useAudioPlayer.ts
   var EASY_READ_AUDIO_EXCLUDED_SELECTOR = ".word-card, [data-activity-item], nav, .nav__list, button, input, textarea, select, option";
+  function normalizeAudioMatchText(value) {
+    return String(value ?? "").replace(/\u00a0/g, " ").replace(/\s+/g, " ").trim().toLocaleLowerCase();
+  }
+  function restoreRebuiltPageAudioIds(content, audioFiles, translations) {
+    const pageId = document.querySelector('meta[name="title-id"]')?.content;
+    if (!pageId) return;
+    const prefix = `${pageId.replace(/_sec\d+$/, "")}_`;
+    const entries = Object.keys(audioFiles).filter((id) => id.startsWith(prefix) && typeof translations[id] === "string" && translations[id].trim());
+    if (entries.length === 0) return;
+    const claimed = new Set(Array.from(content.querySelectorAll("[data-id]"), (element) => element.getAttribute("data-id")));
+    const elements = Array.from(content.querySelectorAll("h1,h2,h3,h4,h5,h6,p,li,td,th,figcaption,span,div"));
+    for (const id of entries) {
+      if (claimed.has(id)) continue;
+      const wanted = normalizeAudioMatchText(translations[id]);
+      if (!wanted) continue;
+      const match = elements.find((element) => {
+        if (element.hasAttribute("data-id") || element.closest("[data-id]")) return false;
+        if (normalizeAudioMatchText(element.textContent) !== wanted) return false;
+        return !Array.from(element.children).some((child) => normalizeAudioMatchText(child.textContent) === wanted);
+      });
+      if (!match) continue;
+      match.setAttribute("data-id", id);
+      claimed.add(id);
+    }
+    // Some fidelity layouts combine two source sentences into one paragraph.
+    // Wrap only the exact sentence substring so both recordings remain in the
+    // queue without adding hidden or duplicate text.
+    for (const id of entries) {
+      if (claimed.has(id)) continue;
+      const spoken = translations[id].trim();
+      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
+      let node;
+      while (node = walker.nextNode()) {
+        if (node.parentElement?.closest("[data-id],script,style")) continue;
+        const index = node.nodeValue.indexOf(spoken);
+        if (index < 0) continue;
+        const fragment = document.createDocumentFragment();
+        fragment.append(node.nodeValue.slice(0, index));
+        const span = document.createElement("span");
+        span.setAttribute("data-id", id);
+        span.textContent = spoken;
+        fragment.append(span, node.nodeValue.slice(index + spoken.length));
+        node.replaceWith(fragment);
+        claimed.add(id);
+        break;
+      }
+    }
+  }
   function resolvePlayableAudio(el, id, audioFiles, translations, easyReadMode) {
     const sourceFilename = audioFiles[id];
     if (!easyReadMode) {
@@ -45081,6 +45129,7 @@ function useAtomValueWithDelay<Value>(
     if (typeof document === "undefined") return [];
     const content = document.getElementById("content");
     if (!content) return [];
+    restoreRebuiltPageAudioIds(content, audioFiles, translations);
     const elements = Array.from(content.querySelectorAll("[data-id]"));
     const items = [];
     for (const el of elements) {

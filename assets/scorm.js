@@ -1,8 +1,17 @@
-// scorm.js — SCORM 1.2 adapter, auto-generated, do not edit by hand
+// scorm.js — SCORM 1.2 adapter, auto-generated
 (function () {
   'use strict';
 
-  // --- Find the SCORM 1.2 API by traversing parent frames ---
+  // This script is shared by every packaged page. Load the mobile dock
+  // compatibility styles once so the whole book gets the same responsive bar.
+  if (!document.querySelector('link[data-responsive-reader-bar]')) {
+    var readerBarStyles = document.createElement('link');
+    readerBarStyles.rel = 'stylesheet';
+    readerBarStyles.href = './assets/responsive-reader-bar.css?v=20260912-1';
+    readerBarStyles.setAttribute('data-responsive-reader-bar', '');
+    document.head.appendChild(readerBarStyles);
+  }
+
   function findAPI(win) {
     var depth = 0;
     while (depth < 7) {
@@ -15,28 +24,21 @@
   }
 
   var API = findAPI(window);
-  if (!API) return; // Not in a SCORM LMS — exit silently
+  if (!API) return;
 
-  // --- Initialize the session ---
   API.LMSInitialize('');
 
-  // --- Identify the current page ---
   var metaTitleId = document.querySelector('meta[name="title-id"]');
   var pageId = metaTitleId ? metaTitleId.getAttribute('content') : '';
-
-  // All activity IDs in this ADT (embedded at generation time)
   var ALL_ACTIVITY_IDS = [];
   var hasActivities = ALL_ACTIVITY_IDS.length > 0;
 
-  // --- Record where the learner is ---
   API.LMSSetValue('cmi.core.lesson_location', pageId);
 
-  // --- Set lesson status ---
   if (hasActivities) {
     applyStatus();
     watchForCompletions();
   } else {
-    // Content-only ADT — mark as passed on first visit
     var existingStatus = API.LMSGetValue('cmi.core.lesson_status') || '';
     if (existingStatus !== 'passed') {
       API.LMSSetValue('cmi.core.lesson_status', 'passed');
@@ -48,22 +50,17 @@
 
   API.LMSCommit('');
 
-  // --- Session close ---
   window.addEventListener('beforeunload', function () {
     if (hasActivities) applyStatus();
     API.LMSCommit('');
     API.LMSFinish('');
   });
 
-  // -------------------------------------------------------
-  // Helpers
-  // -------------------------------------------------------
-
   function getCompletedIds() {
     var completed = [];
     try {
       completed = JSON.parse(localStorage.getItem('completedActivities') || '[]');
-    } catch (e) { /* ignore */ }
+    } catch (e) { /* Ignore malformed stored learner data. */ }
 
     var ids = {};
     for (var i = 0; i < completed.length; i++) {

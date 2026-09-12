@@ -15,6 +15,7 @@ for (const relative of [
   "assets/config.json",
   "content/i18n/sw-TZ/texts.json",
   "content/i18n/sw-TZ/audios.json",
+  "content/i18n/sw-TZ/videos.json",
   "content/i18n/sw-TZ/timecode/timecode_output.json",
 ]) {
   inline[`./${relative}`] = JSON.parse(fs.readFileSync(path.join(root, relative), "utf8"));

@@ -1,4 +1,5 @@
 {
+  "video-1": "page_1-muted-compressed.mp4",
   "video-2": "page_2.mp4",
   "video-3": "page_3.mp4",
   "video-4": "page_4.mp4",
@@ -57,7 +58,7 @@
   "video-57": "page_57.mp4",
   "video-58": "page_58.mp4",
   "video-59": "page_59.mp4",
-  "video-60": "page_60.mp4",
+  "video-60": "page_60-muted-compressed.mp4",
   "video-61": "page_61.mp4",
   "video-62": "page_62.mp4",
   "video-63": "page_63.mp4",
@@ -173,7 +174,7 @@
   "video-173": "Page_173.mp4",
   "video-174": "Page_174.mp4",
   "video-175": "Page_175.mp4",
-  "video-176": "Page_176.mp4",
+  "video-176": "page_176-muted-compressed.mp4",
   "video-177": "Page_177.mp4",
   "video-178": "Page_178.mp4",
   "video-179": "Page_179.mp4",

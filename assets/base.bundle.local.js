@@ -45053,6 +45053,7 @@ function useAtomValueWithDelay<Value>(
     return createApproximateWordTimestamps(text, audioDuration);
   }
   function elementSupportsWordHighlight(element) {
+    if (element.hasAttribute("data-tts-highlight-only")) return false;
     const tag = element.tagName.toLowerCase();
     return tag !== "img" && tag !== "input" && tag !== "textarea" && tag !== "select";
   }
@@ -45068,43 +45069,23 @@ function useAtomValueWithDelay<Value>(
     const prefix = `${pageId.replace(/_sec\d+$/, "")}_`;
     const entries = Object.keys(audioFiles).filter((id) => id.startsWith(prefix) && typeof translations[id] === "string" && translations[id].trim());
     if (entries.length === 0) return;
-    const claimed = new Set(Array.from(content.querySelectorAll("[data-id]"), (element) => element.getAttribute("data-id")));
-    const elements = Array.from(content.querySelectorAll("h1,h2,h3,h4,h5,h6,p,li,td,th,figcaption,span,div"));
-    for (const id of entries) {
-      if (claimed.has(id)) continue;
-      const wanted = normalizeAudioMatchText(translations[id]);
-      if (!wanted) continue;
-      const match = elements.find((element) => {
-        if (element.hasAttribute("data-id") || element.closest("[data-id]")) return false;
-        if (normalizeAudioMatchText(element.textContent) !== wanted) return false;
-        return !Array.from(element.children).some((child) => normalizeAudioMatchText(child.textContent) === wanted);
-      });
-      if (!match) continue;
-      match.setAttribute("data-id", id);
-      claimed.add(id);
-    }
-    // Some fidelity layouts combine two source sentences into one paragraph.
-    // Wrap only the exact sentence substring so both recordings remain in the
-    // queue without adding hidden or duplicate text.
-    for (const id of entries) {
-      if (claimed.has(id)) continue;
-      const spoken = translations[id].trim();
-      const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT);
-      let node;
-      while (node = walker.nextNode()) {
-        if (node.parentElement?.closest("[data-id],script,style")) continue;
-        const index = node.nodeValue.indexOf(spoken);
-        if (index < 0) continue;
-        const fragment = document.createDocumentFragment();
-        fragment.append(node.nodeValue.slice(0, index));
+    // Fidelity page rebuilds can combine, split, hide, or replace the original
+    // nodes that carried ADT's narration IDs. Rebuild the playable queue from
+    // the authoritative audio/text catalog so no source line, number, table
+    // cell, answer blank, or figure description disappears from read-aloud.
+    let completeNarration = content.querySelector("[data-tts-complete-page]");
+    if (!completeNarration) {
+      completeNarration = document.createElement("div");
+      completeNarration.className = "sr-only";
+      completeNarration.setAttribute("data-tts-complete-page", "true");
+      completeNarration.setAttribute("aria-label", "Usomaji kamili wa ukurasa");
+      for (const id of entries) {
         const span = document.createElement("span");
         span.setAttribute("data-id", id);
-        span.textContent = spoken;
-        fragment.append(span, node.nodeValue.slice(index + spoken.length));
-        node.replaceWith(fragment);
-        claimed.add(id);
-        break;
+        span.textContent = translations[id].trim();
+        completeNarration.appendChild(span);
       }
+      content.prepend(completeNarration);
     }
   }
   function resolvePlayableAudio(el, id, audioFiles, translations, easyReadMode) {
@@ -45130,14 +45111,25 @@ function useAtomValueWithDelay<Value>(
     const content = document.getElementById("content");
     if (!content) return [];
     restoreRebuiltPageAudioIds(content, audioFiles, translations);
-    const elements = Array.from(content.querySelectorAll("[data-id]"));
+    const completeNarration = content.querySelector("[data-tts-complete-page]");
+    const elements = Array.from((completeNarration ?? content).querySelectorAll("[data-id]"));
     const items = [];
     for (const el of elements) {
       const id = el.getAttribute("data-id");
       if (!id) continue;
-      const audio = resolvePlayableAudio(el, id, audioFiles, translations, easyReadMode);
+      let highlightElement = el;
+      if (completeNarration) {
+        const visibleMatch = Array.from(content.querySelectorAll(`[data-id="${CSS.escape(id)}"]`)).find(
+          (candidate) => !candidate.closest("[data-tts-complete-page]") && !candidate.closest(".sr-only")
+        );
+        if (visibleMatch) highlightElement = visibleMatch;
+        if (/^pg001_(?:im001|n(?:000[6-9]|001[0-6]))$/.test(id)) {
+          highlightElement = content.querySelector(".certificate-tts-target") ?? highlightElement;
+        }
+      }
+      const audio = resolvePlayableAudio(highlightElement, id, audioFiles, translations, easyReadMode);
       if (!audio) continue;
-      items.push({ el, ...audio });
+      items.push({ el: highlightElement, ...audio });
     }
     return items;
   }
@@ -54173,7 +54165,11 @@ function useAtomValueWithDelay<Value>(
   }
   async function loadPagesManifest(versionParam = "") {
     const url = `./content/pages.json${versionParam ? `?v=${versionParam}` : ""}`;
-    return await fetchJson(url) ?? [];
+    const pages = await fetchJson(url) ?? [];
+    if (!pages.some((page) => page.section_id === "pg185_sec001")) {
+      pages.push({ section_id: "pg185_sec001", href: "pg185_sec001.html" });
+    }
+    return pages;
   }
   async function loadTocManifest(versionParam = "") {
     const url = `./content/toc.json${versionParam ? `?v=${versionParam}` : ""}`;

@@ -2,7 +2,7 @@
   if (!document.querySelector('link[data-book-fidelity-styles]')) {
     const auditedStyles = document.createElement('link');
     auditedStyles.rel = 'stylesheet';
-    auditedStyles.href = './assets/fonts.css?v=20260823-page138-side-borders-151';
+    auditedStyles.href = './assets/fonts.css?v=20260910-title-page-4';
     auditedStyles.dataset.bookFidelityStyles = 'true';
     document.head.append(auditedStyles);
   }
@@ -32,7 +32,7 @@
   window.setTimeout(fitLegacyPage, 1600);
 
   const ensureSourcePageNumber = () => {
-    if (page <= 1 || document.querySelector('#content > .source-page-number')) return;
+    if (page <= 1 || page === 185 || document.querySelector('#content > .source-page-number')) return;
     const roman = ['','i','ii','iii','iv','v','vi'];
     const marker = document.createElement('div');
     marker.className = 'source-page-number';
@@ -181,7 +181,7 @@
        overflow. Keep the legacy adjustment only for the untouched opening. */
     if (page >= 22) return;
     const coverType = {
-      pg001_n0002: '90px',
+      pg001_n0002: '128px',
       pg001_n0003: '36px',
       pg001_n0004: '30px',
       pg001_n0017: '32px',

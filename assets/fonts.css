@@ -399,6 +399,7 @@ input[data-activity-item]:focus { outline-offset: 2px; outline: rgb(56, 189, 248
 #content#content [data-section-id="pg020_sec001"] .mb-8 > .grid { grid-template-columns: repeat(3, minmax(0px, 1fr)) !important; gap: 4px 30px !important; padding-left: 58px !important; }
 #content#content [data-section-id="pg020_sec001"] .mb-8 > .grid > div { padding: 0px !important; border: 0px !important; border-radius: 0px !important; background: transparent !important; }
 #content#content.book-after-page13 :is(.adt-h1, .adt-h2):not(.book-example-label) { font-size: 28px !important; line-height: 1.18 !important; }
+
 #content#content.book-after-page14 { padding-top: 120px !important; }
 #content#content.book-after-page15 > section { box-sizing: border-box !important; min-height: 1055px !important; display: flex !important; flex-direction: column !important; justify-content: space-between !important; }
 #content#content.book-page.book-after-page15 > section { min-height: 1070px !important; }
@@ -5247,4 +5248,59 @@ html body #content {
   display: block !important;
   visibility: visible !important;
   opacity: 1 !important;
+}
+
+/* Source cover spread, split at the measured trim and spine boundaries. */
+html body #content#content#content.book-cover-art-page {
+  width: min(calc(100% - 32px), 1104px) !important;
+  max-width: 1104px !important;
+  min-height: 0 !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  background: #4388cc !important;
+}
+html body #content#content#content.book-cover-art-page::before,
+html body #content#content#content.book-cover-art-page::after {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+}
+html body #content.book-cover-art-page > .book-cover-art {
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+}
+html body #content.book-cover-art-page .book-cover-art-image {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+/* The source title page uses an intentionally oversized subject title. */
+html body #content#content [data-section-id="pg001_sec001"] > div > div:first-child > h1 {
+  font-size: 128px !important;
+  line-height: 1 !important;
+}
+
+@media (max-width: 640px) {
+  html body #content#content [data-section-id="pg001_sec001"] > div > div:first-child > h1 {
+    font-size: 82px !important;
+  }
+}
+
+/* Highlight the approval certificate while its description is spoken. */
+html body #content [data-section-id="pg001_sec001"] .certificate-tts-target.tts-active-block {
+  box-shadow: 0 0 0 2px #facc15 !important;
+  border-radius: 2px !important;
+  background: transparent !important;
 }
